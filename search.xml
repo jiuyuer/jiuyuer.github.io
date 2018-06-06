@@ -2,13 +2,24 @@
 <search>
   <entry>
     <title><![CDATA[瞎写]]></title>
-    <url>%2Fblind-to-write%2F</url>
+    <url>%2F2018%2Fblind-to-write%2F</url>
     <content type="text"><![CDATA[批评你不可怕，对你失望才可怕 早晨被旁边地铁施工地上很有节奏的钻地声给惊醒（神奇的是，梦里也同样听到了节奏的敲打声），抬头看了下挂钟才7点多，我强迫自己再睡会儿，毕竟好不容易赚来周末懒觉的机会。 人往往是这样，强迫自己越不在乎的东西，却越会关注，尤其是钻地的节奏仿佛心脏跳动的频率，整得我难受。既然这样，那行吧，我就用手机的音乐来强行覆盖它。 还是没用，惹不起，那总还是躲得起。穿衣，刷牙，洗脸，收拾东西，出门。带上了电脑和一本五月份计划要看完的书。 这本书是柴静的《看见》，今天下午刚好读完。如果从翻看第一页算起，读这本书少说也有半年了，当然，真正开始看这本书也就上个月底的事。我有时会跟朋友说，我有松鼠癌，买回来的书只会屯着当收藏品。于是4月底突然想改改这种状态，哪怕强行自己一个月读一本技术以外的书。于是，开始计划分解，一个月30天，一本书按章节算，每天要看多少章节，粒度细到每一天的完成额度，看书时间是每天睡前躺床上的功夫。 还是来说说《看见》这本书吧，作者柴静是一位美女记者，剪了一个比齐肩短的发型（当时我截她照片发给朋友看，朋友说长的像鲁豫，还真的是）。这本书，也是柴静对自己在央视的一个小总结，是她个人的一些思考。我网上还特意找了这本书发布会的视频资料，发现她跟白岩松，崔永元，罗永浩都非常的要好。 读柴老师的书，最大感受就是必须要认真阅读，不然思路会接不上，因为她陈述这件事的时候，往往会引入另外一件事，看似无关紧要，但实际却有一定联系。书里面讲述了她采访过的一些真人真事，好多人及事其实也是我们耳有所闻的。不同于尖锐的政治时事记者，看柴静的书，不会有太多让你感到不适的地方。客观地来说，读这本书，就像是带你浅浅地经历她在央视工作的十年，十年中她用肉眼所看见的难忘的一些人物和场景。 书中好多次提到陈虻这个人，他是柴静的导师，看得出来她很敬重他，而且也通过陈虻这个人，让我感受到央视牛人太多，工作有多拼，不过也毕竟是央视这个大平台。书中提到有一次年会上，小崔居然能请来赵本山，郭德纲以及罗大佑，也是牛的不行。在接触《看见》之前，对于柴静我算是一无所知，既然能出书，又是名记，也算是一名“成功人士”。《看见》虽然是柴静10年从业来的自传性作品，和其中我看过的名人自传《乔布斯传》比较起来，《看见》对于作者自己的成功方面和经验描述几乎没有，除了表现的谦逊之外，她运用了超多的细节描述和心理描述来还原了作者本人亲身经历的重大事件的过程。 坦白说，《看见》这本书的开头部分并没有吸引到我，她的一些陈述让我感到别扭，所以中间有把这本书搁置，但是庆幸的是我读完了，感受颇丰。柴静的主要工作是采访，这就要求她务必去接触一些具体的人物，具体而细微的事情，那些事情或琐碎，或热门，或悲痛。今天刚好是汶川地震十年，十年前的今天发生地震时，她在美国，看到报导之后，有一个印象非常深刻，她从美国报纸上剪下两张报道地震的照片放怀里并第一时间去了现场。柴静的每一次采访，每一个报道，即使她是简单记录，字里行间我依旧能够感受到她天生对细微事物有着深刻的体会，她把人看透，把事情看透。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
       <tags>
         <tag>读后感</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[js异步上传文件]]></title>
+    <url>%2F2012%2Fjs-async-upload-files%2F</url>
+    <content type="text"><![CDATA[起因项目中做到了头像上传的功能.因为不可能修改头像就把整个表单提交,所以必须要使用 AJAX 来实现异步上传文件. 经过服务端只要获取到客户端文件的本地路径,然后使用文件流来实现文件操作就可以了.主要还是在浏览器端获取文件的本地路径和预览功能.IE 浏览器从 IE6 开始已经不能使用 input.value 直接获取 input:file 控件的本地路径其他浏览器比如 chrom 和 FF 等都不能直接使用 input.value 获取文件的本地路径.那么只能使用别的方法实现异步上传文件功能.首先声明 IE6 不考虑chrome 和 firefox 因为对 HTML5 支持比较好.所以可以使用 HTML5 中的 files 和 FileReader 对象来实现图片预览功能。如下： 123456789101112131415var fileList = obj.files;var imageType = /image.*/;for (var i = 0; i &lt; fileList.length; i++) &#123; var file = fileList[i]; if (!file.type.match(imageType)) &#123; continue; &#125; var reader = new FileReader(); reader.onload = function(e) &#123; fileName = e.target.result; //Data URI格式 img.src = fileName; //给img.src赋值 &#125;; reader.readAsDataURL(file); //转换成Data URI格式&#125; IE7-IE9 使用 123this.select();this.blur();var fileName = document.selection.createRange().text; 来获取文件的本地路径.然后是用图片预览,因为 IE7-IE9 中的 img 控件的 src 属性已经不能直接使用本地路径来显示图片.所以使用滤镜来实现 12345678divShowImage.setAttribute( 'style', 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);width:300px; height:300px;');divShowImage.filters.item( 'DXImageTransform.Microsoft.AlphaImageLoader').src = fileName;img.setAttribute('style', 'display:none'); //隐藏IMG避免在图片的左上角出现一个小叉叉. 20121009 更新然后是上传..在这里遇到了最大的问题…其实在之前已经遇到过这个问题…但是都先放过去.等要用到的时候再去实现.. 就是 chrome 居然无法获取到图片的本地路径.因为不想提交表单域.网上还是提供了使用 js 中的 XMLHTTPResponse 对象来实现 ajax 直接提交图片的二进制码. 因为以前都是使用 jq 来实现 ajax 的.所以对于 XMLHTTPResponse 对象非常不熟悉.导致在.ashx 中都不知道如何获取数据.尝试了多次..暂时没有结果.这时候我又开始思考是不是应该继续下去.因为已经感觉到复杂了..这么一个异步上传..在理想中不应该是如此复杂,那么就应该考虑自己的思路是不是出现了问题,是不是能换个思路进行下去. 考虑使用 IFrame 中嵌入上传的页面来实现异步上传. 早先考虑过的使用 falsh 插件.但是还是感觉不好..因为觉得可以用 js+ajax 实现. 还想到 webcjs 中使用的异步上传,使用表单域提交,因为其他数据都是通过无表单域的 AJAX 提交的.所以页面的表单域可以留给上传文件. 继续尝试取得提交到服务端的 XMLHTTPResponse 对象. 决定了.. 先使用第三条解决方案.终于完成异步头像上传的全部功能…还是使用了客户端提交表单,然后服务端 context.Request.Files 来获取文件属性.并且使用 jquery.form.js 来实现异步提交表单.主要问题还是服务端获取不到 Files 对象.form 中必须有 enctype=”multipart/form-data”然后 input:file 控件中必须要有 runat=”server”然后才可以在.ashx 文件中获取到 Request.Files;后面的保存和修改数据库信息已经不存在问题了. 总结就是感觉 HTML5 兼容性太差.各种不确定.有些属性不是这个浏览器不支持就是那个浏览器不支持.预览图片的还是使用 HTML5 中 files 对象来转换成 Data URI 来赋值到 src 属性上.然后 IE 的预览图片还是使用滤镜来实现.]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
       </tags>
   </entry>
 </search>
