@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="起因项目中做到了头像上传的功能.因为不可能修改头像就把整个表单提交,所以必须要使用 AJAX 来实现异步上传文件. 经过服务端只要获取到客户端文件的本地路径,然后使用文件流来实现文件操作就可以了.主要还是在浏览器端获取文件的本地路径和预览功能.IE 浏览器从 IE6 开始已经不能使用 input.value 直接获取 input:file 控件的本地路径其他浏览器比如 chrom 和 FF 等都不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-06T08:51:25.246Z">
+<meta property="og:updated_time" content="2018-06-07T05:54:43.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js异步上传文件">
 <meta name="twitter:description" content="起因项目中做到了头像上传的功能.因为不可能修改头像就把整个表单提交,所以必须要使用 AJAX 来实现异步上传文件. 经过服务端只要获取到客户端文件的本地路径,然后使用文件流来实现文件操作就可以了.主要还是在浏览器端获取文件的本地路径和预览功能.IE 浏览器从 IE6 开始已经不能使用 input.value 直接获取 input:file 控件的本地路径其他浏览器比如 chrom 和 FF 等都不">
@@ -389,6 +389,7 @@
         <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>项目中做到了头像上传的功能.因为不可能修改头像就把整个表单提交,所以必须要使用 AJAX 来实现异步上传文件.</p>
 <h2 id="经过"><a href="#经过" class="headerlink" title="经过"></a>经过</h2><p>服务端只要获取到客户端文件的本地路径,然后使用文件流来实现文件操作就可以了.<br>主要还是在浏览器端获取文件的本地路径和预览功能.<br>IE 浏览器从 IE6 开始已经不能使用 input.value 直接获取 input:file 控件的本地路径<br>其他浏览器比如 chrom 和 FF 等都不能直接使用 input.value 获取文件的本地路径.<br>那么只能使用别的方法实现异步上传文件功能.<br>首先声明 IE6 不考虑<br>chrome 和 firefox 因为对 HTML5 支持比较好.所以可以使用 HTML5 中的 files 和 FileReader 对象来实现图片预览功能。如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fileList = obj.files;</span><br><span class="line"><span class="keyword">var</span> imageType = <span class="regexp">/image.*/</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; fileList.length; i++) &#123;</span><br><span class="line">  <span class="keyword">var</span> file = fileList[i];</span><br><span class="line">  <span class="keyword">if</span> (!file.type.match(imageType)) &#123;</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    fileName = e.target.result; <span class="comment">//Data URI格式</span></span><br><span class="line">    img.src = fileName; <span class="comment">//给img.src赋值</span></span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsDataURL(file); <span class="comment">//转换成Data URI格式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>IE7-IE9 使用</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.select();</span><br><span class="line"><span class="keyword">this</span>.blur();</span><br><span class="line"><span class="keyword">var</span> fileName = <span class="built_in">document</span>.selection.createRange().text;</span><br></pre></td></tr></table></figure>
 <p>来获取文件的本地路径.<br>然后是用图片预览,因为 IE7-IE9 中的 img 控件的 src 属性已经不能直接使用本地路径来显示图片.所以使用滤镜来实现</p>
@@ -445,8 +446,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/blind-to-write/" rel="prev" title="瞎写">
-                瞎写 <i class="fa fa-chevron-right"></i>
+              <a href="/2013/huangshan-travel/" rel="prev" title="黄山游记">
+                黄山游记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -535,7 +536,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -557,7 +558,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
