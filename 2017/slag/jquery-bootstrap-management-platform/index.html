@@ -64,7 +64,7 @@
 
 
 
-  <meta name="keywords" content="Javascript," />
+  <meta name="keywords" content="Javascript,前端开发," />
 
 
 
@@ -75,18 +75,18 @@
 
 
 
-<meta name="description" content="起因项目中做到了头像上传的功能.因为不可能修改头像就把整个表单提交,所以必须要使用 AJAX 来实现异步上传文件. 经过服务端只要获取到客户端文件的本地路径,然后使用文件流来实现文件操作就可以了.主要还是在浏览器端获取文件的本地路径和预览功能.IE 浏览器从 IE6 开始已经不能使用 input.value 直接获取 input:file 控件的本地路径其他浏览器比如 chrom 和 FF 等都不">
-<meta name="keywords" content="Javascript">
+<meta name="description" content="现在流行的是前后端分离，MV*模式，我作为一个相对传统行业的老菜鸟来说说最近手上的一个后台管理系统项目的前端工作，欢迎提各种意见。 项目背景 传统后台管理系统，面向的是企业级客户，兼容 IE8+等主流浏览器，所以对界面友好程度相对来说并不是太大，你懂得  前端框架(类库) Jquery+Bootstrap+Layer+zTree+Validform  谈框架这种高大上的东西，我更想用类库来表达(恩">
+<meta name="keywords" content="Javascript,前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript 异步上传文件">
-<meta property="og:url" content="http://yoursite.com/2012/slag/js-async-upload-files/index.html">
+<meta property="og:title" content="Jquery+Bootstrap构建传统后台管理系统">
+<meta property="og:url" content="http://yoursite.com/2017/slag/jquery-bootstrap-management-platform/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
-<meta property="og:description" content="起因项目中做到了头像上传的功能.因为不可能修改头像就把整个表单提交,所以必须要使用 AJAX 来实现异步上传文件. 经过服务端只要获取到客户端文件的本地路径,然后使用文件流来实现文件操作就可以了.主要还是在浏览器端获取文件的本地路径和预览功能.IE 浏览器从 IE6 开始已经不能使用 input.value 直接获取 input:file 控件的本地路径其他浏览器比如 chrom 和 FF 等都不">
+<meta property="og:description" content="现在流行的是前后端分离，MV*模式，我作为一个相对传统行业的老菜鸟来说说最近手上的一个后台管理系统项目的前端工作，欢迎提各种意见。 项目背景 传统后台管理系统，面向的是企业级客户，兼容 IE8+等主流浏览器，所以对界面友好程度相对来说并不是太大，你懂得  前端框架(类库) Jquery+Bootstrap+Layer+zTree+Validform  谈框架这种高大上的东西，我更想用类库来表达(恩">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-08T02:26:06.919Z">
+<meta property="og:updated_time" content="2018-06-08T08:56:44.785Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript 异步上传文件">
-<meta name="twitter:description" content="起因项目中做到了头像上传的功能.因为不可能修改头像就把整个表单提交,所以必须要使用 AJAX 来实现异步上传文件. 经过服务端只要获取到客户端文件的本地路径,然后使用文件流来实现文件操作就可以了.主要还是在浏览器端获取文件的本地路径和预览功能.IE 浏览器从 IE6 开始已经不能使用 input.value 直接获取 input:file 控件的本地路径其他浏览器比如 chrom 和 FF 等都不">
+<meta name="twitter:title" content="Jquery+Bootstrap构建传统后台管理系统">
+<meta name="twitter:description" content="现在流行的是前后端分离，MV*模式，我作为一个相对传统行业的老菜鸟来说说最近手上的一个后台管理系统项目的前端工作，欢迎提各种意见。 项目背景 传统后台管理系统，面向的是企业级客户，兼容 IE8+等主流浏览器，所以对界面友好程度相对来说并不是太大，你懂得  前端框架(类库) Jquery+Bootstrap+Layer+zTree+Validform  谈框架这种高大上的东西，我更想用类库来表达(恩">
 
 
 
@@ -116,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2012/slag/js-async-upload-files/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/slag/jquery-bootstrap-management-platform/"/>
 
 
 
 
 
-  <title>Javascript 异步上传文件 | MiTu-小书童</title>
+  <title>Jquery+Bootstrap构建传统后台管理系统 | MiTu-小书童</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/slag/js-async-upload-files/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/slag/jquery-bootstrap-management-platform/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Javascript 异步上传文件</h1>
+          <h1 class="post-title" itemprop="name headline">Jquery+Bootstrap构建传统后台管理系统</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-10-12T15:50:39+08:00">
-                2012-10-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T16:43:34+08:00">
+                2017-09-10
               </time>
             
 
@@ -353,8 +353,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2012/slag/js-async-upload-files/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2012/slag/js-async-upload-files/" itemprop="commentsCount"></span>
+                <a href="/2017/slag/jquery-bootstrap-management-platform/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/slag/jquery-bootstrap-management-platform/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -382,26 +382,41 @@
       
 
       
-        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>项目中做到了头像上传的功能.因为不可能修改头像就把整个表单提交,所以必须要使用 AJAX 来实现异步上传文件.</p>
-<h2 id="经过"><a href="#经过" class="headerlink" title="经过"></a>经过</h2><p>服务端只要获取到客户端文件的本地路径,然后使用文件流来实现文件操作就可以了.<br>主要还是在浏览器端获取文件的本地路径和预览功能.<br>IE 浏览器从 IE6 开始已经不能使用 input.value 直接获取 input:file 控件的本地路径<br>其他浏览器比如 chrom 和 FF 等都不能直接使用 input.value 获取文件的本地路径.<br>那么只能使用别的方法实现异步上传文件功能.<br>首先声明 IE6 不考虑<br>chrome 和 firefox 因为对 HTML5 支持比较好.所以可以使用 HTML5 中的 files 和 FileReader 对象来实现图片预览功能。如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fileList = obj.files;</span><br><span class="line"><span class="keyword">var</span> imageType = <span class="regexp">/image.*/</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; fileList.length; i++) &#123;</span><br><span class="line">  <span class="keyword">var</span> file = fileList[i];</span><br><span class="line">  <span class="keyword">if</span> (!file.type.match(imageType)) &#123;</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    fileName = e.target.result; <span class="comment">//Data URI格式</span></span><br><span class="line">    img.src = fileName; <span class="comment">//给img.src赋值</span></span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsDataURL(file); <span class="comment">//转换成Data URI格式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>现在流行的是前后端分离，MV*模式，我作为一个相对传统行业的老菜鸟来说说最近手上的一个后台管理系统项目的前端工作，欢迎提各种意见。</p>
+<h3 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h3><ul>
+<li>传统后台管理系统，面向的是企业级客户，兼容 IE8+等主流浏览器，所以对界面友好程度相对来说并不是太大，你懂得</li>
+</ul>
+<h3 id="前端框架-类库"><a href="#前端框架-类库" class="headerlink" title="前端框架(类库)"></a>前端框架(类库)</h3><ul>
+<li>Jquery+Bootstrap+Layer+zTree+Validform</li>
+</ul>
+<p>谈框架这种高大上的东西，我更想用类库来表达(恩，因为我觉得自己对框架这个概念的认识还很浅)，没错正如标题所言，由 jq+bootstrap 构建，再新增一个皮肤包，根据 UI 出的视觉稿进行编码，就将其称为个性化，换肤功能吧。</p>
+<h3 id="公共-CSS"><a href="#公共-CSS" class="headerlink" title="公共 CSS"></a>公共 CSS</h3><p>在 css 公共调用上，我又添加了一些简单字体大小，间距等等</p>
+<h4 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pos-r</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pos-a</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pos-f</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="文字溢出省略号"><a href="#文字溢出省略号" class="headerlink" title="文字溢出省略号"></a>文字溢出省略号</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.single-overflow</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.text-overflow</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>IE7-IE9 使用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.select();</span><br><span class="line"><span class="keyword">this</span>.blur();</span><br><span class="line"><span class="keyword">var</span> fileName = <span class="built_in">document</span>.selection.createRange().text;</span><br></pre></td></tr></table></figure>
-<p>来获取文件的本地路径.<br>然后是用图片预览,因为 IE7-IE9 中的 img 控件的 src 属性已经不能直接使用本地路径来显示图片.所以使用滤镜来实现</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">divShowImage.setAttribute(</span><br><span class="line">  <span class="string">'style'</span>,</span><br><span class="line">  <span class="string">'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);width:300px; height:300px;'</span></span><br><span class="line">);</span><br><span class="line">divShowImage.filters.item(</span><br><span class="line">  <span class="string">'DXImageTransform.Microsoft.AlphaImageLoader'</span></span><br><span class="line">).src = fileName;</span><br><span class="line">img.setAttribute(<span class="string">'style'</span>, <span class="string">'display:none'</span>); <span class="comment">//隐藏IMG避免在图片的左上角出现一个小叉叉.</span></span><br></pre></td></tr></table></figure>
+<h4 id="文字尺寸"><a href="#文字尺寸" class="headerlink" title="文字尺寸"></a>文字尺寸</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.f-12</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.f-14</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.f-16</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.f-18</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">18px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.f-20</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.f-25</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">25px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.f-30</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.f-40</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.f-50</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="文字颜色"><a href="#文字颜色" class="headerlink" title="文字颜色"></a>文字颜色</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.c-red</span>,</span><br><span class="line"><span class="selector-class">.c-red</span> <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-class">.c-red</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f00</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-green</span>,</span><br><span class="line"><span class="selector-class">.c-green</span> <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-class">.c-green</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#008000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-blue</span>,</span><br><span class="line"><span class="selector-class">.c-blue</span> <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-class">.c-blue</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#00f</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-white</span>,</span><br><span class="line"><span class="selector-class">.c-white</span> <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-class">.c-white</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-black</span>,</span><br><span class="line"><span class="selector-class">.c-black</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-black</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f60</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-gray</span>,</span><br><span class="line"><span class="selector-class">.c-gray</span> <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-class">.c-gray</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#808080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-666</span>,</span><br><span class="line"><span class="selector-class">.c-666</span> <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-class">.c-666</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-999</span>,</span><br><span class="line"><span class="selector-class">.c-999</span> <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-class">.c-999</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-orange</span>,</span><br><span class="line"><span class="selector-class">.c-orange</span> <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-class">.c-orange</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#ffa500</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="间距-padding-margin"><a href="#间距-padding-margin" class="headerlink" title="间距 padding/margin"></a>间距 padding/margin</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ml-5</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">5px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.mr-5</span> &#123;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">5px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.mt-5</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">5px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.mb-5</span> &#123;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">5px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*.pl-5，.pt-5，pb-5，pr-5 等等以此类推*/</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="20121009-更新"><a href="#20121009-更新" class="headerlink" title="20121009 更新"></a>20121009 更新</h2><p>然后是上传..在这里遇到了最大的问题…其实在之前已经遇到过这个问题…但是都先放过去.等要用到的时候再去实现..</p>
-<p>就是 chrome 居然无法获取到图片的本地路径.因为不想提交表单域.网上还是提供了使用 js 中的 XMLHTTPResponse 对象来实现 ajax 直接提交图片的二进制码.</p>
-<p>因为以前都是使用 jq 来实现 ajax 的.所以对于 XMLHTTPResponse 对象非常不熟悉.导致在.ashx 中都不知道如何获取数据.尝试了多次..暂时没有结果.这时候我又开始思考是不是应该继续下去.因为已经感觉到复杂了..这么一个异步上传..在理想中不应该是如此复杂,那么就应该考虑自己的思路是不是出现了问题,是不是能换个思路进行下去.</p>
-<ol>
-<li>考虑使用 IFrame 中嵌入上传的页面来实现异步上传.</li>
-<li>早先考虑过的使用 falsh 插件.但是还是感觉不好..因为觉得可以用 js+ajax 实现.</li>
-<li>还想到 webcjs 中使用的异步上传,使用表单域提交,因为其他数据都是通过无表单域的 AJAX 提交的.所以页面的表单域可以留给上传文件.</li>
-<li>继续尝试取得提交到服务端的 XMLHTTPResponse 对象.</li>
-</ol>
-<p>决定了.. 先使用第三条解决方案.<br>终于完成异步头像上传的全部功能…还是使用了客户端提交表单,然后服务端 context.Request.Files 来获取文件属性.并且使用 jquery.form.js 来实现异步提交表单.<br>主要问题还是服务端获取不到 Files 对象.form 中必须有 enctype=”multipart/form-data”<br>然后 input:file 控件中必须要有 runat=”server”<br>然后才可以在.ashx 文件中获取到 Request.Files;<br>后面的保存和修改数据库信息已经不存在问题了.</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>就是感觉 HTML5 兼容性太差.各种不确定.有些属性不是这个浏览器不支持就是那个浏览器不支持.<br>预览图片的还是使用 HTML5 中 files 对象来转换成 Data URI 来赋值到 src 属性上.<br>然后 IE 的预览图片还是使用滤镜来实现.</p>
+<h3 id="类库说明"><a href="#类库说明" class="headerlink" title="类库说明"></a>类库说明</h3><h4 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h4><ul>
+<li>Modal，主要用来做异步请求时的表单操作，像增，改。</li>
+<li>bootstrapTable，个人认为是整个系统的主体，后台系统大多数据展示是以表格形式来视图化，然后这个接口已然够用。有些个性化的东西，在此基础上再进行开发，也就方便，比如，列表表单的显示个性化，可以通过 h5 的 localstorage 进行本地存储，这里在开发过程中碰到一个小坑，在 IE 下面好像没法直接将原来存储的数据清除，只能使用 localstorage.clear()方法？chremo 下面可以在开发工具下直接删除</li>
+<li>然后就是 bootstrap 上应用到的个个小组件啦，自行去官网看 api 吧</li>
+</ul>
+<h4 id="Layer"><a href="#Layer" class="headerlink" title="Layer"></a>Layer</h4><ul>
+<li>作为提示控件来使用，关于 api 啥的也自行前往官网查看</li>
+</ul>
+<h4 id="zTree"><a href="#zTree" class="headerlink" title="zTree"></a>zTree</h4><ul>
+<li>系统中涉及到的树形结构就用 zTree，调用时使用列表形式的 json 数据格式进行交互，最好使用异步的展示形式，不然大数据时会影响性能</li>
+</ul>
+<h4 id="Validform"><a href="#Validform" class="headerlink" title="Validform"></a>Validform</h4><ul>
+<li>Validform 用来表单的校验，一般都是通过 ajax 来进行表单提交，所以我把 ajax 都封装在了 beforeSubmit 这个接口中，还有一个要说明一下，因为错误提示可能需要自定义，可在 tiptype 中进行修改，还有一个就是考虑表单防重复提交</li>
+</ul>
+<h4 id="公共的-js-类库"><a href="#公共的-js-类库" class="headerlink" title="公共的 js 类库"></a>公共的 js 类库</h4><p>我目前是通过单体模式进行封装的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Project = &#123;</span><br><span class="line">  <span class="comment">//公共模块</span></span><br><span class="line">  Util: &#123;</span><br><span class="line">    util_method1: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'util_method1'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    util_method2: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'util_method2'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//工具模块</span></span><br><span class="line">  Tool: &#123;</span><br><span class="line">    tool_method1: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'tool_method1'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    tool_method2: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'tool_method2'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//其他模块，ajax等</span></span><br><span class="line">  Others: &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="综上所述"><a href="#综上所述" class="headerlink" title="综上所述"></a>综上所述</h3><p>那么我觉得一个传统的后台系统开发基本够用了，最后可能需要处理一下前端上的性能，比如，将静态资源打包压缩成一个文件，这里其实还有一个小坑，就是在 IE9 以下的低版本，如果你打包出来的一个 css 文件过大（内容过多），那么 IE9 及以下版本的部分 css 样式就不会生效啦，这时就需要做 hack 处理。</p>
+<h3 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h3><p>作为前端来说，我感觉上述这种系统做多了，会麻木，失去新鲜感。我还是更喜欢互联网模式的开发节奏，用市面上一些比较流行的框架，像 vue,react 等，前后端分离，各种打包工具(gulp，webpack)，模块化及组件化开发。像我上述这种开发模式，就自己所学的新东西并不能真正意义上用到目前的项目中，只能自己写些 demo，作为约束能力薄落的我来说，进步并不太明显，所以，最近也在考虑寻找新东家，希望能去互联网行业，对技术要求更高的公司继续自己的职业，提升自己的技术水平。求推荐啊！</p>
+<p><br><br><br></p>
 
       
     </div>
@@ -421,6 +436,8 @@
           
             <a href="/tags/Javascript/" rel="tag"># Javascript</a>
           
+            <a href="/tags/前端开发/" rel="tag"># 前端开发</a>
+          
         </div>
       
 
@@ -432,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2012/tutorial/introduction-to-SLR-thirteenth/" rel="next" title="“制造浅景深的方法” - 单反入门第十三课">
-                <i class="fa fa-chevron-left"></i> “制造浅景深的方法” - 单反入门第十三课
+              <a href="/2017/travel/big-northwest-pleasure/" rel="next" title="大西北8天自驾游">
+                <i class="fa fa-chevron-left"></i> 大西北8天自驾游
               </a>
             
           </div>
@@ -442,8 +459,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2012/travel/nanjing-trip/" rel="prev" title="南京之行">
-                南京之行 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/slag/js-scope/" rel="prev" title="Javascript 作用域/scope">
+                Javascript 作用域/scope <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -615,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经过"><span class="nav-number">2.</span> <span class="nav-text">经过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20121009-更新"><span class="nav-number">3.</span> <span class="nav-text">20121009 更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目背景"><span class="nav-number">1.</span> <span class="nav-text">项目背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端框架-类库"><span class="nav-number">2.</span> <span class="nav-text">前端框架(类库)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公共-CSS"><span class="nav-number">3.</span> <span class="nav-text">公共 CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定位"><span class="nav-number">3.1.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文字溢出省略号"><span class="nav-number">3.2.</span> <span class="nav-text">文字溢出省略号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文字尺寸"><span class="nav-number">3.3.</span> <span class="nav-text">文字尺寸</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文字颜色"><span class="nav-number">3.4.</span> <span class="nav-text">文字颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#间距-padding-margin"><span class="nav-number">3.5.</span> <span class="nav-text">间距 padding/margin</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类库说明"><span class="nav-number">4.</span> <span class="nav-text">类库说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bootstrap"><span class="nav-number">4.1.</span> <span class="nav-text">Bootstrap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Layer"><span class="nav-number">4.2.</span> <span class="nav-text">Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zTree"><span class="nav-number">4.3.</span> <span class="nav-text">zTree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Validform"><span class="nav-number">4.4.</span> <span class="nav-text">Validform</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#公共的-js-类库"><span class="nav-number">4.5.</span> <span class="nav-text">公共的 js 类库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#综上所述"><span class="nav-number">5.</span> <span class="nav-text">综上所述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题外话"><span class="nav-number">6.</span> <span class="nav-text">题外话</span></a></li></ol></div>
             
 
           </div>

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[求两数组的difference]]></title>
+    <url>%2F2018%2Fslag%2Fthe-difference-two-array%2F</url>
+    <content type="text"><![CDATA[需求123var arr1 = [1, 2, 2, 3, 4, 5];var arr2 = [1, 2];求两数据的不同值，结果为[3, 4, 5] 方案一调用第三方工具：underscore 1234var arr1 = [1, 2, 2, 3, 4, 5];var arr2 = [1, 2];_.difference(arr1, arr2);=&gt; [3, 4, 5] 方案二手写常规办法，创建临时数组 12345678910// pastvar arr1 = [1, 2, 2, 3, 4, 5];var arr2 = [1, 2];var temp = [];for (var i = 0; i &lt; arr1.length; i++) &#123; if (arr2.indexOf(arr1[i]) === -1) &#123; temp.push(arr1[i]); &#125;&#125;console.log(temp); 方案三调用 es6 的数组操作 api 1234// es6let arr1 = [1, 2, 2, 3, 4, 5];let arr2 = [1, 2];console.log(arr1.filter(item =&gt; !arr2.includes(item))); 就酱~]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[瞎写]]></title>
     <url>%2F2018%2Fdiary%2Fblind-to-write%2F</url>
     <content type="text"><![CDATA[批评你不可怕，对你失望才可怕 早晨被旁边地铁施工地上很有节奏的钻地声给惊醒（神奇的是，梦里也同样听到了节奏的敲打声），抬头看了下挂钟才7点多，我强迫自己再睡会儿，毕竟好不容易赚来周末懒觉的机会。 人往往是这样，强迫自己越不在乎的东西，却越会关注，尤其是钻地的节奏仿佛心脏跳动的频率，整得我难受。既然这样，那行吧，我就用手机的音乐来强行覆盖它。 还是没用，惹不起，那总还是躲得起。穿衣，刷牙，洗脸，收拾东西，出门。带上了电脑和一本五月份计划要看完的书。 这本书是柴静的《看见》，今天下午刚好读完。如果从翻看第一页算起，读这本书少说也有半年了，当然，真正开始看这本书也就上个月底的事。我有时会跟朋友说，我有松鼠癌，买回来的书只会屯着当收藏品。于是4月底突然想改改这种状态，哪怕强行自己一个月读一本技术以外的书。于是，开始计划分解，一个月30天，一本书按章节算，每天要看多少章节，粒度细到每一天的完成额度，看书时间是每天睡前躺床上的功夫。 还是来说说《看见》这本书吧，作者柴静是一位美女记者，剪了一个比齐肩短的发型（当时我截她照片发给朋友看，朋友说长的像鲁豫，还真的是）。这本书，也是柴静对自己在央视的一个小总结，是她个人的一些思考。我网上还特意找了这本书发布会的视频资料，发现她跟白岩松，崔永元，罗永浩都非常的要好。 读柴老师的书，最大感受就是必须要认真阅读，不然思路会接不上，因为她陈述这件事的时候，往往会引入另外一件事，看似无关紧要，但实际却有一定联系。书里面讲述了她采访过的一些真人真事，好多人及事其实也是我们耳有所闻的。不同于尖锐的政治时事记者，看柴静的书，不会有太多让你感到不适的地方。客观地来说，读这本书，就像是带你浅浅地经历她在央视工作的十年，十年中她用肉眼所看见的难忘的一些人物和场景。 书中好多次提到陈虻这个人，他是柴静的导师，看得出来她很敬重他，而且也通过陈虻这个人，让我感受到央视牛人太多，工作有多拼，不过也毕竟是央视这个大平台。书中提到有一次年会上，小崔居然能请来赵本山，郭德纲以及罗大佑，也是牛的不行。在接触《看见》之前，对于柴静我算是一无所知，既然能出书，又是名记，也算是一名“成功人士”。《看见》虽然是柴静10年从业来的自传性作品，和其中我看过的名人自传《乔布斯传》比较起来，《看见》对于作者自己的成功方面和经验描述几乎没有，除了表现的谦逊之外，她运用了超多的细节描述和心理描述来还原了作者本人亲身经历的重大事件的过程。 坦白说，《看见》这本书的开头部分并没有吸引到我，她的一些陈述让我感到别扭，所以中间有把这本书搁置，但是庆幸的是我读完了，感受颇丰。柴静的主要工作是采访，这就要求她务必去接触一些具体的人物，具体而细微的事情，那些事情或琐碎，或热门，或悲痛。今天刚好是汶川地震十年，十年前的今天发生地震时，她在美国，看到报导之后，有一个印象非常深刻，她从美国报纸上剪下两张报道地震的照片放怀里并第一时间去了现场。柴静的每一次采访，每一个报道，即使她是简单记录，字里行间我依旧能够感受到她天生对细微事物有着深刻的体会，她把人看透，把事情看透。]]></content>
@@ -65,6 +76,18 @@
       </categories>
       <tags>
         <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jquery+Bootstrap构建传统后台管理系统]]></title>
+    <url>%2F2017%2Fslag%2Fjquery-bootstrap-management-platform%2F</url>
+    <content type="text"><![CDATA[现在流行的是前后端分离，MV*模式，我作为一个相对传统行业的老菜鸟来说说最近手上的一个后台管理系统项目的前端工作，欢迎提各种意见。 项目背景 传统后台管理系统，面向的是企业级客户，兼容 IE8+等主流浏览器，所以对界面友好程度相对来说并不是太大，你懂得 前端框架(类库) Jquery+Bootstrap+Layer+zTree+Validform 谈框架这种高大上的东西，我更想用类库来表达(恩，因为我觉得自己对框架这个概念的认识还很浅)，没错正如标题所言，由 jq+bootstrap 构建，再新增一个皮肤包，根据 UI 出的视觉稿进行编码，就将其称为个性化，换肤功能吧。 公共 CSS在 css 公共调用上，我又添加了一些简单字体大小，间距等等 定位123456789.pos-r &#123; position: relative;&#125;.pos-a &#123; position: absolute;&#125;.pos-f &#123; position: fixed;&#125; 文字溢出省略号12345678910111213.single-overflow &#123; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;&#125;.text-overflow &#123; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; padding: 0 2px;&#125; 文字尺寸123456789101112131415161718192021222324252627.f-12 &#123; font-size: 12px;&#125;.f-14 &#123; font-size: 14px;&#125;.f-16 &#123; font-size: 16px;&#125;.f-18 &#123; font-size: 18px;&#125;.f-20 &#123; font-size: 20px;&#125;.f-25 &#123; font-size: 25px;&#125;.f-30 &#123; font-size: 30px;&#125;.f-40 &#123; font-size: 40px;&#125;.f-50 &#123; font-size: 50px;&#125; 文字颜色1234567891011121314151617181920212223242526272829303132333435363738394041424344454647.c-red,.c-red a,a.c-red &#123; color: #f00;&#125;.c-green,.c-green a,a.c-green &#123; color: #008000;&#125;.c-blue,.c-blue a,a.c-blue &#123; color: #00f;&#125;.c-white,.c-white a,a.c-white &#123; color: #fff;&#125;.c-black,.c-black a &#123; color: #333;&#125;.c-black a:hover &#123; color: #f60;&#125;.c-gray,.c-gray a,a.c-gray &#123; color: #808080;&#125;.c-666,.c-666 a,a.c-666 &#123; color: #666;&#125;.c-999,.c-999 a,a.c-999 &#123; color: #999;&#125;.c-orange,.c-orange a,a.c-orange &#123; color: #ffa500;&#125; 间距 padding/margin1234567891011121314.ml-5 &#123; margin-left: 5px !important;&#125;.mr-5 &#123; margin-right: 5px !important;&#125;.mt-5 &#123; margin-top: 5px !important;&#125;.mb-5 &#123; margin-bottom: 5px !important;&#125;/*.pl-5，.pt-5，pb-5，pr-5 等等以此类推*/ 类库说明Bootstrap Modal，主要用来做异步请求时的表单操作，像增，改。 bootstrapTable，个人认为是整个系统的主体，后台系统大多数据展示是以表格形式来视图化，然后这个接口已然够用。有些个性化的东西，在此基础上再进行开发，也就方便，比如，列表表单的显示个性化，可以通过 h5 的 localstorage 进行本地存储，这里在开发过程中碰到一个小坑，在 IE 下面好像没法直接将原来存储的数据清除，只能使用 localstorage.clear()方法？chremo 下面可以在开发工具下直接删除 然后就是 bootstrap 上应用到的个个小组件啦，自行去官网看 api 吧 Layer 作为提示控件来使用，关于 api 啥的也自行前往官网查看 zTree 系统中涉及到的树形结构就用 zTree，调用时使用列表形式的 json 数据格式进行交互，最好使用异步的展示形式，不然大数据时会影响性能 Validform Validform 用来表单的校验，一般都是通过 ajax 来进行表单提交，所以我把 ajax 都封装在了 beforeSubmit 这个接口中，还有一个要说明一下，因为错误提示可能需要自定义，可在 tiptype 中进行修改，还有一个就是考虑表单防重复提交 公共的 js 类库我目前是通过单体模式进行封装的 12345678910111213141516171819202122var Project = &#123; //公共模块 Util: &#123; util_method1: function() &#123; console.log('util_method1'); &#125;, util_method2: function() &#123; console.log('util_method2'); &#125; &#125;, //工具模块 Tool: &#123; tool_method1: function() &#123; console.log('tool_method1'); &#125;, tool_method2: function() &#123; console.log('tool_method2'); &#125; &#125;, //其他模块，ajax等 Others: &#123;&#125;&#125;; 综上所述那么我觉得一个传统的后台系统开发基本够用了，最后可能需要处理一下前端上的性能，比如，将静态资源打包压缩成一个文件，这里其实还有一个小坑，就是在 IE9 以下的低版本，如果你打包出来的一个 css 文件过大（内容过多），那么 IE9 及以下版本的部分 css 样式就不会生效啦，这时就需要做 hack 处理。 题外话作为前端来说，我感觉上述这种系统做多了，会麻木，失去新鲜感。我还是更喜欢互联网模式的开发节奏，用市面上一些比较流行的框架，像 vue,react 等，前后端分离，各种打包工具(gulp，webpack)，模块化及组件化开发。像我上述这种开发模式，就自己所学的新东西并不能真正意义上用到目前的项目中，只能自己写些 demo，作为约束能力薄落的我来说，进步并不太明显，所以，最近也在考虑寻找新东家，希望能去互联网行业，对技术要求更高的公司继续自己的职业，提升自己的技术水平。求推荐啊！]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>前端开发</tag>
       </tags>
   </entry>
   <entry>
