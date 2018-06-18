@@ -448,7 +448,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/encyclopedia/how-to-use-network-location-on-mac/" rel="prev" title="如何在 Mac 上使用网络位置">
+              <a href="/2018/encyclopedia/mac-network-location/" rel="prev" title="如何在 Mac 上使用网络位置">
                 如何在 Mac 上使用网络位置 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -482,8 +482,7 @@
   
     <div class="comments" id="comments">
       
-        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
-        <div id="gitment-container" style="display:none"></div>
+        <div id="gitment-container"></div>
       
     </div>
 
@@ -861,11 +860,7 @@
       }
 
       
-      function showGitment(){
-        document.getElementById("gitment-display-button").style.display = "none";
-        document.getElementById("gitment-container").style.display = "block";
-        renderGitment();
-      }
+      renderGitment();
       
       </script>
     
