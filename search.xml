@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[新手向：Vue 2.0 的建议学习顺序]]></title>
+    <url>%2F2018%2Fslag%2Fhow-to-learn-vue%2F</url>
+    <content type="text"><![CDATA[注：2.0 已经有 中文文档 。如果对自己英文有信心，也可以直接阅读 英文文档。此指南仅供参考，请根据自身实际情况灵活调整。欢迎转载，请注明出处。 起步 扎实的 JavaScript / HTML / CSS 基本功。这是前置条件。 通读官方教程 (guide) 的基础篇。不要用任何构建工具，就只用最简单的 &lt;script&gt;，把教程里的例子模仿一遍，理解用法。不推荐上来就直接用 vue-cli 构建项目，尤其是如果没有 Node/Webpack 基础。 照着官网上的示例，自己想一些类似的例子，模仿着实现来练手，加深理解。 阅读官方教程进阶篇的前半部分，到『自定义指令 (Custom Directive) 』为止。着重理解 Vue 的响应式机制和组件生命周期。『渲染函数（Render Function)』如果理解吃力可以先跳过。 阅读教程里关于路由和状态管理的章节，然后根据需要学习 vue-router 和 vuex。同样的，先不要管构建工具，以跟着文档里的例子理解用法为主。 走完基础文档后，如果你对于基于 Node 的前端工程化不熟悉，就需要补课了。下面这些严格来说并不是 Vue 本身的内容，也不涵盖所有的前端工程化知识，但对于大型的 Vue 工程是前置条件，也是合格的『前端工程师』应当具备的知识。 前端生态/工程化 了解 JavaScript 背后的规范，ECMAScript 的历史和目前的规范制定方式。学习 ES2015/16 的新特性，理解 ES2015 modules，适当关注还未成为标准的提案。 学习命令行的使用。建议用 Mac。 学习 Node.js 基础。建议使用 nvm 这样的工具来管理机器上的 Node 版本，并且将 npm 的 registry 注册表配置为淘宝的镜像源。至少要了解 npm 的常用命令，npm scripts 如何使用，语义化版本号规则，CommonJS 模块规范（了解它和 ES2015 Modules 的异同），Node 包的解析规则，以及 Node 的常用 API。应当做到可以自己写一些基本的命令行程序。注意最新版本的 Node (6+) 已经支持绝大部分 ES2015 的特性，可以借此巩固 ES2015。 了解如何使用 / 配置 Babel 来将 ES2015 编译到 ES5 用于浏览器环境。 学习 Webpack。Webpack 是一个极其强大同时也复杂的工具，作为起步，理解它的『一切皆模块』的思想，并基本了解其常用配置选项和 loader 的概念/使用方法即可，比如如何搭配 Webpack 使用 Babel。学习 Webpack 的一个挑战在于其本身文档的混乱，建议多搜索搜索，应该还是有质量不错的第三方教程的。英文好的建议阅读 Webpack 2.0 的文档。 Vue 进阶 有了 Node 和 Webpack 的基础，可以通过 vue-cli 来搭建基于 Webpack ，并且支持单文件组件的项目了。建议用 webpack-simple 这个模板开始，并阅读官方教程进阶篇剩余的内容以及 vue-loader 的文档，了解一些进阶配置。有兴趣的可以自己亲手从零开始搭一个项目加深理解。 根据 例子 尝试在 Webpack 模板基础上整合 vue-router 和 vuex 深入理解 Virtual DOM 和『渲染函数 (Render Functions)』这一章节（可选择性使用 JSX)，理解模板和渲染函数之间的对应关系，了解其使用方法和适用场景。 （可选）根据需求，了解服务端渲染的使用（需要配合 Node 服务器开发的知识）。其实更重要的是理解它所解决的问题并搞清楚你是否需要它。 阅读开源的 Vue 应用、组件、插件源码，自己尝试编写开源的 Vue 组件、插件。 参考 贡献指南 阅读 Vue 的源码，理解内部实现细节。（需要了解 Flow） 参与 Vue GitHub issue 的定位 -&gt; 贡献 PR -&gt; 加入核心团队 -&gt; 升任 CTO -&gt; 迎娶白富美…（误 转自：尤大大的新手向：Vue 2.0 的建议学习顺序]]></content>
+      <categories>
+        <category>百科全书</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Vue.js</tag>
+        <tag>前端开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何用命令将本地项目上传到git]]></title>
     <url>%2F2018%2Fencyclopedia%2Fupload-projects-git%2F</url>
     <content type="text"><![CDATA[通过命令 git init 把这个目录变成 git 可以管理的仓库（先进入项目文件夹） 1git init 把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件 1git add . 用命令 git commit 告诉 Git，把文件提交到仓库。引号内为提交说明 1git commit -m &apos;first commit&apos; 关联到远程库 git remote add origin 你的远程库地址 1git remote add origin https://github.com/cade8800/ionic-demo.git 获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败） 1git pull --rebase origin master 把本地库的内容推送到远程，使用 git push 命令，实际上是把当前分支 master 推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。 1git push -u origin master 状态查询命令1git status]]></content>
@@ -32,9 +45,9 @@
         <category>技术渣</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
-        <tag>ajax</tag>
-        <tag>axios</tag>
+        <tag>JavaScript</tag>
+        <tag>Ajax</tag>
+        <tag>Axios</tag>
       </tags>
   </entry>
   <entry>
@@ -45,7 +58,7 @@
         <category>技术渣</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
+        <tag>JavaScript</tag>
         <tag>ES6</tag>
       </tags>
   </entry>
@@ -57,7 +70,7 @@
         <category>技术渣</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -90,8 +103,8 @@
         <category>技术渣</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
-        <tag>Vue2.0</tag>
+        <tag>JavaScript</tag>
+        <tag>Vue.js</tag>
       </tags>
   </entry>
   <entry>
@@ -106,25 +119,25 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Javascript 提升]]></title>
+    <title><![CDATA[JavaScript 提升]]></title>
     <url>%2F2017%2Fslag%2Fjs-ascension%2F</url>
     <content type="text"><![CDATA[这里的提升，我的理解是包括变量和函数在内的所有声明的提升而根据对作用域的理解，任何声明在某个作用域内的变量，都将附属于这个作用域。 考虑以下代码12345678//代码块一a = 2;var a;console.log(a);//代码块二console.log(a);var a = 2; 上述两段代码的结果是啥？ 思考思路：包括变量和函数在内的所有声明都会在任何代码被执行前首先被处理。 变量声明于是， 上述代码块一，会以如下形式处理： 123var a;a = 2;console.log(a); 代码块二处理： 123var a;console.log(a);a = 2; 函数声明12345foo();function foo() &#123; console.log(a); //undefined var a = 2;&#125; 上述代码理解为下面的形式： 123456function foo() &#123; var a; console.log(a); //undefined a = 2;&#125;foo(); 提示：函数声明会被提升，但是函数表达式却不会被提升 如下代码： 123456foo();//不是 ReferenceError(引用错误)，对象表明一个不存在的变量被引用//而是 TypeError(类型错误),对象用来表示值的类型非预期类型时发生的错误var foo = function bar() &#123; // ...&#125;; 可以理解为下面形式： 12345var foo;foo(); // 报TypeError错误foo = function bar() &#123; // ...&#125;; 再来一道题，大家自行理解 12345foo();bar();var foo = function bar() &#123; // ...&#125;; 提升：变量和函数声明从它们在代码中出现的位置被“移动”到了最上面的过程重要提示：只有声明本身会被提升，而赋值或其他运行逻辑会留在原地。 函数优先函数声明和变量声明在被提升的同时，如果在一个作用域中同时存在多个“重复”或者说同名的声明代码中，函数会首先被提升，然后才是变量。 考虑以下代码： 12345678foo(); // 1var foo;function foo() &#123; console.log(1);&#125;foo = function() &#123; console.log(2);&#125;; 可以理解为如下形式： 1234567function foo() &#123; console.log(1);&#125;foo();foo = function() &#123; console.log(2);&#125;; 提示：出现在后面的函数声明还是可以覆盖前面的 js 语言精粹提到的糟粕中有类似的这么一段： 1234567891011foo(); // 是‘b’ 还是 TypeError: foo is not a function?var a = true;if (a) &#123; function foo() &#123; console.log('a'); &#125;&#125; else &#123; function foo() &#123; console.log('b'); &#125;&#125; 上面这段代码在 Gecko 引擎中打印”TypeError”；而在其他浏览器中则打印”b”。 原因在于 Gecko 加入了 ECMAScript 以外的一个 feature：条件式函数声明。 注意引用的 Note：条件式函数声明跟函数表达式的处理方式一样。因此，条件式函数声明丧失了函数声明提升的特性。 基于以上原因，请不要在你的代码里将函数声明嵌套在条件语句内。 写成函数表达式好了。]]></content>
       <categories>
         <category>技术渣</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Javascript 作用域/scope]]></title>
+    <title><![CDATA[JavaScript 作用域/scope]]></title>
     <url>%2F2017%2Fslag%2Fjs-scope%2F</url>
     <content type="text"><![CDATA[什么是作用域？百度百科：程序设计概念，通常来说，一段程序代码中所用到的名字并不总是有效/可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域 书面版：一套设计良好，用来存储变量，并可以方便找到这些变量的规则称为作用域 RL 查询1var = 2; RHS：谁是赋值操作的源头，查找变量 a 的值，即 2。 LHS：赋值操作的目标是谁，试图找到变量的容器本身，从而可以对其赋值。也就是查找变量 a 。 12345678910console.log(a); // 这里对 a 是一个 RHS 查询，找到 a 的值，并 console.log 出来。a = 2; // 这里对 a 是一个 LHS 查询，找到 变量 a，并对其赋值为 2 。function foo(a) &#123; console.log(a); // 2&#125;foo(2);// 这里首先对 foo() 函数调用，执行 RHS 引用，即找到 foo 函数，// 然后，执行了 a = 2 的传参赋值，这里首先执行 LHS 查询，// 找到 a 并赋值为 2，然后 console.log(a) 执行了 RHS查询。 作用域嵌套遍历嵌套作用域链规则：引擎从当前的执行作用域开始查找变量，如果找不到，就向上一级继续查找。当抵达最外层的全局作用域时，无论找到还是没找到，查找过程都会停止。 词法作用域词法作用域就是定义在词法阶段的作用域。是由你在写代码时将变量和块作用域写在哪里来决定的 12345678function foo(a) &#123; var b = a * 2; function bar(c) &#123; console.log(a, b, c); &#125; bar(b * 3);&#125;foo(2); //2, 4, 12 包含整个全局作用域，其中只有一个标识符： foo。 包含着 foo 所创建的作用域，其中有三个标识符：a、bar 和 b 包含着 bar 所创建的作用域，其中只有一个标识符：c 查找作用域查找会在找到第一个匹配的标识符时停止。在多层的嵌套作用域中可以定义同名的标识符，这叫作“遮蔽效应”（内部的标识符“遮蔽”了外部的标识符）。抛开遮蔽效应，作用域查找始终从运行时所处的最内部作用域开始，逐级向外或者说向上进行，直到遇见第一个匹配的标识符为止。 重要说明全局变量会自动成为全局对象的属性，因此可以不直接通过全局对象的词法名称，而是间接地通过对全局对象属性的引用来对其进行访问。 1window.a; 通过这种技术可以访问那些被同名变量所遮蔽的全局变量。但非全局的变量如果被遮蔽了，无论如何都无法被访问到。 词法作用域查找只会查找一级标识符，比如 a、b 和 c。如果代码中引用了 foo.bar.baz，词法作用域查找只会试图查找 foo 标识符，找到这个变量后，对象属性访问规则会分别接管对 bar 和 baz 属性的访问]]></content>
       <categories>
         <category>技术渣</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -135,7 +148,7 @@
         <category>技术渣</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
+        <tag>JavaScript</tag>
         <tag>前端开发</tag>
       </tags>
   </entry>
@@ -262,14 +275,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Javascript 异步上传文件]]></title>
+    <title><![CDATA[JavaScript 异步上传文件]]></title>
     <url>%2F2012%2Fslag%2Fjs-async-upload-files%2F</url>
     <content type="text"><![CDATA[起因项目中做到了头像上传的功能.因为不可能修改头像就把整个表单提交,所以必须要使用 AJAX 来实现异步上传文件. 经过服务端只要获取到客户端文件的本地路径,然后使用文件流来实现文件操作就可以了.主要还是在浏览器端获取文件的本地路径和预览功能.IE 浏览器从 IE6 开始已经不能使用 input.value 直接获取 input:file 控件的本地路径其他浏览器比如 chrom 和 FF 等都不能直接使用 input.value 获取文件的本地路径.那么只能使用别的方法实现异步上传文件功能.首先声明 IE6 不考虑chrome 和 firefox 因为对 HTML5 支持比较好.所以可以使用 HTML5 中的 files 和 FileReader 对象来实现图片预览功能。如下： 123456789101112131415var fileList = obj.files;var imageType = /image.*/;for (var i = 0; i &lt; fileList.length; i++) &#123; var file = fileList[i]; if (!file.type.match(imageType)) &#123; continue; &#125; var reader = new FileReader(); reader.onload = function(e) &#123; fileName = e.target.result; //Data URI格式 img.src = fileName; //给img.src赋值 &#125;; reader.readAsDataURL(file); //转换成Data URI格式&#125; IE7-IE9 使用 123this.select();this.blur();var fileName = document.selection.createRange().text; 来获取文件的本地路径.然后是用图片预览,因为 IE7-IE9 中的 img 控件的 src 属性已经不能直接使用本地路径来显示图片.所以使用滤镜来实现 12345678divShowImage.setAttribute( 'style', 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);width:300px; height:300px;');divShowImage.filters.item( 'DXImageTransform.Microsoft.AlphaImageLoader').src = fileName;img.setAttribute('style', 'display:none'); //隐藏IMG避免在图片的左上角出现一个小叉叉. 20121009 更新然后是上传..在这里遇到了最大的问题…其实在之前已经遇到过这个问题…但是都先放过去.等要用到的时候再去实现.. 就是 chrome 居然无法获取到图片的本地路径.因为不想提交表单域.网上还是提供了使用 js 中的 XMLHTTPResponse 对象来实现 ajax 直接提交图片的二进制码. 因为以前都是使用 jq 来实现 ajax 的.所以对于 XMLHTTPResponse 对象非常不熟悉.导致在.ashx 中都不知道如何获取数据.尝试了多次..暂时没有结果.这时候我又开始思考是不是应该继续下去.因为已经感觉到复杂了..这么一个异步上传..在理想中不应该是如此复杂,那么就应该考虑自己的思路是不是出现了问题,是不是能换个思路进行下去. 考虑使用 IFrame 中嵌入上传的页面来实现异步上传. 早先考虑过的使用 falsh 插件.但是还是感觉不好..因为觉得可以用 js+ajax 实现. 还想到 webcjs 中使用的异步上传,使用表单域提交,因为其他数据都是通过无表单域的 AJAX 提交的.所以页面的表单域可以留给上传文件. 继续尝试取得提交到服务端的 XMLHTTPResponse 对象. 决定了.. 先使用第三条解决方案.终于完成异步头像上传的全部功能…还是使用了客户端提交表单,然后服务端 context.Request.Files 来获取文件属性.并且使用 jquery.form.js 来实现异步提交表单.主要问题还是服务端获取不到 Files 对象.form 中必须有 enctype=”multipart/form-data”然后 input:file 控件中必须要有 runat=”server”然后才可以在.ashx 文件中获取到 Request.Files;后面的保存和修改数据库信息已经不存在问题了. 总结就是感觉 HTML5 兼容性太差.各种不确定.有些属性不是这个浏览器不支持就是那个浏览器不支持.预览图片的还是使用 HTML5 中 files 对象来转换成 Data URI 来赋值到 src 属性上.然后 IE 的预览图片还是使用滤镜来实现.]]></content>
       <categories>
         <category>技术渣</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
