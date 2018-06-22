@@ -79,11 +79,11 @@
 <meta name="keywords" content="JavaScript,FastClick,移动端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Chrome警告： Unable to preventDefault inside passive event listener 的解决方案">
-<meta property="og:url" content="http://yoursite.com/2018/slag/unable-to-preventDefault-inside-passive-event/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/slag/unable-to-preventDefault/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示： 1[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/50935660">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-22T03:27:08.971Z">
+<meta property="og:updated_time" content="2018-06-22T03:30:54.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Chrome警告： Unable to preventDefault inside passive event listener 的解决方案">
 <meta name="twitter:description" content="最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示： 1[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/50935660">
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/slag/unable-to-preventDefault-inside-passive-event/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/slag/unable-to-preventDefault/"/>
 
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/unable-to-preventDefault-inside-passive-event/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/unable-to-preventDefault/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
@@ -353,8 +353,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/slag/unable-to-preventDefault-inside-passive-event/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/slag/unable-to-preventDefault-inside-passive-event/" itemprop="commentsCount"></span>
+                <a href="/2018/slag/unable-to-preventDefault/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/slag/unable-to-preventDefault/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -420,6 +420,7 @@
 <p>在 Android 版 Chrome 浏览器的 touch 事件监听器的页面中，80% 的页面都不会调用 preventDefault 函数来阻止事件的默认行为。在滑动流畅度上，有 10% 的页面增加至少 100ms 的延迟，1% 的页面甚至增加 500ms 以上的延迟。</p>
 <p>由于浏览器无法预先知道一个事件处理函数中会不会调用 preventDefault()，它需要等到事件处理函数执行完后，才能去执行默认行为，然而事件处理函数执行是要耗时的，这样一来就会导致页面卡顿，也就是说，当浏览器等待执行事件的默认行为时，大部分情况是白等了。</p>
 <p>如果 Web 开发者能够提前告诉浏览器：“我不调用 preventDefault 函数来阻止事件事件行为”，那么浏览器就能快速生成事件，从而提升页面性能，Passive event listeners 的提出就解决了这样的问题。</p>
+<p><br></p>
 
       
     </div>
