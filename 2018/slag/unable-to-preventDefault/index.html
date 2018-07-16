@@ -83,7 +83,7 @@
 <meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示： 1[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/50935660">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-22T03:30:54.446Z">
+<meta property="og:updated_time" content="2018-07-16T02:33:11.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Chrome警告： Unable to preventDefault inside passive event listener 的解决方案">
 <meta name="twitter:description" content="最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示： 1[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/50935660">
@@ -383,7 +383,7 @@
 
       
         <p>最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/5093566007214080</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/5093566007214080</span><br></pre></td></tr></table></figure>
 <p>首先，之所以报错是因为引入了 FastClick（为了解决 300ms 的 click 延迟）</p>
 <p>于是 Google 了一番，找到这篇文章，有了详细解释<br><a href="https://developers.google.cn/web/updates/2017/01/scrolling-intervention" target="_blank" rel="noopener">https://developers.google.cn/web/updates/2017/01/scrolling-intervention</a></p>
 <p>简而言之：</p>
