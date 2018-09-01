@@ -282,6 +282,209 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/webkit-overflow-scrolling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/slag/webkit-overflow-scrolling/" itemprop="url">-webkit-overflow-scrolling:touch及ios滚动</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T16:35:22+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术渣/" itemprop="url" rel="index">
+                    <span itemprop="name">技术渣</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="webkit-overflow-scrolling-touch-是什么？"><a href="#webkit-overflow-scrolling-touch-是什么？" class="headerlink" title="-webkit-overflow-scrolling:touch 是什么？"></a>-webkit-overflow-scrolling:touch 是什么？</h2><p>MDN 上是这样定义的：</p>
+<blockquote>
+<p><strong><code>-webkit-overflow-scrolling</code></strong>: 属性控制元素在移动设备上是否使用滚动回弹效果.<br><strong><code>auto</code></strong>: 使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止。<br><strong><code>touch</code></strong>: 使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文。</p>
+</blockquote>
+<p>在移动端上，在你用 <code>overflow-y:scorll</code> 属性的时候，你会发现滚动的效果很木，很慢，这时候可以使用 <code>-webkit-overflow-scrolling:touch</code> 这个属性，让滚动条产生滚动回弹的效果，就像 ios 原生的滚动条一样流畅。</p>
+<h2 id="解决-safari-布局抖动的例子"><a href="#解决-safari-布局抖动的例子" class="headerlink" title="解决 safari 布局抖动的例子"></a>解决 safari 布局抖动的例子</h2><p><img src="/images/slag/webkit-scrolling-touch.png" alt=""></p>
+<p>想实现一个布局为 header、main、bottom 的布局，其中头部和底部通过 fixed 固定，中间部分通过滚动条滑动。</p>
+<p>如果目的是实现只要中间的内容超过屏幕高度时，中间内容会自动滚动的效果的话，main 部分加上上下的 padding，然后不需要自己添加任何滚动条属性，当超出高度时，body 会自动产生滚动条。这样我们的目的其实是实现了的。</p>
+<p>但是在 safari 上，当超出高度，页面往下滑时，浏览器底部的工具栏会随着页面一起晃动（向下滚动时会拉起底部工具栏），造成了很不好的体验。所以我们想在中间的 main 部分加一个独立的滚动条。</p>
+<h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>在 main 上使用 fixed 定位，加上 overflow-y 属性。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">overflow-y</span>: scroll;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不过不推荐这个 fixed 方案，因为页面偶尔卡住不动，下面说到了这个问题。</p>
+<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>中间的 main 不设定位，高度 100%，再 padding 头部和尾部，</p>
+<p>其中头部和底部的定位设为 absolute 会比设为 fixed 体验更好（况且 fix 布局在移动端本来就有各种各样的问题，还是尽量避开:) ）。</p>
+<p>大致代码如下，仍是 overflow-y 和-webkit-overflow-scrolling，重点在于中间部分依照文本流布局。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">main</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">50px</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">overflow-y</span>: scroll;</span><br><span class="line">  <span class="attribute">-webkit-overflow-scrolling</span>: touch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="探究-webkit-overflow-scrolling-touch-偶尔卡住或不能滑动的-bug"><a href="#探究-webkit-overflow-scrolling-touch-偶尔卡住或不能滑动的-bug" class="headerlink" title="探究-webkit-overflow-scrolling:touch 偶尔卡住或不能滑动的 bug"></a>探究-webkit-overflow-scrolling:touch 偶尔卡住或不能滑动的 bug</h2><p>-webkit-overflow-scrolling:touch 这个属性真的是各种坑，我研究这个属性已经大半年了，还没有发现能够在 safari 上完美使用无 bug 的例子。</p>
+<blockquote>
+<p>最常见的例子就是</p>
+<ul>
+<li>在 safari 上，使用了-webkit-overflow-scrolling:touch 之后，页面偶尔会卡住不动。</li>
+<li>在 safari 上，点击其他区域，再在滚动区域滑动，滚动条无法滚动的 bug。</li>
+<li>通过动态添加内容撑开容器，结果根本不能滑动的 bug。</li>
+</ul>
+</blockquote>
+<p>在网上也看到了一些人在问这个问题，不过不多，国外倒是讨论的更多一点，描述如下。</p>
+<p><img src="/images/slag/webkit-scrolling-touch2.png" alt=""></p>
+<p>偶尔卡住的问题，解决方案网上众说纷纭，遇到了很多相同的说法，比如如果卡住不动的话，就加一个 z-index，就能解决该问题的说法。</p>
+<p>在试了很多次之后，这种说法没有一次解决过这个问题。这个说法能够传播出来，可能是使用者当时在使用的时候遇到了-webkit-overflow-scrolling:touch 点透或者层级的问题。所以该方案不具有适用性。</p>
+<p>所以这个东西真的让我很苦恼了很久，以致于那段时间所有的滚动条不是通过 body 自己滚动，就是使用 iScroll 这样的库，繁琐地让我几乎想要放弃移动 web，拥抱 hybrid，不过在 stackoverflow 潜水了很久之后，总结了以下几种解决方案：</p>
+<h3 id="保证使用了该属性的元素上没有设置定位"><a href="#保证使用了该属性的元素上没有设置定位" class="headerlink" title="保证使用了该属性的元素上没有设置定位"></a>保证使用了该属性的元素上没有设置定位</h3><p>如果出现偶尔卡住不动的情况，那么在使用该属性的元素上不设置定位或者手动设置定位为 <code>static</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">static</span>;</span><br></pre></td></tr></table></figure>
+<p>这样会解决部分因为定位(relative、fixed、absolute)导致的页面偶尔不能滚动的 bug。</p>
+<blockquote>
+<p>但是滑动到顶部继续手指往下滑，或者到底部继续往上滑，还是会触发卡住的问题（其实是整个页面上下回弹），说他算 bug，其实就是 ios8 以上的特性，如果滚动区域大一点，用户不会觉得这是 bug，如果小了，用户会不知道发生了什么而卡住了。<br>视频在这，有梯子的同学可以看一看 <a href="https://www.youtube.com/watch?v=MkAVYbO_joo。" target="_blank" rel="noopener">https://www.youtube.com/watch?v=MkAVYbO_joo。</a></p>
+</blockquote>
+<h3 id="如果添加动态内容页面不能滚动，让子元素-height-1"><a href="#如果添加动态内容页面不能滚动，让子元素-height-1" class="headerlink" title="如果添加动态内容页面不能滚动，让子元素 height+1"></a>如果添加动态内容页面不能滚动，让子元素 height+1</h3><p>如果在 <code>-webkit-overflow-scrolling:touch</code> 属性的元素上，想通过动态添加内容来撑开容器，触发滚动，是有 bug 的，页面是会卡住不动的。</p>
+<p>国内没有人讨论这个问题，国外倒是很多，例如下面的描述：</p>
+<p><img src="/images/slag/webkit-scrolling-touch2.png" alt=""></p>
+<p>收集了很多资料，用了之后，下面的方法真正的解决了我的问题，真是直呼神奇，方案如下图：</p>
+<p>图一：<br><img src="/images/slag/webkit-scrolling-touch3.png" alt=""><br>图二：<br><img src="/images/slag/webkit-scrolling-touch4.png" alt=""></p>
+<p>方法就是在 <code>webkit-overflow-scrolling:touch</code> 属性的下一层子元素上，将 height 加 1%或 1px。从而主动触发 scrollbar。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">main-inner</span> &#123;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="built_in">calc</span>(100% + 1px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你也可以直接加伪元素上：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">main</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="built_in">calc</span>(100% + 1px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个方案不得不说真的好用。。</p>
+<p>当然还有其他方案，不过要写 js 或者 jq 了，麻烦。</p>
+<h3 id="为什么会有卡住不动的这个-bug"><a href="#为什么会有卡住不动的这个-bug" class="headerlink" title="为什么会有卡住不动的这个 bug"></a>为什么会有卡住不动的这个 bug</h3><p>这个 bug 产生于 ios8 以上（不十分肯定，但在 ios5~7 上需要手动使用 translateZ(0)打开硬件加速）</p>
+<p>Safari 对于 overflow-scrolling 用了原生控件来实现。对于有-webkit-overflow-scrolling 的网页，会创建一个 UIScrollView，提供子 layer 给渲染模块使用。</p>
+<p>我想说作为一个苦逼的前端只能解决到这了。</p>
+<h3 id="webkit-overflow-scrolling-touch-的其他坑"><a href="#webkit-overflow-scrolling-touch-的其他坑" class="headerlink" title="-webkit-overflow-scrolling:touch 的其他坑"></a>-webkit-overflow-scrolling:touch 的其他坑</h3><blockquote>
+<p>除此之外，这个属性还有很多 bug，包括且不限于以下几种：</p>
+<ul>
+<li>滚动中 scrollTop 属性不会变化</li>
+<li>手势可穿过其他元素触发元素滚动</li>
+<li>滚动时暂停其他 transition</li>
+</ul>
+</blockquote>
+<h2 id="最后的吐槽"><a href="#最后的吐槽" class="headerlink" title="最后的吐槽"></a>最后的吐槽</h2><p>想写这个文章很久了， 本来以为就我有这个问题，结果看到网站上也有很多人在用这个属性，我用 safari 试了下，都能触发不能滑动的问题，但是网上的文章又很少，不知道大家是不是就视而不见了。</p>
+<p>所以目前来看，如果不想那么费心，直接上 iScroll 或者 better-scroll 吧，我觉得 better-scroll 还是挺好用的。如果你喜欢偷懒，那么接着用-webkit-overflow-scrolling:touch 也没什么问题。</p>
+<p>毕竟移动端的水太深了，你永远不知道下一个问题是发生在 safari 还是 x5 内核浏览器上。</p>
+<p>转自：<a href="https://www.cnblogs.com/xiahj/p/8036419.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiahj/p/8036419.html</a><br><br><br><br></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/js-jump-out-of-the-loop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1691,165 +1894,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/maximum-call-stack-size-exceeded-error/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/slag/maximum-call-stack-size-exceeded-error/" itemprop="url">Vue.js “Maximum call stack size exceeded” error.</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-20T10:04:46+08:00">
-                2018-06-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术渣/" itemprop="url" rel="index">
-                    <span itemprop="name">技术渣</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在使用 Vuejs 开发 SPA 页面时，我创建了一个父组件以及子组件，然后通过父组件去调用子组件时，报如下错误：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.js “Maximum call stack size exceeded” error.</span><br></pre></td></tr></table></figure>
-<p>示例代码：</p>
-<blockquote>
-<p><strong>Panel.vue</strong></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=<span class="string">"panel"</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"panel"</span>&gt;</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &lt;li v-<span class="keyword">for</span>=<span class="string">"shelf in shelfs"</span>&gt;</span><br><span class="line">          &lt;panel-body :shelf=<span class="string">"shelf"</span> :selected.sync=<span class="string">"selected"</span>&gt;&lt;/panel-body&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">      &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> PanelBody <span class="keyword">from</span> <span class="string">'../components/PanelBody'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'panel-body'</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    <span class="string">'panel-body'</span>: PanelBody</span><br><span class="line">  &#125;,</span><br><span class="line">  data: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">    shelfs: [&#123;</span><br><span class="line">      name: <span class="string">'shelf 1'</span>,</span><br><span class="line">      books: [&#123;</span><br><span class="line">        title: <span class="string">'Lorem ipum'</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        title: <span class="string">'Dolor sit amet'</span></span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: <span class="string">'shelf 2'</span>,</span><br><span class="line">      books: [&#123;</span><br><span class="line">        title: <span class="string">'Ipsum lorem'</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        title: <span class="string">'Amet sit dolor'</span></span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;],</span><br><span class="line">    selected: &#123;&#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>PanelBody.vue</strong></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=<span class="string">"panel-body"</span>&gt;</span><br><span class="line">    &lt;a href=<span class="string">"#"</span> v-on:click.prevent.stop=<span class="string">"select"</span>&gt;&#123;&#123; shelf.name &#125;&#125;&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">    &lt;ul v-show="isSelected"&gt;</span></span><br><span class="line"><span class="regexp">      &lt;li v-for="book in shelf.books"&gt;&#123;&#123; book.title &#125;&#125;&lt;/</span>li&gt;</span><br><span class="line">    &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  name: 'panel-body',</span></span><br><span class="line"><span class="regexp">  props: ['shelf', 'selected'],</span></span><br><span class="line"><span class="regexp">  computed: &#123;</span></span><br><span class="line"><span class="regexp">    isSelected: function () &#123;</span></span><br><span class="line"><span class="regexp">      return this.selected === this.shelf</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  methods: &#123;</span></span><br><span class="line"><span class="regexp">    select: function () &#123;</span></span><br><span class="line"><span class="regexp">      this.selected = this.shelf</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
-<p>错误原因：</p>
-<blockquote>
-<p>Maximum call stack size exceeded</p>
-</blockquote>
-<p>错误出处：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> PanelBody <span class="keyword">from</span> <span class="string">'../components/PanelBody'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'panel-body'</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    <span class="string">'panel-body'</span>: PanelBody</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<p>错误解决：<br>你定义你的父组件名称:“panel-body”。<strong>只要将名称改成:“panel”或者其他不与子组件引用名一样</strong>，你就能删除你的循环引用，从而不再报错。<br><br></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1904,7 +1948,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1926,7 +1970,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
