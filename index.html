@@ -374,71 +374,20 @@
 
       
         
-          
-            <h2 id="webkit-overflow-scrolling-touch-是什么？"><a href="#webkit-overflow-scrolling-touch-是什么？" class="headerlink" title="-webkit-overflow-scrolling:touch 是什么？"></a>-webkit-overflow-scrolling:touch 是什么？</h2><p>MDN 上是这样定义的：</p>
+          <h2 id="webkit-overflow-scrolling-touch-是什么？"><a href="#webkit-overflow-scrolling-touch-是什么？" class="headerlink" title="-webkit-overflow-scrolling:touch 是什么？"></a>-webkit-overflow-scrolling:touch 是什么？</h2><p>MDN 上是这样定义的：</p>
 <blockquote>
 <p><strong><code>-webkit-overflow-scrolling</code></strong>: 属性控制元素在移动设备上是否使用滚动回弹效果.<br><strong><code>auto</code></strong>: 使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止。<br><strong><code>touch</code></strong>: 使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文。</p>
 </blockquote>
 <p>在移动端上，在你用 <code>overflow-y:scorll</code> 属性的时候，你会发现滚动的效果很木，很慢，这时候可以使用 <code>-webkit-overflow-scrolling:touch</code> 这个属性，让滚动条产生滚动回弹的效果，就像 ios 原生的滚动条一样流畅。</p>
 <h2 id="解决-safari-布局抖动的例子"><a href="#解决-safari-布局抖动的例子" class="headerlink" title="解决 safari 布局抖动的例子"></a>解决 safari 布局抖动的例子</h2><p><img src="/images/slag/webkit-scrolling-touch.png" alt=""></p>
 <p>想实现一个布局为 header、main、bottom 的布局，其中头部和底部通过 fixed 固定，中间部分通过滚动条滑动。</p>
-<p>如果目的是实现只要中间的内容超过屏幕高度时，中间内容会自动滚动的效果的话，main 部分加上上下的 padding，然后不需要自己添加任何滚动条属性，当超出高度时，body 会自动产生滚动条。这样我们的目的其实是实现了的。</p>
-<p>但是在 safari 上，当超出高度，页面往下滑时，浏览器底部的工具栏会随着页面一起晃动（向下滚动时会拉起底部工具栏），造成了很不好的体验。所以我们想在中间的 main 部分加一个独立的滚动条。</p>
-<h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>在 main 上使用 fixed 定位，加上 overflow-y 属性。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">overflow-y</span>: scroll;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>不过不推荐这个 fixed 方案，因为页面偶尔卡住不动，下面说到了这个问题。</p>
-<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>中间的 main 不设定位，高度 100%，再 padding 头部和尾部，</p>
-<p>其中头部和底部的定位设为 absolute 会比设为 fixed 体验更好（况且 fix 布局在移动端本来就有各种各样的问题，还是尽量避开:) ）。</p>
-<p>大致代码如下，仍是 overflow-y 和-webkit-overflow-scrolling，重点在于中间部分依照文本流布局。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">main</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">50px</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">overflow-y</span>: scroll;</span><br><span class="line">  <span class="attribute">-webkit-overflow-scrolling</span>: touch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="探究-webkit-overflow-scrolling-touch-偶尔卡住或不能滑动的-bug"><a href="#探究-webkit-overflow-scrolling-touch-偶尔卡住或不能滑动的-bug" class="headerlink" title="探究-webkit-overflow-scrolling:touch 偶尔卡住或不能滑动的 bug"></a>探究-webkit-overflow-scrolling:touch 偶尔卡住或不能滑动的 bug</h2><p>-webkit-overflow-scrolling:touch 这个属性真的是各种坑，我研究这个属性已经大半年了，还没有发现能够在 safari 上完美使用无 bug 的例子。</p>
-<blockquote>
-<p>最常见的例子就是</p>
-<ul>
-<li>在 safari 上，使用了-webkit-overflow-scrolling:touch 之后，页面偶尔会卡住不动。</li>
-<li>在 safari 上，点击其他区域，再在滚动区域滑动，滚动条无法滚动的 bug。</li>
-<li>通过动态添加内容撑开容器，结果根本不能滑动的 bug。</li>
-</ul>
-</blockquote>
-<p>在网上也看到了一些人在问这个问题，不过不多，国外倒是讨论的更多一点，描述如下。</p>
-<p><img src="/images/slag/webkit-scrolling-touch2.png" alt=""></p>
-<p>偶尔卡住的问题，解决方案网上众说纷纭，遇到了很多相同的说法，比如如果卡住不动的话，就加一个 z-index，就能解决该问题的说法。</p>
-<p>在试了很多次之后，这种说法没有一次解决过这个问题。这个说法能够传播出来，可能是使用者当时在使用的时候遇到了-webkit-overflow-scrolling:touch 点透或者层级的问题。所以该方案不具有适用性。</p>
-<p>所以这个东西真的让我很苦恼了很久，以致于那段时间所有的滚动条不是通过 body 自己滚动，就是使用 iScroll 这样的库，繁琐地让我几乎想要放弃移动 web，拥抱 hybrid，不过在 stackoverflow 潜水了很久之后，总结了以下几种解决方案：</p>
-<h3 id="保证使用了该属性的元素上没有设置定位"><a href="#保证使用了该属性的元素上没有设置定位" class="headerlink" title="保证使用了该属性的元素上没有设置定位"></a>保证使用了该属性的元素上没有设置定位</h3><p>如果出现偶尔卡住不动的情况，那么在使用该属性的元素上不设置定位或者手动设置定位为 <code>static</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">static</span>;</span><br></pre></td></tr></table></figure>
-<p>这样会解决部分因为定位(relative、fixed、absolute)导致的页面偶尔不能滚动的 bug。</p>
-<blockquote>
-<p>但是滑动到顶部继续手指往下滑，或者到底部继续往上滑，还是会触发卡住的问题（其实是整个页面上下回弹），说他算 bug，其实就是 ios8 以上的特性，如果滚动区域大一点，用户不会觉得这是 bug，如果小了，用户会不知道发生了什么而卡住了。<br>视频在这，有梯子的同学可以看一看 <a href="https://www.youtube.com/watch?v=MkAVYbO_joo。" target="_blank" rel="noopener">https://www.youtube.com/watch?v=MkAVYbO_joo。</a></p>
-</blockquote>
-<h3 id="如果添加动态内容页面不能滚动，让子元素-height-1"><a href="#如果添加动态内容页面不能滚动，让子元素-height-1" class="headerlink" title="如果添加动态内容页面不能滚动，让子元素 height+1"></a>如果添加动态内容页面不能滚动，让子元素 height+1</h3><p>如果在 <code>-webkit-overflow-scrolling:touch</code> 属性的元素上，想通过动态添加内容来撑开容器，触发滚动，是有 bug 的，页面是会卡住不动的。</p>
-<p>国内没有人讨论这个问题，国外倒是很多，例如下面的描述：</p>
-<p><img src="/images/slag/webkit-scrolling-touch2.png" alt=""></p>
-<p>收集了很多资料，用了之后，下面的方法真正的解决了我的问题，真是直呼神奇，方案如下图：</p>
-<p>图一：<br><img src="/images/slag/webkit-scrolling-touch3.png" alt=""><br>图二：<br><img src="/images/slag/webkit-scrolling-touch4.png" alt=""></p>
-<p>方法就是在 <code>webkit-overflow-scrolling:touch</code> 属性的下一层子元素上，将 height 加 1%或 1px。从而主动触发 scrollbar。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">main-inner</span> &#123;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="built_in">calc</span>(100% + 1px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>你也可以直接加伪元素上：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">main</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="built_in">calc</span>(100% + 1px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个方案不得不说真的好用。。</p>
-<p>当然还有其他方案，不过要写 js 或者 jq 了，麻烦。</p>
-<h3 id="为什么会有卡住不动的这个-bug"><a href="#为什么会有卡住不动的这个-bug" class="headerlink" title="为什么会有卡住不动的这个 bug"></a>为什么会有卡住不动的这个 bug</h3><p>这个 bug 产生于 ios8 以上（不十分肯定，但在 ios5~7 上需要手动使用 translateZ(0)打开硬件加速）</p>
-<p>Safari 对于 overflow-scrolling 用了原生控件来实现。对于有-webkit-overflow-scrolling 的网页，会创建一个 UIScrollView，提供子 layer 给渲染模块使用。</p>
-<p>我想说作为一个苦逼的前端只能解决到这了。</p>
-<h3 id="webkit-overflow-scrolling-touch-的其他坑"><a href="#webkit-overflow-scrolling-touch-的其他坑" class="headerlink" title="-webkit-overflow-scrolling:touch 的其他坑"></a>-webkit-overflow-scrolling:touch 的其他坑</h3><blockquote>
-<p>除此之外，这个属性还有很多 bug，包括且不限于以下几种：</p>
-<ul>
-<li>滚动中 scrollTop 属性不会变化</li>
-<li>手势可穿过其他元素触发元素滚动</li>
-<li>滚动时暂停其他 transition</li>
-</ul>
-</blockquote>
-<h2 id="最后的吐槽"><a href="#最后的吐槽" class="headerlink" title="最后的吐槽"></a>最后的吐槽</h2><p>想写这个文章很久了， 本来以为就我有这个问题，结果看到网站上也有很多人在用这个属性，我用 safari 试了下，都能触发不能滑动的问题，但是网上的文章又很少，不知道大家是不是就视而不见了。</p>
-<p>所以目前来看，如果不想那么费心，直接上 iScroll 或者 better-scroll 吧，我觉得 better-scroll 还是挺好用的。如果你喜欢偷懒，那么接着用-webkit-overflow-scrolling:touch 也没什么问题。</p>
-<p>毕竟移动端的水太深了，你永远不知道下一个问题是发生在 safari 还是 x5 内核浏览器上。</p>
-<p>转自：<a href="https://www.cnblogs.com/xiahj/p/8036419.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiahj/p/8036419.html</a><br><br><br><br></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/slag/webkit-overflow-scrolling/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -738,49 +687,15 @@
 
       
         
-          
-            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>开源软件(Open source software)的源代码对有追求的程序员来说是一无尽的宝藏，此外正确的使用开源软件，可以提高开发软件时的效率、提升软件质量。但是在使用和借鉴开源软件的时候，我们不得不关心一下它对使用者的诸多限制，比较常见的方式即协议授权(licence)，这些协议中明确说明了使用者应该遵循的原则。</p>
+          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>开源软件(Open source software)的源代码对有追求的程序员来说是一无尽的宝藏，此外正确的使用开源软件，可以提高开发软件时的效率、提升软件质量。但是在使用和借鉴开源软件的时候，我们不得不关心一下它对使用者的诸多限制，比较常见的方式即协议授权(licence)，这些协议中明确说明了使用者应该遵循的原则。</p>
 <p>现在开源协议众多，大概有 50 多种，下面只对几种常见协议做介绍。<br>首先看一张总结很好的图【摘自阮一峰】<br><img src="/images/baike/open-source-software.png" alt=""></p>
-<h2 id="BSD-协议"><a href="#BSD-协议" class="headerlink" title="BSD 协议"></a>BSD 协议</h2><p>BSD 开源协议是一个给予使用者很大自由的协议。开发者可以自由使用和修改源代码，也可以讲修改后的源代码作为开源或者专有软件再发布。但是有一下几个要求：</p>
-<p>如果再发布的产品中含有源代码，则在源代码中必须带有原来代码中的 BSD 协议。</p>
-<p>如果再发布的只是二进制类库/软件，则需要再类库/软件的文档和版权申明中包含原有代码中的 BSD 协议。</p>
-<p>不可以用开源代码的作者/机构名字和原来产品的名字做市场推广。</p>
-<p>BSD 代码鼓励代码共享，但需要尊重代码作者的著作权。BSD 由于允许使用者修改和重新发布代码，也允许使用或在 BSD 代码上开发商业软件发布和销售，因此是对商业集成很友好的协议。而很多的公司企业在选用开源产品的时候都首选 BSD 协议，因为可以完全控制这些第三方的代码，在必要的时候可以修改或者二次开发。</p>
-<h2 id="Apache-Licence-2-0-Apache-2-0"><a href="#Apache-Licence-2-0-Apache-2-0" class="headerlink" title="Apache Licence 2.0(Apache-2.0)"></a>Apache Licence 2.0(Apache-2.0)</h2><p>Apache Licence 是著名的非盈利开源组织 Apache 采用的协议。该协议和 BSD 类似，同样鼓励代码共享和最终原作者的著作权，同样允许源代码修改和再发布。</p>
-<p>但是也需要遵循以下条件：</p>
-<ul>
-<li>需要给代码的用户一份 Apache Licence。</li>
-<li>如果修改了代码，需要再被修改的文件中说明。</li>
-<li>在衍生的代码中（修改和有源代码衍生的代码中）需要带有原来代码中的协议，商标，专利声明和其他原来作者规定需要包含的说明。</li>
-<li>如果再发布的产品中包含一个 Notice 文件，则在 Notice 文件中需要带有 Apache Licence。你可以再 Notice 中增加自己的许可，但是不可以表现为对 Apache Licence 构成更改。</li>
-</ul>
-<p>使用这个协议的好处是:</p>
-<ul>
-<li>永久权利 一旦被授权，永久拥有。</li>
-<li>全球范围的权利 在一个国家获得授权，适用于所有国家。假如你在美国，许可是从印度授权的，也没有问题。</li>
-<li>授权免费 无版税， 前期、后期均无任何费用。</li>
-<li>授权无排他性 任何人都可以获得授权</li>
-<li>授权不可撤消 一旦获得授权，没有任何人可以取消。比如，你基于该产品代码开发了衍生产品，你不用担心会在某一天被禁止使用该代码</li>
-<li>Apache Licence 也是对商业应用友好的许可。使用者也可以再需要的时候修改代码来满足并作为开源或商业产品发布/销售。</li>
-</ul>
-<h2 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h2><p>我们很熟悉的 Linux 就是采用了 GPL。GPL 协议和 BSD, Apache Licence 等鼓励代码重用的许可很不一样。GPL 的出发点是代码的开源/免费使用和引用/修改/衍生代码的开源/免费使用，但不允许修改后和衍生的代码做为闭源的商业软件发布和销售。这也就是为什么我们能用免费的各种 linux，包括商业公司的 linux 和 linux 上各种各样的由个人，组织，以及商业软件公司开发的免费软件了。</p>
-<p>GPL 协议的主要内容是只要在一个软件中使用(“使用”指类库引用，修改后的代码或者衍生代码)GPL 协议的产品，则该软件产品必须也采用 GPL 协议，既必须也是开源和免费。这就是所谓的”传染性”。GPL 协议的产品作为一个单独的产品使用没有任何问题，还可以享受免费的优势。</p>
-<p>由于 GPL 严格要求使用了 GPL 类库的软件产品必须使用 GPL 协议，对于使用 GPL 协议的开源代码，商业软件或者对代码有保密要求的部门就不适合集成/采用作为类库和二次开发的基础。</p>
-<p>其它细节如再发布的时候需要伴随 GPL 协议等和 BSD/Apache 等类似。</p>
-<h2 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h2><p>LGPL 是 GPL 的一个为主要为类库使用设计的开源协议。和 GPL 要求任何使用/修改/衍生之 GPL 类库的的软件必须采用 GPL 协议不同。LGPL 允许商业软件通过类库引用(link)方式使用 LGPL 类库而不需要开源商业软件的代码。这使得采用 LGPL 协议的开源代码可以被商业软件作为类库引用并发布和销售。</p>
-<p>但是如果修改 LGPL 协议的代码或者衍生，则所有修改的代码，涉及修改部分的额外代码和衍生的代码都必须采用 LGPL 协议。因此 LGPL 协议的开源代码很适合作为第三方类库被商业软件引用，但不适合希望以 LGPL 协议代码为基础，通过修改和衍生的方式做二次开发的商业软件采用。</p>
-<p>GPL/LGPL 都保障原作者的知识产权，避免有人利用开源代码复制并开发类似的产品</p>
-<h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT 是和 BSD 一样宽范的许可协议,源自麻省理工学院（Massachusetts Institute of Technology, MIT），又称 X11 协议。作者只想保留版权,而无任何其他了限制。MIT 与 BSD 类似，但是比 BSD 协议更加宽松，是目前最少限制的协议。这个协议唯一的条件就是在修改后的代码或者发行包包含原作者的许可信息。适用商业软件。使用 MIT 的软件项目有：jquery、Node.js。</p>
-<p>MIT 与 BSD 类似，但是比 BSD 协议更加宽松，是目前最少限制的协议。这个协议唯一的条件就是在修改后的代码或者发行包包含原作者的许可信息。适用商业软件。使用 MIT 的软件项目有：jquery、Node.js。</p>
-<h2 id="MPL-Mozilla-Public-License-1-1"><a href="#MPL-Mozilla-Public-License-1-1" class="headerlink" title="MPL (Mozilla Public License 1.1)"></a>MPL (Mozilla Public License 1.1)</h2><p>MPL 协议允许免费重发布、免费修改，但要求修改后的代码版权归软件的发起者 。这种授权维护了商业软件的利益，它要求基于这种软件的修改无偿贡献版权给该软件。这样，围绕该软件的所有代码的版权都集中在发起开发人的手中。但 MPL 是允许修改，无偿使用得。MPL 软件对链接没有要求。</p>
-<h2 id="EPL-Eclipse-Public-License-1-0"><a href="#EPL-Eclipse-Public-License-1-0" class="headerlink" title="EPL (Eclipse Public License 1.0)"></a>EPL (Eclipse Public License 1.0)</h2><p>EPL 允许 Recipients 任意使用、复制、分发、传播、展示、修改以及改后闭源的二次商业发布。<br>使用 EPL 协议，需要遵守以下规则：</p>
-<p>当一个 Contributors 将源码的整体或部分再次开源发布的时候,必须继续遵循 EPL 开源协议来发布,而不能改用其他协议发布.除非你得到了原“源码”Owner 的授权；</p>
-<p>EPL 协议下,你可以将源码不做任何修改来商业发布.但如果你要发布修改后的源码,或者当你再发布的是 Object Code 的时候,你必须声明它的 Source Code 是可以获取的,而且要告知获取方法；</p>
-<p>当你需要将 EPL 下的源码作为一部分跟其他私有的源码混和着成为一个 Project 发布的时候,你可以将整个 Project/Product 以私人的协议发布,但要声明哪一部分代码是 EPL 下的,而且声明那部分代码继续遵循 EPL；</p>
-<p>独立的模块(Separate Module),不需要开源。</p>
-<p>转自： <a href="https://blog.csdn.net/qq_22494029/article/details/79731340" target="_blank" rel="noopener">https://blog.csdn.net/qq_22494029/article/details/79731340</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/encyclopedia/open-source-licenses/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
