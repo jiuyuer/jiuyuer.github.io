@@ -2,15 +2,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -38,10 +50,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
 
 
 
@@ -50,21 +58,14 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
 
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.4.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
-
-
-
-
-
-
-  <meta name="keywords" content="MiTu, 迷途小书童, 吃馒头也开心" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.4.1">
 
 
 
@@ -72,19 +73,6 @@
 
 
 
-
-
-
-<meta name="description" content="吃馒头也开心">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MiTu-小书童">
-<meta property="og:url" content="http://yoursite.com/page/5/index.html">
-<meta property="og:site_name" content="MiTu-小书童">
-<meta property="og:description" content="吃馒头也开心">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MiTu-小书童">
-<meta name="twitter:description" content="吃馒头也开心">
 
 
 
@@ -93,15 +81,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '5.1.4',
+    version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -113,12 +99,36 @@
 </script>
 
 
+  
+
+
+
+
+  <meta name="description" content="吃馒头也开心">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MiTu-小书童">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta property="og:site_name" content="MiTu-小书童">
+<meta property="og:description" content="吃馒头也开心">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MiTu-小书童">
+<meta name="twitter:description" content="吃馒头也开心">
+
+
+
+
+
 
   <link rel="canonical" href="http://yoursite.com/page/5/"/>
 
 
 
-
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>MiTu-小书童</title>
   
@@ -130,9 +140,37 @@
 
 
 
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -149,19 +187,21 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">MiTu-小书童</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">尘世中_迷途小书童_</p>
       
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -169,66 +209,58 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
 
+      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
         </li>
       
     </ul>
+  
+
   
 
   
@@ -259,12 +291,23 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -277,6 +320,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -286,7 +331,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -301,11 +346,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-tenth/" itemprop="url">“外接闪光灯” - 单反入门第十课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-tenth/" itemprop="url">
+                  “外接闪光灯” - 单反入门第十课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -313,11 +368,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-13T20:07:23+08:00">
-                2012-09-13
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-13 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-13T20:07:23+08:00">2012-09-13</time>
             
 
             
@@ -335,11 +391,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -384,7 +436,7 @@
 <p>在这个公式中，是以 ISO 100 为标准的拍摄环境。举例来说，当一个闪灯的 GN 值有 40 时，当我们使用 F4 的光圈拍摄，闪灯的有效距离可以达到 10 公尺内的范围。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-tenth/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-tenth/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -392,6 +444,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -430,6 +485,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -439,7 +496,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -454,11 +511,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-ninth/" itemprop="url">“点测光” - 单反入门第九课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-ninth/" itemprop="url">
+                  “点测光” - 单反入门第九课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -466,11 +533,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-12T20:07:23+08:00">
-                2012-09-12
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-12 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-12T20:07:23+08:00">2012-09-12</time>
             
 
             
@@ -488,11 +556,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -532,7 +596,7 @@
 <p>虽然说点测光是一个好用的工具，但并不是每一台 DSLR 中都内建了点测光，有的入门级相机只有中央重点测光的功能，这时，我们可以使用额外的测光表，或是利用长距离镜头来缩小测光的范围。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-ninth/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-ninth/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -540,6 +604,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -578,6 +645,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -587,7 +656,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -602,11 +671,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-eighth/" itemprop="url">“曝光补偿” - 单反入门第八课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-eighth/" itemprop="url">
+                  “曝光补偿” - 单反入门第八课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -614,11 +693,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-11T20:07:23+08:00">
-                2012-09-11
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-11 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-11T20:07:23+08:00">2012-09-11</time>
             
 
             
@@ -636,11 +716,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -682,7 +758,7 @@
 <p>甚幺样的情况会让相机的测光系统发生误判呢？我们在这里举两个最常见的例子；当拍摄画面中有很多浅色系，环境中的光线反射程度很高，除了现场原本的光线外，额外反射出来的光线，让测光系统误判此环境的光线很强，因此相机的曝光组合会比正常情况下的光线值低，拍出来的相片会偏暗。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-eighth/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-eighth/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -690,6 +766,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -728,6 +807,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -737,7 +818,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -752,11 +833,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-seventh/" itemprop="url">“感光度” - 单反入门第七课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-seventh/" itemprop="url">
+                  “感光度” - 单反入门第七课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -764,11 +855,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-10T20:07:23+08:00">
-                2012-09-10
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-10 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-10T20:07:23+08:00">2012-09-10</time>
             
 
             
@@ -786,11 +878,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -835,7 +923,7 @@
 <p>F2.8、1/60s、ISO 100 = F5.6、1/60s、ISO 400（因为光圈减少了两格的光量，所以右边在 ISO 感光度上增加了两格补回来）</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-seventh/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-seventh/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -843,6 +931,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -881,6 +972,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -890,7 +983,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -905,11 +998,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-sixth/" itemprop="url">“对焦” - 单反入门第六课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-sixth/" itemprop="url">
+                  “对焦” - 单反入门第六课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -917,11 +1020,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-09T20:07:23+08:00">
-                2012-09-09
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-09 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-09T20:07:23+08:00">2012-09-09</time>
             
 
             
@@ -939,11 +1043,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -984,7 +1084,7 @@
 <h2 id="反差低的环境"><a href="#反差低的环境" class="headerlink" title="反差低的环境"></a>反差低的环境</h2><p>基本上，自动对焦的系统通常是利用环境中的反差，经过运算合焦后，来达成自动对焦的目的。这样的设计在拍摄环境反差比较低时，就会发生对不到焦的情况，很难达成合焦的动作，也就是一般常说的「迷焦」。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-sixth/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-sixth/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -992,6 +1092,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1030,6 +1133,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1039,7 +1144,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1054,11 +1159,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-fifth/" itemprop="url">“景深” - 单反入门第五课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-fifth/" itemprop="url">
+                  “景深” - 单反入门第五课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1066,11 +1181,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-08T20:07:23+08:00">
-                2012-09-08
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-08 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-08T20:07:23+08:00">2012-09-08</time>
             
 
             
@@ -1088,11 +1204,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -1133,7 +1245,7 @@
 <p>景深可能很长，也可能很短、很浅，我们可以根据需求调整摄影的模式来控制景深的长短。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-fifth/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-fifth/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1141,6 +1253,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1179,6 +1294,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1188,7 +1305,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1203,11 +1320,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-fourth/" itemprop="url">“曝光” - 单反入门第四课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-fourth/" itemprop="url">
+                  “曝光” - 单反入门第四课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1215,11 +1342,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-07T20:07:23+08:00">
-                2012-09-07
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-07 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-07T20:07:23+08:00">2012-09-07</time>
             
 
             
@@ -1237,11 +1365,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -1284,7 +1408,7 @@
 <p>也就是说，一个完整的曝光程序，是由光圈的大小以及快门的时间搭配组合而成的。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-fourth/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-fourth/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1292,6 +1416,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1330,6 +1457,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1339,7 +1468,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1354,11 +1483,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-third/" itemprop="url">“快门” - 单反入门第三课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-third/" itemprop="url">
+                  “快门” - 单反入门第三课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1366,11 +1505,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-06T20:07:23+08:00">
-                2012-09-06
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-06 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-06T20:07:23+08:00">2012-09-06</time>
             
 
             
@@ -1388,11 +1528,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -1438,7 +1574,7 @@
 <p>B 指的是慢快门 Bulb，B 快门的开关时间由操作者自行控制，我们可以藉由快门按钮或是快门线，来决定整个曝光的时间。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-third/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-third/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1446,6 +1582,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1484,6 +1623,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1493,7 +1634,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1508,11 +1649,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-second/" itemprop="url">“光圈” - 单反入门第二课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-second/" itemprop="url">
+                  “光圈” - 单反入门第二课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1520,11 +1671,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-04T20:07:23+08:00">
-                2012-09-04
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-04 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-04T20:07:23+08:00">2012-09-04</time>
             
 
             
@@ -1542,11 +1694,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -1588,7 +1736,7 @@
 <p>光圈的计算单位我们称为光圈值（f-number）或者是级数（f-stop）。首先我们来谈谈光圈值。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-second/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-second/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1596,6 +1744,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1634,6 +1785,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1643,7 +1796,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1658,11 +1811,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-first/" itemprop="url">“器材准备” - 单反入门第一课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-first/" itemprop="url">
+                  “器材准备” - 单反入门第一课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1670,11 +1833,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-03T20:07:23+08:00">
-                2012-09-03
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-03 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-03T20:07:23+08:00">2012-09-03</time>
             
 
             
@@ -1692,11 +1856,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -1741,7 +1901,7 @@
 <p>大光圈的镜头的散景相当迷人，对初学者来说更是一个很难抵抗的魅力。但是大光圈的变焦镜一只动辄四、五万，如果预算有限又想享受大光圈，那么副厂镜头是可以考虑的选择，像 Sigma 就有 18-50mm F2.8 EX DC 这样的焦段设计。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-first/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-first/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1749,6 +1909,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1783,15 +1946,12 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1826,72 +1986,142 @@
               <p class="site-description motion-element" itemprop="description">吃馒头也开心</p>
           </div>
 
-          <nav class="site-state motion-element">
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">54</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
 
-            
-              <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">54</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
 
-            
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
+            </nav>
+          
 
           
 
           
             <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/jiuyuer" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://weibo.com/newselement" target="_blank" title="Weibo">
-                      
-                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.instagram.com/fanginsss/" target="_blank" title="Instagram">
-                      
-                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://webcjs.tuchong.com" target="_blank" title="Photos">
-                      
-                        <i class="fa fa-fw fa-camera-retro"></i>Photos</a>
-                  </span>
-                
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/jiuyuer" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/newselement" target="_blank" title="Weibo"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.instagram.com/fanginsss/" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://webcjs.tuchong.com" target="_blank" title="Photos"><i class="fa fa-fw fa-camera-retro"></i>Photos</a>
+                  
+                </span>
+              
             </div>
           
 
@@ -1924,6 +2154,9 @@
           
 
           
+            
+          
+          
 
         </div>
       </section>
@@ -1942,17 +2175,21 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 &mdash; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mi Tu</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
@@ -1960,12 +2197,13 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a></div>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a></div>
 
 
 
 
         
+
 
 
 
@@ -1985,7 +2223,10 @@
     
 
     
+	
+    
 
+    
   </div>
 
   
@@ -2004,7 +2245,11 @@
 
 
 
-  
+
+
+
+
+
 
 
 
@@ -2024,16 +2269,6 @@
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -2042,18 +2277,13 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
 
 
 
@@ -2061,9 +2291,9 @@
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
 
 
 
@@ -2072,21 +2302,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
 
 
 
@@ -2094,10 +2310,7 @@
 
 
 
-
-
   
-
 
 
 
@@ -2120,7 +2333,6 @@
     
 
     
-
 
 
 
@@ -2178,6 +2390,8 @@
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      
+
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -2211,6 +2425,7 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
                 var contentInLowerCase = content.toLowerCase();
                 var articleUrl = decodeURIComponent(data.url);
                 var indexOfTitle = [];
@@ -2457,6 +2672,12 @@
   
 
   
+
+  
+  
+
+  
+
   
 
   

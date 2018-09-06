@@ -2,15 +2,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -38,10 +50,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
 
 
 
@@ -50,21 +58,14 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
 
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.4.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
-
-
-
-
-
-
-  <meta name="keywords" content="MiTu, 迷途小书童, 吃馒头也开心" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.4.1">
 
 
 
@@ -72,19 +73,6 @@
 
 
 
-
-
-
-<meta name="description" content="吃馒头也开心">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MiTu-小书童">
-<meta property="og:url" content="http://yoursite.com/page/4/index.html">
-<meta property="og:site_name" content="MiTu-小书童">
-<meta property="og:description" content="吃馒头也开心">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MiTu-小书童">
-<meta name="twitter:description" content="吃馒头也开心">
 
 
 
@@ -93,15 +81,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '5.1.4',
+    version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -113,12 +99,36 @@
 </script>
 
 
+  
+
+
+
+
+  <meta name="description" content="吃馒头也开心">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MiTu-小书童">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:site_name" content="MiTu-小书童">
+<meta property="og:description" content="吃馒头也开心">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MiTu-小书童">
+<meta name="twitter:description" content="吃馒头也开心">
+
+
+
+
+
 
   <link rel="canonical" href="http://yoursite.com/page/4/"/>
 
 
 
-
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>MiTu-小书童</title>
   
@@ -130,9 +140,37 @@
 
 
 
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -149,19 +187,21 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">MiTu-小书童</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">尘世中_迷途小书童_</p>
       
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -169,66 +209,58 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
 
+      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
         </li>
       
     </ul>
+  
+
   
 
   
@@ -259,12 +291,23 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -277,6 +320,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -286,7 +331,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -301,11 +346,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/tutorial/select-the-camera/" itemprop="url">佳能好？还是尼康好？</a></h1>
+                <a class="post-title-link" href="/2014/tutorial/select-the-camera/" itemprop="url">
+                  佳能好？还是尼康好？
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -313,11 +368,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-18T16:07:48+08:00">
-                2014-04-18
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2014-04-18 16:07:48" itemprop="dateCreated datePublished" datetime="2014-04-18T16:07:48+08:00">2014-04-18</time>
             
 
             
@@ -335,11 +391,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -386,7 +438,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2014/tutorial/select-the-camera/" rel="contents">
+            <a class="btn" href="/2014/tutorial/select-the-camera/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -394,6 +446,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -432,6 +487,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -441,7 +498,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -456,11 +513,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/travel/sanya-with-mass-line/" itemprop="url">三亚跟团行</a></h1>
+                <a class="post-title-link" href="/2014/travel/sanya-with-mass-line/" itemprop="url">
+                  三亚跟团行
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -468,11 +535,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-08T13:55:08+08:00">
-                2014-04-08
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2014-04-08 13:55:08" itemprop="dateCreated datePublished" datetime="2014-04-08T13:55:08+08:00">2014-04-08</time>
             
 
             
@@ -490,11 +558,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/路上/" itemprop="url" rel="index">
-                    <span itemprop="name">路上</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/路上/" itemprop="url" rel="index"><span itemprop="name">路上</span></a></span>
 
                 
                 
@@ -537,7 +601,7 @@
 <p>到三亚，当然是以看海玩水为主吧，但是，记得做好防晒措施，不然，别像有些人回来之后，整个脸都肿起来了，那真是后遗症相当厉害了。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2014/travel/sanya-with-mass-line/" rel="contents">
+            <a class="btn" href="/2014/travel/sanya-with-mass-line/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -545,6 +609,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -583,6 +650,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -592,7 +661,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -607,11 +676,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/diary/2014-new-start/" itemprop="url">2014，新的开始</a></h1>
+                <a class="post-title-link" href="/2014/diary/2014-new-start/" itemprop="url">
+                  2014，新的开始
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -619,11 +698,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-02-14T01:56:31+08:00">
-                2014-02-14
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2014-02-14 01:56:31" itemprop="dateCreated datePublished" datetime="2014-02-14T01:56:31+08:00">2014-02-14</time>
             
 
             
@@ -641,11 +721,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
 
                 
                 
@@ -698,6 +774,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -736,6 +815,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -745,7 +826,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -760,11 +841,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/travel/huangshan-travel/" itemprop="url">黄山游记</a></h1>
+                <a class="post-title-link" href="/2013/travel/huangshan-travel/" itemprop="url">
+                  黄山游记
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -772,11 +863,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-08-22T01:56:31+08:00">
-                2013-08-22
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2013-08-22 01:56:31" itemprop="dateCreated datePublished" datetime="2013-08-22T01:56:31+08:00">2013-08-22</time>
             
 
             
@@ -794,11 +886,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/路上/" itemprop="url" rel="index">
-                    <span itemprop="name">路上</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/路上/" itemprop="url" rel="index"><span itemprop="name">路上</span></a></span>
 
                 
                 
@@ -837,7 +925,7 @@
 <h2 id="题记"><a href="#题记" class="headerlink" title="题记"></a>题记</h2><p>首先，这次其实算是跟团游玩的，跟团游玩当然有好处也有坏处，先说说好处吧，那就是你的来回出行都不用再自己打理，自然是有汽车来回接送，不需要花太多的经历去考虑这些事（如果人多一起去的话，当然是领队较烦一些）。然后，我们这次是住山上的，所以说，在不了解山上的住宿情况下，跟团的话，他们都是会帮我们安排好，也省去了好多事，让你可以安心的爬山观光，到了时间会有导游通知你去哪入住。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/travel/huangshan-travel/" rel="contents">
+            <a class="btn" href="/2013/travel/huangshan-travel/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -845,6 +933,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -883,6 +974,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -892,7 +985,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -907,11 +1000,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/tutorial/the-photography-foundation/" itemprop="url">摄影基础知识</a></h1>
+                <a class="post-title-link" href="/2013/tutorial/the-photography-foundation/" itemprop="url">
+                  摄影基础知识
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -919,11 +1022,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-06-06T20:03:18+08:00">
-                2013-06-06
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2013-06-06 20:03:18" itemprop="dateCreated datePublished" datetime="2013-06-06T20:03:18+08:00">2013-06-06</time>
             
 
             
@@ -941,11 +1045,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -998,7 +1098,7 @@
 </ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/tutorial/the-photography-foundation/" rel="contents">
+            <a class="btn" href="/2013/tutorial/the-photography-foundation/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1006,6 +1106,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1044,6 +1147,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1053,7 +1158,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1068,11 +1173,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/travel/nanjing-trip/" itemprop="url">南京之行</a></h1>
+                <a class="post-title-link" href="/2012/travel/nanjing-trip/" itemprop="url">
+                  南京之行
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1080,11 +1195,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-11-13T16:16:53+08:00">
-                2012-11-13
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-11-13 16:16:53" itemprop="dateCreated datePublished" datetime="2012-11-13T16:16:53+08:00">2012-11-13</time>
             
 
             
@@ -1102,11 +1218,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/路上/" itemprop="url" rel="index">
-                    <span itemprop="name">路上</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/路上/" itemprop="url" rel="index"><span itemprop="name">路上</span></a></span>
 
                 
                 
@@ -1144,7 +1256,7 @@
           <p>记录此次南京之行，<br>赶火车，下雨，<br>动车晚点一个多小时，<br>无座，<br>赶不上末班车，<br>垫个报纸坐车厢门口，<br>“逃票”被抓，<br>旅途就是需要这样的折腾。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/travel/nanjing-trip/" rel="contents">
+            <a class="btn" href="/2012/travel/nanjing-trip/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1152,6 +1264,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1190,6 +1305,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1199,7 +1316,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1214,11 +1331,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/slag/js-async-upload-files/" itemprop="url">JavaScript 异步上传文件</a></h1>
+                <a class="post-title-link" href="/2012/slag/js-async-upload-files/" itemprop="url">
+                  JavaScript 异步上传文件
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1226,11 +1353,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-10-12T15:50:39+08:00">
-                2012-10-12
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-10-12 15:50:39" itemprop="dateCreated datePublished" datetime="2012-10-12T15:50:39+08:00">2012-10-12</time>
             
 
             
@@ -1248,11 +1376,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术渣/" itemprop="url" rel="index">
-                    <span itemprop="name">技术渣</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -1292,7 +1416,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fileList = obj.files;</span><br><span class="line"><span class="keyword">var</span> imageType = <span class="regexp">/image.*/</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; fileList.length; i++) &#123;</span><br><span class="line">  <span class="keyword">var</span> file = fileList[i];</span><br><span class="line">  <span class="keyword">if</span> (!file.type.match(imageType)) &#123;</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    fileName = e.target.result; <span class="comment">//Data URI格式</span></span><br><span class="line">    img.src = fileName; <span class="comment">//给img.src赋值</span></span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsDataURL(file); <span class="comment">//转换成Data URI格式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/slag/js-async-upload-files/" rel="contents">
+            <a class="btn" href="/2012/slag/js-async-upload-files/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1300,6 +1424,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1338,6 +1465,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1347,7 +1476,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1362,11 +1491,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-thirteenth/" itemprop="url">“制造浅景深的方法” - 单反入门第十三课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-thirteenth/" itemprop="url">
+                  “制造浅景深的方法” - 单反入门第十三课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1374,11 +1513,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-16T20:07:23+08:00">
-                2012-09-16
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-16 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-16T20:07:23+08:00">2012-09-16</time>
             
 
             
@@ -1396,11 +1536,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -1442,7 +1578,7 @@
 <p>以现在一般初学者会购买的变焦镜来说，多数是落在 18-70mm f3.5-4.5 这样规格的平价镜头上，望远程的光圈值最大只有 f4.5。这跟大光圈变焦镜的 f2.8 相比，已经有了一格半左右的级数差距，自然在浅景深的营造上会比较吃亏。今天，我们就要教大家如何用平价的变焦镜头，来拍出美丽的浅景深照片。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-thirteenth/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-thirteenth/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1450,6 +1586,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1488,6 +1627,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1497,7 +1638,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1512,11 +1653,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-twelfth/" itemprop="url">“直方图(histogram)” - 单反入门第十二课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-twelfth/" itemprop="url">
+                  “直方图(histogram)” - 单反入门第十二课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1524,11 +1675,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-15T20:07:23+08:00">
-                2012-09-15
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-15 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-15T20:07:23+08:00">2012-09-15</time>
             
 
             
@@ -1546,11 +1698,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -1590,7 +1738,7 @@
 <p>我们知道，数码相机相对于传统胶片相机一个很大的优势就是即拍即现，拍出的照片立刻就能在 LCD 液晶屏上回放看到效果。不过现在的数码相机动辄就是 400 万以上像素，而这些相机所配备的 LCD 液晶屏往往只有十几万像素，因此这个小小的 LCD 液晶屏根本不能完全表现出所拍照片的细节效果。特别是因为 LCD 对于光线并不那么敏感，很多时候拍摄的照片即使过曝或者曝光不足通过 LCD 也难以反映出来，这里我们就要借助许多数码相机内置的―直方图显示‖功能来判断拍摄的相片曝光是否均匀。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-twelfth/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-twelfth/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1598,6 +1746,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1636,6 +1787,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1645,7 +1798,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -1660,11 +1813,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-eleventh/" itemprop="url">“基本构图” - 单反入门第十一课</a></h1>
+                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-eleventh/" itemprop="url">
+                  “基本构图” - 单反入门第十一课
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1672,11 +1835,12 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-14T20:07:23+08:00">
-                2012-09-14
-              </time>
-            
 
+              
+                
+              
+
+              <time title="创建时间：2012-09-14 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-14T20:07:23+08:00">2012-09-14</time>
             
 
             
@@ -1694,11 +1858,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爱摄影/" itemprop="url" rel="index">
-                    <span itemprop="name">爱摄影</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
 
                 
                 
@@ -1740,7 +1900,7 @@
 <p><img src="/images/slr/SLR_eleventh1.jpeg" alt=""></p><p align="center" style="line-height: initial; margin-top: -20px;">直式构图用来拍摄一个完整的人物体态是最方便的了</p><p></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-eleventh/" rel="contents">
+            <a class="btn" href="/2012/tutorial/introduction-to-SLR-eleventh/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1748,6 +1908,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1782,15 +1945,12 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1825,72 +1985,142 @@
               <p class="site-description motion-element" itemprop="description">吃馒头也开心</p>
           </div>
 
-          <nav class="site-state motion-element">
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">54</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
 
-            
-              <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">54</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
 
-            
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
+            </nav>
+          
 
           
 
           
             <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/jiuyuer" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://weibo.com/newselement" target="_blank" title="Weibo">
-                      
-                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.instagram.com/fanginsss/" target="_blank" title="Instagram">
-                      
-                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://webcjs.tuchong.com" target="_blank" title="Photos">
-                      
-                        <i class="fa fa-fw fa-camera-retro"></i>Photos</a>
-                  </span>
-                
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/jiuyuer" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/newselement" target="_blank" title="Weibo"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.instagram.com/fanginsss/" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://webcjs.tuchong.com" target="_blank" title="Photos"><i class="fa fa-fw fa-camera-retro"></i>Photos</a>
+                  
+                </span>
+              
             </div>
           
 
@@ -1923,6 +2153,9 @@
           
 
           
+            
+          
+          
 
         </div>
       </section>
@@ -1941,17 +2174,21 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 &mdash; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mi Tu</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
@@ -1959,12 +2196,13 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a></div>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a></div>
 
 
 
 
         
+
 
 
 
@@ -1984,7 +2222,10 @@
     
 
     
+	
+    
 
+    
   </div>
 
   
@@ -2003,7 +2244,11 @@
 
 
 
-  
+
+
+
+
+
 
 
 
@@ -2023,16 +2268,6 @@
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -2041,18 +2276,13 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
 
 
 
@@ -2060,9 +2290,9 @@
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
 
 
 
@@ -2071,21 +2301,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
 
 
 
@@ -2093,10 +2309,7 @@
 
 
 
-
-
   
-
 
 
 
@@ -2119,7 +2332,6 @@
     
 
     
-
 
 
 
@@ -2177,6 +2389,8 @@
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      
+
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -2210,6 +2424,7 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
                 var contentInLowerCase = content.toLowerCase();
                 var articleUrl = decodeURIComponent(data.url);
                 var indexOfTitle = [];
@@ -2456,6 +2671,12 @@
   
 
   
+
+  
+  
+
+  
+
   
 
   
