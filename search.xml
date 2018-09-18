@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[移动端fixed的元素抖动问题]]></title>
+    <url>%2F2018%2Fslag%2Fmobile-fixed-shake%2F</url>
+    <content type="text"><![CDATA[工作中发现，给一个元素添加 fixed 属性，让它固定在窗口某个位置，直接加 position:fixed 这个属性就能重现这个效果（BUG）； 在安卓手机上的效果都比较好，但是 ios 系统的个别浏览器兼容性就不好，如 QQ 浏览器、UC 浏览器、360 浏览器（这几个是 ios 最容易出问题的浏览器）； 问题重现：当用户快速滑动页面的到时候，fixed 的元素就会在窗口跳动或者抖动，非常影响用户体验 解决方案：大致思路就是，将 fixed 的元素与滚动的元素区分开来，例如：项目中有一个固定在底部的使用了 fixed 的按钮，那么滚动的容器与之成为兄弟元素 123456789101112&lt;div class="container"&gt; &lt;!-- 这里是内容区的滚动 --&gt; &lt;div class="content"&gt; &lt;p&gt;...&lt;/p&gt; &lt;!-- 很长的内容 --&gt; &lt;p&gt;...&lt;/p&gt; &lt;/div&gt; &lt;!-- 这里是固定底部的按钮或者其他元素 --&gt; &lt;div class="fixBox"&gt; &lt;button&gt;按钮&lt;/button&gt; &lt;/div&gt;&lt;/div&gt; 1234567891011121314151617.container &#123; width: 100%; height: 100%; overflow: hidden; display: flex;&#125;.content &#123; flex: 1 1 auto; overflow: auto; overflow-x: visible;&#125;.fixBox &#123; position: absolute; bottom: 0; height: 45px; width: 100%;&#125; 在 class 为 container 的内容层中滚动，实际上，滚动条在 content 上，与 fixBox 已经无关，所以就不会影响抖动问题 额外出现的问题精确定位到问题所在之后，就开始写 HTML 跟 CSS 了，因为考虑到是在移动端的项目，所以二话不说，直接上了 flex 的布局。 结果，测试人员在测试的过程中发现，低版本 webview 不支持 css3 flex 布局，具体请 点这里. 尴了个尬，此处省略无数个 WTF~! 最后，只能使用最原始的绝对定位来实现此效果~ 下面附上修改后的样式： 12345678910111213141516171819202122232425.container &#123; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; overflow: hidden;&#125;.content &#123; overflow: auto; overflow-x: visible; position: absolute; top: 0; right: 0; bottom: 80px; left: 0;&#125;.fixBox &#123; position: absolute; bottom: 0; height: 45px; width: 100%;&#125; 完结~]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Css/Css3</tag>
+        <tag>HTML5</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一些有用的 HTML5 pattern]]></title>
     <url>%2F2018%2Fslag%2Fhtml5-pattern%2F</url>
     <content type="text"><![CDATA[最近在做手机页面时，遇到数字输入的键盘的问题，之前的做法只是一刀切的使用 type=&quot;tel&quot;，不过一直觉得九宫格的电话号码键盘上的英文字母太碍事了。于是想要尝试其它的实现方案，最终的结论却令人沮丧。不过也趁机详细了解了下 pattern 这个属性。 type=&quot;tel&quot; 和 type=&quot;number&quot; 的区别这里还是先那么先交代一下最初遇到的问题。其实无论是 tel 还是 number 都不是完美的： type=”tel” 优点是 iOS 和 Android 的键盘表现都差不多 缺点是那些字母好多余，虽然我没有强迫症但还是感觉怪怪的啊。 type=”number” 优点是 Android 下实现的一个真正的数字键盘 缺点一：iOS 下不是九宫格键盘，输入不方便 缺点二：旧版 Android（包括微信所用的 X5 内核）在输入框后面会有超级鸡肋的小尾巴，好在 Android 4.4.4 以后给去掉了。 不过对于缺点二，我们可以用 webkit 私有的伪元素给 fix 掉： 123456input[type='number']::-webkit-inner-spin-button,input[type='number']::-webkit-outer-spin-button &#123; -webkit-appearance: none; appearance: none; margin: 0;&#125; pattern 属性pattern 用于验证表单输入的内容，通常 HTML5 的 type 属性，比如 email、tel、number、data 类、url 等，已经自带了简单的数据格式验证功能了，加上 pattern 后，前端部分的验证更加简单高效了。 显而易见，pattern 的属性值要用正则表达式。 实例 简单的数字验证 数字的验证有两个： 12&lt;input type="number" pattern="\d"&gt;&lt;input type="number" pattern="[0-9]*"&gt; 对表单验证来说，这两个正则的作用是一样的，表现的话差异就很大： iOS 中，只有[0-9]*才可以调起九宫格数字键盘，\d 无效 Android 4.4 以下(包括 X5 内核)，两者都调起数字键盘； Android 4.4.4 以上，只认 type 属性，也就是说，如果上面的代码将 type=”number” 改为 type=”text” ，将调起全键盘而不会是九宫格数字键盘。 常用的正则表达式pattern 的用法都一样，这里不再啰嗦各种详细写法了，只是列出来一些常用的正则就好了： 信用卡 [0-9]{13,16} 银联卡 ^62[0-5]\d{13,16}$ Visa: ^4[0-9]{12}(?:[0-9]{3})?$ 万事达：^5[1-5][0-9]{14}$ QQ 号码：[1-9][0-9]{4,14} 手机号码：^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$ 身份证：^([0-9]){7,18}(x|X)?$ 密码：^[a-zA-Z]\w{5,17}$ 字母开头，长度在 6~18 之间，只能包含字母、数字和下划线 强密码：^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,10}$ 包含大小写字母和数字的组合，不能使用特殊字符，长度在 8-10 之间 7 个汉字或 14 个字符：^[\u4e00-\u9fa5]{1,7}$|^[\dA-Za-z_]{1,14}$ 浏览器支持很不幸，pattern 的浏览器支持很惨： via Can I Use 但是如果只是如文章开头提到的改数字键盘的话，iOS 和 Android 都是没有问题的。 转自：https://www.qianduan.net/xie-you-yong-de-html5-pattern/]]></content>
