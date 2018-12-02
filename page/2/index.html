@@ -327,6 +327,661 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/webkit-overflow-scrolling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="吃馒头也开心">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/slag/webkit-overflow-scrolling/" itemprop="url">
+                  -webkit-overflow-scrolling:touch及ios滚动
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-01 16:35:22" itemprop="dateCreated datePublished" datetime="2018-09-01T16:35:22+08:00">2018-09-01</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="webkit-overflow-scrolling-touch-是什么？"><a href="#webkit-overflow-scrolling-touch-是什么？" class="headerlink" title="-webkit-overflow-scrolling:touch 是什么？"></a>-webkit-overflow-scrolling:touch 是什么？</h2><p>MDN 上是这样定义的：</p>
+<blockquote>
+<p><strong><code>-webkit-overflow-scrolling</code></strong>: 属性控制元素在移动设备上是否使用滚动回弹效果.<br><strong><code>auto</code></strong>: 使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止。<br><strong><code>touch</code></strong>: 使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文。</p>
+</blockquote>
+<p>在移动端上，在你用 <code>overflow-y:scorll</code> 属性的时候，你会发现滚动的效果很木，很慢，这时候可以使用 <code>-webkit-overflow-scrolling:touch</code> 这个属性，让滚动条产生滚动回弹的效果，就像 ios 原生的滚动条一样流畅。</p>
+<h2 id="解决-safari-布局抖动的例子"><a href="#解决-safari-布局抖动的例子" class="headerlink" title="解决 safari 布局抖动的例子"></a>解决 safari 布局抖动的例子</h2><p><img src="/images/slag/webkit-scrolling-touch.png" alt=""></p>
+<p>想实现一个布局为 header、main、bottom 的布局，其中头部和底部通过 fixed 固定，中间部分通过滚动条滑动。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/slag/webkit-overflow-scrolling/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/js-jump-out-of-the-loop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="吃馒头也开心">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/slag/js-jump-out-of-the-loop/" itemprop="url">
+                  JavaScript跳出循环的方法及区别
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-01 17:25:22" itemprop="dateCreated datePublished" datetime="2018-08-01T17:25:22+08:00">2018-08-01</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>跟许多多态语言一样，js 也有 break，continue，return</p>
+<p>面向对象编程语法中我们会碰到 break，continue，return 这三个常用的关键字，那么关于这三个关键字的使用具体的操作是什么呢？我们在使用这三关键字的时候需要注意和需要理解的规则是什么呢？让我们开始介绍吧</p>
+<h2 id="js-编程语法之-break-语句"><a href="#js-编程语法之-break-语句" class="headerlink" title="js 编程语法之 break 语句"></a>js 编程语法之 break 语句</h2><p>break 语句会使运行的程序立刻退出包含在最内层的循环或者退出一个 switch 语句。</p>
+<p>由于它是用来退出循环或者 switch 语句，所以只有当它出现在这些语句时，这种形式的 break 语句才是合法的。</p>
+<p>如果一个循环的终止条件非常复杂，那么使用 break 语句来实现某些条件比用一个循环表达式来表达所有的条件容易得多。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i == <span class="number">8</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.write(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当 i=8 的时候，直接退出 for 这个循环。这个循环将不再被执行！</p>
+<p>//输出结果：1234567</p>
+<h2 id="js-编程语法之-continue-语句"><a href="#js-编程语法之-continue-语句" class="headerlink" title="js 编程语法之 continue 语句"></a>js 编程语法之 continue 语句</h2><p>continue 语句和 break 语句相似。所不同的是，它不是退出一个循环，而是开始循环的一次新迭代。</p>
+<p>continue 语句只能用在 while 语句、do/while 语句、for 语句、或者 for/in 语句的循环体内，在其它地方使用都会引起错误！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i == <span class="number">8</span>) &#123;</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.write(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当 i=8 的时候，直接跳出本次 for 循环。下次继续执行。</p>
+<p>//输出结果：1234567910</p>
+<h2 id="js-编程语法之-return-语句"><a href="#js-编程语法之-return-语句" class="headerlink" title="js 编程语法之 return 语句"></a>js 编程语法之 return 语句</h2><p>return 语句就是用于指定函数返回的值。return 语句只能出现在函数体内，出现在代码中的其他任何地方都会造成语法错误！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i == <span class="number">8</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.write(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果 Uncaught SyntaxError: Illegal return statement(…)<br>意思是非法捕获的查询返回语句。</p>
+<p>当执行 return 语句时，即使函数主体中还有其他语句，函数执行也会停止！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (username == <span class="string">''</span>) &#123;</span><br><span class="line">  alert(<span class="string">'请输入用户名'</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (qq == <span class="string">''</span>) &#123;</span><br><span class="line">  alert(<span class="string">'请输入QQ'</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的实例里，当 username 为空时，就不会再向下执行</p>
+<p><br></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/encyclopedia/open-source-licenses/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="吃馒头也开心">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/encyclopedia/open-source-licenses/" itemprop="url">
+                  几种常见的开源协议
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-26 15:23:54" itemprop="dateCreated datePublished" datetime="2018-07-26T15:23:54+08:00">2018-07-26</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>开源软件(Open source software)的源代码对有追求的程序员来说是一无尽的宝藏，此外正确的使用开源软件，可以提高开发软件时的效率、提升软件质量。但是在使用和借鉴开源软件的时候，我们不得不关心一下它对使用者的诸多限制，比较常见的方式即协议授权(licence)，这些协议中明确说明了使用者应该遵循的原则。</p>
+<p>现在开源协议众多，大概有 50 多种，下面只对几种常见协议做介绍。<br>首先看一张总结很好的图【摘自阮一峰】<br><img src="/images/baike/open-source-software.png" alt=""></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/encyclopedia/open-source-licenses/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/http-update-https-warn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="吃馒头也开心">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/slag/http-update-https-warn/" itemprop="url">
+                  网页调试显示的警告，让你网站升级为HTTPS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-12 09:53:08" itemprop="dateCreated datePublished" datetime="2018-07-12T09:53:08+08:00">2018-07-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在 chrome 中打开调试工具，出现如下图提示：</p>
+<p><img src="/images/baike/http-update-https.jpg" alt=""></p>
+<blockquote>
+<p>This page includes a password or credit card input in a non-secure context. A warning has been added to the URL bar. For more information, see <a href="https://goo.gl/zmWq3m" target="_blank" rel="noopener">https://goo.gl/zmWq3m</a>.</p>
+</blockquote>
+<p>提示原因：简单的说，通过 HTTP 协议传递密码是非常不安全的，所以 Google 弹出了这个警告，提示你该是时候把你的网站 <strong>升级为HTTPS</strong> 了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/nomenclature/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -925,9 +1580,19 @@
 <p>使用 eslint + VSCode 来写 vue 。 每次保存，vscode 就能标红不符合 eslint 规则的地方，同时还会做一些简单的自我修正</p>
 <p>首先安装 eslint 插件，上文有官网通道，自己去官方查看安装步骤。</p>
 <p>安装并配置完成 ESLint 后，我们继续回到 VSCode 进行扩展设置，点击 首选项 &gt; 设置 打开 VSCode 配置文件，添加如下配置</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"editor.tabSize"</span>: <span class="number">2</span>,</span><br><span class="line"><span class="string">"files.associations"</span>: &#123;</span><br><span class="line">  <span class="string">"*.vue"</span>: <span class="string">"vue"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"eslint.autoFixOnSave"</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="string">"eslint.options"</span>: &#123;</span><br><span class="line">  <span class="string">"extensions"</span>: [</span><br><span class="line">    <span class="string">".js"</span>,</span><br><span class="line">    <span class="string">".vue"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"eslint.validate"</span>: [</span><br><span class="line">  <span class="string">"javascript"</span>,</span><br><span class="line">  <span class="string">"javascriptreact"</span>,</span><br><span class="line">  <span class="string">"vue"</span>,</span><br><span class="line">  <span class="string">"vue-html"</span></span><br><span class="line">],</span><br><span class="line"><span class="string">"emmet.syntaxProfiles"</span>: &#123;</span><br><span class="line">  <span class="string">"javascript"</span>: <span class="string">"jsx"</span>,</span><br><span class="line">  <span class="string">"vue"</span>: <span class="string">"html"</span>,</span><br><span class="line">  <span class="string">"vue-html"</span>: <span class="string">"html"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// "prettier.singleQuote": true,</span></span><br><span class="line"><span class="string">"vetur.format.defaultFormatter.html"</span>: <span class="string">"js-beautify-html"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// eslint</span></span><br><span class="line"><span class="string">"editor.tabSize"</span>: <span class="number">2</span>,</span><br><span class="line"><span class="comment">//根据文件后缀名定义vue文件类型</span></span><br><span class="line"><span class="string">"files.associations"</span>: &#123;</span><br><span class="line">  <span class="string">"*.vue"</span>: <span class="string">"vue"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"eslint.autoFixOnSave"</span>: <span class="literal">true</span>, <span class="comment">//每次保存的时候将代码按eslint格式进行修复</span></span><br><span class="line"><span class="string">"eslint.options"</span>: &#123;</span><br><span class="line">  <span class="string">"plugins"</span>: [<span class="string">"vue"</span>],</span><br><span class="line">  <span class="string">"extensions"</span>: [</span><br><span class="line">    <span class="string">".js"</span>,</span><br><span class="line">    <span class="string">".vue"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">//保存时eslint自动修复错误</span></span><br><span class="line"><span class="string">"eslint.validate"</span>: [</span><br><span class="line">  <span class="string">"javascript"</span>,</span><br><span class="line">  <span class="string">"javascriptreact"</span>,</span><br><span class="line">  <span class="string">"vue"</span>,</span><br><span class="line">  <span class="string">"vue-html"</span>,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"language"</span>: <span class="string">"vue"</span>,</span><br><span class="line">    <span class="string">"autoFix"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">"vetur.format.defaultFormatter.html"</span>: <span class="string">"js-beautify-html"</span>,</span><br><span class="line"><span class="string">"vetur.format.defaultFormatterOptions"</span>: &#123;</span><br><span class="line">  <span class="string">"js-beautify-html"</span>: &#123;</span><br><span class="line">    <span class="string">"wrap_attributes"</span>: <span class="string">"force"</span> <span class="comment">// 可以换成上面任意一种value</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>PS：这里有一个不明白的地方，我在没有装 vscode 插件 Beautify 以及 Prettier 插件的时候，引用了上述配置也能生效。。。但建议大家将这两个插件都安装一下。</p>
 <p>这样每次保存的时候就可以根据根目录下.eslintrc.js 你配置的 eslint 规则来检查和做一些简单的 fix。每个人和团队都有自己的代码规范，统一就好了</p>
+<h3 id="ESLint-和-Prettier-的冲突修复"><a href="#ESLint-和-Prettier-的冲突修复" class="headerlink" title="ESLint 和 Prettier 的冲突修复"></a>ESLint 和 Prettier 的冲突修复</h3><p>在用 <code>Prettier</code> 格式化的时候，可以能会和 <code>ESLint</code> 定义的校验规则冲突，比如 <code>Prettier</code> 字符串默认是用双引号而 <code>ESLint</code> 定义的是单引号的话这样格式化之后就不符合 <code>ESLint</code> 规则了。所以要解决冲突就需要在 <code>Prettier</code> 的规则配置里也配置上和 <code>ESLint</code> 一样的规则，这里贴下 <code>ESLint</code> 和 <code>Prettier</code> 的配置文件。</p>
+<ul>
+<li>.eslintrc.js 配置文件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  root: <span class="literal">true</span>,</span><br><span class="line">  parser: <span class="string">"babel-eslint"</span>,</span><br><span class="line">  parserOptions: &#123;</span><br><span class="line">    sourceType: <span class="string">"module"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  env: &#123;</span><br><span class="line">    browser: <span class="literal">true</span>,</span><br><span class="line">    node: <span class="literal">true</span>,</span><br><span class="line">    es6: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  extends: <span class="string">"eslint:recommended"</span>,</span><br><span class="line">  <span class="comment">// required to lint *.vue files</span></span><br><span class="line">  plugins: [<span class="string">"html"</span>],</span><br><span class="line">  <span class="comment">// check if imports actually resolve</span></span><br><span class="line">  settings: &#123;</span><br><span class="line">    <span class="string">"import/resolver"</span>: &#123;</span><br><span class="line">      webpack: &#123;</span><br><span class="line">        config: <span class="string">"build/webpack.base.conf.js"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// add your custom rules here</span></span><br><span class="line">  <span class="comment">//it is base on https://github.com/vuejs/eslint-config-vue</span></span><br><span class="line">  rules: &#123;</span><br><span class="line">    <span class="string">"accessor-pairs"</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">"arrow-spacing"</span>: [</span><br><span class="line">      <span class="number">2</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        before: <span class="literal">true</span>,</span><br><span class="line">        after: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>.prettierrc 配置文件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"eslintIntegration"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">//使用单引号</span></span><br><span class="line">  <span class="string">"singleQuote"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">//结尾不加分号</span></span><br><span class="line">  <span class="string">"semi"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样把 <code>ESLint</code> 和 <code>Prettier</code> 冲突的规则配置一致,格式化之后就不会冲突了。</p>
 <h3 id="命令式自动修复"><a href="#命令式自动修复" class="headerlink" title="命令式自动修复"></a>命令式自动修复</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run lint -- --fix</span><br></pre></td></tr></table></figure>
 <p>命令行工具有几个选项，你可以通过运行 eslint -h 查看所有选项</p>
 <p><br></p>
@@ -1317,746 +1982,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/maximum-call-stack-size-exceeded-error/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/slag/maximum-call-stack-size-exceeded-error/" itemprop="url">
-                  Vue.js “Maximum call stack size exceeded” error.
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-20 10:04:46" itemprop="dateCreated datePublished" datetime="2018-06-20T10:04:46+08:00">2018-06-20</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在使用 Vuejs 开发 SPA 页面时，我创建了一个父组件以及子组件，然后通过父组件去调用子组件时，报如下错误：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.js “Maximum call stack size exceeded” error.</span><br></pre></td></tr></table></figure>
-<p>示例代码：</p>
-<blockquote>
-<p><strong>Panel.vue</strong></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=<span class="string">"panel"</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"panel"</span>&gt;</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &lt;li v-<span class="keyword">for</span>=<span class="string">"shelf in shelfs"</span>&gt;</span><br><span class="line">          &lt;panel-body :shelf=<span class="string">"shelf"</span> :selected.sync=<span class="string">"selected"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">panel-body</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">      &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> PanelBody <span class="keyword">from</span> <span class="string">'../components/PanelBody'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'panel-body'</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    <span class="string">'panel-body'</span>: PanelBody</span><br><span class="line">  &#125;,</span><br><span class="line">  data: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">    shelfs: [&#123;</span><br><span class="line">      name: <span class="string">'shelf 1'</span>,</span><br><span class="line">      books: [&#123;</span><br><span class="line">        title: <span class="string">'Lorem ipum'</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        title: <span class="string">'Dolor sit amet'</span></span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: <span class="string">'shelf 2'</span>,</span><br><span class="line">      books: [&#123;</span><br><span class="line">        title: <span class="string">'Ipsum lorem'</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        title: <span class="string">'Amet sit dolor'</span></span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;],</span><br><span class="line">    selected: &#123;&#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>PanelBody.vue</strong></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=<span class="string">"panel-body"</span>&gt;</span><br><span class="line">    &lt;a href=<span class="string">"#"</span> v-on:click.prevent.stop=<span class="string">"select"</span>&gt;&#123;&#123; shelf.name &#125;&#125;&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">    &lt;ul v-show="isSelected"&gt;</span></span><br><span class="line"><span class="regexp">      &lt;li v-for="book in shelf.books"&gt;&#123;&#123; book.title &#125;&#125;&lt;/</span>li&gt;</span><br><span class="line">    &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  name: 'panel-body',</span></span><br><span class="line"><span class="regexp">  props: ['shelf', 'selected'],</span></span><br><span class="line"><span class="regexp">  computed: &#123;</span></span><br><span class="line"><span class="regexp">    isSelected: function () &#123;</span></span><br><span class="line"><span class="regexp">      return this.selected === this.shelf</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  methods: &#123;</span></span><br><span class="line"><span class="regexp">    select: function () &#123;</span></span><br><span class="line"><span class="regexp">      this.selected = this.shelf</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
-<p>错误原因：</p>
-<blockquote>
-<p>Maximum call stack size exceeded</p>
-</blockquote>
-<p>错误出处：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> PanelBody <span class="keyword">from</span> <span class="string">'../components/PanelBody'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'panel-body'</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    <span class="string">'panel-body'</span>: PanelBody</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<p>错误解决：<br>你定义你的父组件名称:“panel-body”。<strong>只要将名称改成:“panel”或者其他不与子组件引用名一样</strong>，你就能删除你的循环引用，从而不再报错。<br><br></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/encyclopedia/training-documents/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/encyclopedia/training-documents/" itemprop="url">
-                  培训文档（基于Vue2.0的项目开发）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-18 19:01:31" itemprop="dateCreated datePublished" datetime="2018-06-18T19:01:31+08:00">2018-06-18</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>注：<a href="https://cn.vuejs.org" target="_blank" rel="noopener">Vue2.0 中文文档</a> ，如果对自己英文有信心，也可以直接阅读 <a href="https://vuejs.org" target="_blank" rel="noopener">英文文档</a>。</p>
-<h2 id="起步：从了解-Vue-开始"><a href="#起步：从了解-Vue-开始" class="headerlink" title="起步：从了解 Vue 开始"></a>起步：从了解 Vue 开始</h2><ol>
-<li><p>扎实的 JavaScript / HTML / CSS 基本功。这是前置条件。</p>
-</li>
-<li><p>通读官方教程 (guide) 的基础篇。不要用任何构建工具，就只用最简单的 &lt;script&gt;，把教程里的例子模仿一遍，理解用法。<strong>不推荐上来就直接用 vue-cli 构建项目，尤其是如果没有 Node/Webpack 基础。</strong></p>
-</li>
-<li><p>照着官网上的示例，自己想一些类似的例子，模仿着实现来练手，加深理解。</p>
-</li>
-<li><p>阅读官方教程进阶篇的前半部分，到『自定义指令 (Custom Directive) 』为止。着重理解 Vue 的响应式机制和组件生命周期。『渲染函数（Render Function)』如果理解吃力可以先跳过。</p>
-</li>
-<li><p>阅读教程里关于路由和状态管理的章节，然后根据需要学习 vue-router 和 vuex。同样的，先不要管构建工具，以跟着文档里的例子理解用法为主。</p>
-</li>
-<li><p>走完基础文档后，如果你对于基于 Node 的前端工程化不熟悉，就需要补课了。下面这些严格来说并不是 Vue 本身的内容，也不涵盖所有的前端工程化知识，但对于大型的 Vue 工程是前置条件，也是合格的『前端工程师』应当具备的知识。</p>
-</li>
-</ol>
-<h2 id="前端生态-工程化"><a href="#前端生态-工程化" class="headerlink" title="前端生态/工程化"></a>前端生态/工程化</h2><ol>
-<li><p>了解 JavaScript 背后的规范，ECMAScript 的历史和目前的规范制定方式。学习 ES2015/16 的新特性，理解 ES2015 modules，适当关注<a href="https://github.com/tc39/proposals" target="_blank" rel="noopener">还未成为标准的提案</a>。</p>
-</li>
-<li><p>学习命令行的使用。建议用 Mac。</p>
-</li>
-<li><p>学习 Node.js 基础。<strong>建议使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> 这样的工具来管理机器上的 Node 版本，并且将 npm 的 registry 注册表配置为<a href="https://npm.taobao.org" target="_blank" rel="noopener">淘宝的镜像源</a>。</strong>至少要了解 npm 的常用命令，npm scripts 如何使用，语义化版本号规则，CommonJS 模块规范（了解它和 ES2015 Modules 的异同），Node 包的解析规则，以及 Node 的常用 API。应当做到可以自己写一些基本的命令行程序。注意最新版本的 Node (6+) 已经支持绝大部分 ES2015 的特性，可以借此巩固 ES2015。</p>
-</li>
-<li><p>了解如何使用 / 配置 Babel 来将 ES2015 编译到 ES5 用于浏览器环境。</p>
-</li>
-<li><p>学习 Webpack。Webpack 是一个极其强大同时也复杂的工具，作为起步，理解它的『一切皆模块』的思想，并基本了解其常用配置选项和 loader 的概念/使用方法即可，比如如何搭配 Webpack 使用 Babel。学习 Webpack 的一个挑战在于其本身文档的混乱，建议多搜索搜索，应该还是有质量不错的第三方教程的。英文好的建议阅读 <a href="https://webpack.js.org/guides/getting-started/" target="_blank" rel="noopener">Webpack 2.0 的文档</a>。</p>
-</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/encyclopedia/training-documents/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/how-to-learn-vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/slag/how-to-learn-vue/" itemprop="url">
-                  新手向：Vue 2.0 的建议学习顺序
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-18 15:56:06" itemprop="dateCreated datePublished" datetime="2018-06-18T15:56:06+08:00">2018-06-18</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>注：2.0 已经有 <a href="https://cn.vuejs.org" target="_blank" rel="noopener">中文文档</a> 。如果对自己英文有信心，也可以直接阅读 <a href="https://vuejs.org" target="_blank" rel="noopener">英文文档</a>。<br>此指南仅供参考，请根据自身实际情况灵活调整。<br>欢迎转载，请注明出处。</p>
-</blockquote>
-<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><ol>
-<li><p>扎实的 JavaScript / HTML / CSS 基本功。这是前置条件。</p>
-</li>
-<li><p>通读官方教程 (guide) 的基础篇。不要用任何构建工具，就只用最简单的 &lt;script&gt;，把教程里的例子模仿一遍，理解用法。<strong>不推荐上来就直接用 vue-cli 构建项目，尤其是如果没有 Node/Webpack 基础。</strong></p>
-</li>
-<li><p>照着官网上的示例，自己想一些类似的例子，模仿着实现来练手，加深理解。</p>
-</li>
-<li><p>阅读官方教程进阶篇的前半部分，到『自定义指令 (Custom Directive) 』为止。着重理解 Vue 的响应式机制和组件生命周期。『渲染函数（Render Function)』如果理解吃力可以先跳过。</p>
-</li>
-<li><p>阅读教程里关于路由和状态管理的章节，然后根据需要学习 vue-router 和 vuex。同样的，先不要管构建工具，以跟着文档里的例子理解用法为主。</p>
-</li>
-<li><p>走完基础文档后，如果你对于基于 Node 的前端工程化不熟悉，就需要补课了。下面这些严格来说并不是 Vue 本身的内容，也不涵盖所有的前端工程化知识，但对于大型的 Vue 工程是前置条件，也是合格的『前端工程师』应当具备的知识。</p>
-</li>
-</ol>
-<h2 id="前端生态-工程化"><a href="#前端生态-工程化" class="headerlink" title="前端生态/工程化"></a>前端生态/工程化</h2><ol>
-<li><p>了解 JavaScript 背后的规范，ECMAScript 的历史和目前的规范制定方式。学习 ES2015/16 的新特性，理解 ES2015 modules，适当关注<a href="https://github.com/tc39/proposals" target="_blank" rel="noopener">还未成为标准的提案</a>。</p>
-</li>
-<li><p>学习命令行的使用。建议用 Mac。</p>
-</li>
-<li><p>学习 Node.js 基础。<strong>建议使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> 这样的工具来管理机器上的 Node 版本，并且将 npm 的 registry 注册表配置为<a href="https://npm.taobao.org" target="_blank" rel="noopener">淘宝的镜像源</a>。</strong>至少要了解 npm 的常用命令，npm scripts 如何使用，语义化版本号规则，CommonJS 模块规范（了解它和 ES2015 Modules 的异同），Node 包的解析规则，以及 Node 的常用 API。应当做到可以自己写一些基本的命令行程序。注意最新版本的 Node (6+) 已经支持绝大部分 ES2015 的特性，可以借此巩固 ES2015。</p>
-</li>
-<li><p>了解如何使用 / 配置 Babel 来将 ES2015 编译到 ES5 用于浏览器环境。</p>
-</li>
-<li><p>学习 Webpack。Webpack 是一个极其强大同时也复杂的工具，作为起步，理解它的『一切皆模块』的思想，并基本了解其常用配置选项和 loader 的概念/使用方法即可，比如如何搭配 Webpack 使用 Babel。学习 Webpack 的一个挑战在于其本身文档的混乱，建议多搜索搜索，应该还是有质量不错的第三方教程的。英文好的建议阅读 <a href="https://webpack.js.org/guides/getting-started/" target="_blank" rel="noopener">Webpack 2.0 的文档</a>。</p>
-</li>
-</ol>
-<h2 id="Vue-进阶"><a href="#Vue-进阶" class="headerlink" title="Vue 进阶"></a>Vue 进阶</h2><ol>
-<li><p>有了 Node 和 Webpack 的基础，可以通过 vue-cli 来搭建基于 Webpack ，并且支持单文件组件的项目了。建议用 webpack-simple 这个模板开始，并阅读官方教程进阶篇剩余的内容以及 <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader 的文档</a>，了解一些进阶配置。有兴趣的可以自己亲手从零开始搭一个项目加深理解。</p>
-</li>
-<li><p>根据 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="noopener">例子</a> 尝试在 Webpack 模板基础上整合 vue-router 和 vuex</p>
-</li>
-<li><p>深入理解 Virtual DOM 和『渲染函数 (Render Functions)』这一章节（可选择性使用 JSX)，理解模板和渲染函数之间的对应关系，了解其使用方法和适用场景。</p>
-</li>
-<li><p>（可选）根据需求，了解服务端渲染的使用（需要配合 Node 服务器开发的知识）。其实更重要的是理解它所解决的问题并搞清楚你是否需要它。</p>
-</li>
-<li><p>阅读开源的 Vue 应用、组件、插件源码，自己尝试编写开源的 Vue 组件、插件。</p>
-</li>
-<li><p>参考 <a href="https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md#development-setup" target="_blank" rel="noopener">贡献指南</a> 阅读 Vue 的源码，理解内部实现细节。（需要了解 <a href="https://flow.org" target="_blank" rel="noopener">Flow</a>）</p>
-</li>
-<li><p>参与 Vue GitHub issue 的定位 -&gt; 贡献 PR -&gt; 加入核心团队 -&gt; 升任 CTO -&gt; 迎娶白富美…（误</p>
-</li>
-</ol>
-<p><br></p>
-<blockquote>
-<p>转自：<a href="https://zhuanlan.zhihu.com/p/23134551" target="_blank" rel="noopener">尤大大的新手向：Vue 2.0 的建议学习顺序</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/encyclopedia/upload-projects-git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/encyclopedia/upload-projects-git/" itemprop="url">
-                  如何用命令将本地项目上传到git
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-18 14:32:21" itemprop="dateCreated datePublished" datetime="2018-06-18T14:32:21+08:00">2018-06-18</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>通过命令 git init 把这个目录变成 git 可以管理的仓库（先进入项目文件夹）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用命令 git commit 告诉 Git，把文件提交到仓库。引号内为提交说明</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">'first commit'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关联到远程库 git remote add origin 你的远程库地址</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/cade8800/ionic-demo.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把本地库的内容推送到远程，使用 git push 命令，实际上是把当前分支 master 推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li>状态查询命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="/images/baike/git-project.png" alt=""><br><br></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2103,7 +2033,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">60</span>
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2209,7 +2139,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">35</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
