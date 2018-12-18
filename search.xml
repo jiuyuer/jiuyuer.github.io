@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何撰写PRD文档]]></title>
+    <url>%2F2018%2Fencyclopedia%2Fhow-to-write-the-PRD-document%2F</url>
+    <content type="text"><![CDATA[产品经理主要有两项职责： 评估产品机会 定义要开发的产品； 定义开发的产品则需要通过产品需求文档(PRD)来描述产品的特征和功能。 PRD(开发需求文档）的作用在学习如何撰写 PRD 之前，我们先要明白写 PRD 的目的是什么： ① 概念化”阶段进入到“图纸化”我们之前在市场需求文档（MRD）中阐述到的功能，都是表达的一个意向，不考虑实现方法和细节。而 PRD 则是将概念图纸化，需要阐述详细的细节和实现模型。产品人员可以通过撰写 PRD，梳理清楚方案实现过程中的各种问题和影响。 ② 向项目成员传达需求的意义和明细PRD 的主要面向对象是项目经理、开发、设计和测试。如何向这些不同的角色表达清楚需求明细，就需要一份规范的 PRD 文档来描述。项目经理通过文档可以迅速了解任务的规模和相关接口，而开发设计人员通过文档可以了解页面元素和用例规则，测试人员可以提前根据文档撰写测试用例。PRD 文档在形式上是项目启动的必要元素之一。 ③ 管理归档需求大都数的新需求都需要迭代几个版本后才能走向成熟稳定的阶段，如果没有 PRD 文档，在大型项目中，需求的迭代变更将变的无据可循。PRD 的文档修订编号和命名也是项目规范化管理的主要方法之一。 PRD 的表现形式一般企业内部的 PRD 文档选择 wiki 系统或 word 文档。wiki 在协同和保密方面会有优势，而且能够记录修改文档的每一次变更。而 word 在阅读修改方面比较有优势，一般使用 Word 加 SVN 的方式来管理更新文档。这个可根据每个企业的管理规范来选择那种方法更合适。 PRD 的主要构成一份基础的 PRD 文档主要由三部分组成 ① 引言引言部分主要包括：需求背景、需求目的、需求概要、涉及范围、全局规则和名词说明，交互原型地址等。引言部分的写作目的是让阅读者快速理解需求背景和概要。如果是公司内部文档，引言部分可以从简写作。 ② 业务建模建模的目的是为了帮助阅读对象更好的理解需要开发的需求，常用的模型种类包括：用例图、实体图、状态图、流程图等。常用的建模语言如 UML。 ③ 业务模块业务模块包含具体页面的元素、用例规则，以及相关的原型，流程图。业务模块的描述是整个文档最核心的部分，下面博主用案例来描述一下业务模块的编写方法。]]></content>
+      <categories>
+        <category>百科全书</category>
+      </categories>
+      <tags>
+        <tag>PRD文档</tag>
+        <tag>产品</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用 CentOS7 心得]]></title>
     <url>%2F2018%2Fencyclopedia%2Fusing-centos%2F</url>
     <content type="text"><![CDATA[最近在阿里云上购置了一个云服务，系统是 CentOS7 的，对于不懂 Linux 的菜鸟来说，买了之后也是一脸蒙逼，简直无从下手。幸好有强大的搜索引擎，折腾了两天，总算有些收获。 收获一：使用 MAC 终端登录登录阿里云，拿到外网的 ip 地址，然后打开 MAC 终端，输入 1ssh root@xx.xxx.xxx.xxx 没错，就这么简单，然后我们就可以在服务器上愉快的玩耍了。 收获二：文件上传下载scp 了解一下 上传文件到服务器1scp -r test.txt root@xx.xxx.xxx.xxx:~ 从服务器下载文件1scp -r root@xx.xxx.xxx.xxx:~/test.txt ~/Desktop/ 收获三：在 CentOS7 上安装 Node.js这个也折腾了好久，网上的教程也挺多的，但是本人遇到的几个坑说明一下 源码安装，推荐但是并不是最有效率的，因为下载过来的源码需要经过解压，编译（很花费时间，而且需要安装 gcc 来作为编译软件），安装 使用已编译版本安装，这是我目前使用的方法，好处不用说了，坏处是版本固定，安装完之后，需要将 node 和 npm 配置成全局环境 收获四：在 CentOS7 上安装 mongodb1、下载安装包12# 版本自己选择curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.2.12.tgz 2、解压1tar -zxvf mongodb-linux-x86_64-3.2.12.tgz 3、移动到指定位置1mv mongodb-linux-x86_64-3.2.12/ /usr/local/mongodb 4、在/usr/local/mongodb 下创建文件夹12mkdir -p /data/dbmkdir /logs 5、启动在/usr/local/mongodb/bin 下 1./mongod PS: 12345678 # 使用命令启动mongodb数据库cd /usr/local/mongodb/bin./mongod -dbpath=/usr/local/mongodb/data -logpath=/usr/local/mongodb/logs/mongodb.log -logappend -port=27017 -fork # 常用的启动参数： # --dbpath：指定存储数据的文件夹 # --logpath：指定日志存储文件 # --logappend：日志以增加方式产生 # --port指定端口，如果不写的话，默认是27017 6、关闭1/mongod --shutdown 收获五：在 CentOS7 上安装 redis其实跟安装 mongodb 大同小异，搜一下网上一大堆 收获六：后台启动 node 服务，关闭 ssh 时，不会断开 有两种方法 利用 forever 在 Linux 上实现 Node.js 项目自启动 nohup 对于 Linux 高手来说不算什么，所以，这只是 Linux 菜鸟的日常记录（无辜笑脸）]]></content>
