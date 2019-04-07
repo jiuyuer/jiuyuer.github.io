@@ -327,6 +327,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/vue-webpack-img-src/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="吃馒头也开心">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/slag/vue-webpack-img-src/" itemprop="url">
+                  Vue+Webpack在Template中为Img标签的属性Src赋值问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-04 00:48:17" itemprop="dateCreated datePublished" datetime="2018-07-04T00:48:17+08:00">2018-07-04</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用 Vue 的脚手架构建项目过程中，其中一个模板是这样写的：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"imgSrc"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>大致代码如上所示，其实 imgSrc 是一个变量方式引入的图片地址。</p>
+<p>遇到的问题是 imgSrc 中的路径并不会被 webpack 编译，还保持着相对路径的状态，最终产生 404 错误。</p>
+<p>那该如何解决？</p>
+<h4 id="如果使用的是-img-标签"><a href="#如果使用的是-img-标签" class="headerlink" title="如果使用的是 img 标签"></a>如果使用的是 img 标签</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js 中代码</span></span><br><span class="line">data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        img: <span class="built_in">require</span>(<span class="string">'path/to/your/source'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 然后在template中 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"img"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="如果使用的是背景图的方式"><a href="#如果使用的是背景图的方式" class="headerlink" title="如果使用的是背景图的方式"></a>如果使用的是背景图的方式</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js 中代码</span></span><br><span class="line">data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        img: <span class="built_in">require</span>(<span class="string">'path/to/your/source'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html 中代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"&#123;backgroundImage:'url(' + img + ')'&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 或者直接在css中定义 */</span></span><br><span class="line"><span class="selector-class">.img</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'path/to/your/source'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过 require 的方式去加载，就能让 webpack 编译并在生产版本中正常展示</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/vscode-ESLint/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1923,224 +2087,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/es6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/slag/es6/" itemprop="url">
-                  ES6常用方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-12 09:07:27" itemprop="dateCreated datePublished" datetime="2018-06-12T09:07:27+08:00">2018-06-12</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="let-命令-和-const-命令"><a href="#let-命令-和-const-命令" class="headerlink" title="let 命令 和 const 命令"></a>let 命令 和 const 命令</h2><h3 id="let-命令："><a href="#let-命令：" class="headerlink" title="let 命令："></a>let 命令：</h3><p>let 用于声明变量，但是所有声明的变量只在 let 命令所在的代码块有效。<br>let 不允许在同以作用域中重复声明变量。<br>let 不存在变量提升，所以变量一定要在声明后使用，否则会报错。</p>
-<h3 id="const-命令"><a href="#const-命令" class="headerlink" title="const 命令:"></a>const 命令:</h3><p>const 命令用来声明常量，一旦声明，其值就不能改变，即 const 一旦声明常量就必须立刻初始化，不能留到以后赋值。<br>const 命令只是保证变量名指向的地址不变，并步保证该地址的数据不变。</p>
-<h3 id="相同点："><a href="#相同点：" class="headerlink" title="相同点："></a>相同点：</h3><p>let 和 const 命令声明的变量都只在它们所在的块级作用域中才有效。<br>如果区块中存在 let 和 const 命令，则这个区块对这些命令声明的变量从一开始就形成封闭作用域。</p>
-<h2 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h2><p>ES6 允许按照一定的模式，从数组和对象中提取值，对变量进行赋值，称为解构。</p>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c,d] = [“aa”, “bb”, <span class="number">77</span>,<span class="number">88</span>];  <span class="comment">//数组结构</span></span><br><span class="line"><span class="keyword">let</span> [a,b,[c,d],e] =[“aa”,’bb’,[<span class="number">33</span>,<span class="number">44</span>],<span class="number">55</span>];  <span class="comment">//嵌套数组解构</span></span><br><span class="line"><span class="keyword">let</span> [a,b,,e] =[“aa”,’bb’,[<span class="number">33</span>,<span class="number">44</span>],<span class="number">55</span>]; <span class="comment">//空缺变量</span></span><br><span class="line"><span class="keyword">let</span> [a,b,,e,f] =[“aa”,’bb’,[<span class="number">33</span>,<span class="number">44</span>],<span class="number">55</span>]; <span class="comment">//多余变量</span></span><br><span class="line"><span class="keyword">let</span> [a,b,,e,f=’hello’] =[“aa”,’bb’,[<span class="number">33</span>,<span class="number">44</span>],<span class="number">55</span>]; <span class="comment">//默认值</span></span><br></pre></td></tr></table></figure>
-<h3 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">uid</span>: <span class="number">121</span>, <span class="attr">uname</span>: <span class="string">'张三'</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.uid = <span class="number">111</span>;</span><br><span class="line">obj.uname = <span class="string">'张三'</span>;</span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">uid</span>: id, <span class="attr">uname</span>: name &#125; = obj; <span class="comment">//顺序改变无影响</span></span><br><span class="line"><span class="built_in">console</span>.log(name); <span class="comment">//张三</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//小括号：</span></span><br><span class="line"><span class="keyword">let</span> uid, uname;</span><br><span class="line">(&#123; uid, uname &#125; = obj); <span class="comment">//必须有小括号，否则&#123;&#125;就会被解读为语句块</span></span><br><span class="line"><span class="built_in">console</span>.log(uname); <span class="comment">//张三</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//  PS: 可嵌套 ，可有默认值</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串解构"><a href="#字符串解构" class="headerlink" title="字符串解构"></a>字符串解构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c, d] = <span class="string">'倚天屠龙'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c, d);</span><br></pre></td></tr></table></figure>
-<h3 id="函数参数解构"><a href="#函数参数解构" class="headerlink" title="函数参数解构"></a>函数参数解构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">uid</span>: <span class="number">121</span>, <span class="attr">uname</span>: <span class="string">'张三'</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">analysis</span>(<span class="params">&#123; uid, uname &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(uid);</span><br><span class="line">  <span class="built_in">console</span>.log(uname);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//-------以下也正确</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">analysis</span>(<span class="params">&#123; uname &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(uname);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">analysis(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">//  PS: 参数中数组、字符串、默认值、缺位均支持 。</span></span><br></pre></td></tr></table></figure>
-<h2 id="数组操作-Array"><a href="#数组操作-Array" class="headerlink" title="数组操作 Array"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">数组操作 Array</a></h2><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p>方法对数组的每个元素执行一次提供的函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array1 = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"></span><br><span class="line">array1.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(element);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// expected output: "a"</span></span><br><span class="line"><span class="comment">// expected output: "b"</span></span><br><span class="line"><span class="comment">// expected output: "c"</span></span><br></pre></td></tr></table></figure>
-<h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><p>方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> words = [<span class="string">'spray'</span>, <span class="string">'limit'</span>, <span class="string">'elite'</span>, <span class="string">'exuberant'</span>, <span class="string">'destruction'</span>, <span class="string">'present'</span>];</span><br><span class="line"><span class="keyword">const</span> result = words.filter(<span class="function"><span class="params">word</span> =&gt;</span> word.length &gt; <span class="number">6</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"></span><br><span class="line"><span class="comment">// expected output: Array ["exuberant", "destruction", "present"]</span></span><br></pre></td></tr></table></figure>
-<h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</span><br><span class="line"><span class="keyword">let</span> doubles = numbers.map(<span class="function"><span class="params">x</span> =&gt;</span> x ** <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// doubles is now [1, 25, 100, 225]</span></span><br><span class="line"><span class="comment">// numbers is still [1, 5, 10, 15]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">10</span>];</span><br><span class="line"><span class="keyword">let</span> halves = numbers.map(<span class="function"><span class="params">x</span> =&gt;</span> x / <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">let</span> roots = numbers.map(<span class="built_in">Math</span>.sqrt);</span><br><span class="line"></span><br><span class="line"><span class="comment">// roots is now [1, 2, 3]</span></span><br><span class="line"><span class="comment">// numbers is still [1, 4, 9]</span></span><br></pre></td></tr></table></figure>
-<h3 id="includes"><a href="#includes" class="headerlink" title="includes()"></a>includes()</h3><p>方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回 false。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1.includes(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pets = [<span class="string">'cat'</span>, <span class="string">'dog'</span>, <span class="string">'bat'</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pets.includes(<span class="string">'cat'</span>));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pets.includes(<span class="string">'at'</span>));</span><br><span class="line"><span class="comment">// expected output: false</span></span><br></pre></td></tr></table></figure>
-<h2 id="箭头函数表达式"><a href="#箭头函数表达式" class="headerlink" title="箭头函数表达式"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">箭头函数表达式</a></h2><p>语法比函数表达式更短，并且没有自己的 this，arguments，super 或 new.target。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> materials = [<span class="string">'Hydrogen'</span>, <span class="string">'Helium'</span>, <span class="string">'Lithium'</span>, <span class="string">'Beryllium'</span>];</span><br><span class="line"></span><br><span class="line">materials.map(<span class="function"><span class="keyword">function</span>(<span class="params">material</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> material.length;</span><br><span class="line">&#125;); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line">materials.map(<span class="function"><span class="params">material</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> material.length;</span><br><span class="line">&#125;); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line">materials.map(<span class="function"><span class="params">material</span> =&gt;</span> material.length); <span class="comment">// [8, 6, 7, 9]</span></span><br></pre></td></tr></table></figure>
-<h2 id="import"><a href="#import" class="headerlink" title="import"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import" target="_blank" rel="noopener">import</a></h2><p>import 语句用于导入由另一个模块导出的绑定。无论是否声明了 strict mode ，导入的模块都运行在严格模式下。import 语句不能在嵌入式脚本中使用。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> defaultExport <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">export</span> &#125; <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">export</span> <span class="keyword">as</span> alias &#125; <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; export1 , export2 &#125; <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; export1 , export2 <span class="keyword">as</span> alias2 , [...] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> defaultExport, &#123; <span class="keyword">export</span> [ , [...] ] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> defaultExport, * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"module-name"</span>;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>defaultExport</p>
-</blockquote>
-<ul>
-<li>将引用模块默认导出的名称。</li>
-</ul>
-<blockquote>
-<p>module-name</p>
-</blockquote>
-<ul>
-<li>要导入的模块。这通常是包含模块的.js 文件的相对或绝对路径名，不包括.js 扩展名。某些打包工具可以允许或要求使用该扩展；检查你的运行环境。只允许单引号和双引号的字符串。</li>
-</ul>
-<blockquote>
-<p>name</p>
-</blockquote>
-<ul>
-<li>引用时将用作一种命名空间的模块对象的名称。</li>
-</ul>
-<blockquote>
-<p>export, exportN</p>
-</blockquote>
-<ul>
-<li>要导入的导出名称。</li>
-</ul>
-<blockquote>
-<p>alias, aliasN</p>
-</blockquote>
-<ul>
-<li>将引用指定的导入的名称。</li>
-</ul>
-<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">Promise</a></h2><h3 id="Promise-对象"><a href="#Promise-对象" class="headerlink" title="Promise 对象"></a><a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">Promise 对象</a></h3><ul>
-<li>Promise 的含义</li>
-<li>基本用法</li>
-<li>Promise.prototype.then()</li>
-<li>Promise.prototype.catch()</li>
-<li>Promise.prototype.finally()</li>
-<li>Promise.all()</li>
-<li>Promise.race()</li>
-<li>Promise.resolve()</li>
-<li>Promise.reject()</li>
-<li>应用</li>
-<li>Promise.try()</li>
-</ul>
-<h2 id="Sass-Less-PostCSS"><a href="#Sass-Less-PostCSS" class="headerlink" title="Sass/Less/PostCSS"></a>Sass/Less/PostCSS</h2><h3 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a><a href="https://www.sass.hk" target="_blank" rel="noopener">Sass</a></h3><p>世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言！</p>
-<h3 id="Less"><a href="#Less" class="headerlink" title="Less"></a><a href="http://www.bootcss.com/p/lesscss/" target="_blank" rel="noopener">Less</a></h3><p>一种 动态 样式 语言.<br>LESS 将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 (支持 IE 6+, Webkit, Firefox)，也可以借助 Node.js 或者 Rhino 在服务端运行。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2192,7 +2138,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">67</span>
+                    <span class="site-state-item-count">68</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2217,7 +2163,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
