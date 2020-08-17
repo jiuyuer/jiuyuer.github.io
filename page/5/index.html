@@ -327,6 +327,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/slag/jquery-bootstrap-management-platform/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="吃馒头也开心">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/slag/jquery-bootstrap-management-platform/" itemprop="url">
+                  Jquery+Bootstrap构建传统后台管理系统
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-10 16:43:34" itemprop="dateCreated datePublished" datetime="2017-09-10T16:43:34+08:00">2017-09-10</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>现在流行的是前后端分离，MV*模式，我作为一个相对传统行业的老菜鸟来说说最近手上的一个后台管理系统项目的前端工作，欢迎提各种意见。</p>
+<h3 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h3><ul>
+<li>传统后台管理系统，面向的是企业级客户，兼容 IE8+等主流浏览器，所以对界面友好程度相对来说并不是太大，你懂得</li>
+</ul>
+<h3 id="前端框架-类库"><a href="#前端框架-类库" class="headerlink" title="前端框架(类库)"></a>前端框架(类库)</h3><ul>
+<li>Jquery+Bootstrap+Layer+zTree+Validform</li>
+</ul>
+<p>谈框架这种高大上的东西，我更想用类库来表达(恩，因为我觉得自己对框架这个概念的认识还很浅)，没错正如标题所言，由 jq+bootstrap 构建，再新增一个皮肤包，根据 UI 出的视觉稿进行编码，就将其称为个性化，换肤功能吧。</p>
+<h3 id="公共-CSS"><a href="#公共-CSS" class="headerlink" title="公共 CSS"></a>公共 CSS</h3><p>在 css 公共调用上，我又添加了一些简单字体大小，间距等等</p>
+<h4 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pos-r</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pos-a</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pos-f</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="文字溢出省略号"><a href="#文字溢出省略号" class="headerlink" title="文字溢出省略号"></a>文字溢出省略号</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.single-overflow</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.text-overflow</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/slag/jquery-bootstrap-management-platform/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/travel/big-northwest-pleasure/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1807,179 +1975,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/tutorial/the-photography-foundation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2013/tutorial/the-photography-foundation/" itemprop="url">
-                  摄影基础知识
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2013-06-06 20:03:18" itemprop="dateCreated datePublished" datetime="2013-06-06T20:03:18+08:00">2013-06-06</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一、光圈快门及其相互关系"><a href="#一、光圈快门及其相互关系" class="headerlink" title="一、光圈快门及其相互关系"></a>一、光圈快门及其相互关系</h1><p>光圈是相机镜头中的可以改变中间孔的大小的机械装置，快门是控制曝光时间长短的装置（机械或电子），二者结合，共同控制曝光量。</p>
-<p>举例来说，光线好比水流，镜头相当于一个可以控制水流方向和流量有水闸的的洞。光圈是洞的大小，快门是开闸的时间。</p>
-<p>开闸时间一定时，洞越小，流入的水量就越少，反之就越多。当快门速度一定时，光圈合适（例如 f5.6)，曝光正常，光圈太大(例如 f2.8)，曝光过度，照片（冲洗后的正片，不是底片）就白花花一片，没有层次，甚至白纸一张；光圈太小(例如 f11)，曝光不足，照片黑糊糊的，损失低光部位层次甚至没有影像。</p>
-<p>洞的大小一定时，开闸时间越长，流入的水量就越多，反之就越少。故当光圈一定时，快门速度合适(例如 1/250 秒)，曝光正常，快门越满(例如 1/60 秒)，曝光时间越长，曝光过度，快门速度越快(例如 1/1000 秒)，曝光不足。</p>
-<p>需要注意的时，虽然光圈和快门都能控制曝光量，其作用并不是等价的。光圈越小，光的走向越集中，到达胶片（或 CCD)成像时，越容易清晰成像，（当然，光圈过小时，会出现衍射，反而模糊）景深越大，反之越小。所以，当需要精确控制景深时，可以先确定光圈大小，再决定快门速度。当拍摄运动的物体时，如果快门开启时间太长，运动的物体在底片（或 CCD)的不同部位成像,拍出来的照片当然不清晰，反之，当快门速度很快时，动体在胶片上的成像还没有明显移动，曝光过程已经完成，照片就清晰，也就是把动体凝固在了画面上，所以当拍摄动体时，可选择尽量快的快门速度，然后调节光圈，正确曝光。当然，如果你想让动体在照片上留下运动轨迹，增强动感，可以选择比较慢的快门速度。</p>
-<p>尤其重要的是闪光摄影，恰当选择快门和光圈，可以很好地控制闪光和其它光线的光比。由于现在广泛使用的电子闪光灯的闪光时间非常短，只有大约万分之一秒，所以，当快门速度与之同步(所谓同步，就是使闪光的时间落在快门完全开启后，关闭前的时间段内,否则，闪光时快门还没有完全打开，或已在关闭，闪光就没有意义了，甚至在底片的一部分上曝光，拍摄失败)以后，再延长曝光时间也没有效果了。所以，闪光灯的作用效果要靠光圈来控制，连续环境光（如夜景中的其它灯光）的作用要靠快门来控制，恰当选择曝光组合，可以创造完美的艺术效果。</p>
-<h1 id="二、给初级拍摄者的十条好建议"><a href="#二、给初级拍摄者的十条好建议" class="headerlink" title="二、给初级拍摄者的十条好建议"></a>二、给初级拍摄者的十条好建议</h1><ol>
-<li><p>在按下快门前，检查一下在被摄体后面，是否有一些东西影响被摄体的―头部‖（好像使它们伸长了）。树叉通常是始作俑者。看看两幅图像的比较，是不是这个道理呢？</p>
-</li>
-<li><p>墙壁等类似物体可以把闪光灯的光线反射到被摄体上。如果没有这样的物体，最好不要使用闪光灯。否则，拍出来的照片会很黑。典型的例子是在音乐会上，很多闪光的效果出不来，除非你是在舞台的边缘。</p>
-</li>
-<li><p>确定相机是否是平行或垂直于地面的。否则照片的看上去就是歪斜的，这是一个很难原谅的问题。</p>
-</li>
-<li><p>使主体与背景在影调或色调上有适当的差异，形成鲜明的对比。这可以通过调整光圈来实现。光圈越大，背景就越模糊，这可突出主体。当然，我们要根据实际情况来调节。</p>
-</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/tutorial/the-photography-foundation/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2031,7 +2026,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">69</span>
+                    <span class="site-state-item-count">70</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2243,7 +2238,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
