@@ -327,6 +327,190 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/encyclopedia/training-documents/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="吃馒头也开心">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/encyclopedia/training-documents/" itemprop="url">
+                  培训文档（基于Vue2.0的项目开发）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-18 19:01:31" itemprop="dateCreated datePublished" datetime="2018-06-18T19:01:31+08:00">2018-06-18</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>注：<a href="https://cn.vuejs.org" target="_blank" rel="noopener">Vue2.0 中文文档</a> ，如果对自己英文有信心，也可以直接阅读 <a href="https://vuejs.org" target="_blank" rel="noopener">英文文档</a>。</p>
+<h2 id="起步：从了解-Vue-开始"><a href="#起步：从了解-Vue-开始" class="headerlink" title="起步：从了解 Vue 开始"></a>起步：从了解 Vue 开始</h2><ol>
+<li><p>扎实的 JavaScript / HTML / CSS 基本功。这是前置条件。</p>
+</li>
+<li><p>通读官方教程 (guide) 的基础篇。不要用任何构建工具，就只用最简单的 &lt;script&gt;，把教程里的例子模仿一遍，理解用法。<strong>不推荐上来就直接用 vue-cli 构建项目，尤其是如果没有 Node/Webpack 基础。</strong></p>
+</li>
+<li><p>照着官网上的示例，自己想一些类似的例子，模仿着实现来练手，加深理解。</p>
+</li>
+<li><p>阅读官方教程进阶篇的前半部分，到『自定义指令 (Custom Directive) 』为止。着重理解 Vue 的响应式机制和组件生命周期。『渲染函数（Render Function)』如果理解吃力可以先跳过。</p>
+</li>
+<li><p>阅读教程里关于路由和状态管理的章节，然后根据需要学习 vue-router 和 vuex。同样的，先不要管构建工具，以跟着文档里的例子理解用法为主。</p>
+</li>
+<li><p>走完基础文档后，如果你对于基于 Node 的前端工程化不熟悉，就需要补课了。下面这些严格来说并不是 Vue 本身的内容，也不涵盖所有的前端工程化知识，但对于大型的 Vue 工程是前置条件，也是合格的『前端工程师』应当具备的知识。</p>
+</li>
+</ol>
+<h2 id="前端生态-工程化"><a href="#前端生态-工程化" class="headerlink" title="前端生态/工程化"></a>前端生态/工程化</h2><ol>
+<li><p>了解 JavaScript 背后的规范，ECMAScript 的历史和目前的规范制定方式。学习 ES2015/16 的新特性，理解 ES2015 modules，适当关注<a href="https://github.com/tc39/proposals" target="_blank" rel="noopener">还未成为标准的提案</a>。</p>
+</li>
+<li><p>学习命令行的使用。建议用 Mac。</p>
+</li>
+<li><p>学习 Node.js 基础。<strong>建议使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> 这样的工具来管理机器上的 Node 版本，并且将 npm 的 registry 注册表配置为<a href="https://npm.taobao.org" target="_blank" rel="noopener">淘宝的镜像源</a>。</strong>至少要了解 npm 的常用命令，npm scripts 如何使用，语义化版本号规则，CommonJS 模块规范（了解它和 ES2015 Modules 的异同），Node 包的解析规则，以及 Node 的常用 API。应当做到可以自己写一些基本的命令行程序。注意最新版本的 Node (6+) 已经支持绝大部分 ES2015 的特性，可以借此巩固 ES2015。</p>
+</li>
+<li><p>了解如何使用 / 配置 Babel 来将 ES2015 编译到 ES5 用于浏览器环境。</p>
+</li>
+<li><p>学习 Webpack。Webpack 是一个极其强大同时也复杂的工具，作为起步，理解它的『一切皆模块』的思想，并基本了解其常用配置选项和 loader 的概念/使用方法即可，比如如何搭配 Webpack 使用 Babel。学习 Webpack 的一个挑战在于其本身文档的混乱，建议多搜索搜索，应该还是有质量不错的第三方教程的。英文好的建议阅读 <a href="https://webpack.js.org/guides/getting-started/" target="_blank" rel="noopener">Webpack 2.0 的文档</a>。</p>
+</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/encyclopedia/training-documents/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/how-to-learn-vue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1925,166 +2109,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/diary/to-static-and-wonderful/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/diary/to-static-and-wonderful/" itemprop="url">
-                  不向静中参妙理，纵然颖悟也虚浮
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-09-18 14:28:49" itemprop="dateCreated datePublished" datetime="2017-09-18T14:28:49+08:00">2017-09-18</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>围棋界著名的一句诗：弗思而应诚多败，信手频挥更鲜谋，不向静中参妙理，纵然颖悟也虚浮。</p>
-<p>意思大概是平时不去打好基本功，纵然在对弈之时下出妙子也无非是偶然而已，可理解为须寂寞清静才能达到深远的境界。</p>
-<p>这句话用我的白话文来说就是，不要心浮气躁，必须得脚踏实地，即使你想建造一座宏伟的高层建筑，那也必须要把根基打结实才行。就像大学期末考试一样，你考 60 分，也许只是最后两周临时抱佛脚的功劳，但是，真正这门课你的掌握度也许只有 20%，甚至都还不到。到了社会，当你面试的时候(尤其是技术相关)，也许这 60 分的能力你能骗过小部分人，但是，一个对知识体系非常清晰，沉淀很深的面试官而言，你只不过是一只三脚猫而已。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/diary/to-static-and-wonderful/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2136,7 +2160,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">72</span>
+                    <span class="site-state-item-count">73</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2266,7 +2290,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">46</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
