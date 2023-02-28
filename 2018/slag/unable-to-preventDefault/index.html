@@ -79,7 +79,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -104,18 +104,20 @@
 
 
 
-  <meta name="description" content="最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示： 1[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/50935660">
-<meta name="keywords" content="JavaScript,FastClick,移动端">
+  <meta name="description" content="最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示： 1[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https:&#x2F;&#x2F;www.chromestatus.com&#x2F;features&#x2F;50935660">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Chrome警告： Unable to preventDefault inside passive event listener 的解决方案">
 <meta property="og:url" content="http://yoursite.com/2018/slag/unable-to-preventDefault/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
-<meta property="og:description" content="最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示： 1[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/50935660">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-16T02:33:11.399Z">
+<meta property="og:description" content="最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示： 1[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https:&#x2F;&#x2F;www.chromestatus.com&#x2F;features&#x2F;50935660">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-06-22T02:53:26.000Z">
+<meta property="article:modified_time" content="2018-07-16T02:33:11.399Z">
+<meta property="article:author" content="Mi Tu">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="FastClick">
+<meta property="article:tag" content="移动端">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Chrome警告： Unable to preventDefault inside passive event listener 的解决方案">
-<meta name="twitter:description" content="最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示： 1[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/50935660">
 
 
 
@@ -170,7 +172,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -388,7 +390,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -424,8 +426,9 @@
       
         <p>最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/5093566007214080</span><br></pre></td></tr></table></figure>
+
 <p>首先，之所以报错是因为引入了 FastClick（为了解决 300ms 的 click 延迟）</p>
-<p>于是 Google 了一番，找到这篇文章，有了详细解释<br><a href="https://developers.google.cn/web/updates/2017/01/scrolling-intervention" target="_blank" rel="noopener">https://developers.google.cn/web/updates/2017/01/scrolling-intervention</a></p>
+<p>于是 Google 了一番，找到这篇文章，有了详细解释<br><a target="_blank" rel="noopener" href="https://developers.google.cn/web/updates/2017/01/scrolling-intervention">https://developers.google.cn/web/updates/2017/01/scrolling-intervention</a></p>
 <p>简而言之：</p>
 <blockquote>
 <p>由于浏览器必须要在执行事件处理函数之后，才能知道有没有掉用过 preventDefault() ，这就导致了浏览器不能及时响应滚动，略有延迟。</p>
@@ -434,34 +437,37 @@
 <p>所以为了让页面滚动的效果如丝般顺滑，从 chrome56 开始，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。浏览器忽略 preventDefault() 就可以第一时间滚动了。</p>
 </blockquote>
 <p>举例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wnidow.addEventListener(<span class="string">'touchmove'</span>, func) 效果和下面一句一样</span><br><span class="line">wnidow.addEventListener(<span class="string">'touchmove'</span>, func, &#123; <span class="attr">passive</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wnidow.<span class="title function_">addEventListener</span>(<span class="string">&#x27;touchmove&#x27;</span>, func) 效果和下面一句一样</span><br><span class="line">wnidow.<span class="title function_">addEventListener</span>(<span class="string">&#x27;touchmove&#x27;</span>, func, &#123; <span class="attr">passive</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure>
+
 <p>这就导致了一个问题：</p>
 <blockquote>
 <p>如果在以上这 3 个元素的 touchstart 和 touchmove 事件处理函数中调用 e.preventDefault() ，会被浏览器忽略掉，并不会阻止默认行为。</p>
 </blockquote>
 <p>测试：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  margin: <span class="number">0</span>;</span><br><span class="line">  height: <span class="number">2000</span>px;</span><br><span class="line">  background: linear-gradient(to bottom, red, green);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在 chrome56 中，照样滚动，而且控制台会有提示，blablabla</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'touchmove'</span>, e =&gt; e.preventDefault())</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  <span class="attr">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attr">height</span>: 2000px;</span><br><span class="line">  <span class="attr">background</span>: linear-<span class="title function_">gradient</span>(to bottom, red, green);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在 chrome56 中，照样滚动，而且控制台会有提示，blablabla</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;touchmove&#x27;</span>, <span class="function"><span class="params">e</span> =&gt;</span> e.<span class="title function_">preventDefault</span>())</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <p>那么如何解决这个问题呢？不让控制台提示，而且 preventDefault() 有效果呢？</p>
 <p>两个方案：</p>
 <ol>
 <li><p>注册处理函数时，用如下方式，明确声明为不是被动的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'touchmove'</span>, func, &#123; <span class="attr">passive</span>: <span class="literal">false</span> &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;touchmove&#x27;</span>, func, &#123; <span class="attr">passive</span>: <span class="literal">false</span> &#125;)</span><br></pre></td></tr></table></figure>
+
 <p>在 touch 的事件监听方法上绑定第三个参数{ passive: false }，通过传递 passive 为 false 来明确告诉浏览器：事件处理程序调用 preventDefault 来阻止默认滑动行为。</p>
 </li>
-<li><p>应用 CSS 属性 touch-action: none; 这样任何触摸事件都不会产生默认行为，但是 touch 事件照样触发。<br>touch-action 还有很多选项，详细请参考 <a href="https://w3c.github.io/pointerevents/#the-touch-action-css-property" target="_blank" rel="noopener">touch-action</a>;</p>
+<li><p>应用 CSS 属性 touch-action: none; 这样任何触摸事件都不会产生默认行为，但是 touch 事件照样触发。<br>touch-action 还有很多选项，详细请参考 <a target="_blank" rel="noopener" href="https://w3c.github.io/pointerevents/#the-touch-action-css-property">touch-action</a>;</p>
 </li>
 </ol>
 <p><strong>Passive event listeners</strong></p>
-<p>2016 年 Google I/O 上提出的概念，目的是用来提升页面滑动的流畅度。</p>
+<p>2016 年 Google I&#x2F;O 上提出的概念，目的是用来提升页面滑动的流畅度。</p>
 <blockquote>
 <p>For instance, in Chrome for Android 80% of the touch events that block scrolling never actually prevent it. 10% of these events add more than 100ms of delay to the start of scrolling, and a catastrophic delay of at least 500ms occurs in 1% of scrolls.</p>
 </blockquote>
 <p>在 Android 版 Chrome 浏览器的 touch 事件监听器的页面中，80% 的页面都不会调用 preventDefault 函数来阻止事件的默认行为。在滑动流畅度上，有 10% 的页面增加至少 100ms 的延迟，1% 的页面甚至增加 500ms 以上的延迟。</p>
 <p>由于浏览器无法预先知道一个事件处理函数中会不会调用 preventDefault()，它需要等到事件处理函数执行完后，才能去执行默认行为，然而事件处理函数执行是要耗时的，这样一来就会导致页面卡顿，也就是说，当浏览器等待执行事件的默认行为时，大部分情况是白等了。</p>
 <p>如果 Web 开发者能够提前告诉浏览器：“我不调用 preventDefault 函数来阻止事件事件行为”，那么浏览器就能快速生成事件，从而提升页面性能，Passive event listeners 的提出就解决了这样的问题。</p>
-<p><br></p>
-
+<br/>
       
     </div>
 
@@ -485,7 +491,7 @@
           
             <a href="/tags/FastClick/" rel="tag"># FastClick</a>
           
-            <a href="/tags/移动端/" rel="tag"># 移动端</a>
+            <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag"># 移动端</a>
           
         </div>
       
@@ -573,9 +579,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -773,7 +779,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2023</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

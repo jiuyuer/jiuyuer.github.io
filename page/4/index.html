@@ -79,7 +79,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -110,10 +110,9 @@
 <meta property="og:url" content="http://yoursite.com/page/4/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="吃馒头也开心">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Mi Tu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MiTu-小书童">
-<meta name="twitter:description" content="吃馒头也开心">
 
 
 
@@ -168,7 +167,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -327,6 +326,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/maximum-call-stack-size-exceeded-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="吃馒头也开心">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/slag/maximum-call-stack-size-exceeded-error/" itemprop="url">
+                  Vue.js “Maximum call stack size exceeded” error.
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-20 10:04:46" itemprop="dateCreated datePublished" datetime="2018-06-20T10:04:46+08:00">2018-06-20</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在使用 Vuejs 开发 SPA 页面时，我创建了一个父组件以及子组件，然后通过父组件去调用子组件时，报如下错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.js “Maximum call stack size exceeded” error.</span><br></pre></td></tr></table></figure>
+
+<p>示例代码：</p>
+<blockquote>
+<p><strong>Panel.vue</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;panel&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;shelf in shelfs&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">panel-body</span> <span class="attr">:shelf</span>=<span class="string">&quot;shelf&quot;</span> <span class="attr">:selected.sync</span>=<span class="string">&quot;selected&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">panel-body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">import</span> <span class="title class_">PanelBody</span> <span class="keyword">from</span> <span class="string">&#x27;../components/PanelBody&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">name</span>: <span class="string">&#x27;panel-body&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">components</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="string">&#x27;panel-body&#x27;</span>: <span class="title class_">PanelBody</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">data</span>: <span class="function">() =&gt;</span> (&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">shelfs</span>: [&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">name</span>: <span class="string">&#x27;shelf 1&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">books</span>: [&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">title</span>: <span class="string">&#x27;Lorem ipum&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">title</span>: <span class="string">&#x27;Dolor sit amet&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">name</span>: <span class="string">&#x27;shelf 2&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">books</span>: [&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">title</span>: <span class="string">&#x27;Ipsum lorem&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">title</span>: <span class="string">&#x27;Amet sit dolor&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">selected</span>: &#123;&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>PanelBody.vue</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;panel-body&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">v-on:click.prevent.stop</span>=<span class="string">&quot;select&quot;</span>&gt;</span>&#123;&#123; shelf.name &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">v-show</span>=<span class="string">&quot;isSelected&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;book in shelf.books&quot;</span>&gt;</span>&#123;&#123; book.title &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">name</span>: <span class="string">&#x27;panel-body&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">props</span>: [<span class="string">&#x27;shelf&#x27;</span>, <span class="string">&#x27;selected&#x27;</span>],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">computed</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">isSelected</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">selected</span> === <span class="variable language_">this</span>.<span class="property">shelf</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">methods</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">select</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">this</span>.<span class="property">selected</span> = <span class="variable language_">this</span>.<span class="property">shelf</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>错误原因：</p>
+<blockquote>
+<p>Maximum call stack size exceeded</p>
+</blockquote>
+<p>错误出处：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">PanelBody</span> <span class="keyword">from</span> <span class="string">&#x27;../components/PanelBody&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;panel-body&#x27;</span>,</span><br><span class="line">  <span class="attr">components</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;panel-body&#x27;</span>: <span class="title class_">PanelBody</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>错误解决：<br>你定义你的父组件名称:“panel-body”。<strong>只要将名称改成:“panel”或者其他不与子组件引用名一样</strong>，你就能删除你的循环引用，从而不再报错。<br><br></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/encyclopedia/training-documents/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -391,7 +565,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
 
                 
                 
@@ -426,11 +600,11 @@
 
       
         
-          <p>注：<a href="https://cn.vuejs.org" target="_blank" rel="noopener">Vue2.0 中文文档</a> ，如果对自己英文有信心，也可以直接阅读 <a href="https://vuejs.org" target="_blank" rel="noopener">英文文档</a>。</p>
+          <p>注：<a target="_blank" rel="noopener" href="https://cn.vuejs.org/">Vue2.0 中文文档</a> ，如果对自己英文有信心，也可以直接阅读 <a target="_blank" rel="noopener" href="https://vuejs.org/">英文文档</a>。</p>
 <h2 id="起步：从了解-Vue-开始"><a href="#起步：从了解-Vue-开始" class="headerlink" title="起步：从了解 Vue 开始"></a>起步：从了解 Vue 开始</h2><ol>
-<li><p>扎实的 JavaScript / HTML / CSS 基本功。这是前置条件。</p>
+<li><p>扎实的 JavaScript &#x2F; HTML &#x2F; CSS 基本功。这是前置条件。</p>
 </li>
-<li><p>通读官方教程 (guide) 的基础篇。不要用任何构建工具，就只用最简单的 &lt;script&gt;，把教程里的例子模仿一遍，理解用法。<strong>不推荐上来就直接用 vue-cli 构建项目，尤其是如果没有 Node/Webpack 基础。</strong></p>
+<li><p>通读官方教程 (guide) 的基础篇。不要用任何构建工具，就只用最简单的 &lt;script&gt;，把教程里的例子模仿一遍，理解用法。<strong>不推荐上来就直接用 vue-cli 构建项目，尤其是如果没有 Node&#x2F;Webpack 基础。</strong></p>
 </li>
 <li><p>照着官网上的示例，自己想一些类似的例子，模仿着实现来练手，加深理解。</p>
 </li>
@@ -441,16 +615,16 @@
 <li><p>走完基础文档后，如果你对于基于 Node 的前端工程化不熟悉，就需要补课了。下面这些严格来说并不是 Vue 本身的内容，也不涵盖所有的前端工程化知识，但对于大型的 Vue 工程是前置条件，也是合格的『前端工程师』应当具备的知识。</p>
 </li>
 </ol>
-<h2 id="前端生态-工程化"><a href="#前端生态-工程化" class="headerlink" title="前端生态/工程化"></a>前端生态/工程化</h2><ol>
-<li><p>了解 JavaScript 背后的规范，ECMAScript 的历史和目前的规范制定方式。学习 ES2015/16 的新特性，理解 ES2015 modules，适当关注<a href="https://github.com/tc39/proposals" target="_blank" rel="noopener">还未成为标准的提案</a>。</p>
+<h2 id="前端生态-x2F-工程化"><a href="#前端生态-x2F-工程化" class="headerlink" title="前端生态&#x2F;工程化"></a>前端生态&#x2F;工程化</h2><ol>
+<li><p>了解 JavaScript 背后的规范，ECMAScript 的历史和目前的规范制定方式。学习 ES2015&#x2F;16 的新特性，理解 ES2015 modules，适当关注<a target="_blank" rel="noopener" href="https://github.com/tc39/proposals">还未成为标准的提案</a>。</p>
 </li>
 <li><p>学习命令行的使用。建议用 Mac。</p>
 </li>
-<li><p>学习 Node.js 基础。<strong>建议使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> 这样的工具来管理机器上的 Node 版本，并且将 npm 的 registry 注册表配置为<a href="https://npm.taobao.org" target="_blank" rel="noopener">淘宝的镜像源</a>。</strong>至少要了解 npm 的常用命令，npm scripts 如何使用，语义化版本号规则，CommonJS 模块规范（了解它和 ES2015 Modules 的异同），Node 包的解析规则，以及 Node 的常用 API。应当做到可以自己写一些基本的命令行程序。注意最新版本的 Node (6+) 已经支持绝大部分 ES2015 的特性，可以借此巩固 ES2015。</p>
+<li><p>学习 Node.js 基础。<strong>建议使用 <a target="_blank" rel="noopener" href="https://github.com/creationix/nvm">nvm</a> 这样的工具来管理机器上的 Node 版本，并且将 npm 的 registry 注册表配置为<a target="_blank" rel="noopener" href="https://npm.taobao.org/">淘宝的镜像源</a>。</strong>至少要了解 npm 的常用命令，npm scripts 如何使用，语义化版本号规则，CommonJS 模块规范（了解它和 ES2015 Modules 的异同），Node 包的解析规则，以及 Node 的常用 API。应当做到可以自己写一些基本的命令行程序。注意最新版本的 Node (6+) 已经支持绝大部分 ES2015 的特性，可以借此巩固 ES2015。</p>
 </li>
-<li><p>了解如何使用 / 配置 Babel 来将 ES2015 编译到 ES5 用于浏览器环境。</p>
+<li><p>了解如何使用 &#x2F; 配置 Babel 来将 ES2015 编译到 ES5 用于浏览器环境。</p>
 </li>
-<li><p>学习 Webpack。Webpack 是一个极其强大同时也复杂的工具，作为起步，理解它的『一切皆模块』的思想，并基本了解其常用配置选项和 loader 的概念/使用方法即可，比如如何搭配 Webpack 使用 Babel。学习 Webpack 的一个挑战在于其本身文档的混乱，建议多搜索搜索，应该还是有质量不错的第三方教程的。英文好的建议阅读 <a href="https://webpack.js.org/guides/getting-started/" target="_blank" rel="noopener">Webpack 2.0 的文档</a>。</p>
+<li><p>学习 Webpack。Webpack 是一个极其强大同时也复杂的工具，作为起步，理解它的『一切皆模块』的思想，并基本了解其常用配置选项和 loader 的概念&#x2F;使用方法即可，比如如何搭配 Webpack 使用 Babel。学习 Webpack 的一个挑战在于其本身文档的混乱，建议多搜索搜索，应该还是有质量不错的第三方教程的。英文好的建议阅读 <a target="_blank" rel="noopener" href="https://webpack.js.org/guides/getting-started/">Webpack 2.0 的文档</a>。</p>
 </li>
 </ol>
           <!--noindex-->
@@ -575,7 +749,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
 
                 
                 
@@ -612,12 +786,12 @@
         
           
             <blockquote>
-<p>注：2.0 已经有 <a href="https://cn.vuejs.org" target="_blank" rel="noopener">中文文档</a> 。如果对自己英文有信心，也可以直接阅读 <a href="https://vuejs.org" target="_blank" rel="noopener">英文文档</a>。<br>此指南仅供参考，请根据自身实际情况灵活调整。<br>欢迎转载，请注明出处。</p>
+<p>注：2.0 已经有 <a target="_blank" rel="noopener" href="https://cn.vuejs.org/">中文文档</a> 。如果对自己英文有信心，也可以直接阅读 <a target="_blank" rel="noopener" href="https://vuejs.org/">英文文档</a>。<br>此指南仅供参考，请根据自身实际情况灵活调整。<br>欢迎转载，请注明出处。</p>
 </blockquote>
 <h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><ol>
-<li><p>扎实的 JavaScript / HTML / CSS 基本功。这是前置条件。</p>
+<li><p>扎实的 JavaScript &#x2F; HTML &#x2F; CSS 基本功。这是前置条件。</p>
 </li>
-<li><p>通读官方教程 (guide) 的基础篇。不要用任何构建工具，就只用最简单的 &lt;script&gt;，把教程里的例子模仿一遍，理解用法。<strong>不推荐上来就直接用 vue-cli 构建项目，尤其是如果没有 Node/Webpack 基础。</strong></p>
+<li><p>通读官方教程 (guide) 的基础篇。不要用任何构建工具，就只用最简单的 &lt;script&gt;，把教程里的例子模仿一遍，理解用法。<strong>不推荐上来就直接用 vue-cli 构建项目，尤其是如果没有 Node&#x2F;Webpack 基础。</strong></p>
 </li>
 <li><p>照着官网上的示例，自己想一些类似的例子，模仿着实现来练手，加深理解。</p>
 </li>
@@ -628,22 +802,22 @@
 <li><p>走完基础文档后，如果你对于基于 Node 的前端工程化不熟悉，就需要补课了。下面这些严格来说并不是 Vue 本身的内容，也不涵盖所有的前端工程化知识，但对于大型的 Vue 工程是前置条件，也是合格的『前端工程师』应当具备的知识。</p>
 </li>
 </ol>
-<h2 id="前端生态-工程化"><a href="#前端生态-工程化" class="headerlink" title="前端生态/工程化"></a>前端生态/工程化</h2><ol>
-<li><p>了解 JavaScript 背后的规范，ECMAScript 的历史和目前的规范制定方式。学习 ES2015/16 的新特性，理解 ES2015 modules，适当关注<a href="https://github.com/tc39/proposals" target="_blank" rel="noopener">还未成为标准的提案</a>。</p>
+<h2 id="前端生态-x2F-工程化"><a href="#前端生态-x2F-工程化" class="headerlink" title="前端生态&#x2F;工程化"></a>前端生态&#x2F;工程化</h2><ol>
+<li><p>了解 JavaScript 背后的规范，ECMAScript 的历史和目前的规范制定方式。学习 ES2015&#x2F;16 的新特性，理解 ES2015 modules，适当关注<a target="_blank" rel="noopener" href="https://github.com/tc39/proposals">还未成为标准的提案</a>。</p>
 </li>
 <li><p>学习命令行的使用。建议用 Mac。</p>
 </li>
-<li><p>学习 Node.js 基础。<strong>建议使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> 这样的工具来管理机器上的 Node 版本，并且将 npm 的 registry 注册表配置为<a href="https://npm.taobao.org" target="_blank" rel="noopener">淘宝的镜像源</a>。</strong>至少要了解 npm 的常用命令，npm scripts 如何使用，语义化版本号规则，CommonJS 模块规范（了解它和 ES2015 Modules 的异同），Node 包的解析规则，以及 Node 的常用 API。应当做到可以自己写一些基本的命令行程序。注意最新版本的 Node (6+) 已经支持绝大部分 ES2015 的特性，可以借此巩固 ES2015。</p>
+<li><p>学习 Node.js 基础。<strong>建议使用 <a target="_blank" rel="noopener" href="https://github.com/creationix/nvm">nvm</a> 这样的工具来管理机器上的 Node 版本，并且将 npm 的 registry 注册表配置为<a target="_blank" rel="noopener" href="https://npm.taobao.org/">淘宝的镜像源</a>。</strong>至少要了解 npm 的常用命令，npm scripts 如何使用，语义化版本号规则，CommonJS 模块规范（了解它和 ES2015 Modules 的异同），Node 包的解析规则，以及 Node 的常用 API。应当做到可以自己写一些基本的命令行程序。注意最新版本的 Node (6+) 已经支持绝大部分 ES2015 的特性，可以借此巩固 ES2015。</p>
 </li>
-<li><p>了解如何使用 / 配置 Babel 来将 ES2015 编译到 ES5 用于浏览器环境。</p>
+<li><p>了解如何使用 &#x2F; 配置 Babel 来将 ES2015 编译到 ES5 用于浏览器环境。</p>
 </li>
-<li><p>学习 Webpack。Webpack 是一个极其强大同时也复杂的工具，作为起步，理解它的『一切皆模块』的思想，并基本了解其常用配置选项和 loader 的概念/使用方法即可，比如如何搭配 Webpack 使用 Babel。学习 Webpack 的一个挑战在于其本身文档的混乱，建议多搜索搜索，应该还是有质量不错的第三方教程的。英文好的建议阅读 <a href="https://webpack.js.org/guides/getting-started/" target="_blank" rel="noopener">Webpack 2.0 的文档</a>。</p>
+<li><p>学习 Webpack。Webpack 是一个极其强大同时也复杂的工具，作为起步，理解它的『一切皆模块』的思想，并基本了解其常用配置选项和 loader 的概念&#x2F;使用方法即可，比如如何搭配 Webpack 使用 Babel。学习 Webpack 的一个挑战在于其本身文档的混乱，建议多搜索搜索，应该还是有质量不错的第三方教程的。英文好的建议阅读 <a target="_blank" rel="noopener" href="https://webpack.js.org/guides/getting-started/">Webpack 2.0 的文档</a>。</p>
 </li>
 </ol>
 <h2 id="Vue-进阶"><a href="#Vue-进阶" class="headerlink" title="Vue 进阶"></a>Vue 进阶</h2><ol>
-<li><p>有了 Node 和 Webpack 的基础，可以通过 vue-cli 来搭建基于 Webpack ，并且支持单文件组件的项目了。建议用 webpack-simple 这个模板开始，并阅读官方教程进阶篇剩余的内容以及 <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader 的文档</a>，了解一些进阶配置。有兴趣的可以自己亲手从零开始搭一个项目加深理解。</p>
+<li><p>有了 Node 和 Webpack 的基础，可以通过 vue-cli 来搭建基于 Webpack ，并且支持单文件组件的项目了。建议用 webpack-simple 这个模板开始，并阅读官方教程进阶篇剩余的内容以及 <a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/">vue-loader 的文档</a>，了解一些进阶配置。有兴趣的可以自己亲手从零开始搭一个项目加深理解。</p>
 </li>
-<li><p>根据 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="noopener">例子</a> 尝试在 Webpack 模板基础上整合 vue-router 和 vuex</p>
+<li><p>根据 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-hackernews-2.0">例子</a> 尝试在 Webpack 模板基础上整合 vue-router 和 vuex</p>
 </li>
 <li><p>深入理解 Virtual DOM 和『渲染函数 (Render Functions)』这一章节（可选择性使用 JSX)，理解模板和渲染函数之间的对应关系，了解其使用方法和适用场景。</p>
 </li>
@@ -651,15 +825,13 @@
 </li>
 <li><p>阅读开源的 Vue 应用、组件、插件源码，自己尝试编写开源的 Vue 组件、插件。</p>
 </li>
-<li><p>参考 <a href="https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md#development-setup" target="_blank" rel="noopener">贡献指南</a> 阅读 Vue 的源码，理解内部实现细节。（需要了解 <a href="https://flow.org" target="_blank" rel="noopener">Flow</a>）</p>
+<li><p>参考 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md#development-setup">贡献指南</a> 阅读 Vue 的源码，理解内部实现细节。（需要了解 <a target="_blank" rel="noopener" href="https://flow.org/">Flow</a>）</p>
 </li>
 <li><p>参与 Vue GitHub issue 的定位 -&gt; 贡献 PR -&gt; 加入核心团队 -&gt; 升任 CTO -&gt; 迎娶白富美…（误</p>
 </li>
 </ol>
-<p><br></p>
-<blockquote>
-<p>转自：<a href="https://zhuanlan.zhihu.com/p/23134551" target="_blank" rel="noopener">尤大大的新手向：Vue 2.0 的建议学习顺序</a></p>
-</blockquote>
+<br>
+> 转自：[尤大大的新手向：Vue 2.0 的建议学习顺序](https://zhuanlan.zhihu.com/p/23134551)
 
           
         
@@ -777,7 +949,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
 
                 
                 
@@ -814,30 +986,17 @@
         
           
             <ol>
-<li><p>通过命令 git init 把这个目录变成 git 可以管理的仓库（先进入项目文件夹）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用命令 git commit 告诉 Git，把文件提交到仓库。引号内为提交说明</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">'first commit'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关联到远程库 git remote add origin 你的远程库地址</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/cade8800/ionic-demo.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把本地库的内容推送到远程，使用 git push 命令，实际上是把当前分支 master 推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-</li>
+<li>通过命令 git init 把这个目录变成 git 可以管理的仓库（先进入项目文件夹）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
+<li>把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></li>
+<li>用命令 git commit 告诉 Git，把文件提交到仓库。引号内为提交说明<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li>关联到远程库 git remote add origin 你的远程库地址<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/cade8800/ionic-demo.git</span><br></pre></td></tr></table></figure></li>
+<li>获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure></li>
+<li>把本地库的内容推送到远程，使用 git push 命令，实际上是把当前分支 master 推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></li>
 </ol>
 <ul>
-<li>状态查询命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-</li>
+<li>状态查询命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><img src="/images/baike/git-project.png" alt=""><br><br></p>
+<p><img src="/images/baike/git-project.png"><br><br/></p>
 
           
         
@@ -955,7 +1114,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
 
                 
                 
@@ -999,16 +1158,19 @@
 <li>您的 Mac 在工作场所和家中连接到多种类型的网络服务（如 Wi-Fi 和以太网），但是，在工作场所，您希望您的 Mac 先尝试连接到以太网网络，而在家中，则希望先尝试连接到 Wi-Fi 网络。换言之，您希望针对每个位置设置不同的服务顺序。</li>
 <li>您的 Mac 无法连接到网络，并且您想要快速重设您的网络设置以用于测试，同时不丢失当前的网络设置。</li>
 </ul>
-<p>在上述每个示例中，“网络”偏好设置中的“位置”功能均可发挥作用。以下步骤适用于使用 <a href="https://support.apple.com/zh-cn/HT201260" target="_blank" rel="noopener">OS X v10.6 或更高版本的</a> Mac 电脑。</p>
+<p>在上述每个示例中，“网络”偏好设置中的“位置”功能均可发挥作用。以下步骤适用于使用 <a target="_blank" rel="noopener" href="https://support.apple.com/zh-cn/HT201260">OS X v10.6 或更高版本的</a> Mac 电脑。</p>
 <hr>
 <h2 id="如何创建新的网络位置"><a href="#如何创建新的网络位置" class="headerlink" title="如何创建新的网络位置"></a>如何创建新的网络位置</h2><ol>
-<li>选取苹果菜单 () &gt;“系统偏好设置”，然后点按“网络”。</li>
-<li><p>“位置”弹出式菜单中会显示您当前所选网络设置组的名称。默认位置名称为“自动”。从该菜单中选取“编辑位置”。<br><img src="/images/baike/macos-sierra-system-preferences-network-location-edit.png" alt=""></p>
+<li><p>选取苹果菜单 () &gt;“系统偏好设置”，然后点按“网络”。</p>
 </li>
-<li><p>此时，将打开一个位置对话框。点按位置列表下方的 “添加”按钮，然后为新位置键入一个名称，如“工作”或“家庭”或“移动”：<br><img src="/images/baike/macos-sierra-system-preferences-network-location-edit-2.png" alt=""></p>
+<li><p>“位置”弹出式菜单中会显示您当前所选网络设置组的名称。默认位置名称为“自动”。从该菜单中选取“编辑位置”。<br><img src="/images/baike/macos-sierra-system-preferences-network-location-edit.png"></p>
 </li>
-<li>点按“完成”。“位置”菜单现在应显示新位置的名称。点按“应用”后，您对网络设置所做的全部更改都将存储到该位置。您之前位置中的网络设置在您离开时会保留，因此您可以随时切换回来。</li>
-<li>点按“应用”以存储您的设置，并从之前的位置切换到新的位置。您的 Mac 会自动尝试为每种类型的网络确定正确的设置。如果您需要进一步调整设置，请记得再次点按“应用”。如果您的新设置不允许您连接到您的网络，请点按“向导”。</li>
+<li><p>此时，将打开一个位置对话框。点按位置列表下方的 “添加”按钮，然后为新位置键入一个名称，如“工作”或“家庭”或“移动”：<br><img src="/images/baike/macos-sierra-system-preferences-network-location-edit-2.png"></p>
+</li>
+<li><p>点按“完成”。“位置”菜单现在应显示新位置的名称。点按“应用”后，您对网络设置所做的全部更改都将存储到该位置。您之前位置中的网络设置在您离开时会保留，因此您可以随时切换回来。</p>
+</li>
+<li><p>点按“应用”以存储您的设置，并从之前的位置切换到新的位置。您的 Mac 会自动尝试为每种类型的网络确定正确的设置。如果您需要进一步调整设置，请记得再次点按“应用”。如果您的新设置不允许您连接到您的网络，请点按“向导”。</p>
+</li>
 </ol>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1132,7 +1294,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -1172,24 +1334,25 @@
 <p>因为 params 是添加到 url 的请求字符串中的，用于 get 请求。</p>
 <p>而 data 是添加到请求体(body)中的， 用于 post 请求。</p>
 <p>比如对于下面的 get 请求：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">  method: <span class="string">'get'</span>,</span><br><span class="line">  url: <span class="string">'https://onana.cn/openapi/api?info=20ff1803ff65429b8'</span>,</span><br><span class="line">  params: &#123;</span><br><span class="line">    info: <span class="string">'西安天气'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">axios</span>(&#123;</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;https://onana.cn/openapi/api?info=20ff1803ff65429b8&#x27;</span>,</span><br><span class="line">  <span class="attr">params</span>: &#123;</span><br><span class="line">    <span class="attr">info</span>: <span class="string">&#x27;西安天气&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <p>如果我们将 params 修改为 data，那么是不能请求成功的，因为 get 请求中不存在 data 这个选项。</p>
 <h4 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h4><blockquote>
 <p>HTTP 请求过程中</p>
 </blockquote>
 <ul>
-<li><p>GET 请求：表单参数以 name=value&amp;name1=value1 的形式附到 url 的后面</p>
+<li><p>GET 请求：表单参数以 name&#x3D;value&amp;name1&#x3D;value1 的形式附到 url 的后面</p>
 </li>
-<li><p>POST 请求：表单参数是在请求体中，也是 name=value&amp;name1=value1 的形式在请求体中。</p>
+<li><p>POST 请求：表单参数是在请求体中，也是 name&#x3D;value&amp;name1&#x3D;value1 的形式在请求体中。</p>
 </li>
-<li><p>POST 表单请求提交时，使用的 Content-Type 是 application/x-www-form-urlencoded，而使用原生 AJAX 的 POST 请求如果不指定请求头 RequestHeader，默认使用的 Content-Type 是 text/plain;charset=UTF-8。在 html 中 form 的 Content-type 默认值：Content-type：application/x-www-form-urlencoded。如果使用 ajax 请求，在请求头中出现 request payload 导致参数的方式改变了，那么解决办法就是：</p>
+<li><p>POST 表单请求提交时，使用的 Content-Type 是 application&#x2F;x-www-form-urlencoded，而使用原生 AJAX 的 POST 请求如果不指定请求头 RequestHeader，默认使用的 Content-Type 是 text&#x2F;plain;charset&#x3D;UTF-8。在 html 中 form 的 Content-type 默认值：Content-type：application&#x2F;x-www-form-urlencoded。如果使用 ajax 请求，在请求头中出现 request payload 导致参数的方式改变了，那么解决办法就是：</p>
 <blockquote>
-<p>headers: {‘Content-Type’:’application/x-www-form-urlencoded’}</p>
+<p>headers: {‘Content-Type’:’application&#x2F;x-www-form-urlencoded’}</p>
 </blockquote>
 </li>
 </ul>
 <p>这样，问题就可以解决。</p>
-<p><br></p>
+<br/>
 
           
         
@@ -1307,7 +1470,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -1348,21 +1511,31 @@
 <h3 id="相同点："><a href="#相同点：" class="headerlink" title="相同点："></a>相同点：</h3><p>let 和 const 命令声明的变量都只在它们所在的块级作用域中才有效。<br>如果区块中存在 let 和 const 命令，则这个区块对这些命令声明的变量从一开始就形成封闭作用域。</p>
 <h2 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h2><p>ES6 允许按照一定的模式，从数组和对象中提取值，对变量进行赋值，称为解构。</p>
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c,d] = [“aa”, “bb”, <span class="number">77</span>,<span class="number">88</span>];  <span class="comment">//数组结构</span></span><br><span class="line"><span class="keyword">let</span> [a,b,[c,d],e] =[“aa”,’bb’,[<span class="number">33</span>,<span class="number">44</span>],<span class="number">55</span>];  <span class="comment">//嵌套数组解构</span></span><br><span class="line"><span class="keyword">let</span> [a,b,,e] =[“aa”,’bb’,[<span class="number">33</span>,<span class="number">44</span>],<span class="number">55</span>]; <span class="comment">//空缺变量</span></span><br><span class="line"><span class="keyword">let</span> [a,b,,e,f] =[“aa”,’bb’,[<span class="number">33</span>,<span class="number">44</span>],<span class="number">55</span>]; <span class="comment">//多余变量</span></span><br><span class="line"><span class="keyword">let</span> [a,b,,e,f=’hello’] =[“aa”,’bb’,[<span class="number">33</span>,<span class="number">44</span>],<span class="number">55</span>]; <span class="comment">//默认值</span></span><br></pre></td></tr></table></figure>
-<h3 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">uid</span>: <span class="number">121</span>, <span class="attr">uname</span>: <span class="string">'张三'</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.uid = <span class="number">111</span>;</span><br><span class="line">obj.uname = <span class="string">'张三'</span>;</span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">uid</span>: id, <span class="attr">uname</span>: name &#125; = obj; <span class="comment">//顺序改变无影响</span></span><br><span class="line"><span class="built_in">console</span>.log(name); <span class="comment">//张三</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//小括号：</span></span><br><span class="line"><span class="keyword">let</span> uid, uname;</span><br><span class="line">(&#123; uid, uname &#125; = obj); <span class="comment">//必须有小括号，否则&#123;&#125;就会被解读为语句块</span></span><br><span class="line"><span class="built_in">console</span>.log(uname); <span class="comment">//张三</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//  PS: 可嵌套 ，可有默认值</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串解构"><a href="#字符串解构" class="headerlink" title="字符串解构"></a>字符串解构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c, d] = <span class="string">'倚天屠龙'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c, d);</span><br></pre></td></tr></table></figure>
-<h3 id="函数参数解构"><a href="#函数参数解构" class="headerlink" title="函数参数解构"></a>函数参数解构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">uid</span>: <span class="number">121</span>, <span class="attr">uname</span>: <span class="string">'张三'</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">analysis</span>(<span class="params">&#123; uid, uname &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(uid);</span><br><span class="line">  <span class="built_in">console</span>.log(uname);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//-------以下也正确</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">analysis</span>(<span class="params">&#123; uname &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(uname);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">analysis(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">//  PS: 参数中数组、字符串、默认值、缺位均支持 。</span></span><br></pre></td></tr></table></figure>
-<h2 id="数组操作-Array"><a href="#数组操作-Array" class="headerlink" title="数组操作 Array"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">数组操作 Array</a></h2><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p>方法对数组的每个元素执行一次提供的函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array1 = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"></span><br><span class="line">array1.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(element);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// expected output: "a"</span></span><br><span class="line"><span class="comment">// expected output: "b"</span></span><br><span class="line"><span class="comment">// expected output: "c"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">uid</span>: <span class="number">121</span>, <span class="attr">uname</span>: <span class="string">&#x27;张三&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">obj.<span class="property">uid</span> = <span class="number">111</span>;</span><br><span class="line">obj.<span class="property">uname</span> = <span class="string">&#x27;张三&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">uid</span>: id, <span class="attr">uname</span>: name &#125; = obj; <span class="comment">//顺序改变无影响</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name); <span class="comment">//张三</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//小括号：</span></span><br><span class="line"><span class="keyword">let</span> uid, uname;</span><br><span class="line">(&#123; uid, uname &#125; = obj); <span class="comment">//必须有小括号，否则&#123;&#125;就会被解读为语句块</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(uname); <span class="comment">//张三</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//  PS: 可嵌套 ，可有默认值</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串解构"><a href="#字符串解构" class="headerlink" title="字符串解构"></a>字符串解构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c, d] = <span class="string">&#x27;倚天屠龙&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a, b, c, d);</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数参数解构"><a href="#函数参数解构" class="headerlink" title="函数参数解构"></a>函数参数解构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">uid</span>: <span class="number">121</span>, <span class="attr">uname</span>: <span class="string">&#x27;张三&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">analysis</span>(<span class="params">&#123; uid, uname &#125;</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(uid);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(uname);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//-------以下也正确</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">analysis</span>(<span class="params">&#123; uname &#125;</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(uname);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">analysis</span>(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">//  PS: 参数中数组、字符串、默认值、缺位均支持 。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数组操作-Array"><a href="#数组操作-Array" class="headerlink" title="数组操作 Array"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array">数组操作 Array</a></h2><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p>方法对数组的每个元素执行一次提供的函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"></span><br><span class="line">array1.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">element</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(element);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// expected output: &quot;a&quot;</span></span><br><span class="line"><span class="comment">// expected output: &quot;b&quot;</span></span><br><span class="line"><span class="comment">// expected output: &quot;c&quot;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><p>方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> words = [<span class="string">'spray'</span>, <span class="string">'limit'</span>, <span class="string">'elite'</span>, <span class="string">'exuberant'</span>, <span class="string">'destruction'</span>, <span class="string">'present'</span>];</span><br><span class="line"><span class="keyword">const</span> result = words.filter(<span class="function"><span class="params">word</span> =&gt;</span> word.length &gt; <span class="number">6</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"></span><br><span class="line"><span class="comment">// expected output: Array ["exuberant", "destruction", "present"]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> words = [<span class="string">&#x27;spray&#x27;</span>, <span class="string">&#x27;limit&#x27;</span>, <span class="string">&#x27;elite&#x27;</span>, <span class="string">&#x27;exuberant&#x27;</span>, <span class="string">&#x27;destruction&#x27;</span>, <span class="string">&#x27;present&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> result = words.<span class="title function_">filter</span>(<span class="function"><span class="params">word</span> =&gt;</span> word.<span class="property">length</span> &gt; <span class="number">6</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br><span class="line"></span><br><span class="line"><span class="comment">// expected output: Array [&quot;exuberant&quot;, &quot;destruction&quot;, &quot;present&quot;]</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</span><br><span class="line"><span class="keyword">let</span> doubles = numbers.map(<span class="function"><span class="params">x</span> =&gt;</span> x ** <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// doubles is now [1, 25, 100, 225]</span></span><br><span class="line"><span class="comment">// numbers is still [1, 5, 10, 15]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">10</span>];</span><br><span class="line"><span class="keyword">let</span> halves = numbers.map(<span class="function"><span class="params">x</span> =&gt;</span> x / <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">let</span> roots = numbers.map(<span class="built_in">Math</span>.sqrt);</span><br><span class="line"></span><br><span class="line"><span class="comment">// roots is now [1, 2, 3]</span></span><br><span class="line"><span class="comment">// numbers is still [1, 4, 9]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</span><br><span class="line"><span class="keyword">let</span> doubles = numbers.<span class="title function_">map</span>(<span class="function"><span class="params">x</span> =&gt;</span> x ** <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// doubles is now [1, 25, 100, 225]</span></span><br><span class="line"><span class="comment">// numbers is still [1, 5, 10, 15]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">10</span>];</span><br><span class="line"><span class="keyword">let</span> halves = numbers.<span class="title function_">map</span>(<span class="function"><span class="params">x</span> =&gt;</span> x / <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">let</span> roots = numbers.<span class="title function_">map</span>(<span class="title class_">Math</span>.<span class="property">sqrt</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// roots is now [1, 2, 3]</span></span><br><span class="line"><span class="comment">// numbers is still [1, 4, 9]</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="includes"><a href="#includes" class="headerlink" title="includes()"></a>includes()</h3><p>方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回 false。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1.includes(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pets = [<span class="string">'cat'</span>, <span class="string">'dog'</span>, <span class="string">'bat'</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pets.includes(<span class="string">'cat'</span>));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pets.includes(<span class="string">'at'</span>));</span><br><span class="line"><span class="comment">// expected output: false</span></span><br></pre></td></tr></table></figure>
-<h2 id="箭头函数表达式"><a href="#箭头函数表达式" class="headerlink" title="箭头函数表达式"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">箭头函数表达式</a></h2><p>语法比函数表达式更短，并且没有自己的 this，arguments，super 或 new.target。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> materials = [<span class="string">'Hydrogen'</span>, <span class="string">'Helium'</span>, <span class="string">'Lithium'</span>, <span class="string">'Beryllium'</span>];</span><br><span class="line"></span><br><span class="line">materials.map(<span class="function"><span class="keyword">function</span>(<span class="params">material</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> material.length;</span><br><span class="line">&#125;); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line">materials.map(<span class="function"><span class="params">material</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> material.length;</span><br><span class="line">&#125;); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line">materials.map(<span class="function"><span class="params">material</span> =&gt;</span> material.length); <span class="comment">// [8, 6, 7, 9]</span></span><br></pre></td></tr></table></figure>
-<h2 id="import"><a href="#import" class="headerlink" title="import"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import" target="_blank" rel="noopener">import</a></h2><p>import 语句用于导入由另一个模块导出的绑定。无论是否声明了 strict mode ，导入的模块都运行在严格模式下。import 语句不能在嵌入式脚本中使用。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> defaultExport <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">export</span> &#125; <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">export</span> <span class="keyword">as</span> alias &#125; <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; export1 , export2 &#125; <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; export1 , export2 <span class="keyword">as</span> alias2 , [...] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> defaultExport, &#123; <span class="keyword">export</span> [ , [...] ] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> defaultExport, * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">"module-name"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"module-name"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array1.<span class="title function_">includes</span>(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pets = [<span class="string">&#x27;cat&#x27;</span>, <span class="string">&#x27;dog&#x27;</span>, <span class="string">&#x27;bat&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(pets.<span class="title function_">includes</span>(<span class="string">&#x27;cat&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(pets.<span class="title function_">includes</span>(<span class="string">&#x27;at&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="箭头函数表达式"><a href="#箭头函数表达式" class="headerlink" title="箭头函数表达式"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions">箭头函数表达式</a></h2><p>语法比函数表达式更短，并且没有自己的 this，arguments，super 或 new.target。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> materials = [<span class="string">&#x27;Hydrogen&#x27;</span>, <span class="string">&#x27;Helium&#x27;</span>, <span class="string">&#x27;Lithium&#x27;</span>, <span class="string">&#x27;Beryllium&#x27;</span>];</span><br><span class="line"></span><br><span class="line">materials.<span class="title function_">map</span>(<span class="keyword">function</span>(<span class="params">material</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> material.<span class="property">length</span>;</span><br><span class="line">&#125;); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line">materials.<span class="title function_">map</span>(<span class="function"><span class="params">material</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> material.<span class="property">length</span>;</span><br><span class="line">&#125;); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line">materials.<span class="title function_">map</span>(<span class="function"><span class="params">material</span> =&gt;</span> material.<span class="property">length</span>); <span class="comment">// [8, 6, 7, 9]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="import"><a href="#import" class="headerlink" title="import"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import">import</a></h2><p>import 语句用于导入由另一个模块导出的绑定。无论是否声明了 strict mode ，导入的模块都运行在严格模式下。import 语句不能在嵌入式脚本中使用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> defaultExport <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">export</span> &#125; <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">export</span> <span class="keyword">as</span> alias &#125; <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; export1 , export2 &#125; <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; export1 , export2 <span class="keyword">as</span> alias2 , [...] &#125; <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> defaultExport, &#123; <span class="keyword">export</span> [ , [...] ] &#125; <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> defaultExport, * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;module-name&quot;</span>;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>defaultExport</p>
 </blockquote>
@@ -1393,7 +1566,7 @@
 <ul>
 <li>将引用指定的导入的名称。</li>
 </ul>
-<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">Promise</a></h2><h3 id="Promise-对象"><a href="#Promise-对象" class="headerlink" title="Promise 对象"></a><a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">Promise 对象</a></h3><ul>
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></h2><h3 id="Promise-对象"><a href="#Promise-对象" class="headerlink" title="Promise 对象"></a><a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/#docs/promise">Promise 对象</a></h3><ul>
 <li>Promise 的含义</li>
 <li>基本用法</li>
 <li>Promise.prototype.then()</li>
@@ -1406,8 +1579,8 @@
 <li>应用</li>
 <li>Promise.try()</li>
 </ul>
-<h2 id="Sass-Less-PostCSS"><a href="#Sass-Less-PostCSS" class="headerlink" title="Sass/Less/PostCSS"></a>Sass/Less/PostCSS</h2><h3 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a><a href="https://www.sass.hk" target="_blank" rel="noopener">Sass</a></h3><p>世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言！</p>
-<h3 id="Less"><a href="#Less" class="headerlink" title="Less"></a><a href="http://www.bootcss.com/p/lesscss/" target="_blank" rel="noopener">Less</a></h3><p>一种 动态 样式 语言.<br>LESS 将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 (支持 IE 6+, Webkit, Firefox)，也可以借助 Node.js 或者 Rhino 在服务端运行。</p>
+<h2 id="Sass-x2F-Less-x2F-PostCSS"><a href="#Sass-x2F-Less-x2F-PostCSS" class="headerlink" title="Sass&#x2F;Less&#x2F;PostCSS"></a>Sass&#x2F;Less&#x2F;PostCSS</h2><h3 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a><a target="_blank" rel="noopener" href="https://www.sass.hk/">Sass</a></h3><p>世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言！</p>
+<h3 id="Less"><a href="#Less" class="headerlink" title="Less"></a><a target="_blank" rel="noopener" href="http://www.bootcss.com/p/lesscss/">Less</a></h3><p>一种 动态 样式 语言.<br>LESS 将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 (支持 IE 6+, Webkit, Firefox)，也可以借助 Node.js 或者 Rhino 在服务端运行。</p>
 
           
         
@@ -1525,7 +1698,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -1562,12 +1735,16 @@
         
           
             <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">求两数据的不同值，结果为[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
 <h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>调用第三方工具：underscore</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">_.difference(arr1, arr2);</span><br><span class="line">=&gt; [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">_.<span class="title function_">difference</span>(arr1, arr2);</span><br><span class="line">=&gt; [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
 <h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>手写常规办法，创建临时数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// past</span></span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> temp = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr1.length; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (arr2.indexOf(arr1[i]) === <span class="number">-1</span>) &#123;</span><br><span class="line">    temp.push(arr1[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(temp);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// past</span></span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> temp = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr1.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (arr2.<span class="title function_">indexOf</span>(arr1[i]) === -<span class="number">1</span>) &#123;</span><br><span class="line">    temp.<span class="title function_">push</span>(arr1[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(temp);</span><br></pre></td></tr></table></figure>
+
 <h3 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h3><p>调用 es6 的数组操作 api</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr1.filter(<span class="function"><span class="params">item</span> =&gt;</span> !arr2.includes(item)));</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr1.<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> !arr2.<span class="title function_">includes</span>(item)));</span><br></pre></td></tr></table></figure>
+
 <p>就酱~<br><br></p>
 
           
@@ -1686,7 +1863,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
 
                 
                 
@@ -1849,7 +2026,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
 
                 
                 
@@ -1897,182 +2074,6 @@
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/slag/vue-inter-component-communication/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/slag/vue-inter-component-communication/" itemprop="url">
-                  Vue 组件间通信
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-11-13 19:57:24" itemprop="dateCreated datePublished" datetime="2017-11-13T19:57:24+08:00">2017-11-13</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>分两种，父子组件与非父子组件的通信</p>
-<h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><p>首先要明白，在 Vue 中，父子组件的关系可以总结为 prop 向下传递，事件向上传递</p>
-<p>也就是说父组件通过 prop 给子组件下发数据，子组件通过 事件 给父组件发送消息</p>
-<p>注：如果你想把一个对象的所有属性作为 prop 进行传递，可以使用不带任何参数的 v-bind(即用 v-bind 而不是 v-bind:prop-name)。例如，已知一个 todo 对象：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">todo: &#123;</span><br><span class="line">   text: <span class="string">'Learn Vue'</span>,</span><br><span class="line">   isComplete: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;todo-item v-bind=<span class="string">"todo"</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>将等价于：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;todo-item v-bind:text=<span class="string">"todo.text"</span> v-bind:is-complete=<span class="string">"todo.isComplete"</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>通过 Vue 的自定义事件来解决子组件给父组件发送消息</p>
-<p>每个 Vue 实例都实现了事件接口，即：</p>
-<ul>
-<li>使用 $on(eventName) 监听事件</li>
-<li>使用 $emit(eventName) 触发事件</li>
-</ul>
-<blockquote>
-<p>PS：在项目中有时也会碰到父与子孙组件的通信，这时，需要在子组件中给对应的数据添加 watch 来时时响应才行</p>
-</blockquote>
-<h2 id="非父子组件通信"><a href="#非父子组件通信" class="headerlink" title="非父子组件通信"></a>非父子组件通信</h2><p>有两种办法解决：</p>
-<h4 id="一、组件间相对简单情况下"><a href="#一、组件间相对简单情况下" class="headerlink" title="一、组件间相对简单情况下"></a>一、组件间相对简单情况下</h4><p>有时候，非父子关系的两个组件之间也需要通信。在简单的场景下，可以使用一个空的 Vue 实例作为事件总线：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bus = <span class="keyword">new</span> Vue();</span><br><span class="line"><span class="comment">// 触发组件 A 中的事件</span></span><br><span class="line">bus.$emit(<span class="string">'id-selected'</span>, <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 在组件 B 创建的钩子中监听事件</span></span><br><span class="line">bus.$on(<span class="string">'id-selected'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>这个时候，可能我们就需要定义一个全局变量来分配各个组件间的通信事件</p>
-<h4 id="二、组件复杂的情况下"><a href="#二、组件复杂的情况下" class="headerlink" title="二、组件复杂的情况下"></a>二、组件复杂的情况下</h4><p>官方文档推荐考虑使用专门的状态管理模式（Vuex）。</p>
-
-          
         
       
     </div>
@@ -2158,9 +2159,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2358,7 +2359,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2023</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

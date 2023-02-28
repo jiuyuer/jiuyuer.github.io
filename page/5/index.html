@@ -79,7 +79,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -110,10 +110,9 @@
 <meta property="og:url" content="http://yoursite.com/page/5/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="吃馒头也开心">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Mi Tu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MiTu-小书童">
-<meta name="twitter:description" content="吃馒头也开心">
 
 
 
@@ -168,7 +167,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -327,6 +326,186 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/slag/vue-inter-component-communication/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="吃馒头也开心">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/slag/vue-inter-component-communication/" itemprop="url">
+                  Vue 组件间通信
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-13 19:57:24" itemprop="dateCreated datePublished" datetime="2017-11-13T19:57:24+08:00">2017-11-13</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>分两种，父子组件与非父子组件的通信</p>
+<h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><p>首先要明白，在 Vue 中，父子组件的关系可以总结为 prop 向下传递，事件向上传递</p>
+<p>也就是说父组件通过 prop 给子组件下发数据，子组件通过 事件 给父组件发送消息</p>
+<p>注：如果你想把一个对象的所有属性作为 prop 进行传递，可以使用不带任何参数的 v-bind(即用 v-bind 而不是 v-bind:prop-name)。例如，已知一个 todo 对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">todo</span>: &#123;</span><br><span class="line">   <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span>,</span><br><span class="line">   <span class="attr">isComplete</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;todo-item v-bind=<span class="string">&quot;todo&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将等价于：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;todo-item v-<span class="attr">bind</span>:text=<span class="string">&quot;todo.text&quot;</span> v-<span class="attr">bind</span>:is-complete=<span class="string">&quot;todo.isComplete&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>通过 Vue 的自定义事件来解决子组件给父组件发送消息</p>
+<p>每个 Vue 实例都实现了事件接口，即：</p>
+<ul>
+<li>使用 $on(eventName) 监听事件</li>
+<li>使用 $emit(eventName) 触发事件</li>
+</ul>
+<blockquote>
+<p>PS：在项目中有时也会碰到父与子孙组件的通信，这时，需要在子组件中给对应的数据添加 watch 来时时响应才行</p>
+</blockquote>
+<h2 id="非父子组件通信"><a href="#非父子组件通信" class="headerlink" title="非父子组件通信"></a>非父子组件通信</h2><p>有两种办法解决：</p>
+<h4 id="一、组件间相对简单情况下"><a href="#一、组件间相对简单情况下" class="headerlink" title="一、组件间相对简单情况下"></a>一、组件间相对简单情况下</h4><p>有时候，非父子关系的两个组件之间也需要通信。在简单的场景下，可以使用一个空的 Vue 实例作为事件总线：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bus = <span class="keyword">new</span> <span class="title class_">Vue</span>();</span><br><span class="line"><span class="comment">// 触发组件 A 中的事件</span></span><br><span class="line">bus.$emit(<span class="string">&#x27;id-selected&#x27;</span>, <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 在组件 B 创建的钩子中监听事件</span></span><br><span class="line">bus.$on(<span class="string">&#x27;id-selected&#x27;</span>, <span class="keyword">function</span>(<span class="params">id</span>) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这个时候，可能我们就需要定义一个全局变量来分配各个组件间的通信事件</p>
+<h4 id="二、组件复杂的情况下"><a href="#二、组件复杂的情况下" class="headerlink" title="二、组件复杂的情况下"></a>二、组件复杂的情况下</h4><p>官方文档推荐考虑使用专门的状态管理模式（Vuex）。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/diary/to-static-and-wonderful/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -391,7 +570,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
 
                 
                 
@@ -551,7 +730,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -587,14 +766,17 @@
       
         
           <p>这里的提升，我的理解是包括变量和函数在内的所有声明的提升<br>而根据对作用域的理解，任何声明在某个作用域内的变量，都将附属于这个作用域。</p>
-<h2 id="考虑以下代码"><a href="#考虑以下代码" class="headerlink" title="考虑以下代码"></a>考虑以下代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码块一</span></span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//代码块二</span></span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="考虑以下代码"><a href="#考虑以下代码" class="headerlink" title="考虑以下代码"></a>考虑以下代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码块一</span></span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//代码块二</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
 <p>上述两段代码的结果是啥？</p>
 <p>思考思路：包括变量和函数在内的所有声明都会在任何代码被执行前首先被处理。</p>
 <h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p>于是， 上述代码块一，会以如下形式处理：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br></pre></td></tr></table></figure>
+
 <p>代码块二处理：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line">a = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">foo();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">//undefined</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">a = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">foo</span>();</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">//undefined</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/slag/js-ascension/#more" rel="contents">
@@ -717,7 +899,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -752,14 +934,15 @@
 
       
         
-          <h2 id="什么是作用域？"><a href="#什么是作用域？" class="headerlink" title="什么是作用域？"></a>什么是作用域？</h2><p>百度百科：程序设计概念，通常来说，一段程序代码中所用到的名字并不总是有效/可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域</p>
+          <h2 id="什么是作用域？"><a href="#什么是作用域？" class="headerlink" title="什么是作用域？"></a>什么是作用域？</h2><p>百度百科：程序设计概念，通常来说，一段程序代码中所用到的名字并不总是有效&#x2F;可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域</p>
 <p>书面版：一套设计良好，用来存储变量，并可以方便找到这些变量的规则称为作用域</p>
 <h2 id="RL-查询"><a href="#RL-查询" class="headerlink" title="RL 查询"></a>RL 查询</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>RHS：谁是赋值操作的源头，查找变量 a 的值，即 2。</li>
 <li>LHS：赋值操作的目标是谁，试图找到变量的容器本身，从而可以对其赋值。也就是查找变量 a 。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 这里对 a 是一个 RHS 查询，找到 a 的值，并 console.log 出来。</span></span><br><span class="line">a = <span class="number">2</span>; <span class="comment">// 这里对 a 是一个 LHS 查询，找到 变量 a，并对其赋值为 2 。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 2</span></span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">2</span>);</span><br><span class="line"><span class="comment">// 这里首先对 foo() 函数调用，执行 RHS 引用，即找到 foo 函数，</span></span><br><span class="line"><span class="comment">// 然后，执行了 a = 2 的传参赋值，这里首先执行 LHS 查询，</span></span><br><span class="line"><span class="comment">// 找到 a 并赋值为 2，然后 console.log(a) 执行了 RHS查询。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// 这里对 a 是一个 RHS 查询，找到 a 的值，并 console.log 出来。</span></span><br><span class="line">a = <span class="number">2</span>; <span class="comment">// 这里对 a 是一个 LHS 查询，找到 变量 a，并对其赋值为 2 。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params">a</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// 2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">foo</span>(<span class="number">2</span>);</span><br><span class="line"><span class="comment">// 这里首先对 foo() 函数调用，执行 RHS 引用，即找到 foo 函数，</span></span><br><span class="line"><span class="comment">// 然后，执行了 a = 2 的传参赋值，这里首先执行 LHS 查询，</span></span><br><span class="line"><span class="comment">// 找到 a 并赋值为 2，然后 console.log(a) 执行了 RHS查询。</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/slag/js-scope/#more" rel="contents">
@@ -882,7 +1065,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -927,7 +1110,8 @@
 <p>谈框架这种高大上的东西，我更想用类库来表达(恩，因为我觉得自己对框架这个概念的认识还很浅)，没错正如标题所言，由 jq+bootstrap 构建，再新增一个皮肤包，根据 UI 出的视觉稿进行编码，就将其称为个性化，换肤功能吧。</p>
 <h3 id="公共-CSS"><a href="#公共-CSS" class="headerlink" title="公共 CSS"></a>公共 CSS</h3><p>在 css 公共调用上，我又添加了一些简单字体大小，间距等等</p>
 <h4 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pos-r</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pos-a</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pos-f</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="文字溢出省略号"><a href="#文字溢出省略号" class="headerlink" title="文字溢出省略号"></a>文字溢出省略号</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.single-overflow</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.text-overflow</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文字溢出省略号"><a href="#文字溢出省略号" class="headerlink" title="文字溢出省略号"></a>文字溢出省略号</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.single-overflow</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.text-overflow</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  -webkit-line-clamp: <span class="number">2</span>;</span><br><span class="line">  -webkit-box-orient: vertical;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/slag/jquery-bootstrap-management-platform/#more" rel="contents">
@@ -1050,7 +1234,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/路上/" itemprop="url" rel="index"><span itemprop="name">路上</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E8%B7%AF%E4%B8%8A/" itemprop="url" rel="index"><span itemprop="name">路上</span></a></span>
 
                 
                 
@@ -1088,19 +1272,19 @@
           <blockquote>
 <p>有人说：“人生至少要有两次冲动：一场奋不顾身的爱情和一段走就走的旅行。”</p>
 </blockquote>
-<p><img src="/images/northwest/pleasure1.jpeg" alt=""><br><img src="/images/northwest/pleasure2.jpeg" alt=""></p>
+<p><img src="/images/northwest/pleasure1.jpeg"><br><img src="/images/northwest/pleasure2.jpeg"></p>
 <h2 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h2><ul>
 <li>成员人数：4 人</li>
-<li>共需费用：约 4600 元/人（包括租车及违章费用，你想飙车我也没意见）</li>
+<li>共需费用：约 4600 元&#x2F;人（包括租车及违章费用，你想飙车我也没意见）</li>
 <li>行驶里程：2450 公里</li>
 <li>路线：飞到兰州-动车到西宁(租车自驾)-张掖-嘉峪关-敦煌-德令哈-茶卡盐湖-黑马河乡-顺时针环青海湖(鸟岛，仙女湾啥的都不好玩)-西宁(还车)-西宁飞回杭州</li>
 </ul>
 <h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><ul>
 <li>机票：杭州-兰州，3400；西宁-杭州，3840(中转西安咸阳)。PS：越早订越便宜，你们懂得。</li>
-<li>住宿：93.5/人/天，双人间。可兄弟，可情侣，可夫妻，可。。</li>
-<li>门票费：595/人，塔尔寺(80/人)，敦煌莫高窟(200/人)，鸣沙山月牙泉(120/人)，嘉峪关关城通票(120/人)，张掖丹霞国家地质公园(75/人)</li>
+<li>住宿：93.5&#x2F;人&#x2F;天，双人间。可兄弟，可情侣，可夫妻，可。。</li>
+<li>门票费：595&#x2F;人，塔尔寺(80&#x2F;人)，敦煌莫高窟(200&#x2F;人)，鸣沙山月牙泉(120&#x2F;人)，嘉峪关关城通票(120&#x2F;人)，张掖丹霞国家地质公园(75&#x2F;人)</li>
 <li>神舟租车：别克君越，2073 元，共 8 天，真心没想到它的油耗这么少</li>
-<li>油费：270+170+320+205 = 965 元（92 号）</li>
+<li>油费：270+170+320+205 &#x3D; 965 元（92 号）</li>
 <li>过路费(省道及高速)：约 357 元</li>
 <li>停车费：51 元</li>
 <li>矿泉水(娃哈哈)：总共 49 瓶（4 人），水很重要</li>
@@ -1117,7 +1301,7 @@
 <li>共和县云天夏都商务酒店-青海湖鸟岛景区：64.5 公里，环湖西路，青海湖鸟岛景区-青海湖仙女湾：84.5 公里，环湖西路，西莎线</li>
 <li>青海湖仙女湾-7 天连锁酒店(湟中塔尔寺店)：208 公里，西莎线，京藏高速</li>
 <li>7 天连锁酒店(湟中塔尔寺店)-塔尔寺：4 公里，塔尔寺-西宁高铁：35 公里，宁贵高速，京藏高速</li>
-<li><strong>总计：2429.3+市区绕行 = 约 2450 公里</strong></li>
+<li><strong>总计：2429.3+市区绕行 &#x3D; 约 2450 公里</strong></li>
 </ol>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1241,7 +1425,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
 
                 
                 
@@ -1406,7 +1590,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
 
                 
                 
@@ -1567,7 +1751,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
 
                 
                 
@@ -1729,7 +1913,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
 
                 
                 
@@ -1772,173 +1956,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/diary/confused/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/tutorial/select-the-camera/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/tutorial/select-the-camera/" itemprop="url">
-                  佳能好？还是尼康好？
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2014-04-18 16:07:48" itemprop="dateCreated datePublished" datetime="2014-04-18T16:07:48+08:00">2014-04-18</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/爱摄影/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>购买相机“佳能好还是尼康好”，有学摄影的学生、家庭用户、摄影爱好者，有要卡片机的，也有买单反的。佳能、尼康是在国内摄影器材销售量数一数二的产品，到底谁好？您可以从以下几个方面去考虑。</p>
-<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
-<li>每个人对摄影的偏好不一样，所以买相机前要对自己的用途有个定位。比如有的喜欢旅游，爱好风光摄影；有的喜欢人像，喜欢给家人拍照，有了定位我们来说下特点：佳能的色调偏暖，就是出来的片子会偏红；尼康的色调偏冷，片子出来后会偏青。也就是拍风光用尼康拍的更山清水秀，爱拍人像的用佳能白里透红。</li>
-</ul>
-<h2 id="喜好"><a href="#喜好" class="headerlink" title="喜好"></a>喜好</h2><ul>
-<li>佳能的成像柔点，尼康的成像锐点。比如同时拍一张人像，佳能的拍出来脸部皮肤看着可能很光滑，尼康就会把斑点、发丝都给拍出来，这样就看自己的喜好了，要是不 PS 估计很多 MM 接受不了尼康给自己拍脸了，也有可能需要的就是发丝的这个锐度。</li>
-</ul>
-<h2 id="配件（指单反用户）"><a href="#配件（指单反用户）" class="headerlink" title="配件（指单反用户）"></a>配件（指单反用户）</h2><ul>
-<li>买了机身没有镜头是不能用的。NIKON 是多年研究光学产品的专家,镜头的价格也是相对便宜点（不包刮 07 年 10 月反布的 5 款新镜头）；Canon 具有高科技的产品手法，L 头更是现在专业摄影届必不可少的利器，价格当然也是很高。</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/tutorial/select-the-camera/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2028,9 +2045,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2228,7 +2245,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2023</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

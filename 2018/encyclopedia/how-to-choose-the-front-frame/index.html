@@ -79,7 +79,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -105,19 +105,20 @@
 
 
   <meta name="description" content="目前 vue，angular，react 这三个前端框架非常流行，但是在很多场景下，我们在选择技术路线的时候总是很纠结，不知道该选择哪一种，这个问题的本质是对框架的优劣认识不清晰。在这里不详细对比技术细节，因为技术细节差异不是我们选择框架的首要因素。 如何选择框架我们该怎样选择一个框架，我觉得可以从以下几个角度去分析对比几个框架的优劣  这个框架的使用场景。比如是否同时适用于 Web 端和原生 A">
-<meta name="keywords" content="前端框架,技术选型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端框架选型说明">
 <meta property="og:url" content="http://yoursite.com/2018/encyclopedia/how-to-choose-the-front-frame/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="目前 vue，angular，react 这三个前端框架非常流行，但是在很多场景下，我们在选择技术路线的时候总是很纠结，不知道该选择哪一种，这个问题的本质是对框架的优劣认识不清晰。在这里不详细对比技术细节，因为技术细节差异不是我们选择框架的首要因素。 如何选择框架我们该怎样选择一个框架，我觉得可以从以下几个角度去分析对比几个框架的优劣  这个框架的使用场景。比如是否同时适用于 Web 端和原生 A">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/baike/iview.png">
 <meta property="og:image" content="http://yoursite.com/images/baike/element-ui.png">
-<meta property="og:updated_time" content="2018-12-02T09:23:12.350Z">
+<meta property="article:published_time" content="2018-11-01T10:10:32.000Z">
+<meta property="article:modified_time" content="2018-12-02T09:23:12.350Z">
+<meta property="article:author" content="Mi Tu">
+<meta property="article:tag" content="前端框架">
+<meta property="article:tag" content="技术选型">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端框架选型说明">
-<meta name="twitter:description" content="目前 vue，angular，react 这三个前端框架非常流行，但是在很多场景下，我们在选择技术路线的时候总是很纠结，不知道该选择哪一种，这个问题的本质是对框架的优劣认识不清晰。在这里不详细对比技术细节，因为技术细节差异不是我们选择框架的首要因素。 如何选择框架我们该怎样选择一个框架，我觉得可以从以下几个角度去分析对比几个框架的优劣  这个框架的使用场景。比如是否同时适用于 Web 端和原生 A">
 <meta name="twitter:image" content="http://yoursite.com/images/baike/iview.png">
 
 
@@ -173,7 +174,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -391,7 +392,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
 
                 
                 
@@ -435,7 +436,8 @@
 <li><strong>跨平台性。</strong>是否需要同时支持移动端和 pc 端</li>
 </ul>
 <h2 id="框架的共同点"><a href="#框架的共同点" class="headerlink" title="框架的共同点"></a>框架的共同点</h2><p>都有很好的性能(这里的 angular 指的是 2.0+)，都支持数据绑定，组件等基本功能。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <h2 id="框架的不同点"><a href="#框架的不同点" class="headerlink" title="框架的不同点"></a>框架的不同点</h2><h3 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h3><p>这是一个给开发者一整套解决方案的框架，相对于 vue 和 react，angular 不需要搭配其他库，就可以构建出一个大型项目，但它并不太适合开发小型应用。下面是 angular 的一些特点~</p>
 <p>1.<strong>这是一个完整的框架拥有良好的项目结构。</strong>通常情况下，我们编写的 js 代码是没有正规的项目结构的，是因为在小型项目中对结构的要求很低，但是在大型项目中则完全不同，比如 webapp 中 ionic 框架就是用的 Angular 作为内核个人觉得也是看中了 angular 的这个特点。但是会丢失一些灵活性。</p>
 <p>2.<strong>拥有自己的构建工具。</strong>在 Angular-CLI 使用打包编译，生成组件等都有相应的命令行，非常方便快捷，虽然 vue 和 React 也有构建工具，但是局限性很大，需要配合其他构建工具，个人觉得 Angular-CLI 足够强大，这也是一套完整的框架带来的红利，不必在选择库上浪费时间。</p>
@@ -459,7 +461,7 @@
 <blockquote>
 <ul>
 <li>轻量级，响应式组件</li>
-<li>都利用  “Virtual DOM” 虚拟 DOM 实现快速渲染</li>
+<li>都利用  “Virtual DOM” 虚拟 DOM 实现快速渲染</li>
 <li>都服务器端渲染</li>
 <li>易于集成路由工具，打包工具以及状态管理工具</li>
 <li>优秀的支持和社区</li>
@@ -472,7 +474,7 @@
 <blockquote>
 <p>总结：react 和 vue 一样只关注视图层，只是一个 UI 组件库，这跟 angular 有本质的区别，如果 react 想开发大型应用需要配合第三方库，他的跨平台优势和生态优势大于 vue。</p>
 </blockquote>
-<p>还有其他的一些前端框架像 Ember，Knockout 等就不一一列举了，可以 <a href="https://cn.vuejs.org/v2/guide/comparison.html" target="_blank" rel="noopener">点这里</a> 查看他们的差异</p>
+<p>还有其他的一些前端框架像 Ember，Knockout 等就不一一列举了，可以 <a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/comparison.html">点这里</a> 查看他们的差异</p>
 <h2 id="选择-Vue-理由"><a href="#选择-Vue-理由" class="headerlink" title="选择 Vue 理由"></a>选择 Vue 理由</h2><p>首先我想说，没有哪个框架是绝对的好与不好，只有合适与否。之所以选择 Vue 的理由有如下几个：</p>
 <ol>
 <li>学习成本较低，原因在上文中已说明</li>
@@ -493,10 +495,10 @@
 <h3 id="使用率（npm-平均下载频率，组件数量，star-issue…"><a href="#使用率（npm-平均下载频率，组件数量，star-issue…" class="headerlink" title="使用率（npm 平均下载频率，组件数量，star, issue…)"></a>使用率（npm 平均下载频率，组件数量，star, issue…)</h3><p>npm 下载次数及 issue，目前明显未解决 bug 遗留数量,</p>
 <blockquote>
 <p>PS：这个应该跟生态也有关系， 用 element 的人多，发现 bug 的几率更大，另外 iview 里面有很多 issue 写明是 UI 组件的问题 但未标明是确切的 bug</p>
-<p><img src="/images/baike/iview.png" alt=""><br><img src="/images/baike/element-ui.png" alt=""></p>
+<p><img src="/images/baike/iview.png"><br><img src="/images/baike/element-ui.png"></p>
 </blockquote>
 <p><strong>以上截图截止时间：2018.11.1</strong><br>以上对比其实可以看出， element 开发者团队规模大于 iview 团队，其结果就是 无论是提交代码频率， 发布版本数量 都比 iview 更强！</p>
-<p>其他数据不一一列举了，可以去 github 上自行查看<br><strong><a href="https://github.com/iview/iview" target="_blank" rel="noopener">iview</a></strong><br><strong><a href="https://github.com/ElemeFE/element" target="_blank" rel="noopener">element</a></strong></p>
+<p>其他数据不一一列举了，可以去 github 上自行查看<br><strong><a target="_blank" rel="noopener" href="https://github.com/iview/iview">iview</a></strong><br><strong><a target="_blank" rel="noopener" href="https://github.com/ElemeFE/element">element</a></strong></p>
 <blockquote>
 <p>结论：</p>
 <ul>
@@ -525,9 +527,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端框架/" rel="tag"># 前端框架</a>
+            <a href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" rel="tag"># 前端框架</a>
           
-            <a href="/tags/技术选型/" rel="tag"># 技术选型</a>
+            <a href="/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B/" rel="tag"># 技术选型</a>
           
         </div>
       
@@ -624,9 +626,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -820,7 +822,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何选择框架"><span class="nav-number">1.</span> <span class="nav-text">如何选择框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#框架的共同点"><span class="nav-number">2.</span> <span class="nav-text">框架的共同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#框架的不同点"><span class="nav-number">3.</span> <span class="nav-text">框架的不同点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular"><span class="nav-number">3.1.</span> <span class="nav-text">Angular</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue"><span class="nav-number">3.2.</span> <span class="nav-text">Vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React"><span class="nav-number">3.3.</span> <span class="nav-text">React</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择-Vue-理由"><span class="nav-number">4.</span> <span class="nav-text">选择 Vue 理由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三方-UI-组件库选择"><span class="nav-number">5.</span> <span class="nav-text">第三方 UI 组件库选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用率（npm-平均下载频率，组件数量，star-issue…"><span class="nav-number">5.1.</span> <span class="nav-text">使用率（npm 平均下载频率，组件数量，star, issue…)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">如何选择框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6%E7%9A%84%E5%85%B1%E5%90%8C%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">框架的共同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6%E7%9A%84%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">框架的不同点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular"><span class="nav-number">3.1.</span> <span class="nav-text">Angular</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue"><span class="nav-number">3.2.</span> <span class="nav-text">Vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React"><span class="nav-number">3.3.</span> <span class="nav-text">React</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9-Vue-%E7%90%86%E7%94%B1"><span class="nav-number">4.</span> <span class="nav-text">选择 Vue 理由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9-UI-%E7%BB%84%E4%BB%B6%E5%BA%93%E9%80%89%E6%8B%A9"><span class="nav-number">5.</span> <span class="nav-text">第三方 UI 组件库选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%8E%87%EF%BC%88npm-%E5%B9%B3%E5%9D%87%E4%B8%8B%E8%BD%BD%E9%A2%91%E7%8E%87%EF%BC%8C%E7%BB%84%E4%BB%B6%E6%95%B0%E9%87%8F%EF%BC%8Cstar-issue%E2%80%A6"><span class="nav-number">5.1.</span> <span class="nav-text">使用率（npm 平均下载频率，组件数量，star, issue…)</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -840,7 +842,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2023</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

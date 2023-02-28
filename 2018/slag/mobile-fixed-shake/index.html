@@ -79,7 +79,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -105,17 +105,18 @@
 
 
   <meta name="description" content="工作中发现，给一个元素添加 fixed 属性，让它固定在窗口某个位置，直接加 position:fixed 这个属性就能重现这个效果（BUG）； 在安卓手机上的效果都比较好，但是 ios 系统的个别浏览器兼容性就不好，如 QQ 浏览器、UC 浏览器、360 浏览器（这几个是 ios 最容易出问题的浏览器）； 问题重现：当用户快速滑动页面的到时候，fixed 的元素就会在窗口跳动或者抖动，非常影响用">
-<meta name="keywords" content="Css&#x2F;Css3,HTML5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动端fixed的元素抖动问题">
 <meta property="og:url" content="http://yoursite.com/2018/slag/mobile-fixed-shake/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="工作中发现，给一个元素添加 fixed 属性，让它固定在窗口某个位置，直接加 position:fixed 这个属性就能重现这个效果（BUG）； 在安卓手机上的效果都比较好，但是 ios 系统的个别浏览器兼容性就不好，如 QQ 浏览器、UC 浏览器、360 浏览器（这几个是 ios 最容易出问题的浏览器）； 问题重现：当用户快速滑动页面的到时候，fixed 的元素就会在窗口跳动或者抖动，非常影响用">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-18T13:45:55.453Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-09-18T13:22:43.000Z">
+<meta property="article:modified_time" content="2018-09-18T13:45:55.453Z">
+<meta property="article:author" content="Mi Tu">
+<meta property="article:tag" content="Css&#x2F;Css3">
+<meta property="article:tag" content="HTML5">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动端fixed的元素抖动问题">
-<meta name="twitter:description" content="工作中发现，给一个元素添加 fixed 属性，让它固定在窗口某个位置，直接加 position:fixed 这个属性就能重现这个效果（BUG）； 在安卓手机上的效果都比较好，但是 ios 系统的个别浏览器兼容性就不好，如 QQ 浏览器、UC 浏览器、360 浏览器（这几个是 ios 最容易出问题的浏览器）； 问题重现：当用户快速滑动页面的到时候，fixed 的元素就会在窗口跳动或者抖动，非常影响用">
 
 
 
@@ -170,7 +171,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -388,7 +389,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -426,18 +427,21 @@
 <p>在安卓手机上的效果都比较好，但是 ios 系统的个别浏览器兼容性就不好，如 QQ 浏览器、UC 浏览器、360 浏览器（这几个是 ios 最容易出问题的浏览器）；</p>
 <h2 id="问题重现："><a href="#问题重现：" class="headerlink" title="问题重现："></a>问题重现：</h2><p>当用户快速滑动页面的到时候，fixed 的元素就会在窗口跳动或者抖动，非常影响用户体验</p>
 <h2 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h2><p>大致思路就是，<strong>将 fixed 的元素与滚动的元素区分开来</strong>，例如：项目中有一个固定在底部的使用了 fixed 的按钮，那么滚动的容器与之成为兄弟元素</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 这里是内容区的滚动 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 很长的内容 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 这里是固定底部的按钮或者其他元素 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fixBox"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 这里是内容区的滚动 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 很长的内容 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 这里是固定底部的按钮或者其他元素 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fixBox&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> auto;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">  <span class="attribute">overflow-x</span>: visible;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fixBox</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">45px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>在 class 为 container 的内容层中滚动，实际上，滚动条在 content 上，与 fixBox 已经无关，所以就不会影响抖动问题</p>
 </blockquote>
 <h2 id="额外出现的问题"><a href="#额外出现的问题" class="headerlink" title="额外出现的问题"></a>额外出现的问题</h2><p>精确定位到问题所在之后，就开始写 HTML 跟 CSS 了，因为考虑到是在移动端的项目，所以二话不说，直接上了 flex 的布局。</p>
-<p>结果，测试人员在测试的过程中发现，<strong>低版本 webview 不支持 css3 flex 布局</strong>，具体请 <a href="https://caniuse.com/#search=flex" target="_blank" rel="noopener">点这里</a>.</p>
+<p>结果，测试人员在测试的过程中发现，<strong>低版本 webview 不支持 css3 flex 布局</strong>，具体请 <a target="_blank" rel="noopener" href="https://caniuse.com/#search=flex">点这里</a>.</p>
 <p>尴了个尬，此处省略无数个 WTF~!</p>
 <p>最后，只能使用最原始的绝对定位来实现此效果~</p>
 <p>下面附上修改后的样式：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">  <span class="attribute">overflow-x</span>: visible;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">80px</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fixBox</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">45px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>完结~<br><br></p>
+
+<p>完结~<br><br/></p>
 
       
     </div>
@@ -557,9 +561,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -753,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题重现："><span class="nav-number">1.</span> <span class="nav-text">问题重现：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案："><span class="nav-number">2.</span> <span class="nav-text">解决方案：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#额外出现的问题"><span class="nav-number">3.</span> <span class="nav-text">额外出现的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E9%87%8D%E7%8E%B0%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">问题重现：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">解决方案：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%9D%E5%A4%96%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">额外出现的问题</span></a></li></ol></div>
             
 
           </div>
@@ -773,7 +777,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2023</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

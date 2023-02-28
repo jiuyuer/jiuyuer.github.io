@@ -79,7 +79,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -110,10 +110,9 @@
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="吃馒头也开心">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Mi Tu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MiTu-小书童">
-<meta name="twitter:description" content="吃馒头也开心">
 
 
 
@@ -168,7 +167,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -327,6 +326,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/encyclopedia/development-of-specification/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Tu">
+      <meta itemprop="description" content="吃馒头也开心">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/encyclopedia/development-of-specification/" itemprop="url">
+                  开发规范
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-06 20:07:42" itemprop="dateCreated datePublished" datetime="2018-11-06T20:07:42+08:00">2018-11-06</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一个软件的生命周期中，80%的花费在于维护。几乎没有任何一个软件，在其整个生命同期中，均由最初的开发人员来维护。</p>
+<h2 id="规范目的"><a href="#规范目的" class="headerlink" title="规范目的"></a>规范目的</h2><p>改善软件的可读性、提高代码质量、确保代码的高可维护性。包括但不限于各类资源文件的定义、命名规则、代码规范。侧重于技术要求，所有开发人员在实际开发及维护中必须严格遵守。各模块组长有责任督小组成员遵从规范，并定期做抽查，确保模块质量。对于不符合规范的代码，责令相关开发人员改正。</p>
+<h2 id="格式规范"><a href="#格式规范" class="headerlink" title="格式规范"></a>格式规范</h2><ul>
+<li>安装好 IDE（vscode），需要安装对应的插件，setting 文件的配置，具体看开发快速上手文档。</li>
+<li>TAB 键用两个空格代替（WINDOWS 下 TAB 键占四个空格，LINUX 下 TAB 键占八个空格）。</li>
+<li>文件内容编码均统一为 UTF-8。</li>
+</ul>
+<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><p>遵循以下规则</p>
+<ol>
+<li>有意义的名词、简短、具有可读性</li>
+<li>以小写开头 camelCase (小驼峰式命名)</li>
+<li>公共组件命名以公司名称简拼为命名空间(yht-xx.vue)，后续升级为组件库形式</li>
+<li>文件夹命名主要以功能模块代表命名 camelCase (小驼峰式命名)</li>
+</ol>
+<blockquote>
+<p>同时还需要注意：必须符合自定义元素规范: 使用连字符分隔单词，切勿使用保留字。yht- 前缀作为命名空间: 如果非常通用的话可使用一个单词来命名，这样可以方便于其它项目里复用。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/encyclopedia/development-of-specification/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/encyclopedia/component-library-document/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -391,7 +564,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
 
                 
                 
@@ -428,7 +601,7 @@
         
           
             <p>后续会有一个以上的项目需要维护，多个项目需要开发类似功能的情况，开发一个通用的组件库并维护是需要的。</p>
-<p>目前 tinyweb 中引入了第三方 UI 组件库 <strong><a href="http://element-cn.eleme.io/#/zh-CN/component/installation" target="_blank" rel="noopener">element-ui</a></strong>（因为组件本身已经有很完善的文档说明，所以不再重复编写）</p>
+<p>目前 tinyweb 中引入了第三方 UI 组件库 **<a target="_blank" rel="noopener" href="http://element-cn.eleme.io/#/zh-CN/component/installation">element-ui</a>**（因为组件本身已经有很完善的文档说明，所以不再重复编写）</p>
 <p>但是考虑到后续要开发维护属于自己的组件库，并且解耦第三方 UI 库，以及考虑到开源协作相关</p>
 <p>列了个方案如下：</p>
 <p>参考 element 以及 iview 的风格，构建开发属于自己的组件库项目（单独立项），git 仓库管理并设置分支策略，有对应组件文档维护以及详细 demo 展示，至于如何开源协作，需要一起沟通出相应的规范及流程。</p>
@@ -549,7 +722,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
 
                 
                 
@@ -585,9 +758,9 @@
       
         
           <p>代码规范是程序员的根本，入门第一步，从规范代码开始。</p>
-<p>而 <a href="https://cn.eslint.org" target="_blank" rel="noopener">ESLint</a> 就是一款专门用于 Javascript/ESscript 代码一致性的“插件”，基于 node.js，或者你可以看做是项目构建系统的一部分。它根本目的是统一项目的代码风格规范，养成规范的写代码习惯，减少不必要的错误和隐患。</p>
+<p>而 <a target="_blank" rel="noopener" href="https://cn.eslint.org/">ESLint</a> 就是一款专门用于 Javascript&#x2F;ESscript 代码一致性的“插件”，基于 node.js，或者你可以看做是项目构建系统的一部分。它根本目的是统一项目的代码风格规范，养成规范的写代码习惯，减少不必要的错误和隐患。</p>
 <p>所以项目中引入并配置了相关的代码规范约定，用来统一代码风格和规范团队协作开发。</p>
-<p>配置文件官方说明，<a href="https://cn.eslint.org/docs/user-guide/configuring" target="_blank" rel="noopener">点这里</a></p>
+<p>配置文件官方说明，<a target="_blank" rel="noopener" href="https://cn.eslint.org/docs/user-guide/configuring">点这里</a></p>
 <ol>
 <li>extends 继承官方推荐的规则</li>
 <li>确定规则使用的环境（可略）</li>
@@ -597,7 +770,7 @@
 </ol>
 <p>ESLint 附带有大量的规则。你可以使用注释或配置文件修改你项目中要使用的规则。</p>
 <p>其中 rules 就是配置规则的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rules: &#123;</span><br><span class="line">  <span class="string">"规则名"</span>: [规则值, 规则配置]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rules</span>: &#123;</span><br><span class="line">  <span class="string">&quot;规则名&quot;</span>: [规则值, 规则配置]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/encyclopedia/code-specification/#more" rel="contents">
@@ -720,7 +893,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/百科全书/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a></span>
 
                 
                 
@@ -887,7 +1060,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
 
                 
                 
@@ -1047,7 +1220,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -1084,15 +1257,19 @@
         
           
             <p>需求：将下面 data 数组中 id 重复的数据去掉？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201801</span>, <span class="attr">name</span>: <span class="string">'张三'</span>, <span class="attr">age</span>: <span class="number">15</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201804</span>, <span class="attr">name</span>: <span class="string">'John'</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201802</span>, <span class="attr">name</span>: <span class="string">'李四'</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201801</span>, <span class="attr">name</span>: <span class="string">'张三'</span>, <span class="attr">age</span>: <span class="number">15</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201805</span>, <span class="attr">name</span>: <span class="string">'Jack'</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201803</span>, <span class="attr">name</span>: <span class="string">'王五'</span>, <span class="attr">age</span>: <span class="number">10</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201805</span>, <span class="attr">name</span>: <span class="string">'Jack'</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201804</span>, <span class="attr">name</span>: <span class="string">'John'</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201805</span>, <span class="attr">name</span>: <span class="string">'Jack'</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201801</span>, <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>, <span class="attr">age</span>: <span class="number">15</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201804</span>, <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201802</span>, <span class="attr">name</span>: <span class="string">&#x27;李四&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201801</span>, <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>, <span class="attr">age</span>: <span class="number">15</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201805</span>, <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201803</span>, <span class="attr">name</span>: <span class="string">&#x27;王五&#x27;</span>, <span class="attr">age</span>: <span class="number">10</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201805</span>, <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201804</span>, <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201805</span>, <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
 <p>下面列了两种办法来解决：</p>
-<h2 id="一、数组的-reduce-方法"><a href="#一、数组的-reduce-方法" class="headerlink" title="一、数组的 reduce()方法"></a>一、数组的 reduce()方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> hash = &#123;&#125;;</span><br><span class="line">data = data.reduce(<span class="function">(<span class="params">preVal, curVal</span>) =&gt;</span> &#123;</span><br><span class="line">  hash[curVal.id] ? <span class="string">''</span> : (hash[curVal.id] = <span class="literal">true</span> &amp;&amp; preVal.push(curVal));</span><br><span class="line">  <span class="keyword">return</span> preVal;</span><br><span class="line">&#125;, []);</span><br></pre></td></tr></table></figure>
-<h3 id="上述方法的实现思路"><a href="#上述方法的实现思路" class="headerlink" title="上述方法的实现思路"></a>上述方法的实现思路</h3><p>利用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="noopener">reduce()</a>方法的累积器作用，在对由对象组成的数组进行遍历时，通过对象 <code>hash</code> 来标记数组中每个元素 id 是否出现过，如果出现过，那么遍历到的当前元素则不会放入到累积器中，如果没有出现，则添加到累积器中，这样保证了最后返回值中每个数据 id 的唯一性。</p>
-<p>关于数组的 reduce()方法，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="noopener">点这里</a>，MDN 上已经写的很清楚了，自己理解。</p>
-<h2 id="二、for-循环遍历"><a href="#二、for-循环遍历" class="headerlink" title="二、for 循环遍历"></a>二、for 循环遍历</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeRepeat</span>(<span class="params">arr, key</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i][key] === arr[j][key]) &#123;</span><br><span class="line">        arr.splice(j, <span class="number">1</span>);</span><br><span class="line">        j = j - <span class="number">1</span>; <span class="comment">// 关键，因为splice()删除元素之后，会使得数组长度减小，此时如果没有j=j-1的话，会导致相同id项在重复两次以上之后无法进行去重，且会错误删除id没有重复的项。</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">removeRepeat(data, <span class="string">'id'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="一、数组的-reduce-方法"><a href="#一、数组的-reduce-方法" class="headerlink" title="一、数组的 reduce()方法"></a>一、数组的 reduce()方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> hash = &#123;&#125;;</span><br><span class="line">data = data.<span class="title function_">reduce</span>(<span class="function">(<span class="params">preVal, curVal</span>) =&gt;</span> &#123;</span><br><span class="line">  hash[curVal.<span class="property">id</span>] ? <span class="string">&#x27;&#x27;</span> : (hash[curVal.<span class="property">id</span>] = <span class="literal">true</span> &amp;&amp; preVal.<span class="title function_">push</span>(curVal));</span><br><span class="line">  <span class="keyword">return</span> preVal;</span><br><span class="line">&#125;, []);</span><br></pre></td></tr></table></figure>
+
+<h3 id="上述方法的实现思路"><a href="#上述方法的实现思路" class="headerlink" title="上述方法的实现思路"></a>上述方法的实现思路</h3><p>利用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">reduce()</a>方法的累积器作用，在对由对象组成的数组进行遍历时，通过对象 <code>hash</code> 来标记数组中每个元素 id 是否出现过，如果出现过，那么遍历到的当前元素则不会放入到累积器中，如果没有出现，则添加到累积器中，这样保证了最后返回值中每个数据 id 的唯一性。</p>
+<p>关于数组的 reduce()方法，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">点这里</a>，MDN 上已经写的很清楚了，自己理解。</p>
+<h2 id="二、for-循环遍历"><a href="#二、for-循环遍历" class="headerlink" title="二、for 循环遍历"></a>二、for 循环遍历</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">removeRepeat</span>(<span class="params">arr, key</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; arr.<span class="property">length</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i][key] === arr[j][key]) &#123;</span><br><span class="line">        arr.<span class="title function_">splice</span>(j, <span class="number">1</span>);</span><br><span class="line">        j = j - <span class="number">1</span>; <span class="comment">// 关键，因为splice()删除元素之后，会使得数组长度减小，此时如果没有j=j-1的话，会导致相同id项在重复两次以上之后无法进行去重，且会错误删除id没有重复的项。</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">removeRepeat</span>(data, <span class="string">&#x27;id&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
 <h3 id="上述方法的实现思路-1"><a href="#上述方法的实现思路-1" class="headerlink" title="上述方法的实现思路"></a>上述方法的实现思路</h3><p>利用 for 循环遍历数组，并将数组中的每一个元素与剩余元素一一进行比较，如果在剩余元素中出现 id 相同的项，则通过 <code>splice()</code>方法将相同 id 项删除，这样在最终得到的数组中每个数据 id 将是唯一的。通过 <code>splice()</code>方法删除元素后，会使得数组长度减小，为了实现去重应该执行 <code>j = j-1</code>。上面将去重方法直接封装成函数 <code>removeRepeat</code>，使用时可以直接调用该函数，并传入要去重的数组和唯一属性名。</p>
-<p><br></p>
-<p>转自 <a href="https://blog.csdn.net/XuM222222/article/details/80657316" target="_blank" rel="noopener">https://blog.csdn.net/XuM222222/article/details/80657316</a></p>
+<br/>
+
+<p>转自 <a target="_blank" rel="noopener" href="https://blog.csdn.net/XuM222222/article/details/80657316">https://blog.csdn.net/XuM222222/article/details/80657316</a></p>
 
           
         
@@ -1210,7 +1387,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -1250,18 +1427,21 @@
 <p>在安卓手机上的效果都比较好，但是 ios 系统的个别浏览器兼容性就不好，如 QQ 浏览器、UC 浏览器、360 浏览器（这几个是 ios 最容易出问题的浏览器）；</p>
 <h2 id="问题重现："><a href="#问题重现：" class="headerlink" title="问题重现："></a>问题重现：</h2><p>当用户快速滑动页面的到时候，fixed 的元素就会在窗口跳动或者抖动，非常影响用户体验</p>
 <h2 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h2><p>大致思路就是，<strong>将 fixed 的元素与滚动的元素区分开来</strong>，例如：项目中有一个固定在底部的使用了 fixed 的按钮，那么滚动的容器与之成为兄弟元素</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 这里是内容区的滚动 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 很长的内容 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 这里是固定底部的按钮或者其他元素 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fixBox"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 这里是内容区的滚动 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 很长的内容 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 这里是固定底部的按钮或者其他元素 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fixBox&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> auto;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">  <span class="attribute">overflow-x</span>: visible;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fixBox</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">45px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>在 class 为 container 的内容层中滚动，实际上，滚动条在 content 上，与 fixBox 已经无关，所以就不会影响抖动问题</p>
 </blockquote>
 <h2 id="额外出现的问题"><a href="#额外出现的问题" class="headerlink" title="额外出现的问题"></a>额外出现的问题</h2><p>精确定位到问题所在之后，就开始写 HTML 跟 CSS 了，因为考虑到是在移动端的项目，所以二话不说，直接上了 flex 的布局。</p>
-<p>结果，测试人员在测试的过程中发现，<strong>低版本 webview 不支持 css3 flex 布局</strong>，具体请 <a href="https://caniuse.com/#search=flex" target="_blank" rel="noopener">点这里</a>.</p>
+<p>结果，测试人员在测试的过程中发现，<strong>低版本 webview 不支持 css3 flex 布局</strong>，具体请 <a target="_blank" rel="noopener" href="https://caniuse.com/#search=flex">点这里</a>.</p>
 <p>尴了个尬，此处省略无数个 WTF~!</p>
 <p>最后，只能使用最原始的绝对定位来实现此效果~</p>
 <p>下面附上修改后的样式：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">  <span class="attribute">overflow-x</span>: visible;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">80px</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fixBox</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">45px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>完结~<br><br></p>
+
+<p>完结~<br><br/></p>
 
           
         
@@ -1379,7 +1559,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -1416,11 +1596,11 @@
         
           <p>最近在做手机页面时，遇到数字输入的键盘的问题，之前的做法只是一刀切的使用 <code>type=&quot;tel&quot;</code>，不过一直觉得九宫格的电话号码键盘上的英文字母太碍事了。于是想要尝试其它的实现方案，最终的结论却令人沮丧。不过也趁机详细了解了下 <code>pattern</code> 这个属性。</p>
 <h2 id="type-quot-tel-quot-和-type-quot-number-quot-的区别"><a href="#type-quot-tel-quot-和-type-quot-number-quot-的区别" class="headerlink" title="type=&quot;tel&quot; 和 type=&quot;number&quot; 的区别"></a><code>type=&quot;tel&quot;</code> 和 <code>type=&quot;number&quot;</code> 的区别</h2><p>这里还是先那么先交代一下最初遇到的问题。其实无论是 tel 还是 number 都不是完美的：</p>
-<h3 id="type-”tel”"><a href="#type-”tel”" class="headerlink" title="type=”tel”"></a>type=”tel”</h3><ul>
+<h3 id="type-x3D-”tel”"><a href="#type-x3D-”tel”" class="headerlink" title="type&#x3D;”tel”"></a>type&#x3D;”tel”</h3><ul>
 <li>优点是 iOS 和 Android 的键盘表现都差不多</li>
 <li>缺点是那些字母好多余，虽然我没有强迫症但还是感觉怪怪的啊。</li>
 </ul>
-<h3 id="type-”number”"><a href="#type-”number”" class="headerlink" title="type=”number”"></a>type=”number”</h3><ul>
+<h3 id="type-x3D-”number”"><a href="#type-x3D-”number”" class="headerlink" title="type&#x3D;”number”"></a>type&#x3D;”number”</h3><ul>
 <li>优点是 Android 下实现的一个真正的数字键盘</li>
 <li>缺点一：iOS 下不是九宫格键盘，输入不方便</li>
 <li>缺点二：旧版 Android（包括微信所用的 X5 内核）在输入框后面会有超级鸡肋的小尾巴，好在 Android 4.4.4 以后给去掉了。</li>
@@ -1547,7 +1727,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -1585,19 +1765,29 @@
           
             <h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3><p>只需要把行内元素包裹在一个属性 <code>display</code> 为 <code>block</code> 的父层元素中，并且把父层元素添加如下属性</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="块状元素"><a href="#块状元素" class="headerlink" title="块状元素"></a>块状元素</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="comment">/* 这里可以设置顶端外边距 */</span></span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="多个块状元素"><a href="#多个块状元素" class="headerlink" title="多个块状元素"></a>多个块状元素</h3><p>将元素的 <code>display</code> 属性设置为 <code>inline-block</code>，并且把父元素的 <code>text-align</code> 属性设置为 <code>center</code></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="多个块状元素-使用-flexbox-布局实现"><a href="#多个块状元素-使用-flexbox-布局实现" class="headerlink" title="多个块状元素 (使用 flexbox 布局实现)"></a>多个块状元素 (使用 flexbox 布局实现)</h3><p>使用 <code>flexbox</code>，只需要把待处理的块状元素的父元素添加属性 <code>display:flex</code> 及 <code>justify-content:center</code></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><h3 id="单行的行内元素"><a href="#单行的行内元素" class="headerlink" title="单行的行内元素"></a>单行的行内元素</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#222</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 以下代码中，将a元素的height和line-height设置的和父元素一样高度即可实现垂直居中 */</span></span><br><span class="line"><span class="selector-class">.parent</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="多行的行内元素"><a href="#多行的行内元素" class="headerlink" title="多行的行内元素"></a>多行的行内元素</h3><p>组合使用 <code>display:table-cell</code> 和 <code>vertical-align:middle</code> 属性来定义需要居中的元素的父容器元素生成效果</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#222</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="comment">/* 以下属性垂直居中 */</span></span><br><span class="line">  <span class="attribute">display</span>: table-cell;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="已知高度的块状元素"><a href="#已知高度的块状元素" class="headerlink" title="已知高度的块状元素"></a>已知高度的块状元素</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: -<span class="number">50px</span>; <span class="comment">/* margin-top值为自身高度的一半 */</span></span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h2><h3 id="已知高度和宽度的元素"><a href="#已知高度和宽度的元素" class="headerlink" title="已知高度和宽度的元素"></a>已知高度和宽度的元素</h3><h4 id="方案-1"><a href="#方案-1" class="headerlink" title="方案 1"></a>方案 1</h4><p>这是一种不常见的居中方法，可自适应，比方案 2 更智能，如下</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">margin</span>: auto;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="方案-2"><a href="#方案-2" class="headerlink" title="方案 2"></a>方案 2</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: -<span class="number">75px</span>; <span class="comment">/* 设置margin-left / margin-top 为自身高度的一半 */</span></span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">75px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="未知高度和宽度元素"><a href="#未知高度和宽度元素" class="headerlink" title="未知高度和宽度元素"></a>未知高度和宽度元素</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%); <span class="comment">/* 使用css3的transform来实现 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="未知高度和宽度元素"><a href="#未知高度和宽度元素" class="headerlink" title="未知高度和宽度元素"></a>未知高度和宽度元素</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>); <span class="comment">/* 使用css3的transform来实现 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="使用-flex-布局实现"><a href="#使用-flex-布局实现" class="headerlink" title="使用 flex 布局实现"></a>使用 flex 布局实现</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="comment">/* 注意这里需要设置高度来查看垂直居中效果 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#aaa</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
@@ -1716,7 +1906,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -1753,174 +1943,10 @@
         
           <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>混入 (mixins) 是一种分发 Vue 组件中可复用功能的非常灵活的方式。混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被混入该组件本身的选项。</p>
 <p>例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个混入对象</span></span><br><span class="line"><span class="keyword">var</span> myMixin = &#123;</span><br><span class="line">  created: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.hello();</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    hello: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'hello from mixin!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个使用混入对象的组件</span></span><br><span class="line"><span class="keyword">var</span> Component = Vue.extend(&#123;</span><br><span class="line">  mixins: [myMixin]</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> Component(); <span class="comment">// =&gt; "hello from mixin!"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个混入对象</span></span><br><span class="line"><span class="keyword">var</span> myMixin = &#123;</span><br><span class="line">  <span class="attr">created</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">hello</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="attr">hello</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello from mixin!&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个使用混入对象的组件</span></span><br><span class="line"><span class="keyword">var</span> <span class="title class_">Component</span> = <span class="title class_">Vue</span>.<span class="title function_">extend</span>(&#123;</span><br><span class="line">  <span class="attr">mixins</span>: [myMixin]</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> <span class="title class_">Component</span>(); <span class="comment">// =&gt; &quot;hello from mixin!&quot;</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/slag/vue-mixins/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/slag/webkit-overflow-scrolling/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/slag/webkit-overflow-scrolling/" itemprop="url">
-                  -webkit-overflow-scrolling:touch及ios滚动
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-01 16:35:22" itemprop="dateCreated datePublished" datetime="2018-09-01T16:35:22+08:00">2018-09-01</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="webkit-overflow-scrolling-touch-是什么？"><a href="#webkit-overflow-scrolling-touch-是什么？" class="headerlink" title="-webkit-overflow-scrolling:touch 是什么？"></a>-webkit-overflow-scrolling:touch 是什么？</h2><p>MDN 上是这样定义的：</p>
-<blockquote>
-<p><strong><code>-webkit-overflow-scrolling</code></strong>: 属性控制元素在移动设备上是否使用滚动回弹效果.<br><strong><code>auto</code></strong>: 使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止。<br><strong><code>touch</code></strong>: 使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文。</p>
-</blockquote>
-<p>在移动端上，在你用 <code>overflow-y:scorll</code> 属性的时候，你会发现滚动的效果很木，很慢，这时候可以使用 <code>-webkit-overflow-scrolling:touch</code> 这个属性，让滚动条产生滚动回弹的效果，就像 ios 原生的滚动条一样流畅。</p>
-<h2 id="解决-safari-布局抖动的例子"><a href="#解决-safari-布局抖动的例子" class="headerlink" title="解决 safari 布局抖动的例子"></a>解决 safari 布局抖动的例子</h2><p><img src="/images/slag/webkit-scrolling-touch.png" alt=""></p>
-<p>想实现一个布局为 header、main、bottom 的布局，其中头部和底部通过 fixed 固定，中间部分通过滚动条滑动。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/slag/webkit-overflow-scrolling/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2010,9 +2036,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2210,7 +2236,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2023</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

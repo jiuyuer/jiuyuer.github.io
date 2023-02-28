@@ -79,7 +79,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -104,18 +104,20 @@
 
 
 
-  <meta name="description" content="在使用 axios 时，注意到配置选项中包含 params 和 data 两者，以为他们是相同的，实则不然。 因为 params 是添加到 url 的请求字符串中的，用于 get 请求。 而 data 是添加到请求体(body)中的， 用于 post 请求。 比如对于下面的 get 请求： 1234567axios(&amp;#123;  method: &apos;get&apos;,  url: &apos;https://ona">
-<meta name="keywords" content="JavaScript,Ajax,Axios">
+  <meta name="description" content="在使用 axios 时，注意到配置选项中包含 params 和 data 两者，以为他们是相同的，实则不然。 因为 params 是添加到 url 的请求字符串中的，用于 get 请求。 而 data 是添加到请求体(body)中的， 用于 post 请求。 比如对于下面的 get 请求： 1234567axios(&amp;#123;  method: &amp;#x27;get&amp;#x27;,  url: &amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Axios发送请求时params和data的区别">
 <meta property="og:url" content="http://yoursite.com/2018/slag/axios-data-params/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
-<meta property="og:description" content="在使用 axios 时，注意到配置选项中包含 params 和 data 两者，以为他们是相同的，实则不然。 因为 params 是添加到 url 的请求字符串中的，用于 get 请求。 而 data 是添加到请求体(body)中的， 用于 post 请求。 比如对于下面的 get 请求： 1234567axios(&amp;#123;  method: &apos;get&apos;,  url: &apos;https://ona">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-18T08:13:03.514Z">
+<meta property="og:description" content="在使用 axios 时，注意到配置选项中包含 params 和 data 两者，以为他们是相同的，实则不然。 因为 params 是添加到 url 的请求字符串中的，用于 get 请求。 而 data 是添加到请求体(body)中的， 用于 post 请求。 比如对于下面的 get 请求： 1234567axios(&amp;#123;  method: &amp;#x27;get&amp;#x27;,  url: &amp;#">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-06-14T05:44:27.000Z">
+<meta property="article:modified_time" content="2018-06-18T08:13:03.514Z">
+<meta property="article:author" content="Mi Tu">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Ajax">
+<meta property="article:tag" content="Axios">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Axios发送请求时params和data的区别">
-<meta name="twitter:description" content="在使用 axios 时，注意到配置选项中包含 params 和 data 两者，以为他们是相同的，实则不然。 因为 params 是添加到 url 的请求字符串中的，用于 get 请求。 而 data 是添加到请求体(body)中的， 用于 post 请求。 比如对于下面的 get 请求： 1234567axios(&amp;#123;  method: &apos;get&apos;,  url: &apos;https://ona">
 
 
 
@@ -170,7 +172,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -388,7 +390,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -426,24 +428,25 @@
 <p>因为 params 是添加到 url 的请求字符串中的，用于 get 请求。</p>
 <p>而 data 是添加到请求体(body)中的， 用于 post 请求。</p>
 <p>比如对于下面的 get 请求：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">  method: <span class="string">'get'</span>,</span><br><span class="line">  url: <span class="string">'https://onana.cn/openapi/api?info=20ff1803ff65429b8'</span>,</span><br><span class="line">  params: &#123;</span><br><span class="line">    info: <span class="string">'西安天气'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">axios</span>(&#123;</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;https://onana.cn/openapi/api?info=20ff1803ff65429b8&#x27;</span>,</span><br><span class="line">  <span class="attr">params</span>: &#123;</span><br><span class="line">    <span class="attr">info</span>: <span class="string">&#x27;西安天气&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <p>如果我们将 params 修改为 data，那么是不能请求成功的，因为 get 请求中不存在 data 这个选项。</p>
 <h4 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h4><blockquote>
 <p>HTTP 请求过程中</p>
 </blockquote>
 <ul>
-<li><p>GET 请求：表单参数以 name=value&amp;name1=value1 的形式附到 url 的后面</p>
+<li><p>GET 请求：表单参数以 name&#x3D;value&amp;name1&#x3D;value1 的形式附到 url 的后面</p>
 </li>
-<li><p>POST 请求：表单参数是在请求体中，也是 name=value&amp;name1=value1 的形式在请求体中。</p>
+<li><p>POST 请求：表单参数是在请求体中，也是 name&#x3D;value&amp;name1&#x3D;value1 的形式在请求体中。</p>
 </li>
-<li><p>POST 表单请求提交时，使用的 Content-Type 是 application/x-www-form-urlencoded，而使用原生 AJAX 的 POST 请求如果不指定请求头 RequestHeader，默认使用的 Content-Type 是 text/plain;charset=UTF-8。在 html 中 form 的 Content-type 默认值：Content-type：application/x-www-form-urlencoded。如果使用 ajax 请求，在请求头中出现 request payload 导致参数的方式改变了，那么解决办法就是：</p>
+<li><p>POST 表单请求提交时，使用的 Content-Type 是 application&#x2F;x-www-form-urlencoded，而使用原生 AJAX 的 POST 请求如果不指定请求头 RequestHeader，默认使用的 Content-Type 是 text&#x2F;plain;charset&#x3D;UTF-8。在 html 中 form 的 Content-type 默认值：Content-type：application&#x2F;x-www-form-urlencoded。如果使用 ajax 请求，在请求头中出现 request payload 导致参数的方式改变了，那么解决办法就是：</p>
 <blockquote>
-<p>headers: {‘Content-Type’:’application/x-www-form-urlencoded’}</p>
+<p>headers: {‘Content-Type’:’application&#x2F;x-www-form-urlencoded’}</p>
 </blockquote>
 </li>
 </ul>
 <p>这样，问题就可以解决。</p>
-<p><br></p>
+<br/>
 
       
     </div>
@@ -565,9 +568,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -781,7 +784,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2023</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

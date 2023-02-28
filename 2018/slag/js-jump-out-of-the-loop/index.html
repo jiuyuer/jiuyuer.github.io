@@ -79,7 +79,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -105,17 +105,17 @@
 
 
   <meta name="description" content="跟许多多态语言一样，js 也有 break，continue，return 面向对象编程语法中我们会碰到 break，continue，return 这三个常用的关键字，那么关于这三个关键字的使用具体的操作是什么呢？我们在使用这三关键字的时候需要注意和需要理解的规则是什么呢？让我们开始介绍吧 js 编程语法之 break 语句break 语句会使运行的程序立刻退出包含在最内层的循环或者退出一个 s">
-<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript跳出循环的方法及区别">
 <meta property="og:url" content="http://yoursite.com/2018/slag/js-jump-out-of-the-loop/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="跟许多多态语言一样，js 也有 break，continue，return 面向对象编程语法中我们会碰到 break，continue，return 这三个常用的关键字，那么关于这三个关键字的使用具体的操作是什么呢？我们在使用这三关键字的时候需要注意和需要理解的规则是什么呢？让我们开始介绍吧 js 编程语法之 break 语句break 语句会使运行的程序立刻退出包含在最内层的循环或者退出一个 s">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-01T09:31:06.321Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-08-01T09:25:22.000Z">
+<meta property="article:modified_time" content="2018-08-01T09:31:06.321Z">
+<meta property="article:author" content="Mi Tu">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript跳出循环的方法及区别">
-<meta name="twitter:description" content="跟许多多态语言一样，js 也有 break，continue，return 面向对象编程语法中我们会碰到 break，continue，return 这三个常用的关键字，那么关于这三个关键字的使用具体的操作是什么呢？我们在使用这三关键字的时候需要注意和需要理解的规则是什么呢？让我们开始介绍吧 js 编程语法之 break 语句break 语句会使运行的程序立刻退出包含在最内层的循环或者退出一个 s">
 
 
 
@@ -170,7 +170,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -388,7 +388,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -427,21 +427,25 @@
 <h2 id="js-编程语法之-break-语句"><a href="#js-编程语法之-break-语句" class="headerlink" title="js 编程语法之 break 语句"></a>js 编程语法之 break 语句</h2><p>break 语句会使运行的程序立刻退出包含在最内层的循环或者退出一个 switch 语句。</p>
 <p>由于它是用来退出循环或者 switch 语句，所以只有当它出现在这些语句时，这种形式的 break 语句才是合法的。</p>
 <p>如果一个循环的终止条件非常复杂，那么使用 break 语句来实现某些条件比用一个循环表达式来表达所有的条件容易得多。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i == <span class="number">8</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.write(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当 i=8 的时候，直接退出 for 这个循环。这个循环将不再被执行！</p>
-<p>//输出结果：1234567</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i == <span class="number">8</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">write</span>(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当 i&#x3D;8 的时候，直接退出 for 这个循环。这个循环将不再被执行！</p>
+<p>&#x2F;&#x2F;输出结果：1234567</p>
 <h2 id="js-编程语法之-continue-语句"><a href="#js-编程语法之-continue-语句" class="headerlink" title="js 编程语法之 continue 语句"></a>js 编程语法之 continue 语句</h2><p>continue 语句和 break 语句相似。所不同的是，它不是退出一个循环，而是开始循环的一次新迭代。</p>
-<p>continue 语句只能用在 while 语句、do/while 语句、for 语句、或者 for/in 语句的循环体内，在其它地方使用都会引起错误！</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i == <span class="number">8</span>) &#123;</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.write(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当 i=8 的时候，直接跳出本次 for 循环。下次继续执行。</p>
-<p>//输出结果：1234567910</p>
+<p>continue 语句只能用在 while 语句、do&#x2F;while 语句、for 语句、或者 for&#x2F;in 语句的循环体内，在其它地方使用都会引起错误！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i == <span class="number">8</span>) &#123;</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">write</span>(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当 i&#x3D;8 的时候，直接跳出本次 for 循环。下次继续执行。</p>
+<p>&#x2F;&#x2F;输出结果：1234567910</p>
 <h2 id="js-编程语法之-return-语句"><a href="#js-编程语法之-return-语句" class="headerlink" title="js 编程语法之 return 语句"></a>js 编程语法之 return 语句</h2><p>return 语句就是用于指定函数返回的值。return 语句只能出现在函数体内，出现在代码中的其他任何地方都会造成语法错误！</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i == <span class="number">8</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.write(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i == <span class="number">8</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">write</span>(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>执行结果 Uncaught SyntaxError: Illegal return statement(…)<br>意思是非法捕获的查询返回语句。</p>
 <p>当执行 return 语句时，即使函数主体中还有其他语句，函数执行也会停止！</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (username == <span class="string">''</span>) &#123;</span><br><span class="line">  alert(<span class="string">'请输入用户名'</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (qq == <span class="string">''</span>) &#123;</span><br><span class="line">  alert(<span class="string">'请输入QQ'</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (username == <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&#x27;请输入用户名&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (qq == <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&#x27;请输入QQ&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>上面的实例里，当 username 为空时，就不会再向下执行</p>
-<p><br></p>
+<br/>
 
       
     </div>
@@ -559,9 +563,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -755,7 +759,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js-编程语法之-break-语句"><span class="nav-number">1.</span> <span class="nav-text">js 编程语法之 break 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js-编程语法之-continue-语句"><span class="nav-number">2.</span> <span class="nav-text">js 编程语法之 continue 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js-编程语法之-return-语句"><span class="nav-number">3.</span> <span class="nav-text">js 编程语法之 return 语句</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js-%E7%BC%96%E7%A8%8B%E8%AF%AD%E6%B3%95%E4%B9%8B-break-%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.</span> <span class="nav-text">js 编程语法之 break 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js-%E7%BC%96%E7%A8%8B%E8%AF%AD%E6%B3%95%E4%B9%8B-continue-%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.</span> <span class="nav-text">js 编程语法之 continue 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js-%E7%BC%96%E7%A8%8B%E8%AF%AD%E6%B3%95%E4%B9%8B-return-%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.</span> <span class="nav-text">js 编程语法之 return 语句</span></a></li></ol></div>
             
 
           </div>
@@ -775,7 +779,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2023</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

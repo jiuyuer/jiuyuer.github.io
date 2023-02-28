@@ -79,7 +79,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -104,14 +104,13 @@
 
 
 
-  <meta name="description" content="有时候需要将自己写的一些前端项目打包发布到公司内部的 nexus 仓库中私服搭建地址：https://www.jianshu.com/p/1cfbc1518fce 在 nexus 中新建一个 repository打开 nexus,登录以后，按照下图操作">
-<meta name="keywords" content="JavaScript,Vue.js">
+  <meta name="description" content="有时候需要将自己写的一些前端项目打包发布到公司内部的 nexus 仓库中私服搭建地址：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;1cfbc1518fce 在 nexus 中新建一个 repository打开 nexus,登录以后，按照下图操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将npm包发布在私有仓库nexus中">
 <meta property="og:url" content="http://yoursite.com/2020/slag/npm-package/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
-<meta property="og:description" content="有时候需要将自己写的一些前端项目打包发布到公司内部的 nexus 仓库中私服搭建地址：https://www.jianshu.com/p/1cfbc1518fce 在 nexus 中新建一个 repository打开 nexus,登录以后，按照下图操作">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="有时候需要将自己写的一些前端项目打包发布到公司内部的 nexus 仓库中私服搭建地址：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;1cfbc1518fce 在 nexus 中新建一个 repository打开 nexus,登录以后，按照下图操作">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/slag/npm-package1.png">
 <meta property="og:image" content="http://yoursite.com/images/slag/npm-package2.png">
 <meta property="og:image" content="http://yoursite.com/images/slag/npm-package3.png">
@@ -124,10 +123,12 @@
 <meta property="og:image" content="http://yoursite.com/images/slag/npm-package10.png">
 <meta property="og:image" content="http://yoursite.com/images/slag/npm-package11.png">
 <meta property="og:image" content="http://yoursite.com/images/slag/npm-package12.png">
-<meta property="og:updated_time" content="2021-06-04T08:55:09.259Z">
+<meta property="article:published_time" content="2020-08-17T08:16:13.000Z">
+<meta property="article:modified_time" content="2021-06-04T08:55:09.259Z">
+<meta property="article:author" content="Mi Tu">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Vue.js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="将npm包发布在私有仓库nexus中">
-<meta name="twitter:description" content="有时候需要将自己写的一些前端项目打包发布到公司内部的 nexus 仓库中私服搭建地址：https://www.jianshu.com/p/1cfbc1518fce 在 nexus 中新建一个 repository打开 nexus,登录以后，按照下图操作">
 <meta name="twitter:image" content="http://yoursite.com/images/slag/npm-package1.png">
 
 
@@ -183,7 +184,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -401,7 +402,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术渣/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a></span>
 
                 
                 
@@ -435,50 +436,60 @@
       
 
       
-        <p>有时候需要将自己写的一些前端项目打包发布到公司内部的 nexus 仓库中<br>私服搭建地址：<a href="https://www.jianshu.com/p/1cfbc1518fce" target="_blank" rel="noopener">https://www.jianshu.com/p/1cfbc1518fce</a></p>
-<h3 id="在-nexus-中新建一个-repository"><a href="#在-nexus-中新建一个-repository" class="headerlink" title="在 nexus 中新建一个 repository"></a>在 nexus 中新建一个 repository</h3><h4 id="打开-nexus-登录以后，按照下图操作"><a href="#打开-nexus-登录以后，按照下图操作" class="headerlink" title="打开 nexus,登录以后，按照下图操作"></a>打开 nexus,登录以后，按照下图操作</h4><p><img src="/images/slag/npm-package1.png" alt=""></p>
-<a id="more"></a>
-<h4 id="选择-npm-hosted"><a href="#选择-npm-hosted" class="headerlink" title="选择 npm (hosted)"></a>选择 npm (hosted)</h4><p><img src="/images/slag/npm-package2.png" alt=""></p>
-<h4 id="填写-repository-相关信息"><a href="#填写-repository-相关信息" class="headerlink" title="填写 repository 相关信息"></a>填写 repository 相关信息</h4><p><img src="/images/slag/npm-package3.png" alt=""></p>
+        <p>有时候需要将自己写的一些前端项目打包发布到公司内部的 nexus 仓库中<br>私服搭建地址：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1cfbc1518fce">https://www.jianshu.com/p/1cfbc1518fce</a></p>
+<h3 id="在-nexus-中新建一个-repository"><a href="#在-nexus-中新建一个-repository" class="headerlink" title="在 nexus 中新建一个 repository"></a>在 nexus 中新建一个 repository</h3><h4 id="打开-nexus-登录以后，按照下图操作"><a href="#打开-nexus-登录以后，按照下图操作" class="headerlink" title="打开 nexus,登录以后，按照下图操作"></a>打开 nexus,登录以后，按照下图操作</h4><p><img src="/images/slag/npm-package1.png"></p>
+<span id="more"></span>
+<h4 id="选择-npm-hosted"><a href="#选择-npm-hosted" class="headerlink" title="选择 npm (hosted)"></a>选择 npm (hosted)</h4><p><img src="/images/slag/npm-package2.png"></p>
+<h4 id="填写-repository-相关信息"><a href="#填写-repository-相关信息" class="headerlink" title="填写 repository 相关信息"></a>填写 repository 相关信息</h4><p><img src="/images/slag/npm-package3.png"></p>
 <blockquote>
 <ol>
-<li>这里的 <code>Blob Store</code> 最好选择为 npm 专属的<br><img src="/images/slag/npm-package4.png" alt=""></li>
-<li>如果没有需要在 <code>Blob Stores</code> 新建<br><img src="/images/slag/npm-package5.png" alt=""></li>
-<li>在 Hosted 选择： <code>Allow redeploy</code> &gt; <img src="/images/slag/npm-package6.png" alt=""></li>
+<li>这里的 <code>Blob Store</code> 最好选择为 npm 专属的<br><img src="/images/slag/npm-package4.png"></li>
+<li>如果没有需要在 <code>Blob Stores</code> 新建<br><img src="/images/slag/npm-package5.png"></li>
+<li>在 Hosted 选择： <code>Allow redeploy</code> &gt; <img src="/images/slag/npm-package6.png"></li>
 <li>点击 <code>Create repository</code> 创建</li>
 </ol>
 </blockquote>
-<h3 id="配置-npm"><a href="#配置-npm" class="headerlink" title="配置 npm"></a>配置 npm</h3><h4 id="查看仓库地址"><a href="#查看仓库地址" class="headerlink" title="查看仓库地址"></a>查看仓库地址</h4><p>在 Repositories 列表中选择刚刚建的 npm-hosted ，点击 <code>copy</code><br><img src="/images/slag/npm-package7.png" alt=""><br>在弹出的弹框中可以看到仓库地址<br><img src="/images/slag/npm-package8.png" alt=""></p>
+<h3 id="配置-npm"><a href="#配置-npm" class="headerlink" title="配置 npm"></a>配置 npm</h3><h4 id="查看仓库地址"><a href="#查看仓库地址" class="headerlink" title="查看仓库地址"></a>查看仓库地址</h4><p>在 Repositories 列表中选择刚刚建的 npm-hosted ，点击 <code>copy</code><br><img src="/images/slag/npm-package7.png"><br>在弹出的弹框中可以看到仓库地址<br><img src="/images/slag/npm-package8.png"></p>
 <h4 id="配置仓库地址"><a href="#配置仓库地址" class="headerlink" title="配置仓库地址"></a>配置仓库地址</h4><p>在 npm 中配置仓库地址，执行命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry 仓库地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry 仓库地址</span><br></pre></td></tr></table></figure>
+
 <h4 id="验证配置是否正确"><a href="#验证配置是否正确" class="headerlink" title="验证配置是否正确"></a>验证配置是否正确</h4><p>执行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config list</span><br></pre></td></tr></table></figure>
-<h3 id="添加-nexus-权限"><a href="#添加-nexus-权限" class="headerlink" title="添加 nexus 权限"></a>添加 nexus 权限</h3><p>在 <code>Realms</code> 菜单中，将 <code>npm Bearer Token Realm</code> 添加到 <code>Active</code> 中<br><img src="/images/slag/npm-package9.png" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config list</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加-nexus-权限"><a href="#添加-nexus-权限" class="headerlink" title="添加 nexus 权限"></a>添加 nexus 权限</h3><p>在 <code>Realms</code> 菜单中，将 <code>npm Bearer Token Realm</code> 添加到 <code>Active</code> 中<br><img src="/images/slag/npm-package9.png"></p>
 <h3 id="上传-nexus"><a href="#上传-nexus" class="headerlink" title="上传 nexus"></a>上传 nexus</h3><h4 id="新建一个-demo-test-项目"><a href="#新建一个-demo-test-项目" class="headerlink" title="新建一个 demo-test 项目"></a>新建一个 demo-test 项目</h4><ol>
 <li>新建一个目录 demo-test,并切换到其中</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo-test &amp;&amp; cd demo-test</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo-test &amp;&amp; cd demo-test</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>初始化一个项目</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+
 <p>然后一路回车，最后键入 y 即可</p>
-<h4 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm adduser -registry 仓库地址</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm adduser -registry http://xxx.xx.x.x:xxxx/repository/npm-hosted/</span><br><span class="line">Username: admin</span><br><span class="line">Password:</span><br><span class="line">Email: (this IS public) demo-test@devops.com</span><br><span class="line">Logged in as admin on http://xxx.xx.x.x:xxxx/repository/npm-hosted/.</span><br></pre></td></tr></table></figure>
+<h4 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm adduser -registry 仓库地址</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm adduser -registry http://xxx.xx.x.x:xxxx/repository/npm-hosted/</span><br><span class="line">Username: admin</span><br><span class="line">Password:</span><br><span class="line">Email: (this IS public) demo-test@devops.com</span><br><span class="line">Logged in as admin on http://xxx.xx.x.x:xxxx/repository/npm-hosted/.</span><br></pre></td></tr></table></figure>
+
 <h4 id="上传包"><a href="#上传包" class="headerlink" title="上传包"></a>上传包</h4><blockquote>
 <p>上传的包一定要确保根目录下有 package.json ,否则会报错。</p>
 </blockquote>
 <h4 id="第一种方式"><a href="#第一种方式" class="headerlink" title="第一种方式"></a>第一种方式</h4><p>执行命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish -registry 仓库地址</span><br></pre></td></tr></table></figure>
-<p><img src="/images/slag/npm-package10.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">demo-test npm publish -registry http://xx.xx.xx.xx:xxx/repository/npm-hosted/</span><br><span class="line">npm notice</span><br><span class="line">npm notice 📦  demo-test@1.0.0</span><br><span class="line">npm notice === Tarball Contents ===</span><br><span class="line">npm notice 348B package.json</span><br><span class="line">npm notice === Tarball Details ===</span><br><span class="line">npm notice name:          demo-test</span><br><span class="line">npm notice version:       1.0.0</span><br><span class="line">npm notice package size:  320 B</span><br><span class="line">npm notice unpacked size: 348 B</span><br><span class="line">npm notice shasum:        c897041e0aa1cbf68734be9e4058e39490de8eb3</span><br><span class="line">npm notice integrity:     sha512-Seb61XX1ronMM[...]ioQBdXs2fEW+Q==</span><br><span class="line">npm notice total files:   1</span><br><span class="line">npm notice</span><br><span class="line">+ demo-test@1.0.0</span><br><span class="line">➜  demo-test</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish -registry 仓库地址</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/slag/npm-package10.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">demo-test npm publish -registry http://xx.xx.xx.xx:xxx/repository/npm-hosted/</span><br><span class="line">npm notice</span><br><span class="line">npm notice 📦  demo-test@1.0.0</span><br><span class="line">npm notice === Tarball Contents ===</span><br><span class="line">npm notice 348B package.json</span><br><span class="line">npm notice === Tarball Details ===</span><br><span class="line">npm notice name:          demo-test</span><br><span class="line">npm notice version:       1.0.0</span><br><span class="line">npm notice package size:  320 B</span><br><span class="line">npm notice unpacked size: 348 B</span><br><span class="line">npm notice shasum:        c897041e0aa1cbf68734be9e4058e39490de8eb3</span><br><span class="line">npm notice integrity:     sha512-Seb61XX1ronMM[...]ioQBdXs2fEW+Q==</span><br><span class="line">npm notice total files:   1</span><br><span class="line">npm notice</span><br><span class="line">+ demo-test@1.0.0</span><br><span class="line">➜  demo-test</span><br></pre></td></tr></table></figure>
+
 <p>此时即上传成功</p>
 <h4 id="第二种方式"><a href="#第二种方式" class="headerlink" title="第二种方式"></a>第二种方式</h4><p>在 package.json 中添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;publishConfig&quot;: &#123;</span><br><span class="line">    &quot;registry&quot;: &quot;仓库地址&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p><img src="/images/slag/npm-package11.png" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;publishConfig&quot;: &#123;</span><br><span class="line">    &quot;registry&quot;: &quot;仓库地址&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/slag/npm-package11.png"></p>
 <p>然后执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
-<h3 id="验证是否上传成功"><a href="#验证是否上传成功" class="headerlink" title="验证是否上传成功"></a>验证是否上传成功</h3><p><img src="/images/slag/npm-package12.png" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证是否上传成功"><a href="#验证是否上传成功" class="headerlink" title="验证是否上传成功"></a>验证是否上传成功</h3><p><img src="/images/slag/npm-package12.png"></p>
 
       
     </div>
@@ -598,9 +609,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -794,7 +805,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-nexus-中新建一个-repository"><span class="nav-number">1.</span> <span class="nav-text">在 nexus 中新建一个 repository</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打开-nexus-登录以后，按照下图操作"><span class="nav-number">1.1.</span> <span class="nav-text">打开 nexus,登录以后，按照下图操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择-npm-hosted"><span class="nav-number">1.2.</span> <span class="nav-text">选择 npm (hosted)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#填写-repository-相关信息"><span class="nav-number">1.3.</span> <span class="nav-text">填写 repository 相关信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-npm"><span class="nav-number">2.</span> <span class="nav-text">配置 npm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看仓库地址"><span class="nav-number">2.1.</span> <span class="nav-text">查看仓库地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置仓库地址"><span class="nav-number">2.2.</span> <span class="nav-text">配置仓库地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证配置是否正确"><span class="nav-number">2.3.</span> <span class="nav-text">验证配置是否正确</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加-nexus-权限"><span class="nav-number">3.</span> <span class="nav-text">添加 nexus 权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传-nexus"><span class="nav-number">4.</span> <span class="nav-text">上传 nexus</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个-demo-test-项目"><span class="nav-number">4.1.</span> <span class="nav-text">新建一个 demo-test 项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加用户"><span class="nav-number">4.2.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上传包"><span class="nav-number">4.3.</span> <span class="nav-text">上传包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种方式"><span class="nav-number">4.4.</span> <span class="nav-text">第一种方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种方式"><span class="nav-number">4.5.</span> <span class="nav-text">第二种方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证是否上传成功"><span class="nav-number">5.</span> <span class="nav-text">验证是否上传成功</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-nexus-%E4%B8%AD%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA-repository"><span class="nav-number">1.</span> <span class="nav-text">在 nexus 中新建一个 repository</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%93%E5%BC%80-nexus-%E7%99%BB%E5%BD%95%E4%BB%A5%E5%90%8E%EF%BC%8C%E6%8C%89%E7%85%A7%E4%B8%8B%E5%9B%BE%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">打开 nexus,登录以后，按照下图操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%89%E6%8B%A9-npm-hosted"><span class="nav-number">1.2.</span> <span class="nav-text">选择 npm (hosted)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A1%AB%E5%86%99-repository-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF"><span class="nav-number">1.3.</span> <span class="nav-text">填写 repository 相关信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-npm"><span class="nav-number">2.</span> <span class="nav-text">配置 npm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80"><span class="nav-number">2.1.</span> <span class="nav-text">查看仓库地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80"><span class="nav-number">2.2.</span> <span class="nav-text">配置仓库地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E9%85%8D%E7%BD%AE%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE"><span class="nav-number">2.3.</span> <span class="nav-text">验证配置是否正确</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-nexus-%E6%9D%83%E9%99%90"><span class="nav-number">3.</span> <span class="nav-text">添加 nexus 权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E4%BC%A0-nexus"><span class="nav-number">4.</span> <span class="nav-text">上传 nexus</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA-demo-test-%E9%A1%B9%E7%9B%AE"><span class="nav-number">4.1.</span> <span class="nav-text">新建一个 demo-test 项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="nav-number">4.2.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8A%E4%BC%A0%E5%8C%85"><span class="nav-number">4.3.</span> <span class="nav-text">上传包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">4.4.</span> <span class="nav-text">第一种方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">4.5.</span> <span class="nav-text">第二种方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E4%B8%8A%E4%BC%A0%E6%88%90%E5%8A%9F"><span class="nav-number">5.</span> <span class="nav-text">验证是否上传成功</span></a></li></ol></div>
             
 
           </div>
@@ -814,7 +825,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2023</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
