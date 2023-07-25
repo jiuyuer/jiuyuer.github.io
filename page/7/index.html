@@ -1,131 +1,45 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.4.1">
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Pisces',
-    version: '6.4.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"webcjs.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="吃馒头也开心">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MiTu-小书童">
-<meta property="og:url" content="http://yoursite.com/page/7/index.html">
+<meta property="og:url" content="https://webcjs.com/page/7/index.html">
 <meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="吃馒头也开心">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Mi Tu">
+<meta property="article:author" content="MiTu">
+<meta property="article:tag" content="吃馒头也开心">
 <meta name="twitter:card" content="summary">
 
+<link rel="canonical" href="https://webcjs.com/page/7/">
 
 
-
-
-
-  <link rel="canonical" href="http://yoursite.com/page/7/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -137,283 +51,205 @@
 
 
 
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">MiTu-小书童</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">尘世中_迷途小书童_</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MiTu-小书童</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">尘世中_迷途小书童_</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/jiuyuer" class="github-corner" title="MiTu-小书童" aria-label="MiTu-小书童" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-            
 
-          
-          <div id="content" class="content">
+          <div class="content index posts-expand">
             
-  <section id="posts" class="posts-expand">
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/tutorial/introduction-to-SLR-tenth/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2015/prose/you-and-her-love-story/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MiTu-小书童">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-tenth/" itemprop="url">
-                  “外接闪光灯” - 单反入门第十课
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/prose/you-and-her-love-story/" class="post-title-link" itemprop="url">你和她的爱情故事</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
-              <time title="创建时间：2012-09-13 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-13T20:07:23+08:00">2012-09-13</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
+              <time title="创建时间：2015-09-01 01:56:31" itemprop="dateCreated datePublished" datetime="2015-09-01T01:56:31+08:00">2015-09-01</time>
             </span>
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+                </span>
+            </span>
 
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+            <span id="/2015/prose/you-and-her-love-story/" class="post-meta-item leancloud_visitors" data-flag-title="你和她的爱情故事" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2015/prose/you-and-her-love-story/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/prose/you-and-her-love-story/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -421,164 +257,97 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p>一般来说，想对闪灯摄影作比较多样的变化或是闪灯出力（也就是闪光灯的亮度）较大的应用时，单单使用相机内建的闪灯会有很多限制，所以对于想在闪灯摄影上作进阶使用的摄影初学者来说，我们会建议购买一支功能比较强的外接式闪灯来搭配使用。</p>
-<p>外接闪光灯可分为两种类型：一种是可用于不同厂商相机的通用型号，另一种是特定相机专用型号。内置于数码相机中的闪光灯由于是直接把强光照射到拍摄对象上，因此有时会产生难看的阴影。这时候最好使用外置闪光灯。最近，可使用外置闪光灯的数码相机也越来越多。如果是可使用外置闪光灯的机型，不用的话就太可惜了。</p>
-<p>这里先让我们来了解一下闪灯应用的相关名词解释。</p>
-<p>首先来看 GN 值。在闪灯的规格表中，这个数字代表了该闪灯的功率，GN 值（Guide Number，闪灯指数）指的是闪灯出力的程度，当 GN 值越大，代表闪灯的出力越强，也就是发射出来的闪光能力越强。关于 GN 值的计算方式为：</p>
-<blockquote>
-<p>GN ＝ F（光圈） x m（单位为公尺，代表与被拍摄物的距离）</p>
-</blockquote>
-<p>在这个公式中，是以 ISO 100 为标准的拍摄环境。举例来说，当一个闪灯的 GN 值有 40 时，当我们使用 F4 的光圈拍摄，闪灯的有效距离可以达到 10 公尺内的范围。</p>
+          <h4 id="（一）"><a href="#（一）" class="headerlink" title="（一）"></a><center>（一）</center></h4><p>2008 年的秋天，那个清澈的夜晚，你在一大片陌生的面孔中莫名其妙地发现了她。所谓莫名其妙是朦胧诗派的写法，实际上是你搭讪了她的朋友，然后通过她的朋友顺利地要到了她的 QQ。几个月后，你跟她说：我发掘了你。那时她还不大适应你这种种表达方式，所以她微微地愕然了一下。</p>
+<p>有首歌唱：我遇见你是最美丽的意外。你觉得自己遇见她这个美丽的意外实在是有点意外，因为她让你中毒了，并且毒性极大。杨过中了情花毒，一思念小龙女胸口就是那个痛！你中的这个毒好比电脑一开机就卡死，没法运转。</p>
+<h4 id="（二）"><a href="#（二）" class="headerlink" title="（二）"></a><center>（二）</center></h4><p>从此之后，在黎明或是午夜，你总会从许许多多的梦中惊醒。你总会在梦里看到各种各样形形色色的面孔在背后追赶着自己：有古惑仔挥舞着尖刀卖命地追着你砍；有警察举着枪在你后面乱射；更有些人死命地咬着你，嘴里在不停地叫着喊着快还钱还钱快还钱……</p>
+<p>你认为这大概是自己白天追她追得太厉害了，所以到了晚上得自我找点平衡，于是不自学地就老做梦让别人追。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-tenth/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2015/prose/you-and-her-love-story/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/tutorial/introduction-to-SLR-ninth/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2015/diary/still-me/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MiTu-小书童">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-ninth/" itemprop="url">
-                  “点测光” - 单反入门第九课
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/diary/still-me/" class="post-title-link" itemprop="url">我还是我</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
-              <time title="创建时间：2012-09-12 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-12T20:07:23+08:00">2012-09-12</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
+              <time title="创建时间：2015-05-07 19:49:15" itemprop="dateCreated datePublished" datetime="2015-05-07T19:49:15+08:00">2015-05-07</time>
             </span>
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+                </span>
+            </span>
 
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+            <span id="/2015/diary/still-me/" class="post-meta-item leancloud_visitors" data-flag-title="我还是我" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2015/diary/still-me/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/diary/still-me/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -586,159 +355,98 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p>我们在遇到复杂光源的拍摄环境时，当然不能只用经验法则跟曝光补偿，来作一个合适的曝光组合。在这一课，我们要教大家利用点测光，来作更精准的曝光判断。</p>
-<p>点测光是一种十分精确的测光模式，它的测光大约只测画面中之 2%～ 3%的面积，不考虑周边环境亮度，因此可确保摄影者完全按照自己选择的某个具代表性的―点‖来测光曝光，所以能满足严格的曝光要求。点测光模式只是测定画面中心一个很小范围的亮度，并以这个测光值作为曝光的唯一依据，当然，许多情况下是用这个很小范围测试并非位于画面中心的被摄物亮度。在拍摄明暗反差强烈、并且明暗面积很不均衡的被摄物时，摄影者可以用画面中心这样一个很小的范围对被摄主体或其它部位上某处亮度进行测定，而不受大面积强光背景或阴暗背景的影响。点测光在风光和人物摄影中都是一个非常实用的功能，它能让摄影者在复杂的光线场景中进行准确的曝光。</p>
-<p>虽然说点测光是一个好用的工具，但并不是每一台 DSLR 中都内建了点测光，有的入门级相机只有中央重点测光的功能，这时，我们可以使用额外的测光表，或是利用长距离镜头来缩小测光的范围。</p>
+          <p>之前我也说过，迷茫是好事，因为熬过了迷茫期就说明你有了进步。这是一直以来我始终相信的事实，并不是为自己的迷茫找借口。</p>
+<p>不知为何，今天突然感触好深，回想过去，一年多的时间以来，我到底做了些什么，有哪些进步的地方，有哪些改变，很遗憾，细想起来，少，真的很少。反而发现自己失去了好多东西。</p>
+<p>以前，自己还是很有计划性的，自制力也强。喜欢看书，看电影，拍照，打球，一到周末，爬山远足是少不了的。这些个爱好对于现在的我来说，好多都被取代。现在的周末，宅取代了所有。说到宅，我也知道是因为游戏的原因，我也承认自己因为游戏改变了好多。</p>
+<p>说到游戏，突然想到，到现在为止我曾为之疯狂过的事情有三件，高中那会儿，疯狂的打篮球，大学那会儿，疯狂的打台球，毕业一年后，疯狂的打游戏。为之疯狂的程度，我只想说比你想象中的还要疯狂。如果你要问我后不后悔，我可以确定的告诉你，我并不后悔。我想这就是人生吧。</p>
+<p>人生要活的精彩，活的要有激情，不然到老了就没有什么可以值得回忆了。高中太远就不说了。大学那会儿，打一下午篮球，洗完澡然后直接泡在垃圾街边上的露天台球场，一打一晚上，从连握杆都不会到“杀七”。还记得有个下雨的晚上，为了打完最后一场，老板都把其他球桌收拾完等我们了，我们还在为对方撑着伞一定要分出胜负的场景么。晚上躺在寝室的床上，吹牛逼到半夜，吵的隔壁的老王过来敲门喊停。我承认好多次挑起话题的人是我，第一个睡着的人也是我。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-ninth/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2015/diary/still-me/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/tutorial/introduction-to-SLR-eighth/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2014/diary/confused/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MiTu-小书童">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-eighth/" itemprop="url">
-                  “曝光补偿” - 单反入门第八课
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2014/diary/confused/" class="post-title-link" itemprop="url">不知所云</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
-              <time title="创建时间：2012-09-11 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-11T20:07:23+08:00">2012-09-11</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
+              <time title="创建时间：2014-05-11 19:45:53" itemprop="dateCreated datePublished" datetime="2014-05-11T19:45:53+08:00">2014-05-11</time>
             </span>
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+                </span>
+            </span>
 
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+            <span id="/2014/diary/confused/" class="post-meta-item leancloud_visitors" data-flag-title="不知所云" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2014/diary/confused/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/diary/confused/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -746,161 +454,98 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p>每一部单反数码相机，都会有「曝光补偿」的设定，曝光补偿，指的是当我们完成测光，设定光圈快门之后，因应环境光线的变化，对曝光作加减的额外设定。</p>
-<p>曝光补偿也是一种曝光控制方式，一般常见在 ±2-3EV 左右，如果环境光源偏暗，即可增加曝光值(如调整为+1EV、+2EV)以突显画面的清晰度。</p>
-<p>数码相机在拍摄的过程中，如果按下半截快门，液晶屏上就会显示和最终效果图差不多的图片，对焦，曝光一切启动。这个时候的曝光，正是最终图片的曝光度。图片如果明显偏亮或偏暗，说明相机的自动测光准确度有较大偏差，要强制进行曝光补偿，不过有的时候，拍摄时显示的亮度与实际拍摄结果有一定出入。数码相机可以在拍摄后立即浏览画面，此时，可以更加准确地看到拍摄出来的画面的明暗程度，不会再有出入。如果拍摄结果明显偏亮或偏暗，则要重新拍摄，强制进行曝光补偿。</p>
-<p>在前面，我们讨论过相机的测光系统。在一般环境下，光线比较单纯，以相机内建的程序测光，就可以拍出不错的照片了；可是在光线变化比较大的场合，相机在测光时会发生误判，这时拍出来的照片不是太亮、就是太暗。</p>
-<p>甚幺样的情况会让相机的测光系统发生误判呢？我们在这里举两个最常见的例子；当拍摄画面中有很多浅色系，环境中的光线反射程度很高，除了现场原本的光线外，额外反射出来的光线，让测光系统误判此环境的光线很强，因此相机的曝光组合会比正常情况下的光线值低，拍出来的相片会偏暗。</p>
+          <p>一直将屌丝自居，却不知道这屌丝一词是从何时开始由来的。印象中是我到了施强之后才有这称号的。来到施强，开始了我屌丝的生活。<br>入职后的第二周，我便搬入了公司宿舍，图的就是能省几块钱，毕竟刚毕业，作为屌丝的我，口袋里没几个钱。公司的宿舍，大学一般，但比大学少个可以晒衣服的阳台，但多了热水器和空调。宿舍四个人住满了，也结识了龙哥，春哥和谢飞。以及后来的 LT，ZLC，XXF 等。如同大学的寝室文化一样，相处的也是挺和谐的。</p>
+<p>然后，问丁哥借了两个月的工资买了我想了两年多的单反，爱不释手。各种学，各种练，这也符合我红色的性格，也可以用心血来潮来形容。我感谢那时努力的自己。现在的我，拿起相机的时间真的很有限，有限…</p>
+<p>然后，那一年的地下室，也是很值得回味和留恋的。搬到 ERP 那个办公室之后，我可以这么说，几乎那段时间最晚一个走的，关门关窗的那个人，都是我。那年每个夏天的夜晚，我在自己的办公桌前看书学习，看电影，做自己想做的事，一个人静静的呆在一个空旷的办公室里，真的很舒心，我其实挺享受这样的氛围，无人打扰，可以静心做事。因为知道自己跟别人不在同一起跑线上，所以我必须得努力，只有这样，也许我才会有机会追赶上其他人。那段时间，我真的一起在努力提高自己。</p>
+<p>然后，到了九月份，我分手了。没错，我有过女朋友，有过一个很好的女朋友，她是一个对我很好，很温柔，很热情的女朋友。分手理由归结为一点，是我不懂珍惜。</p>
+<p>然后，想起龙哥对我说的一句话，他说，晓峰，我发现了一个问题，你对每位女生都这么好，你女朋友不吃醋么？额…龙哥，我当时真不知道这是你对我的夸奖呢？还是你想提醒我什么。其实，我当时想告诉你的是，其实，我对我女朋友也真的挺好的。肯定比对认识的普通女性朋友要更好的多。但，你这么说了，我觉得也挺有道理，所以，我也有用心去好好想过这事，以及行动过。最后我发现，这并不是我所能改或者怎么样，我发现，其实我本来就是这么一个人，想改都不知道从何处着手改。其实吧，我对男性朋友也挺不错的吧。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-eighth/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2014/diary/confused/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/tutorial/introduction-to-SLR-seventh/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2014/tutorial/select-the-camera/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MiTu-小书童">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-seventh/" itemprop="url">
-                  “感光度” - 单反入门第七课
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2014/tutorial/select-the-camera/" class="post-title-link" itemprop="url">佳能好？还是尼康好？</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
-              <time title="创建时间：2012-09-10 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-10T20:07:23+08:00">2012-09-10</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
+              <time title="创建时间：2014-04-18 16:07:48" itemprop="dateCreated datePublished" datetime="2014-04-18T16:07:48+08:00">2014-04-18</time>
             </span>
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a>
+                </span>
+            </span>
 
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+            <span id="/2014/tutorial/select-the-camera/" class="post-meta-item leancloud_visitors" data-flag-title="佳能好？还是尼康好？" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2014/tutorial/select-the-camera/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/tutorial/select-the-camera/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -908,164 +553,103 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p>感光度（也就是 ISO）指的是感光体对光线感受的能力。在传统摄影时代，感光体就是底片，而在数码摄影的时代，相机则采用 CCD 或是 CMOS 作为感光原件。感光度越高（也就是 ISO 值越高）时，拍摄时所需要的光线就越少，感光度越低时，对拍摄时所需要的光线就越多。</p>
-<blockquote>
-<p>一般我们常见的 ISO 数值有： ISO50、ISO100、ISO200、ISO400、ISO800、ISO1600</p>
-</blockquote>
-<p>当 ISO 的数值越高时，感光度就越强。目前入门级数位单反相机的感光度通常从 100 起跳（NIKON 为 ISO 200），最高一般都有到 ISO 1600 的实力。</p>
-<p>在每两个相邻的感光度号数之间，差异的感光能力是两倍，也就是说，ISO100 的感光能力是 ISO50 的两倍，同样的 ISO1600 的感光能力是 ISO800 的两倍。这里的计算方法，跟我们在前面课程中提到过的光圈和快门是一样的。</p>
-<p>感光度跟光圈、快门一样，在两个相邻号数之间都有「一级」或是「一格」的差距。所以，我们在换算曝光量时，同样的也可以把 ISO 带进去里面作变换。例如：</p>
-<p>F2.8、1&#x2F;60s、ISO 100 &#x3D; F5.6、1&#x2F;60s、ISO 400（因为光圈减少了两格的光量，所以右边在 ISO 感光度上增加了两格补回来）</p>
+          <p>购买相机“佳能好还是尼康好”，有学摄影的学生、家庭用户、摄影爱好者，有要卡片机的，也有买单反的。佳能、尼康是在国内摄影器材销售量数一数二的产品，到底谁好？您可以从以下几个方面去考虑。</p>
+<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
+<li>每个人对摄影的偏好不一样，所以买相机前要对自己的用途有个定位。比如有的喜欢旅游，爱好风光摄影；有的喜欢人像，喜欢给家人拍照，有了定位我们来说下特点：佳能的色调偏暖，就是出来的片子会偏红；尼康的色调偏冷，片子出来后会偏青。也就是拍风光用尼康拍的更山清水秀，爱拍人像的用佳能白里透红。</li>
+</ul>
+<h2 id="喜好"><a href="#喜好" class="headerlink" title="喜好"></a>喜好</h2><ul>
+<li>佳能的成像柔点，尼康的成像锐点。比如同时拍一张人像，佳能的拍出来脸部皮肤看着可能很光滑，尼康就会把斑点、发丝都给拍出来，这样就看自己的喜好了，要是不 PS 估计很多 MM 接受不了尼康给自己拍脸了，也有可能需要的就是发丝的这个锐度。</li>
+</ul>
+<h2 id="配件（指单反用户）"><a href="#配件（指单反用户）" class="headerlink" title="配件（指单反用户）"></a>配件（指单反用户）</h2><ul>
+<li>买了机身没有镜头是不能用的。NIKON 是多年研究光学产品的专家,镜头的价格也是相对便宜点（不包刮 07 年 10 月反布的 5 款新镜头）；Canon 具有高科技的产品手法，L 头更是现在专业摄影届必不可少的利器，价格当然也是很高。</li>
+</ul>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-seventh/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2014/tutorial/select-the-camera/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/tutorial/introduction-to-SLR-sixth/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2014/travel/sanya-with-mass-line/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MiTu-小书童">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-sixth/" itemprop="url">
-                  “对焦” - 单反入门第六课
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2014/travel/sanya-with-mass-line/" class="post-title-link" itemprop="url">三亚跟团行</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
-              <time title="创建时间：2012-09-09 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-09T20:07:23+08:00">2012-09-09</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
+              <time title="创建时间：2014-04-08 13:55:08" itemprop="dateCreated datePublished" datetime="2014-04-08T13:55:08+08:00">2014-04-08</time>
             </span>
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%B7%AF%E4%B8%8A/" itemprop="url" rel="index"><span itemprop="name">路上</span></a>
+                </span>
+            </span>
 
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+            <span id="/2014/travel/sanya-with-mass-line/" class="post-meta-item leancloud_visitors" data-flag-title="三亚跟团行" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2014/travel/sanya-with-mass-line/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/travel/sanya-with-mass-line/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -1073,160 +657,99 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p>一张好的照片，最基本的条件，就是要拥有良好的曝光和正确的对焦。在前面我们已经讲过了曝光的观念和换算方法，在后面会继续教大家如何因应环境来调配合适的曝光组合，这里我们要先教大家正确的对焦方法跟观念。</p>
-<p>自动对焦功能已经是现在 DSLR 的基本功能了，尤其是有超音波马达的推动和更新更强的对焦程序辅助。在一般的拍摄情况下，要做到正确的对焦已不再是件困难的事情了，不过还是有许多人常常会拍出失焦的照片，有些时候连摄影老手也会犯下这样的错误。</p>
-<p>为了帮助初学摄影的朋友可以拍出清晰的照片，在这里我们特别列出了一些在对焦时，容易发生的疏忽和错误。只要在拍摄时仔细的注意下面的一些情况，就可以避免失焦或是焦距偏移的情况发生。</p>
-<h2 id="反差低的环境"><a href="#反差低的环境" class="headerlink" title="反差低的环境"></a>反差低的环境</h2><p>基本上，自动对焦的系统通常是利用环境中的反差，经过运算合焦后，来达成自动对焦的目的。这样的设计在拍摄环境反差比较低时，就会发生对不到焦的情况，很难达成合焦的动作，也就是一般常说的「迷焦」。</p>
+          <p>清明前后，跟可爱的同事们去了一趟海南三亚游玩，而且回来之后，还很不幸的感冒了，一直鼻涕流个不停，才发现，自个儿的身体是那个虚呀，所以，也提醒自己并倡导大家，要多多锻炼身体呀。</p>
+<p>这次三亚之旅呢，是跟团去的，玩的地方有，博鳌、西岛、玉带滩、热带植物园、椰田古寨、亚龙湾海底世界——沙滩漫步、天涯海角、兰花大世界等等。</p>
+<p>当然，既然跟团了，那自己也就不用做什么功课了，跟着导游走就是了。不过，下次如果有机会再去的话，那我想我肯定是要自助游了。要不然真像有位导游说的，花钱买罪受咯。</p>
+<p>玩过这些地方，当然也清楚哪些地好玩，哪些并不是很有意思。</p>
+<p>像兰花大世界就真心没啥兴趣，当然，对于爱兰懂兰的朋友来说又是例外了。</p>
+<p>到三亚，当然是以看海玩水为主吧，但是，记得做好防晒措施，不然，别像有些人回来之后，整个脸都肿起来了，那真是后遗症相当厉害了。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-sixth/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2014/travel/sanya-with-mass-line/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/tutorial/introduction-to-SLR-fifth/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2014/diary/2014-new-start/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MiTu-小书童">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-fifth/" itemprop="url">
-                  “景深” - 单反入门第五课
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2014/diary/2014-new-start/" class="post-title-link" itemprop="url">2014，新的开始</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
-              <time title="创建时间：2012-09-08 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-08T20:07:23+08:00">2012-09-08</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
+              <time title="创建时间：2014-02-14 01:56:31" itemprop="dateCreated datePublished" datetime="2014-02-14T01:56:31+08:00">2014-02-14</time>
             </span>
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+                </span>
+            </span>
 
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+            <span id="/2014/diary/2014-new-start/" class="post-meta-item leancloud_visitors" data-flag-title="2014，新的开始" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2014/diary/2014-new-start/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/diary/2014-new-start/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -1234,160 +757,98 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>2014年2月14日，</p>
+<p>元宵节快乐，</p>
+<p>情人节快！</p>
+<p>不同往年，这个时候的我，还在出差中。出差的这几天（也是第一次以公司的名义出差），经历的种种，深有感触。</p>
+<p>大学毕业那会，向往那种出差可以到处跑，到处玩，可以去了解一个地方的习俗等等，觉得很好玩，很开心。天天在外面，不知道是因为时间的关系，又或许是去年一年，自己成功转型为宅男，所以现在出差在外面，毫不习惯，没有归属感。</p>
+<p>这几天，天天早出晚归，没时间去整理去思考一些东西，好吧，过年的时候我也没想过2014需要作哪些计划，这些都是拖延症惹的祸，但我相信，2013年是我停滞不前的一年，至此结束，2014年，重新出发。</p>
+<p>2014年，</p>
+<p>希望自己能培养跟工作除外的另外一些爱好，摄影除外的，让自己充实起来，而不是整天对着电脑打打游戏，看看电影，整天宅在家里。</p>
+<p>在技术上，希望自己能坚持不懈，完善及完整自己的专业技术，不断学习。</p>
+<p>把去年存下来欠着的书，看完，争取一个月一本书，但这不是给自己压力，而是兴趣。</p>
+<p>也希望自己能够可以合理的安排好自己的时间。</p>
+<p>加油吧！</p>
 
-      
-        
-          <p>除了曝光和测光的复杂方面之外，摄影爱好者通常会发现景深是最难掌握的一个概念。这是不难理解的，因为这是一个基于主观判断的假设的系数。通俗地说，景深就是在所调焦点前后延伸出来的”可接受的清晰区域”。实际上，在任何照片上只有聚焦了的平面才是真正清晰。</p>
-<p>除了曝光和测光的复杂方面之外，摄影爱好者通常会发现景深是最难掌握的一个概念。这是不难理解的，因为这是一个基于主观判断的假设的系数。通俗地说，景深就是在所调焦点前后延伸出来的”可接受的清晰区域”。实际上，在任何照片上只有聚焦了的平面才是真正清晰的。然而，在观赏者看来，这一平面前后的物体也可能会显得相当清晰。教科书在解释景深时往往要讨论”最小弥散圈”，但那是一个对于实际应用并非必要的技术问题。</p>
-<p>例如：你在天然动物园将镜头焦点调在阴影处孟加拉虎的眼睛上，在底片上它的眼睛就是最清晰的。而这时老虎的嘴，还有其身后的树皮，在最终的照片上也显出可以接受的清晰影像。当你的视线从调焦点眼睛移开时，模糊的程度就逐渐加大。在近处前景和远处背景上的物体离虎头越远清晰度就越差。</p>
-<p>景深可能很长，也可能很短、很浅，我们可以根据需求调整摄影的模式来控制景深的长短。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-fifth/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/tutorial/introduction-to-SLR-fourth/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2013/travel/huangshan-travel/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MiTu-小书童">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-fourth/" itemprop="url">
-                  “曝光” - 单反入门第四课
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2013/travel/huangshan-travel/" class="post-title-link" itemprop="url">黄山游记</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
-              <time title="创建时间：2012-09-07 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-07T20:07:23+08:00">2012-09-07</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
+              <time title="创建时间：2013-08-22 01:56:31" itemprop="dateCreated datePublished" datetime="2013-08-22T01:56:31+08:00">2013-08-22</time>
             </span>
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%B7%AF%E4%B8%8A/" itemprop="url" rel="index"><span itemprop="name">路上</span></a>
+                </span>
+            </span>
 
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+            <span id="/2013/travel/huangshan-travel/" class="post-meta-item leancloud_visitors" data-flag-title="黄山游记" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2013/travel/huangshan-travel/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2013/travel/huangshan-travel/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -1395,162 +856,95 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p>曝光英文名称为 Exposure，曝光模式即计算机采用自然光源的模式，通常分为多种，包括：快门优先、光圈优先、手动曝光、AE 锁等模式。照片的好坏与曝光量有关，也就是说应该通多少的光线使 CCD 能够得到清晰的图像。曝光量与通光时间（快门速度决定），通光面积（光圈大小决定）有关。</p>
-<p>我们如果想要得到一张色彩漂亮、明暗分明的影像，就要让感光体（传统时代的感光体为胶卷，DSLR 时代则为 CCD 或 CMOS 感光原件）得到适当的曝光。而所谓的曝光，就是在一定的时间内，让感光体受到一定光量的投射。</p>
-<h2 id="曝光的计算方式为："><a href="#曝光的计算方式为：" class="headerlink" title="曝光的计算方式为："></a>曝光的计算方式为：</h2><blockquote>
-<p>曝光 &#x3D; 光量（光圈容许进入的光线强度）X 时间（快门允许进入的时间长短）</p>
-</blockquote>
-<p>也就是说，一个完整的曝光程序，是由光圈的大小以及快门的时间搭配组合而成的。</p>
+          <p>上周末去了趟黄山，两天一夜游，这次是第二次登山了，跟同事及朋友一起去的，共九人。因为周一碰到了一些其他的琐事一直没时间好好的写个旅行日志，今天就把它记录出来。只作记录，没有文笔可说。</p>
+<h2 id="题记"><a href="#题记" class="headerlink" title="题记"></a>题记</h2><p>首先，这次其实算是跟团游玩的，跟团游玩当然有好处也有坏处，先说说好处吧，那就是你的来回出行都不用再自己打理，自然是有汽车来回接送，不需要花太多的经历去考虑这些事（如果人多一起去的话，当然是领队较烦一些）。然后，我们这次是住山上的，所以说，在不了解山上的住宿情况下，跟团的话，他们都是会帮我们安排好，也省去了好多事，让你可以安心的爬山观光，到了时间会有导游通知你去哪入住。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-fourth/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2013/travel/huangshan-travel/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/tutorial/introduction-to-SLR-third/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2013/tutorial/the-photography-foundation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MiTu-小书童">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-third/" itemprop="url">
-                  “快门” - 单反入门第三课
-                </a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2013/tutorial/the-photography-foundation/" class="post-title-link" itemprop="url">摄影基础知识</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
-              <time title="创建时间：2012-09-06 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-06T20:07:23+08:00">2012-09-06</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
+              <time title="创建时间：2013-06-06 20:03:18" itemprop="dateCreated datePublished" datetime="2013-06-06T20:03:18+08:00">2013-06-06</time>
             </span>
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a>
+                </span>
+            </span>
 
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+            <span id="/2013/tutorial/the-photography-foundation/" class="post-meta-item leancloud_visitors" data-flag-title="摄影基础知识" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2013/tutorial/the-photography-foundation/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2013/tutorial/the-photography-foundation/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -1558,394 +952,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p>快门是相机中的一个机械装置，大多设置于机身接近底片的位置（大型相机的快门则是设计在镜头中），藉由控制快门的开关速度，来决定底片接受光线的时间长短。</p>
-<p>也就是说，在每一次拍摄时，光圈的大小控制了光线的进入量、快门的速度决定光线进入的时间长短，这样一次的动作便完成了我们所谓的「曝光」。</p>
-<p>快门是镜头前阻挡光线进来的装置，一般而言快门的时间范围越大越好。秒数低适合拍运动中的物体，某款相机就强调快门最快能到 1&#x2F;16000 秒，可轻松抓住急速移动的目标。不过当你要拍的是夜晚的车水马龙，快门时间就要拉长，常见照片中丝绢般的水流效果也要用慢速快门才能拍。</p>
-<p>快门以「秒」作为单位，它有一定的数字格式，一般在像机上我们可以见到的快门单位有：</p>
-<blockquote>
-<p>B、1、2、4、8、15、30、60、125、250、500、1000、2000、4000、8000</p>
-</blockquote>
-<p>上面每一个数字单位都是分母，也就是说每一段快门分别是：1 秒、1&#x2F;2 秒、1&#x2F;4 秒、1&#x2F;8 秒、1&#x2F;15 秒、1&#x2F;30 秒、1&#x2F;60 秒、1&#x2F;125 秒、1&#x2F;250 秒（以下依此列推）等等。一般中阶的单眼相机快门做到 1&#x2F;4000 秒，高阶的专业相机则可以到 1&#x2F;8000 秒。</p>
-<p>B 指的是慢快门 Bulb，B 快门的开关时间由操作者自行控制，我们可以藉由快门按钮或是快门线，来决定整个曝光的时间。</p>
+          <h1 id="一、光圈快门及其相互关系"><a href="#一、光圈快门及其相互关系" class="headerlink" title="一、光圈快门及其相互关系"></a>一、光圈快门及其相互关系</h1><p>光圈是相机镜头中的可以改变中间孔的大小的机械装置，快门是控制曝光时间长短的装置（机械或电子），二者结合，共同控制曝光量。</p>
+<p>举例来说，光线好比水流，镜头相当于一个可以控制水流方向和流量有水闸的的洞。光圈是洞的大小，快门是开闸的时间。</p>
+<p>开闸时间一定时，洞越小，流入的水量就越少，反之就越多。当快门速度一定时，光圈合适（例如 f5.6)，曝光正常，光圈太大(例如 f2.8)，曝光过度，照片（冲洗后的正片，不是底片）就白花花一片，没有层次，甚至白纸一张；光圈太小(例如 f11)，曝光不足，照片黑糊糊的，损失低光部位层次甚至没有影像。</p>
+<p>洞的大小一定时，开闸时间越长，流入的水量就越多，反之就越少。故当光圈一定时，快门速度合适(例如 1&#x2F;250 秒)，曝光正常，快门越满(例如 1&#x2F;60 秒)，曝光时间越长，曝光过度，快门速度越快(例如 1&#x2F;1000 秒)，曝光不足。</p>
+<p>需要注意的时，虽然光圈和快门都能控制曝光量，其作用并不是等价的。光圈越小，光的走向越集中，到达胶片（或 CCD)成像时，越容易清晰成像，（当然，光圈过小时，会出现衍射，反而模糊）景深越大，反之越小。所以，当需要精确控制景深时，可以先确定光圈大小，再决定快门速度。当拍摄运动的物体时，如果快门开启时间太长，运动的物体在底片（或 CCD)的不同部位成像,拍出来的照片当然不清晰，反之，当快门速度很快时，动体在胶片上的成像还没有明显移动，曝光过程已经完成，照片就清晰，也就是把动体凝固在了画面上，所以当拍摄动体时，可选择尽量快的快门速度，然后调节光圈，正确曝光。当然，如果你想让动体在照片上留下运动轨迹，增强动感，可以选择比较慢的快门速度。</p>
+<p>尤其重要的是闪光摄影，恰当选择快门和光圈，可以很好地控制闪光和其它光线的光比。由于现在广泛使用的电子闪光灯的闪光时间非常短，只有大约万分之一秒，所以，当快门速度与之同步(所谓同步，就是使闪光的时间落在快门完全开启后，关闭前的时间段内,否则，闪光时快门还没有完全打开，或已在关闭，闪光就没有意义了，甚至在底片的一部分上曝光，拍摄失败)以后，再延长曝光时间也没有效果了。所以，闪光灯的作用效果要靠光圈来控制，连续环境光（如夜景中的其它灯光）的作用要靠快门来控制，恰当选择曝光组合，可以创造完美的艺术效果。</p>
+<h1 id="二、给初级拍摄者的十条好建议"><a href="#二、给初级拍摄者的十条好建议" class="headerlink" title="二、给初级拍摄者的十条好建议"></a>二、给初级拍摄者的十条好建议</h1><ol>
+<li><p>在按下快门前，检查一下在被摄体后面，是否有一些东西影响被摄体的―头部‖（好像使它们伸长了）。树叉通常是始作俑者。看看两幅图像的比较，是不是这个道理呢？</p>
+</li>
+<li><p>墙壁等类似物体可以把闪光灯的光线反射到被摄体上。如果没有这样的物体，最好不要使用闪光灯。否则，拍出来的照片会很黑。典型的例子是在音乐会上，很多闪光的效果出不来，除非你是在舞台的边缘。</p>
+</li>
+<li><p>确定相机是否是平行或垂直于地面的。否则照片的看上去就是歪斜的，这是一个很难原谅的问题。</p>
+</li>
+<li><p>使主体与背景在影调或色调上有适当的差异，形成鲜明的对比。这可以通过调整光圈来实现。光圈越大，背景就越模糊，这可突出主体。当然，我们要根据实际情况来调节。</p>
+</li>
+</ol>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-third/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2013/tutorial/the-photography-foundation/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/tutorial/introduction-to-SLR-second/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-second/" itemprop="url">
-                  “光圈” - 单反入门第二课
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2012-09-04 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-04T20:07:23+08:00">2012-09-04</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>光圈是数码相机的另一个极其重要的物理部件，数码相机毕竟还是相机，再好的镜头如果没有好的光圈也不会有理想的效果，这跟高级相机装上低级胶卷也不会照出好照片是一样的道理。</p>
-<p>光圈通常位于镜头的中央，它是一个环形，可以控制圆孔的开口大小，控制曝光时光线的亮度。当需要大量的光线来进行曝光时，就将光圈的圆孔开大；若只需要少量光线曝光时，就将圆孔缩小、让少量的光线进入。</p>
-<p>光圈由装设在镜头内的叶片控制，而叶片是可动的。光圈越大，镜头里 的叶片开放越大。所谓「最大光圈」，就是叶片毫无动作，让可通过镜头的光源全部跑进来的全开光圈。反之光圈越小，叶片就收缩的越厉 害，最后可缩小到只剩小小的一个圆点。</p>
-<p>光圈的功能就如同我们人类眼睛的虹蟆，是用来控制拍摄时，单位时间的进光量，一般以ｆ／5、Ｆ 5 或 1：5 来标示。以实际而言，较小的ｆ值表示较大的光圈。</p>
-<p>光圈的计算单位我们称为光圈值（f-number）或者是级数（f-stop）。首先我们来谈谈光圈值。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-second/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/tutorial/introduction-to-SLR-first/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mi Tu">
-      <meta itemprop="description" content="吃馒头也开心">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2012/tutorial/introduction-to-SLR-first/" itemprop="url">
-                  “器材准备” - 单反入门第一课
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2012-09-03 20:07:23" itemprop="dateCreated datePublished" datetime="2012-09-03T20:07:23+08:00">2012-09-03</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="选购机身"><a href="#选购机身" class="headerlink" title="选购机身"></a>选购机身</h2><p>首先，我们要选定一部适合自己使用的数码单反机身，在入门到中阶的产品都是我们可以考虑的对象，依目前的行情来说，大约落在两、三万到四、五万元的这个价格带，价格越高的的产品功能性就越强、同时机身结构相对的也比较坚固、有质感。</p>
-<p>选购机身，通常最直接要考虑到的是镜头的搭配。这一等级的 DSLR 都是使用 APS 尺寸的感光原件（除了 Olympus 使用的是另一种四分之三的系统），所以我们购买的镜头焦距都要在乘上 1.5 ～ 1.6 后，才是真正的数值。</p>
-<p>对于喜欢作望远摄影的玩家来说，这是一个相当好的优势，因为平白的多出了 0.5 倍的焦距来运用。但是对于喜爱广角摄影的人就头痛了。举例来说，在传统时代我们最常用的 28mm 广角镜，用到 DSLR 上面时，就会变成了 28×1.5 &#x3D; 37mm，而传统最常用的广角变焦镜 17<del>35mm 就会变成（17</del>35）×1.5&#x3D;25~52mm，平白的损失了不少在超广角的焦段，所以在选择厂牌时，要注意一下原厂的镜头支持情形，是否合乎你的拍照需求。</p>
-<p>最后我们要来注意一下自己对机身像素的需求，目前中阶机种已经做到了 800 万像素，一般也有 600 万像素的实力，这对输出到 A4 以上的尺寸已经是绰绰有余了。很多刚入门的人常常会有高像素的迷思，但其实如果不是专业输出的需求，600 万像素对我们来说已经相当够用了，实在不必去为了要考虑输出多大的图、而去为像素作斤斤计较的功夫。</p>
-<h2 id="镜头"><a href="#镜头" class="headerlink" title="镜头"></a>镜头</h2><p>镜头跟机身是绝对息息相关的，每一家厂牌的镜头都有他自己的特色，像是 Canon 的 USM 超音波技术，是习惯快拍人的最佳利器，Nikon 的调子也是许多老摄影人所津津乐道的，Pentax、Minolta、Olympus 也都各有其特殊的色调，我们在选购机身时，别忘了自己喜欢哪一家厂牌的镜头特色。</p>
-<p>除了原厂本身所出的平价镜头之外，我们还可以选购由第三厂商推出的副厂镜头，比较知名像是 Tokina、Sigma、Tarnom 等，他们的镜头保有低价的优势，在技术规格上也不会跟原厂相去太远，初入门 DSLR 的同学如果预算有限，不妨就以副厂镜头开始下手。</p>
-<p>通常对于初学者来说，18~70mm 这个范围的变焦镜是一个相当好用的焦段，转换成 DSLR 变成 27-105mm，这个焦段涵盖了广角及中望远的部分，已经可以应付一开始大部分的拍摄情况了。</p>
-<p>大光圈的镜头的散景相当迷人，对初学者来说更是一个很难抵抗的魅力。但是大光圈的变焦镜一只动辄四、五万，如果预算有限又想享受大光圈，那么副厂镜头是可以考虑的选择，像 Sigma 就有 18-50mm F2.8 EX DC 这样的焦段设计。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2012/tutorial/introduction-to-SLR-first/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1953,735 +1001,234 @@
           </div>
           
 
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="Mi Tu" />
-            
-              <p class="site-author-name" itemprop="name">Mi Tu</p>
-              <p class="site-description motion-element" itemprop="description">吃馒头也开心</p>
-          </div>
-
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a href="/">
+    <img class="site-author-image" itemprop="image" alt="MiTu"
+      src="/images/avatar.png">
+  </a>
+  <p class="site-author-name" itemprop="name">MiTu</p>
+  <div class="site-description" itemprop="description">吃馒头也开心</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
           
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/%20%7C%7C%20archive">
-                
-                    <span class="site-state-item-count">74</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jiuyuer" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jiuyuer" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/newselement" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;newselement" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/fanginsss/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;fanginsss&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://webcjs.tuchong.com/" title="Photos → https:&#x2F;&#x2F;webcjs.tuchong.com" rel="noopener" target="_blank"><i class="fa fa-camera fa-fw"></i>Photos</a>
+      </span>
+  </div>
 
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">48</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
 
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/jiuyuer" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://weibo.com/newselement" target="_blank" title="Weibo"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.instagram.com/fanginsss/" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://webcjs.tuchong.com" target="_blank" title="Photos"><i class="fa fa-fw fa-camera-retro"></i>Photos</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2008 – <span itemprop="copyrightYear">2023</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2008 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Mi Tu</span>
+  <span class="author" itemprop="copyrightHolder">MiTu</span>
+</div>
 
-  
-
-  
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
 </div>
 
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a></div>
 
 
 
 
-        
-
-
-
-
-
-
-
-
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'D8IKtRAGkYSuagyBorPtoTw2-9Nh9j0Va',
+      appKey     : '2jpWh5gVFhszu5bFWMqgZNVu',
+      placeholder: "Just go go",
+      avatar     : 'robohash',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

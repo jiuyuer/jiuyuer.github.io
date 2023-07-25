@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"webcjs.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="什么是用户画像在移动营销时代里，得用户者得天下，而说到用户则不能不提用户画像。众所周知，商界流传着一句著名的话，那就是“我知道我的广告费有一半是浪费了，但我不知道是那一半被浪费了”。于是大家越来越强调精准投放，精准营销，然而在精准营销的领域里，这一切都离不开用户画像。 那什么是用户画像呢？用户画像就是对客户信息在特定业务场景下的系统描述，即用户信息标签化，通过收集用户社会属性、消费习惯、偏好特征等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金融行业的用户画像搭建与应用">
+<meta property="og:url" content="https://webcjs.com/2019/slag/user-portrait/index.html">
+<meta property="og:site_name" content="MiTu-小书童">
+<meta property="og:description" content="什么是用户画像在移动营销时代里，得用户者得天下，而说到用户则不能不提用户画像。众所周知，商界流传着一句著名的话，那就是“我知道我的广告费有一半是浪费了，但我不知道是那一半被浪费了”。于是大家越来越强调精准投放，精准营销，然而在精准营销的领域里，这一切都离不开用户画像。 那什么是用户画像呢？用户画像就是对客户信息在特定业务场景下的系统描述，即用户信息标签化，通过收集用户社会属性、消费习惯、偏好特征等">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://webcjs.com/images/analysis/2019011002090212.png">
+<meta property="og:image" content="https://webcjs.com/images/analysis/2019011002090278.png">
+<meta property="og:image" content="https://webcjs.com/images/analysis/2019011002090375.png">
+<meta property="article:published_time" content="2019-03-04T08:10:19.000Z">
+<meta property="article:modified_time" content="2023-07-25T14:19:36.790Z">
+<meta property="article:author" content="MiTu">
+<meta property="article:tag" content="用户行为">
+<meta property="article:tag" content="用户画像">
+<meta property="article:tag" content="行为分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://webcjs.com/images/analysis/2019011002090212.png">
+
+<link rel="canonical" href="https://webcjs.com/2019/slag/user-portrait/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>金融行业的用户画像搭建与应用 | MiTu-小书童</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MiTu-小书童</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">尘世中_迷途小书童_</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/jiuyuer" class="github-corner" title="MiTu-小书童" aria-label="MiTu-小书童" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2019/slag/user-portrait/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          金融行业的用户画像搭建与应用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-03-04 16:10:19" itemprop="dateCreated datePublished" datetime="2019-03-04T16:10:19+08:00">2019-03-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/slag/user-portrait/" class="post-meta-item leancloud_visitors" data-flag-title="金融行业的用户画像搭建与应用" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/slag/user-portrait/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/slag/user-portrait/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="什么是用户画像"><a href="#什么是用户画像" class="headerlink" title="什么是用户画像"></a>什么是用户画像</h1><p>在移动营销时代里，得用户者得天下，而说到用户则不能不提用户画像。众所周知，商界流传着一句著名的话，那就是“我知道我的广告费有一半是浪费了，但我不知道是那一半被浪费了”。于是大家越来越强调精准投放，精准营销，然而在精准营销的领域里，这一切都离不开用户画像。</p>
+<p>那什么是用户画像呢？用户画像就是对客户信息在特定业务场景下的系统描述，即用户信息标签化，通过收集用户社会属性、消费习惯、偏好特征等维度数据，并对这些特征属性进行刻画，分析和挖掘潜在价值信息，从而抽象出一个用户的信息全貌。</p>
+<h1 id="如何构建用户画像"><a href="#如何构建用户画像" class="headerlink" title="如何构建用户画像"></a>如何构建用户画像</h1><ol>
+<li>数据收集</li>
+</ol>
+<p>数据是构成用户画像的基础，没有数据的话，用户画像也无从说起，那如何进行用户数据收集呢？用户数据一般分为静态数据和动态数据。</p>
+<p>一般来说，每个公司都会有自己的业务系统，可以收集到用户的基本属性信息和交易信息，例如用户的姓名、年龄、性别和投资产品、投资金额、交易时间等，这些一般是用户的静态数据。而用户的行为信息则是属于动态数据，这个一般是通过 SDK 埋点所获取的，例如用户注册、登录、页面浏览等事件信息。当然，还有第三方数据的采集购买，但这个是作为第一方数据的补充，在这里就不进行论述了。</p>
+<ol start="2">
+<li>数据处理</li>
+</ol>
+<p>一般我们所获取到的数据都是原始数据来的，原始数据可能会存在着一些数据空缺、重复、或不一致等问题。因此我们还要对原数据进行清洗处理，才能从中抽取出有分析意义的数据，而数据清洗原则通常要结合具体业务场景进行制定。</p>
+<ol start="3">
+<li>数据打通</li>
+</ol>
+<p>现在用户数据获取的来源有多个渠道，而要勾勒一个完整的用户视图，则离不开渠道间的数据打通，例如一个用户可能有多个设备，拥有多个账号，则要把多个身份 ID 进行组合，建立统一标准，才能构建完整的用户画像。</p>
+<ol start="4">
+<li>用户数据标签化</li>
+</ol>
+<p>用户画像的本质，实际就是“标签化”的用户行为特征，通过给用户“打标签”如年龄、性别、兴趣爱好等，进行高度精炼的特征描述。</p>
+<p><img src="/images/analysis/2019011002090212.png"></p>
+<p>而用户标签一般分为 3 类：</p>
+<p>1）统计类标签：这类标签是最为基础也是最为常见的标签类型，主要是从原始数据中直接提取出来的，例如用户性别、年龄、城市等；<br>2）规则类标签：这类标签主要基于用户行为及确定规则所产生的，例如“活跃用户”而什么才算是活跃用户，这里标签的规则就主要是由运营人员或数据人员进行确定的；<br>3）挖掘类标签：这类标签主要是通过数据挖掘所产生，解决的是从无到有的问题，例如用户“性别”未知，但因中国人的名字和性别是强相关的，因此可以利用贝叶斯算法推测该用户性别。</p>
+<p>用户标签体系的搭建是用户画像中最为核心的工作，因此在梳理标签体系时尽量按照 MECE 原则，做到相互独立，完全穷尽。例如下图中互金行业的标签体系搭建。</p>
+<p><img src="/images/analysis/2019011002090278.png"></p>
+<h1 id="用户画像的实际运用"><a href="#用户画像的实际运用" class="headerlink" title="用户画像的实际运用"></a>用户画像的实际运用</h1><p>不同的企业做用户画像会有不同的战略目的，例如广告平台，主要是为了精准投放，找到目标用户，而内容平台是为了个性化推荐，更好的留住用户，数据类平台，则是进行用户分析，挖掘数据价值，驱动运营增长；</p>
+<p>而对于金融行业来说，金融服务目前正在由以产品为中心转向以用户为中心。面对不同的用户类型，用户群体的细分就显得非常重要，例如有些客户是稳健型投资者，偏好保本收益，有些则是激进型投资者，偏好高风险收益，那这时就应该要为不同用户群体设计不同的金融产品。同样，针对不同年龄段、不同职业、不同偏好的用户，所采取的营销策略也会不一样。这时就可以根据用户属性信息、消费特征、兴趣偏好等来为不同的用户提供不同的产品服务与营销策略。</p>
+<p><img src="/images/analysis/2019011002090375.png"></p>
+<p>在精准营销的领域当中，用户画像是必不可缺的，一个好的用户画像可以帮助企业进行产品定位，人群细分，指导营销决策。但用户画像的搭建与使用必须结合具体的业务场景，否则就算是有再多的数据维度，再完整的用户画像，也无法发挥作用。<br><br/><br><br/><br><br/></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA/" rel="tag"># 用户行为</a>
+              <a href="/tags/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/" rel="tag"># 用户画像</a>
+              <a href="/tags/%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90/" rel="tag"># 行为分析</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/encyclopedia/how-to-write-the-PRD-document/" rel="prev" title="如何撰写PRD文档">
+      <i class="fa fa-chevron-left"></i> 如何撰写PRD文档
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/diary/annoyance/" rel="next" title="有点点浮躁">
+      有点点浮躁 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F"><span class="nav-number">1.</span> <span class="nav-text">什么是用户画像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F"><span class="nav-number">2.</span> <span class="nav-text">如何构建用户画像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F%E7%9A%84%E5%AE%9E%E9%99%85%E8%BF%90%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">用户画像的实际运用</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a href="/">
+    <img class="site-author-image" itemprop="image" alt="MiTu"
+      src="/images/avatar.png">
+  </a>
+  <p class="site-author-name" itemprop="name">MiTu</p>
+  <div class="site-description" itemprop="description">吃馒头也开心</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jiuyuer" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jiuyuer" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/newselement" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;newselement" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/fanginsss/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;fanginsss&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://webcjs.tuchong.com/" title="Photos → https:&#x2F;&#x2F;webcjs.tuchong.com" rel="noopener" target="_blank"><i class="fa fa-camera fa-fw"></i>Photos</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2008 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MiTu</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'D8IKtRAGkYSuagyBorPtoTw2-9Nh9j0Va',
+      appKey     : '2jpWh5gVFhszu5bFWMqgZNVu',
+      placeholder: "Just go go",
+      avatar     : 'robohash',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
