@@ -189,6 +189,230 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/unable-to-preventDefault/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/slag/unable-to-preventDefault/" class="post-title-link" itemprop="url">关于Chrome警告： Unable to preventDefault inside passive event listener 的解决方案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-22 10:53:26" itemprop="dateCreated datePublished" datetime="2018-06-22T10:53:26+08:00">2018-06-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/slag/unable-to-preventDefault/" class="post-meta-item leancloud_visitors" data-flag-title="关于Chrome警告： Unable to preventDefault inside passive event listener 的解决方案" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/slag/unable-to-preventDefault/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/slag/unable-to-preventDefault/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近在移动端 H5 项目开发中，经常在 chrome 的控制台看到如下提示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/5093566007214080</span><br></pre></td></tr></table></figure>
+
+<p>首先，之所以报错是因为引入了 FastClick（为了解决 300ms 的 click 延迟）</p>
+<p>于是 Google 了一番，找到这篇文章，有了详细解释<br><a target="_blank" rel="noopener" href="https://developers.google.cn/web/updates/2017/01/scrolling-intervention">https://developers.google.cn/web/updates/2017/01/scrolling-intervention</a></p>
+<p>简而言之：</p>
+<blockquote>
+<p>由于浏览器必须要在执行事件处理函数之后，才能知道有没有掉用过 preventDefault() ，这就导致了浏览器不能及时响应滚动，略有延迟。</p>
+</blockquote>
+<blockquote>
+<p>所以为了让页面滚动的效果如丝般顺滑，从 chrome56 开始，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。浏览器忽略 preventDefault() 就可以第一时间滚动了。</p>
+</blockquote>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wnidow.<span class="title function_">addEventListener</span>(<span class="string">&#x27;touchmove&#x27;</span>, func) 效果和下面一句一样</span><br><span class="line">wnidow.<span class="title function_">addEventListener</span>(<span class="string">&#x27;touchmove&#x27;</span>, func, &#123; <span class="attr">passive</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这就导致了一个问题：</p>
+<blockquote>
+<p>如果在以上这 3 个元素的 touchstart 和 touchmove 事件处理函数中调用 e.preventDefault() ，会被浏览器忽略掉，并不会阻止默认行为。</p>
+</blockquote>
+<p>测试：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  <span class="attr">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attr">height</span>: 2000px;</span><br><span class="line">  <span class="attr">background</span>: linear-<span class="title function_">gradient</span>(to bottom, red, green);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在 chrome56 中，照样滚动，而且控制台会有提示，blablabla</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;touchmove&#x27;</span>, <span class="function"><span class="params">e</span> =&gt;</span> e.<span class="title function_">preventDefault</span>())</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/slag/unable-to-preventDefault/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/maximum-call-stack-size-exceeded-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/slag/maximum-call-stack-size-exceeded-error/" class="post-title-link" itemprop="url">Vue.js “Maximum call stack size exceeded” error.</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-20 10:04:46" itemprop="dateCreated datePublished" datetime="2018-06-20T10:04:46+08:00">2018-06-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/slag/maximum-call-stack-size-exceeded-error/" class="post-meta-item leancloud_visitors" data-flag-title="Vue.js “Maximum call stack size exceeded” error." title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/slag/maximum-call-stack-size-exceeded-error/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/slag/maximum-call-stack-size-exceeded-error/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在使用 Vuejs 开发 SPA 页面时，我创建了一个父组件以及子组件，然后通过父组件去调用子组件时，报如下错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.js “Maximum call stack size exceeded” error.</span><br></pre></td></tr></table></figure>
+
+<p>示例代码：</p>
+<blockquote>
+<p><strong>Panel.vue</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;panel&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;shelf in shelfs&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">panel-body</span> <span class="attr">:shelf</span>=<span class="string">&quot;shelf&quot;</span> <span class="attr">:selected.sync</span>=<span class="string">&quot;selected&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">panel-body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">import</span> <span class="title class_">PanelBody</span> <span class="keyword">from</span> <span class="string">&#x27;../components/PanelBody&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">name</span>: <span class="string">&#x27;panel-body&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">components</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="string">&#x27;panel-body&#x27;</span>: <span class="title class_">PanelBody</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">data</span>: <span class="function">() =&gt;</span> (&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">shelfs</span>: [&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">name</span>: <span class="string">&#x27;shelf 1&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">books</span>: [&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">title</span>: <span class="string">&#x27;Lorem ipum&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">title</span>: <span class="string">&#x27;Dolor sit amet&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">name</span>: <span class="string">&#x27;shelf 2&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">books</span>: [&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">title</span>: <span class="string">&#x27;Ipsum lorem&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">title</span>: <span class="string">&#x27;Amet sit dolor&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">selected</span>: &#123;&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>PanelBody.vue</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;panel-body&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">v-on:click.prevent.stop</span>=<span class="string">&quot;select&quot;</span>&gt;</span>&#123;&#123; shelf.name &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">v-show</span>=<span class="string">&quot;isSelected&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;book in shelf.books&quot;</span>&gt;</span>&#123;&#123; book.title &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">name</span>: <span class="string">&#x27;panel-body&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">props</span>: [<span class="string">&#x27;shelf&#x27;</span>, <span class="string">&#x27;selected&#x27;</span>],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">computed</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">isSelected</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">selected</span> === <span class="variable language_">this</span>.<span class="property">shelf</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">methods</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">select</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">this</span>.<span class="property">selected</span> = <span class="variable language_">this</span>.<span class="property">shelf</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>错误原因：</p>
+<blockquote>
+<p>Maximum call stack size exceeded</p>
+</blockquote>
+<p>错误出处：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">PanelBody</span> <span class="keyword">from</span> <span class="string">&#x27;../components/PanelBody&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;panel-body&#x27;</span>,</span><br><span class="line">  <span class="attr">components</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;panel-body&#x27;</span>: <span class="title class_">PanelBody</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>错误解决：<br>你定义你的父组件名称:“panel-body”。<strong>只要将名称改成:“panel”或者其他不与子组件引用名一样</strong>，你就能删除你的循环引用，从而不再报错。<br><br></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/encyclopedia/training-documents/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -928,205 +1152,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/the-difference-two-array/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/slag/the-difference-two-array/" class="post-title-link" itemprop="url">求两数组的difference</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-06-08 16:35:00" itemprop="dateCreated datePublished" datetime="2018-06-08T16:35:00+08:00">2018-06-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2018/slag/the-difference-two-array/" class="post-meta-item leancloud_visitors" data-flag-title="求两数组的difference" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/slag/the-difference-two-array/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/slag/the-difference-two-array/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">求两数据的不同值，结果为[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>调用第三方工具：underscore</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">_.<span class="title function_">difference</span>(arr1, arr2);</span><br><span class="line">=&gt; [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>手写常规办法，创建临时数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// past</span></span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> temp = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr1.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (arr2.<span class="title function_">indexOf</span>(arr1[i]) === -<span class="number">1</span>) &#123;</span><br><span class="line">    temp.<span class="title function_">push</span>(arr1[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(temp);</span><br></pre></td></tr></table></figure>
-
-<h3 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h3><p>调用 es6 的数组操作 api</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr1.<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> !arr2.<span class="title function_">includes</span>(item)));</span><br></pre></td></tr></table></figure>
-
-<p>就酱~<br><br></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/diary/blind-to-write/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/diary/blind-to-write/" class="post-title-link" itemprop="url">瞎写</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-05-17 23:56:15" itemprop="dateCreated datePublished" datetime="2018-05-17T23:56:15+08:00">2018-05-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2018/diary/blind-to-write/" class="post-meta-item leancloud_visitors" data-flag-title="瞎写" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/diary/blind-to-write/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/diary/blind-to-write/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote class="blockquote-center">批评你不可怕，对你失望才可怕</blockquote>
-
-
-<p>早晨被旁边地铁施工地上很有节奏的钻地声给惊醒（神奇的是，梦里也同样听到了节奏的敲打声），抬头看了下挂钟才7点多，我强迫自己再睡会儿，毕竟好不容易赚来周末懒觉的机会。</p>
-<p>人往往是这样，强迫自己越不在乎的东西，却越会关注，尤其是钻地的节奏仿佛心脏跳动的频率，整得我难受。既然这样，那行吧，我就用手机的音乐来强行覆盖它。</p>
-<p>还是没用，惹不起，那总还是躲得起。穿衣，刷牙，洗脸，收拾东西，出门。带上了电脑和一本五月份计划要看完的书。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/diary/blind-to-write/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1200,7 +1225,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-count">77</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1213,7 +1238,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

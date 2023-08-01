@@ -373,6 +373,218 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2022/slag/git-fork/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/slag/git-fork/" class="post-title-link" itemprop="url">fork 别人的代码，如何更新主分支最新代码</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-01 17:44:28" itemprop="dateCreated datePublished" datetime="2022-08-01T17:44:28+08:00">2022-08-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/slag/git-fork/" class="post-meta-item leancloud_visitors" data-flag-title="fork 别人的代码，如何更新主分支最新代码" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/slag/git-fork/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/slag/git-fork/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>fork 操作：就是从别的大佬远程端 <code>git仓库</code> 拷贝一份到自己的 <code>git仓库</code>。</p>
+</blockquote>
+<p>在开发学习时，经常通过 fork 别人的 git 开源项目进行开发学习。<br>所以在我们开发完成后，想合并到大佬的主分支去，我们需要进行创建一个 <code>merge request</code>， 提交给主分支代码管理员进行代码审核，审核通过后允许 <code>merge</code>，这样我们开发的代码就会合并到主项目中。</p>
+<p>那么大佬的主分支有更新了，我们怎样将主分支的更新代码拉取、合并到本地呢？</p>
+<h2 id="fork-分支更新流程："><a href="#fork-分支更新流程：" class="headerlink" title="fork 分支更新流程："></a>fork 分支更新流程：</h2><h3 id="1-首先要确认是否建立了主项目的远程源："><a href="#1-首先要确认是否建立了主项目的远程源：" class="headerlink" title="1. 首先要确认是否建立了主项目的远程源："></a>1. 首先要确认是否建立了主项目的远程源：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
+
+<p>如果只显示自己的两个源（fetch, push）如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tonyt@xiaofeng web-poc % git remote -v</span><br><span class="line">origin  http://10.25.0.130/web-tools/web-poc.git (fetch)</span><br><span class="line">origin  http://10.25.0.130/web-tools/web-poc.git (push)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-则说明没有建立远程的-repo-源，需要添加主-repo-的源："><a href="#2-则说明没有建立远程的-repo-源，需要添加主-repo-的源：" class="headerlink" title="2. 则说明没有建立远程的 repo 源，需要添加主 repo 的源："></a>2. 则说明没有建立远程的 repo 源，需要添加主 repo 的源：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream https://github.com/b******/c*****.git    # git remote add upstream URL</span><br></pre></td></tr></table></figure>
+
+<p>这里的 upstream 是我们建立的远程 branch 的一个本地名。对于 url 一般有 https 与 ssh 的方式，如果是 ssh 方式，则需要添加 ssh 的 url,不能添加 https 的方式，否则不能在 ssh 下访问该 url。</p>
+<h3 id="3-添加完之后再次使用-git-remote-v-来确认。"><a href="#3-添加完之后再次使用-git-remote-v-来确认。" class="headerlink" title="3. 添加完之后再次使用 git remote -v 来确认。"></a>3. 添加完之后再次使用 <code>git remote -v</code> 来确认。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tonyt@xiaofeng web-poc % git remote -v</span><br><span class="line">origin  http://10.25.2.87:9980/root/web-poc.git (fetch)</span><br><span class="line">origin  http://10.25.2.87:9980/root/web-poc.git (push)</span><br><span class="line">upstream        http://10.25.0.130/web-tools/web-poc.git (fetch)</span><br><span class="line">upstream        http://10.25.0.130/web-tools/web-poc.git (push)</span><br></pre></td></tr></table></figure>
+
+<p>有 upstream 这样就是已经创建了主 repo 的远程源。</p>
+<h3 id="4-拉取主-repo-源代码："><a href="#4-拉取主-repo-源代码：" class="headerlink" title="4. 拉取主 repo 源代码："></a>4. 拉取主 repo 源代码：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch upstream</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-合并主-repo-代码到本地代码："><a href="#5-合并主-repo-代码到本地代码：" class="headerlink" title="5. 合并主 repo 代码到本地代码："></a>5. 合并主 repo 代码到本地代码：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge upstream/master</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-大功告成！！！！"><a href="#6-大功告成！！！！" class="headerlink" title="6. 大功告成！！！！"></a>6. 大功告成！！！！</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2022/slag/about-node-npm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/slag/about-node-npm/" class="post-title-link" itemprop="url">node 相关常备命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-01 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-01T00:00:00+08:00">2022-06-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/slag/about-node-npm/" class="post-meta-item leancloud_visitors" data-flag-title="node 相关常备命令" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/slag/about-node-npm/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/slag/about-node-npm/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="清空-node-modules-缓存"><a href="#清空-node-modules-缓存" class="headerlink" title="清空 node_modules 缓存"></a>清空 node_modules 缓存</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 删除package-lock.json</span><br><span class="line">2. npm cache clean -f</span><br><span class="line">3. 删除npm_nodemodules</span><br><span class="line">4. npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="nvm-使用"><a href="#nvm-使用" class="headerlink" title="nvm 使用"></a>nvm 使用</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有安装的版本</span></span><br><span class="line">$ nvm <span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 列出所有远程服务器的版本（官方 node version list）</span></span><br><span class="line">$ nvm ls-remote</span><br><span class="line"><span class="comment"># 显示当前的版本</span></span><br><span class="line">$ nvm current</span><br><span class="line"><span class="comment"># 给不同的版本号添加别名</span></span><br><span class="line">$ nvm <span class="built_in">alias</span> &lt;name&gt; &lt;version&gt;</span><br><span class="line"><span class="comment"># 删除已定义的别名</span></span><br><span class="line">$ nvm <span class="built_in">unalias</span> &lt;name&gt;</span><br><span class="line"><span class="comment"># 在当前版本 node 环境下，重新全局安装指定版本号的 npm 包</span></span><br><span class="line">$ nvm reinstall-packages &lt;version&gt;</span><br><span class="line"><span class="comment"># 查看更多命令可在终端输入</span></span><br><span class="line">$ nvm</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装指定版本，可模糊安装，如：安装 v4.4.0，既可 $ nvm install v4.4.0，又可 $ nvm install 4.4</span></span><br><span class="line">$ nvm install &lt;version&gt;</span><br><span class="line"><span class="comment"># 删除已安装的指定版本，语法与 install 用法一致</span></span><br><span class="line">$ nvm uninstall &lt;version&gt;</span><br><span class="line"><span class="comment"># 临时版本 - 只在当前窗口生效指定版本</span></span><br><span class="line">$ nvm use &lt;version&gt;</span><br><span class="line"><span class="comment"># 永久版本 - 所有窗口生效指定版本</span></span><br><span class="line">$ nvm <span class="built_in">alias</span> default &lt;version&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="node、nvm、npm、npx、nrm-区别"><a href="#node、nvm、npm、npx、nrm-区别" class="headerlink" title="node、nvm、npm、npx、nrm 区别"></a><code>node</code>、<code>nvm</code>、<code>npm</code>、<code>npx</code>、<code>nrm</code> 区别</h3><ul>
+<li>node：是一个基于 Chrome V8 引擎的 JS 运行环境。</li>
+<li>npm：是 node.js 默认的包管理系统（用 JavaScript 编写的），在安装的 node 的时候，npm 也会跟着一起安装，管理 node 中的第三方插件。</li>
+<li>npx：npm 从 v5.2.0 开始新增了 npx 命令，&gt;&#x3D; 该版本会自动安装 npx，附带：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zz00008888/article/details/126117685">npx 有什么作用跟意义？为什么要有 npx？什么场景使用？</a>。</li>
+<li>nrm：是一个 npm 源管理工具，使用它可以快速切换 npm 源，默认是官方源，当 npm 下载包过慢时，可能需要切换到第三方源（例如：淘宝、科大…），还有公司私有源地址等等。</li>
+<li>nvm：node 版本管理器，也就是说：一个 nvm 可以管理多个 node 版本（包含 npm 与 npx），可以方便快捷的 安装、切换 不同版本的 node。</li>
+</ul>
+<h3 id="node、nvm、npm、npx、nrm-关系"><a href="#node、nvm、npm、npx、nrm-关系" class="headerlink" title="node、nvm、npm、npx、nrm 关系"></a><code>node</code>、<code>nvm</code>、<code>npm</code>、<code>npx</code>、<code>nrm</code> 关系</h3><p>nvm 管理 node (包含 npm 与 npx) 的版本，npm 可以管理 node 的第三方插件，nrm 可以管理 npm 的源地址（当然也可以直接使用 npm 自带命令管理，看个人习惯）。</p>
+<p>切换不同的 node 版本，npm 与 npx 的版本也会跟着变化。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ nvm use v8.16.0</span><br><span class="line">Now using node v8.16.0 (npm v6.4.1)</span><br><span class="line"></span><br><span class="line">$ nvm use v14.15.4</span><br><span class="line">Now using node v14.15.4 (npm v6.14.10)</span><br><span class="line"></span><br><span class="line">$ nvm use v18.6.0</span><br><span class="line">Now using node v18.6.0 (npm v8.13.2)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Mac-系统-Node-版本管理"><a href="#Mac-系统-Node-版本管理" class="headerlink" title="Mac 系统 Node 版本管理"></a>Mac 系统 Node 版本管理</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 查看所有node版本</span><br><span class="line">npm view node versions</span><br><span class="line">2. 全局安装n模块</span><br><span class="line">npm install -g n</span><br><span class="line">3. 安装指定版本</span><br><span class="line">sudo n XXX</span><br><span class="line">4. 卸载指定版本</span><br><span class="line">sudo n <span class="built_in">rm</span> XXX</span><br></pre></td></tr></table></figure>
+
+<h3 id="fork-别人的代码，更新主分支最新代码"><a href="#fork-别人的代码，更新主分支最新代码" class="headerlink" title="fork 别人的代码，更新主分支最新代码"></a>fork 别人的代码，更新主分支最新代码</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fork分支更新流程：</span><br><span class="line">1. 首先要确认是否建立了主项目的远程源: $ git remote -v</span><br><span class="line">2. 则说明没有建立远程的repo源，需要添加主repo的源：</span><br><span class="line">   git remote add upstream https://github.com/b******/c*****.git    <span class="comment"># git remote add upstream URL</span></span><br><span class="line">3. 添加完之后再次使用 git remote -v 来确认</span><br><span class="line">   $ git remote -v  <span class="comment"># 有 upstream 这样就是已经创建了主repo的远程源。</span></span><br><span class="line">4. 拉取主repo源代码: git fetch upstream</span><br><span class="line">5. 合并主repo代码到本地代码：git merge upstream/main</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://webcjs.com/2021/slag/nrm-installation-configuration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -763,209 +975,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2019/travel/Turpan-travel/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/travel/Turpan-travel/" class="post-title-link" itemprop="url">乌鲁木齐，吐鲁番两天自驾游</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-04-07 20:05:02" itemprop="dateCreated datePublished" datetime="2019-04-07T20:05:02+08:00">2019-04-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%B7%AF%E4%B8%8A/" itemprop="url" rel="index"><span itemprop="name">路上</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/travel/Turpan-travel/" class="post-meta-item leancloud_visitors" data-flag-title="乌鲁木齐，吐鲁番两天自驾游" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/travel/Turpan-travel/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/travel/Turpan-travel/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h2><ul>
-<li>成员人数：4 人</li>
-<li>共需费用：约 600 元&#x2F;人</li>
-<li>行驶里程：762 公里</li>
-<li>路线：乌鲁木齐-高昌故居-火焰山-吐鲁番-库木塔格沙漠-乌鲁木齐</li>
-</ul>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><ul>
-<li>住宿：吐鲁番亚朵酒店（四星级别，你懂得，400 左右双人间）</li>
-<li>门票费：高昌故居，火焰山，库木塔格沙漠景区等（套票，126&#x2F;人）</li>
-<li>神舟租车：大众途观，712 元租车，405 元油费</li>
-</ul>
-<h2 id="行车详情"><a href="#行车详情" class="headerlink" title="行车详情"></a>行车详情</h2><blockquote>
-<p>乌鲁木齐市租到车 10 点半开始出发，主要走的是京新高速，沿路一直在修路，可能因为是节假日，车况也不是太好。车速限速 120，基本上在 100 左右行驶。一路上，检查也较严格，服务区都会有专门的检查通道，但一般只需要打开窗户，偶尔出示驾照即可。</p>
-</blockquote>
-<h3 id="第一天，乌鲁木齐-高昌故居-火焰山-吐鲁番"><a href="#第一天，乌鲁木齐-高昌故居-火焰山-吐鲁番" class="headerlink" title="第一天，乌鲁木齐-高昌故居-火焰山-吐鲁番"></a>第一天，乌鲁木齐-高昌故居-火焰山-吐鲁番</h3><p>行驶到吐鲁番景区时略严格，需要所有人下车，除了司机要远离车辆，要打开前车盖，后备箱，司机要距离汽车 5 米左右朝向汽车。尴尬的是我不会开前车盖，哈哈哈，还是警察同志帮我开的。。<br>到达高昌故居已经是下午 4 点多了，不过对于 9 点才天黑的边疆来说，这都不是事儿。<br>游完故居，然后去了一个没啥意思的古墓，唐朝风，名字忘了。接着去了火焰山，传说中的火焰山。。。也没啥看头，不过人还挺多。<br>然后一路往吐鲁番亚朵酒店行驶。<br>入住亚朵之后，酒店边上找了一家川菜馆，蛮正宗的。吃完已经快 10 点了。</p>
-<h3 id="第二天，吐鲁番-库木塔格沙漠-乌鲁木齐"><a href="#第二天，吐鲁番-库木塔格沙漠-乌鲁木齐" class="headerlink" title="第二天，吐鲁番-库木塔格沙漠-乌鲁木齐"></a>第二天，吐鲁番-库木塔格沙漠-乌鲁木齐</h3><p>早上在酒店吃了自助餐，大概 10 点多出发，奔向库木塔格沙漠，一路的风景，到达已是下午 1 点左右吧，景区停车挺便宜的，才 5 块。<br>库木塔格沙漠玩到下午 4 点左右，然后出发回乌鲁木齐。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/travel/Turpan-travel/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2019/diary/annoyance/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/diary/annoyance/" class="post-title-link" itemprop="url">有点点浮躁</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-03-30 23:20:49" itemprop="dateCreated datePublished" datetime="2019-03-30T23:20:49+08:00">2019-03-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/diary/annoyance/" class="post-meta-item leancloud_visitors" data-flag-title="有点点浮躁" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/diary/annoyance/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/diary/annoyance/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>其实也没啥，就是莫名的浮躁，好久没有沉下心来好好思考一下未来。<br/></p>
-<p>被各种琐碎的事围绕着，也许已经忘了初心。<br/></p>
-<p>每天都在忙碌，就算不忙，也假装自己很忙。<br/></p>
-<p>忘了自己的兴趣爱好，忘了自己思考的时间。<br/></p>
-<p>突然想到《活着》里面的一句话：没有什么比活着更快乐也没有什么比活着更艰辛。<br/></p>
-<p>希望自己还是能快快乐乐的，让生活变的有趣，让生活能慢下来。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1039,7 +1048,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-count">77</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1052,7 +1061,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
