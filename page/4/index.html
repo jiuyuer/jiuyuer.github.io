@@ -189,6 +189,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/webkit-overflow-scrolling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/slag/webkit-overflow-scrolling/" class="post-title-link" itemprop="url">-webkit-overflow-scrolling:touch及ios滚动</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-09-01 16:35:22" itemprop="dateCreated datePublished" datetime="2018-09-01T16:35:22+08:00">2018-09-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/slag/webkit-overflow-scrolling/" class="post-meta-item leancloud_visitors" data-flag-title="-webkit-overflow-scrolling:touch及ios滚动" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/slag/webkit-overflow-scrolling/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/slag/webkit-overflow-scrolling/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="webkit-overflow-scrolling-touch-是什么？"><a href="#webkit-overflow-scrolling-touch-是什么？" class="headerlink" title="-webkit-overflow-scrolling:touch 是什么？"></a>-webkit-overflow-scrolling:touch 是什么？</h2><p>MDN 上是这样定义的：</p>
+<blockquote>
+<p><strong><code>-webkit-overflow-scrolling</code></strong>: 属性控制元素在移动设备上是否使用滚动回弹效果.<br><strong><code>auto</code></strong>: 使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止。<br><strong><code>touch</code></strong>: 使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文。</p>
+</blockquote>
+<p>在移动端上，在你用 <code>overflow-y:scorll</code> 属性的时候，你会发现滚动的效果很木，很慢，这时候可以使用 <code>-webkit-overflow-scrolling:touch</code> 这个属性，让滚动条产生滚动回弹的效果，就像 ios 原生的滚动条一样流畅。</p>
+<h2 id="解决-safari-布局抖动的例子"><a href="#解决-safari-布局抖动的例子" class="headerlink" title="解决 safari 布局抖动的例子"></a>解决 safari 布局抖动的例子</h2><p><img src="/images/slag/webkit-scrolling-touch.png"></p>
+<p>想实现一个布局为 header、main、bottom 的布局，其中头部和底部通过 fixed 固定，中间部分通过滚动条滑动。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/slag/webkit-overflow-scrolling/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/js-jump-out-of-the-loop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -905,117 +1006,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/no-unneeded-ternary-eslint/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/slag/no-unneeded-ternary-eslint/" class="post-title-link" itemprop="url">eslint 验证 no-unneeded-ternary</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-06-23 17:18:59" itemprop="dateCreated datePublished" datetime="2018-06-23T17:18:59+08:00">2018-06-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2018/slag/no-unneeded-ternary-eslint/" class="post-meta-item leancloud_visitors" data-flag-title="eslint 验证 no-unneeded-ternary" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/slag/no-unneeded-ternary-eslint/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/slag/no-unneeded-ternary-eslint/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>项目中引入 Eslint 进行团队开发，配置好之后，报错提示如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://eslint.org/docs/rules/no-unneeded-ternary  Unnecessary use of boolean literals <span class="keyword">in</span> conditional expression  </span><br></pre></td></tr></table></figure>
-
-<p>文档的意思是 <strong>禁止不必要的嵌套</strong></p>
-<p>源代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">btnStatus</span> = <span class="variable language_">this</span>.<span class="property">btnStatus</span> === <span class="literal">true</span> ? <span class="literal">false</span> : <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>然后点开对应的链接就发现问题所在了~</p>
-<p><strong>链接中的内容</strong> (就不翻译直接引入了。。。)</p>
-<blockquote>
-<p>It’s a common mistake in JavaScript to use a conditional expression to select between two Boolean values instead of using ! to convert the test to a Boolean. Here are some examples:</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Bad</span></span><br><span class="line"><span class="keyword">var</span> isYes = answer === <span class="number">1</span> ? <span class="literal">true</span> : <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Good</span></span><br><span class="line"><span class="keyword">var</span> isYes = answer === <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Bad</span></span><br><span class="line"><span class="keyword">var</span> isNo = answer === <span class="number">1</span> ? <span class="literal">false</span> : <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Good</span></span><br><span class="line"><span class="keyword">var</span> isNo = answer !== <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Another common mistake is using a single variable as both the conditional test and the consequent. In such cases, the logical OR can be used to provide the same functionality. Here is an example:</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Bad</span></span><br><span class="line"><span class="keyword">var</span> foo = bar ? bar : <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Good</span></span><br><span class="line"><span class="keyword">var</span> foo = bar || <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>所以。。。</p>
-<p>修改源代码之后的结果：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">btnStatus</span> = <span class="variable language_">this</span>.<span class="property">btnStatus</span> !== <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>报错&#x2F;警告 问题解决了~<br><br></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1089,7 +1079,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-count">78</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1102,7 +1092,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
