@@ -189,6 +189,116 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/axios-data-params/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.svg">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/slag/axios-data-params/" class="post-title-link" itemprop="url">Axios发送请求时params和data的区别</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-14 13:44:27" itemprop="dateCreated datePublished" datetime="2018-06-14T13:44:27+08:00">2018-06-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/slag/axios-data-params/" class="post-meta-item leancloud_visitors" data-flag-title="Axios发送请求时params和data的区别" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/slag/axios-data-params/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/slag/axios-data-params/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在使用 axios 时，注意到配置选项中包含 params 和 data 两者，以为他们是相同的，实则不然。</p>
+<p>因为 params 是添加到 url 的请求字符串中的，用于 get 请求。</p>
+<p>而 data 是添加到请求体(body)中的， 用于 post 请求。</p>
+<p>比如对于下面的 get 请求：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">axios</span>(&#123;</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;https://onana.cn/openapi/api?info=20ff1803ff65429b8&#x27;</span>,</span><br><span class="line">  <span class="attr">params</span>: &#123;</span><br><span class="line">    <span class="attr">info</span>: <span class="string">&#x27;西安天气&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>如果我们将 params 修改为 data，那么是不能请求成功的，因为 get 请求中不存在 data 这个选项。</p>
+<h4 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h4><blockquote>
+<p>HTTP 请求过程中</p>
+</blockquote>
+<ul>
+<li><p>GET 请求：表单参数以 name&#x3D;value&amp;name1&#x3D;value1 的形式附到 url 的后面</p>
+</li>
+<li><p>POST 请求：表单参数是在请求体中，也是 name&#x3D;value&amp;name1&#x3D;value1 的形式在请求体中。</p>
+</li>
+<li><p>POST 表单请求提交时，使用的 Content-Type 是 application&#x2F;x-www-form-urlencoded，而使用原生 AJAX 的 POST 请求如果不指定请求头 RequestHeader，默认使用的 Content-Type 是 text&#x2F;plain;charset&#x3D;UTF-8。在 html 中 form 的 Content-type 默认值：Content-type：application&#x2F;x-www-form-urlencoded。如果使用 ajax 请求，在请求头中出现 request payload 导致参数的方式改变了，那么解决办法就是：</p>
+<blockquote>
+<p>headers: {‘Content-Type’:’application&#x2F;x-www-form-urlencoded’}</p>
+</blockquote>
+</li>
+</ul>
+<p>这样，问题就可以解决。</p>
+<br/>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/es6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -963,109 +1073,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2017/slag/js-scope/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.svg">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/slag/js-scope/" class="post-title-link" itemprop="url">JavaScript 作用域/scope</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-09-13 16:00:53" itemprop="dateCreated datePublished" datetime="2017-09-13T16:00:53+08:00">2017-09-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2017/slag/js-scope/" class="post-meta-item leancloud_visitors" data-flag-title="JavaScript 作用域/scope" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2017/slag/js-scope/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2017/slag/js-scope/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="什么是作用域？"><a href="#什么是作用域？" class="headerlink" title="什么是作用域？"></a>什么是作用域？</h2><p>百度百科：程序设计概念，通常来说，一段程序代码中所用到的名字并不总是有效&#x2F;可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域</p>
-<p>书面版：一套设计良好，用来存储变量，并可以方便找到这些变量的规则称为作用域</p>
-<h2 id="RL-查询"><a href="#RL-查询" class="headerlink" title="RL 查询"></a>RL 查询</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>RHS：谁是赋值操作的源头，查找变量 a 的值，即 2。</li>
-<li>LHS：赋值操作的目标是谁，试图找到变量的容器本身，从而可以对其赋值。也就是查找变量 a 。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// 这里对 a 是一个 RHS 查询，找到 a 的值，并 console.log 出来。</span></span><br><span class="line">a = <span class="number">2</span>; <span class="comment">// 这里对 a 是一个 LHS 查询，找到 变量 a，并对其赋值为 2 。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params">a</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// 2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">foo</span>(<span class="number">2</span>);</span><br><span class="line"><span class="comment">// 这里首先对 foo() 函数调用，执行 RHS 引用，即找到 foo 函数，</span></span><br><span class="line"><span class="comment">// 然后，执行了 a = 2 的传参赋值，这里首先执行 LHS 查询，</span></span><br><span class="line"><span class="comment">// 找到 a 并赋值为 2，然后 console.log(a) 执行了 RHS查询。</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/slag/js-scope/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1139,20 +1146,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">79</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">61</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

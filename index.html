@@ -189,6 +189,116 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2023/study-notes/fe-standard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.svg">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/study-notes/fe-standard/" class="post-title-link" itemprop="url">前端工程化-前端规范方案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-19 16:31:11" itemprop="dateCreated datePublished" datetime="2023-08-19T16:31:11+08:00">2023-08-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2023/study-notes/fe-standard/" class="post-meta-item leancloud_visitors" data-flag-title="前端工程化-前端规范方案" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2023/study-notes/fe-standard/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/study-notes/fe-standard/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="Code-standard"><a href="#Code-standard" class="headerlink" title="Code standard"></a>Code standard</h3><p><code>代码规范</code> 是前端工程化落地的基石，用于约束 <code>编码规范</code> 和 <code>编码风格</code>，它的好处是：</p>
+<ul>
+<li>强制规范代码风格统一，保持一样的编码习惯</li>
+<li>增加代码的可维护性和可接入性，即使有新成员的加入也能快速适应项目的架构与需求</li>
+<li>保障项目的整体质量，可减少无用代码、重复代码、错误代码和 BUG 代码的产生几率</li>
+</ul>
+<h3 id="Git-Commit-Message"><a href="#Git-Commit-Message" class="headerlink" title="Git Commit Message"></a>Git Commit Message</h3><p><code>commit message</code> 是开发的日常操作, 写好 <code>log</code> 不仅有助于他人 <code>review</code>, 还可以有效的输出 <code>CHANGELOG</code>, 对项目的管理实际至关重要, 但是实际工作中却常常被大家忽略.</p>
+<p>那如何在前端项目中统一 <strong>代码规范</strong>，以及 <strong>Commit Message</strong> 的规范？<br>我这边结合实际项目以及目前较受欢迎的相关工具，给大家分享一套解决方案。</p>
+<p>使用到的工具：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://eslint.org/">eslint</a>：JavaScript 代码检测工具，检测并提示错误或警告信息</li>
+<li><a target="_blank" rel="noopener" href="https://prettier.io/">prettier</a>：代码自动格式化工具，更好的代码风格效果</li>
+<li><a target="_blank" rel="noopener" href="https://typicode.github.io/husky/">husky</a>：Git hooks 工具, 可以在执行 git 命令时，执行自定义的脚本程序</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/okonet/lint-staged">lint-staged</a>：对暂存区 (git add) 文件执行脚本检测校验</li>
+<li><a target="_blank" rel="noopener" href="https://commitlint.js.org/">commitlint</a>：帮助你的团队遵守提交约定。通过支持 npm 安装的配置，它可以很容易地共享提交约定。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/study-notes/fe-standard/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://webcjs.com/2023/slag/licecap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -887,102 +997,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2020/slag/npm-package/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.svg">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/slag/npm-package/" class="post-title-link" itemprop="url">将npm包发布在私有仓库nexus中</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-17 16:16:13" itemprop="dateCreated datePublished" datetime="2020-08-17T16:16:13+08:00">2020-08-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/slag/npm-package/" class="post-meta-item leancloud_visitors" data-flag-title="将npm包发布在私有仓库nexus中" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/slag/npm-package/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/slag/npm-package/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>有时候需要将自己写的一些前端项目打包发布到公司内部的 nexus 仓库中<br>私服搭建地址：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1cfbc1518fce">https://www.jianshu.com/p/1cfbc1518fce</a></p>
-<h3 id="在-nexus-中新建一个-repository"><a href="#在-nexus-中新建一个-repository" class="headerlink" title="在 nexus 中新建一个 repository"></a>在 nexus 中新建一个 repository</h3><h4 id="打开-nexus-登录以后，按照下图操作"><a href="#打开-nexus-登录以后，按照下图操作" class="headerlink" title="打开 nexus,登录以后，按照下图操作"></a>打开 nexus,登录以后，按照下图操作</h4><p><img src="/images/slag/npm-package1.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/slag/npm-package/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1056,20 +1070,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">79</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">61</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
