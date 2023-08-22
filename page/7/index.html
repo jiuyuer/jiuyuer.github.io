@@ -189,6 +189,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2017/slag/js-ascension/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.svg">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/slag/js-ascension/" class="post-title-link" itemprop="url">JavaScript 提升</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-09-14 17:25:27" itemprop="dateCreated datePublished" datetime="2017-09-14T17:25:27+08:00">2017-09-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/slag/js-ascension/" class="post-meta-item leancloud_visitors" data-flag-title="JavaScript 提升" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/slag/js-ascension/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/slag/js-ascension/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这里的提升，我的理解是包括变量和函数在内的所有声明的提升<br>而根据对作用域的理解，任何声明在某个作用域内的变量，都将附属于这个作用域。</p>
+<h2 id="考虑以下代码"><a href="#考虑以下代码" class="headerlink" title="考虑以下代码"></a>考虑以下代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码块一</span></span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//代码块二</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>上述两段代码的结果是啥？</p>
+<p>思考思路：包括变量和函数在内的所有声明都会在任何代码被执行前首先被处理。</p>
+<h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p>于是， 上述代码块一，会以如下形式处理：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br></pre></td></tr></table></figure>
+
+<p>代码块二处理：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">a = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">foo</span>();</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">//undefined</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/slag/js-ascension/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://webcjs.com/2017/slag/js-scope/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -920,110 +1026,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2014/tutorial/select-the-camera/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.svg">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/tutorial/select-the-camera/" class="post-title-link" itemprop="url">佳能好？还是尼康好？</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-04-18 16:07:48" itemprop="dateCreated datePublished" datetime="2014-04-18T16:07:48+08:00">2014-04-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%88%B1%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">爱摄影</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2014/tutorial/select-the-camera/" class="post-meta-item leancloud_visitors" data-flag-title="佳能好？还是尼康好？" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2014/tutorial/select-the-camera/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2014/tutorial/select-the-camera/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>购买相机“佳能好还是尼康好”，有学摄影的学生、家庭用户、摄影爱好者，有要卡片机的，也有买单反的。佳能、尼康是在国内摄影器材销售量数一数二的产品，到底谁好？您可以从以下几个方面去考虑。</p>
-<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
-<li>每个人对摄影的偏好不一样，所以买相机前要对自己的用途有个定位。比如有的喜欢旅游，爱好风光摄影；有的喜欢人像，喜欢给家人拍照，有了定位我们来说下特点：佳能的色调偏暖，就是出来的片子会偏红；尼康的色调偏冷，片子出来后会偏青。也就是拍风光用尼康拍的更山清水秀，爱拍人像的用佳能白里透红。</li>
-</ul>
-<h2 id="喜好"><a href="#喜好" class="headerlink" title="喜好"></a>喜好</h2><ul>
-<li>佳能的成像柔点，尼康的成像锐点。比如同时拍一张人像，佳能的拍出来脸部皮肤看着可能很光滑，尼康就会把斑点、发丝都给拍出来，这样就看自己的喜好了，要是不 PS 估计很多 MM 接受不了尼康给自己拍脸了，也有可能需要的就是发丝的这个锐度。</li>
-</ul>
-<h2 id="配件（指单反用户）"><a href="#配件（指单反用户）" class="headerlink" title="配件（指单反用户）"></a>配件（指单反用户）</h2><ul>
-<li>买了机身没有镜头是不能用的。NIKON 是多年研究光学产品的专家,镜头的价格也是相对便宜点（不包刮 07 年 10 月反布的 5 款新镜头）；Canon 具有高科技的产品手法，L 头更是现在专业摄影届必不可少的利器，价格当然也是很高。</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/tutorial/select-the-camera/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1097,7 +1099,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-count">80</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1110,7 +1112,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">61</span>
+        <span class="site-state-item-count">63</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
