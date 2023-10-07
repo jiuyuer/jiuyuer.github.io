@@ -189,6 +189,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/encyclopedia/upload-projects-git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.svg">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/encyclopedia/upload-projects-git/" class="post-title-link" itemprop="url">如何用命令将本地项目上传到git</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-18 14:32:21" itemprop="dateCreated datePublished" datetime="2018-06-18T14:32:21+08:00">2018-06-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/encyclopedia/upload-projects-git/" class="post-meta-item leancloud_visitors" data-flag-title="如何用命令将本地项目上传到git" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/encyclopedia/upload-projects-git/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/encyclopedia/upload-projects-git/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li>通过命令 git init 把这个目录变成 git 可以管理的仓库（先进入项目文件夹）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
+<li>把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></li>
+<li>用命令 git commit 告诉 Git，把文件提交到仓库。引号内为提交说明<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li>关联到远程库 git remote add origin 你的远程库地址<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/cade8800/ionic-demo.git</span><br></pre></td></tr></table></figure></li>
+<li>获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure></li>
+<li>把本地库的内容推送到远程，使用 git push 命令，实际上是把当前分支 master 推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>状态查询命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="/images/baike/git-project.png"><br><br/></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/encyclopedia/mac-network-location/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -987,107 +1086,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2017/diary/to-static-and-wonderful/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.svg">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/diary/to-static-and-wonderful/" class="post-title-link" itemprop="url">不向静中参妙理，纵然颖悟也虚浮</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-09-18 14:28:49" itemprop="dateCreated datePublished" datetime="2017-09-18T14:28:49+08:00">2017-09-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2017/diary/to-static-and-wonderful/" class="post-meta-item leancloud_visitors" data-flag-title="不向静中参妙理，纵然颖悟也虚浮" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2017/diary/to-static-and-wonderful/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2017/diary/to-static-and-wonderful/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>围棋界著名的一句诗：弗思而应诚多败，信手频挥更鲜谋，不向静中参妙理，纵然颖悟也虚浮。</p>
-<p>意思大概是平时不去打好基本功，纵然在对弈之时下出妙子也无非是偶然而已，可理解为须寂寞清静才能达到深远的境界。</p>
-<p>这句话用我的白话文来说就是，不要心浮气躁，必须得脚踏实地，即使你想建造一座宏伟的高层建筑，那也必须要把根基打结实才行。就像大学期末考试一样，你考 60 分，也许只是最后两周临时抱佛脚的功劳，但是，真正这门课你的掌握度也许只有 20%，甚至都还不到。到了社会，当你面试的时候(尤其是技术相关)，也许这 60 分的能力你能骗过小部分人，但是，一个对知识体系非常清晰，沉淀很深的面试官而言，你只不过是一只三脚猫而已。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/diary/to-static-and-wonderful/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1157,7 +1159,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">80</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1318,7 +1320,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       lang       : '' || 'zh-cn',
       path       : location.pathname,
       recordIP   : true,
-      serverURLs : ''
+      serverURLs : 'https://d8iktrag.lc-cn-e1-shared.com'
     });
   }, window.Valine);
 });
