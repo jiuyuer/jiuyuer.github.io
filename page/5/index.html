@@ -21,9 +21,9 @@
 
   <meta name="description" content="吃馒头也开心">
 <meta property="og:type" content="website">
-<meta property="og:title" content="酒月">
+<meta property="og:title" content="MiTu-小书童">
 <meta property="og:url" content="https://webcjs.com/page/5/index.html">
-<meta property="og:site_name" content="酒月">
+<meta property="og:site_name" content="MiTu-小书童">
 <meta property="og:description" content="吃馒头也开心">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="MiTu">
@@ -43,7 +43,7 @@
   };
 </script>
 
-  <title>酒月</title>
+  <title>MiTu-小书童</title>
   
 
 
@@ -94,7 +94,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">酒月</h1>
+      <h1 class="site-title">MiTu-小书童</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">尘世中_迷途小书童_</p>
@@ -189,6 +189,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/nomenclature/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.svg">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/slag/nomenclature/" class="post-title-link" itemprop="url">三种编程命名法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-07-05 09:18:54" itemprop="dateCreated datePublished" datetime="2018-07-05T09:18:54+08:00">2018-07-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/slag/nomenclature/" class="post-meta-item leancloud_visitors" data-flag-title="三种编程命名法" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/slag/nomenclature/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/slag/nomenclature/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>人们交流靠各种语言，每行都有每行所谓的“行话”。程序员也不例外，众所周知，程序员都是用代码进行交流的。那么除了在代码中的注释之外，<br>程序员如何读懂别人的程序呢？<br>当然，程序员之间也有所谓的“潜规则”。大家都把代码中的变量、函数和类等等用目前常用的匈牙利命名、驼峰式、帕斯卡命名法来进行命名。</p>
+</blockquote>
+<h2 id="匈牙利命名法"><a href="#匈牙利命名法" class="headerlink" title="匈牙利命名法"></a>匈牙利命名法</h2><p>匈牙利命名法通过在变量名前面加上相应的小写字母的符号标识作为前缀，标识出变量的作用域，类型等。这些符号可以多个同时使用，顺序是先 m_（成员变量）， 再指针，再简单数据类型，再其他。例如：m_lpszStr, 表示指向一个以 0 字符结尾的字符串的长指针成员变量。</p>
+<p>匈牙利命名法关键是：标识符的名字以一个或者多个小写字母开头作为前缀；前缀之后的是首字母大写的一个单词或多个单词组合，该单词要指明变量的用途。<br>匈牙利命名法中常用的小写字母的前缀：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">前缀              类型</span><br><span class="line"> a              数组 (Array)</span><br><span class="line"> b              布尔值 (Boolean)</span><br><span class="line"> by             字节 (Byte)</span><br><span class="line"> c              有符号字符 (Char)</span><br><span class="line"> cb             无符号字符 (Char Byte，没有多少人用)</span><br><span class="line"> cr             颜色参考值 (ColorRef)</span><br><span class="line"> cx,cy          坐标差（长度 ShortInt）</span><br><span class="line"> dw             Double Word</span><br><span class="line"> fn             函数</span><br><span class="line"> h              Handle（句柄）</span><br><span class="line"> i              整型</span><br><span class="line"> l              长整型 (Long Int)</span><br><span class="line"> lp             Long Pointer</span><br><span class="line"> m_             类的成员</span><br><span class="line"> n              短整型 (Short Int)</span><br><span class="line"> np             Near Pointer</span><br><span class="line"> p              Pointer</span><br><span class="line"> s              字符串型</span><br><span class="line"> sz             以null做结尾的字符串型 (String with Zero End)</span><br><span class="line"> w              Word</span><br></pre></td></tr></table></figure>
+
+<h2 id="驼峰式"><a href="#驼峰式" class="headerlink" title="驼峰式"></a>驼峰式</h2><p>驼峰式命名法就是当变量名或函式名是由一个或多个单词连结在一起，而构成的唯一识别字时，第一个单词以小写字母开始；第二个单词的首字母大写或每一个单词的首字母都采用大写字母，例如：myFirstName、myLastName，这样的变量名看上去就像驼峰峰一样此起彼伏，故得名。<br>驼峰式命名法（Camel-Case）一词来自 Perl 语言中普遍使用的大小写混合格式，而 Larry Wall 等人所著的畅销书《Programming Perl》（O’Reilly 出版）的封面图片正是一匹骆驼。<br>驼峰式命名法的命名规则可视为一种惯例，并无绝对与强制，为的是增加识别和可读性。</p>
+<h3 id="小驼峰法"><a href="#小驼峰法" class="headerlink" title="小驼峰法"></a>小驼峰法</h3><p>变量一般用小驼峰法标识。驼峰法的意思是：除第一个单词之外，其他单词首字母大写。譬如<br>int myStudentCount;<br>变量 myStudentCount 第一个单词是全部小写，后面的单词首字母大写。</p>
+<h3 id="大驼峰法"><a href="#大驼峰法" class="headerlink" title="大驼峰法"></a>大驼峰法</h3><p>相比小驼峰法，大驼峰法把第一个单词的首字母也大写了。常用于类名，函数名，属性，命名空间。譬如<br>public class DataBaseUser;</p>
+<h2 id="帕斯卡命名法"><a href="#帕斯卡命名法" class="headerlink" title="帕斯卡命名法"></a>帕斯卡命名法</h2><p>帕斯卡命名法其实就是目前说的大驼峰命名法，常用于类名，函数名，属性，命名空间。<br><br></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/esLint-rule/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -198,7 +296,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒月">
+      <meta itemprop="name" content="MiTu-小书童">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -302,7 +400,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒月">
+      <meta itemprop="name" content="MiTu-小书童">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -406,7 +504,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒月">
+      <meta itemprop="name" content="MiTu-小书童">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -520,7 +618,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒月">
+      <meta itemprop="name" content="MiTu-小书童">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -631,7 +729,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒月">
+      <meta itemprop="name" content="MiTu-小书童">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -746,7 +844,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒月">
+      <meta itemprop="name" content="MiTu-小书童">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -855,7 +953,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒月">
+      <meta itemprop="name" content="MiTu-小书童">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -963,140 +1061,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/how-to-learn-vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.svg">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒月">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/slag/how-to-learn-vue/" class="post-title-link" itemprop="url">新手向：Vue 2.0 的建议学习顺序</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-06-18 15:56:06" itemprop="dateCreated datePublished" datetime="2018-06-18T15:56:06+08:00">2018-06-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">百科全书</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2018/slag/how-to-learn-vue/" class="post-meta-item leancloud_visitors" data-flag-title="新手向：Vue 2.0 的建议学习顺序" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/slag/how-to-learn-vue/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/slag/how-to-learn-vue/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>注：2.0 已经有 <a target="_blank" rel="noopener" href="https://cn.vuejs.org/">中文文档</a> 。如果对自己英文有信心，也可以直接阅读 <a target="_blank" rel="noopener" href="https://vuejs.org/">英文文档</a>。<br>此指南仅供参考，请根据自身实际情况灵活调整。<br>欢迎转载，请注明出处。</p>
-</blockquote>
-<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><ol>
-<li><p>扎实的 JavaScript &#x2F; HTML &#x2F; CSS 基本功。这是前置条件。</p>
-</li>
-<li><p>通读官方教程 (guide) 的基础篇。不要用任何构建工具，就只用最简单的 &lt;script&gt;，把教程里的例子模仿一遍，理解用法。<strong>不推荐上来就直接用 vue-cli 构建项目，尤其是如果没有 Node&#x2F;Webpack 基础。</strong></p>
-</li>
-<li><p>照着官网上的示例，自己想一些类似的例子，模仿着实现来练手，加深理解。</p>
-</li>
-<li><p>阅读官方教程进阶篇的前半部分，到『自定义指令 (Custom Directive) 』为止。着重理解 Vue 的响应式机制和组件生命周期。『渲染函数（Render Function)』如果理解吃力可以先跳过。</p>
-</li>
-<li><p>阅读教程里关于路由和状态管理的章节，然后根据需要学习 vue-router 和 vuex。同样的，先不要管构建工具，以跟着文档里的例子理解用法为主。</p>
-</li>
-<li><p>走完基础文档后，如果你对于基于 Node 的前端工程化不熟悉，就需要补课了。下面这些严格来说并不是 Vue 本身的内容，也不涵盖所有的前端工程化知识，但对于大型的 Vue 工程是前置条件，也是合格的『前端工程师』应当具备的知识。</p>
-</li>
-</ol>
-<h2 id="前端生态-x2F-工程化"><a href="#前端生态-x2F-工程化" class="headerlink" title="前端生态&#x2F;工程化"></a>前端生态&#x2F;工程化</h2><ol>
-<li><p>了解 JavaScript 背后的规范，ECMAScript 的历史和目前的规范制定方式。学习 ES2015&#x2F;16 的新特性，理解 ES2015 modules，适当关注<a target="_blank" rel="noopener" href="https://github.com/tc39/proposals">还未成为标准的提案</a>。</p>
-</li>
-<li><p>学习命令行的使用。建议用 Mac。</p>
-</li>
-<li><p>学习 Node.js 基础。<strong>建议使用 <a target="_blank" rel="noopener" href="https://github.com/creationix/nvm">nvm</a> 这样的工具来管理机器上的 Node 版本，并且将 npm 的 registry 注册表配置为<a target="_blank" rel="noopener" href="https://npm.taobao.org/">淘宝的镜像源</a>。</strong>至少要了解 npm 的常用命令，npm scripts 如何使用，语义化版本号规则，CommonJS 模块规范（了解它和 ES2015 Modules 的异同），Node 包的解析规则，以及 Node 的常用 API。应当做到可以自己写一些基本的命令行程序。注意最新版本的 Node (6+) 已经支持绝大部分 ES2015 的特性，可以借此巩固 ES2015。</p>
-</li>
-<li><p>了解如何使用 &#x2F; 配置 Babel 来将 ES2015 编译到 ES5 用于浏览器环境。</p>
-</li>
-<li><p>学习 Webpack。Webpack 是一个极其强大同时也复杂的工具，作为起步，理解它的『一切皆模块』的思想，并基本了解其常用配置选项和 loader 的概念&#x2F;使用方法即可，比如如何搭配 Webpack 使用 Babel。学习 Webpack 的一个挑战在于其本身文档的混乱，建议多搜索搜索，应该还是有质量不错的第三方教程的。英文好的建议阅读 <a target="_blank" rel="noopener" href="https://webpack.js.org/guides/getting-started/">Webpack 2.0 的文档</a>。</p>
-</li>
-</ol>
-<h2 id="Vue-进阶"><a href="#Vue-进阶" class="headerlink" title="Vue 进阶"></a>Vue 进阶</h2><ol>
-<li><p>有了 Node 和 Webpack 的基础，可以通过 vue-cli 来搭建基于 Webpack ，并且支持单文件组件的项目了。建议用 webpack-simple 这个模板开始，并阅读官方教程进阶篇剩余的内容以及 <a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/">vue-loader 的文档</a>，了解一些进阶配置。有兴趣的可以自己亲手从零开始搭一个项目加深理解。</p>
-</li>
-<li><p>根据 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-hackernews-2.0">例子</a> 尝试在 Webpack 模板基础上整合 vue-router 和 vuex</p>
-</li>
-<li><p>深入理解 Virtual DOM 和『渲染函数 (Render Functions)』这一章节（可选择性使用 JSX)，理解模板和渲染函数之间的对应关系，了解其使用方法和适用场景。</p>
-</li>
-<li><p>（可选）根据需求，了解服务端渲染的使用（需要配合 Node 服务器开发的知识）。其实更重要的是理解它所解决的问题并搞清楚你是否需要它。</p>
-</li>
-<li><p>阅读开源的 Vue 应用、组件、插件源码，自己尝试编写开源的 Vue 组件、插件。</p>
-</li>
-<li><p>参考 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md#development-setup">贡献指南</a> 阅读 Vue 的源码，理解内部实现细节。（需要了解 <a target="_blank" rel="noopener" href="https://flow.org/">Flow</a>）</p>
-</li>
-<li><p>参与 Vue GitHub issue 的定位 -&gt; 贡献 PR -&gt; 加入核心团队 -&gt; 升任 CTO -&gt; 迎娶白富美…（误</p>
-</li>
-</ol>
-<br>
-> 转自：[尤大大的新手向：Vue 2.0 的建议学习顺序](https://zhuanlan.zhihu.com/p/23134551)
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1170,20 +1134,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1220,13 +1184,11 @@
         
 
         
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备12033465号-1 </a>
-  </div>
 
 <div class="copyright">
   
   &copy; 2008 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
