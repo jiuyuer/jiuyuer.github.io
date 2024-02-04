@@ -189,6 +189,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/an-array-of-objects-to-heavy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.svg">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/slag/an-array-of-objects-to-heavy/" class="post-title-link" itemprop="url">由对象组成的数组如何去重？</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-10-08 16:13:41" itemprop="dateCreated datePublished" datetime="2018-10-08T16:13:41+08:00">2018-10-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/slag/an-array-of-objects-to-heavy/" class="post-meta-item leancloud_visitors" data-flag-title="由对象组成的数组如何去重？" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/slag/an-array-of-objects-to-heavy/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/slag/an-array-of-objects-to-heavy/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>需求：将下面 data 数组中 id 重复的数据去掉？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201801</span>, <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>, <span class="attr">age</span>: <span class="number">15</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201804</span>, <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201802</span>, <span class="attr">name</span>: <span class="string">&#x27;李四&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201801</span>, <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>, <span class="attr">age</span>: <span class="number">15</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201805</span>, <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201803</span>, <span class="attr">name</span>: <span class="string">&#x27;王五&#x27;</span>, <span class="attr">age</span>: <span class="number">10</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201805</span>, <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201804</span>, <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">201805</span>, <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<p>下面列了两种办法来解决：</p>
+<h2 id="一、数组的-reduce-方法"><a href="#一、数组的-reduce-方法" class="headerlink" title="一、数组的 reduce()方法"></a>一、数组的 reduce()方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> hash = &#123;&#125;;</span><br><span class="line">data = data.<span class="title function_">reduce</span>(<span class="function">(<span class="params">preVal, curVal</span>) =&gt;</span> &#123;</span><br><span class="line">  hash[curVal.<span class="property">id</span>] ? <span class="string">&#x27;&#x27;</span> : (hash[curVal.<span class="property">id</span>] = <span class="literal">true</span> &amp;&amp; preVal.<span class="title function_">push</span>(curVal));</span><br><span class="line">  <span class="keyword">return</span> preVal;</span><br><span class="line">&#125;, []);</span><br></pre></td></tr></table></figure>
+
+<h3 id="上述方法的实现思路"><a href="#上述方法的实现思路" class="headerlink" title="上述方法的实现思路"></a>上述方法的实现思路</h3><p>利用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">reduce()</a>方法的累积器作用，在对由对象组成的数组进行遍历时，通过对象 <code>hash</code> 来标记数组中每个元素 id 是否出现过，如果出现过，那么遍历到的当前元素则不会放入到累积器中，如果没有出现，则添加到累积器中，这样保证了最后返回值中每个数据 id 的唯一性。</p>
+<p>关于数组的 reduce()方法，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">点这里</a>，MDN 上已经写的很清楚了，自己理解。</p>
+<h2 id="二、for-循环遍历"><a href="#二、for-循环遍历" class="headerlink" title="二、for 循环遍历"></a>二、for 循环遍历</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">removeRepeat</span>(<span class="params">arr, key</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; arr.<span class="property">length</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i][key] === arr[j][key]) &#123;</span><br><span class="line">        arr.<span class="title function_">splice</span>(j, <span class="number">1</span>);</span><br><span class="line">        j = j - <span class="number">1</span>; <span class="comment">// 关键，因为splice()删除元素之后，会使得数组长度减小，此时如果没有j=j-1的话，会导致相同id项在重复两次以上之后无法进行去重，且会错误删除id没有重复的项。</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">removeRepeat</span>(data, <span class="string">&#x27;id&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="上述方法的实现思路-1"><a href="#上述方法的实现思路-1" class="headerlink" title="上述方法的实现思路"></a>上述方法的实现思路</h3><p>利用 for 循环遍历数组，并将数组中的每一个元素与剩余元素一一进行比较，如果在剩余元素中出现 id 相同的项，则通过 <code>splice()</code>方法将相同 id 项删除，这样在最终得到的数组中每个数据 id 将是唯一的。通过 <code>splice()</code>方法删除元素后，会使得数组长度减小，为了实现去重应该执行 <code>j = j-1</code>。上面将去重方法直接封装成函数 <code>removeRepeat</code>，使用时可以直接调用该函数，并传入要去重的数组和唯一属性名。</p>
+<br/>
+
+<p>转自 <a target="_blank" rel="noopener" href="https://blog.csdn.net/XuM222222/article/details/80657316">https://blog.csdn.net/XuM222222/article/details/80657316</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/mobile-fixed-shake/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -914,99 +1015,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2018/slag/http-update-https-warn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.svg">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/slag/http-update-https-warn/" class="post-title-link" itemprop="url">网页调试显示的警告，让你网站升级为HTTPS</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-07-12 09:53:08" itemprop="dateCreated datePublished" datetime="2018-07-12T09:53:08+08:00">2018-07-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2018/slag/http-update-https-warn/" class="post-meta-item leancloud_visitors" data-flag-title="网页调试显示的警告，让你网站升级为HTTPS" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/slag/http-update-https-warn/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/slag/http-update-https-warn/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在 chrome 中打开调试工具，出现如下图提示：</p>
-<p><img src="/images/baike/http-update-https.jpg"></p>
-<blockquote>
-<p>This page includes a password or credit card input in a non-secure context. A warning has been added to the URL bar. For more information, see <a target="_blank" rel="noopener" href="https://goo.gl/zmWq3m">https://goo.gl/zmWq3m</a>.</p>
-</blockquote>
-<p>提示原因：简单的说，通过 HTTP 协议传递密码是非常不安全的，所以 Google 弹出了这个警告，提示你该是时候把你的网站 <strong>升级为HTTPS</strong> 了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1080,20 +1088,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">83</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">66</span>
+        <span class="site-state-item-count">67</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2023/study-notes/nodemodules-path/">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2024/study-notes/monorepo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon.svg">
@@ -203,7 +203,110 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/study-notes/nodemodules-path/" class="post-title-link" itemprop="url">修改 node_modules 中的依赖（打补丁）</a>
+            <a href="/2024/study-notes/monorepo/" class="post-title-link" itemprop="url">Monorepo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-01-06 14:09:02" itemprop="dateCreated datePublished" datetime="2024-01-06T14:09:02+08:00">2024-01-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2024/study-notes/monorepo/" class="post-meta-item leancloud_visitors" data-flag-title="Monorepo" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2024/study-notes/monorepo/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/study-notes/monorepo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>Repo 是 repository 的缩写，即 Git 仓库</p>
+</blockquote>
+<p>Monorepo（单一代码仓库）是一种软件开发项目的版本控制管理策略，它将所有相关的代码、组件、模块和项目全部存储在一个统一的代码仓库中，而不是将它们拆分为多个独立的代码仓库</p>
+<h2 id="Monorepo-和-Multi-Repo"><a href="#Monorepo-和-Multi-Repo" class="headerlink" title="Monorepo 和 Multi-Repo"></a>Monorepo 和 Multi-Repo</h2><p>Monorepo 和 Multi-Repo 是两种项目管理方式，其区别如下：</p>
+<ul>
+<li>Monorepo 是使用一个 Git 仓库管理多个项目</li>
+<li>Multi-Repo 是使用多个 Git 仓库管理多个项目，即一个项目对应一个仓库</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/study-notes/monorepo/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2023/study-notes/node-modules-path/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.svg">
+      <meta itemprop="name" content="MiTu">
+      <meta itemprop="description" content="吃馒头也开心">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiTu-小书童">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/study-notes/node-modules-path/" class="post-title-link" itemprop="url">修改 node_modules 中的依赖（打补丁）</a>
         </h2>
 
         <div class="post-meta">
@@ -223,14 +326,10 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
                 </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
-                </span>
             </span>
 
           
-            <span id="/2023/study-notes/nodemodules-path/" class="post-meta-item leancloud_visitors" data-flag-title="修改 node_modules 中的依赖（打补丁）" title="阅读次数">
+            <span id="/2023/study-notes/node-modules-path/" class="post-meta-item leancloud_visitors" data-flag-title="修改 node_modules 中的依赖（打补丁）" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -245,8 +344,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2023/study-notes/nodemodules-path/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2023/study-notes/nodemodules-path/" itemprop="commentCount"></span>
+    <a title="valine" href="/2023/study-notes/node-modules-path/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/study-notes/node-modules-path/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -289,7 +388,7 @@
 </ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2023/study-notes/nodemodules-path/#more" rel="contents">
+              <a class="btn" href="/2023/study-notes/node-modules-path/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -917,113 +1016,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://webcjs.com/2022/slag/git-fork/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.svg">
-      <meta itemprop="name" content="MiTu">
-      <meta itemprop="description" content="吃馒头也开心">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MiTu-小书童">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/slag/git-fork/" class="post-title-link" itemprop="url">fork 别人的代码，如何更新主分支最新代码</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-01 17:44:28" itemprop="dateCreated datePublished" datetime="2022-08-01T17:44:28+08:00">2022-08-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/" itemprop="url" rel="index"><span itemprop="name">技术渣</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/slag/git-fork/" class="post-meta-item leancloud_visitors" data-flag-title="fork 别人的代码，如何更新主分支最新代码" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/slag/git-fork/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/slag/git-fork/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>fork 操作：就是从别的大佬远程端 <code>git仓库</code> 拷贝一份到自己的 <code>git仓库</code>。</p>
-</blockquote>
-<p>在开发学习时，经常通过 fork 别人的 git 开源项目进行开发学习。<br>所以在我们开发完成后，想合并到大佬的主分支去，我们需要进行创建一个 <code>merge request</code>， 提交给主分支代码管理员进行代码审核，审核通过后允许 <code>merge</code>，这样我们开发的代码就会合并到主项目中。</p>
-<p>那么大佬的主分支有更新了，我们怎样将主分支的更新代码拉取、合并到本地呢？</p>
-<h2 id="fork-分支更新流程："><a href="#fork-分支更新流程：" class="headerlink" title="fork 分支更新流程："></a>fork 分支更新流程：</h2><h3 id="1-首先要确认是否建立了主项目的远程源："><a href="#1-首先要确认是否建立了主项目的远程源：" class="headerlink" title="1. 首先要确认是否建立了主项目的远程源："></a>1. 首先要确认是否建立了主项目的远程源：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
-
-<p>如果只显示自己的两个源（fetch, push）如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tonyt@xiaofeng web-poc % git remote -v</span><br><span class="line">origin  http://10.25.0.130/web-tools/web-poc.git (fetch)</span><br><span class="line">origin  http://10.25.0.130/web-tools/web-poc.git (push)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-则说明没有建立远程的-repo-源，需要添加主-repo-的源："><a href="#2-则说明没有建立远程的-repo-源，需要添加主-repo-的源：" class="headerlink" title="2. 则说明没有建立远程的 repo 源，需要添加主 repo 的源："></a>2. 则说明没有建立远程的 repo 源，需要添加主 repo 的源：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream https://github.com/b******/c*****.git    # git remote add upstream URL</span><br></pre></td></tr></table></figure>
-
-<p>这里的 upstream 是我们建立的远程 branch 的一个本地名。对于 url 一般有 https 与 ssh 的方式，如果是 ssh 方式，则需要添加 ssh 的 url,不能添加 https 的方式，否则不能在 ssh 下访问该 url。</p>
-<h3 id="3-添加完之后再次使用-git-remote-v-来确认。"><a href="#3-添加完之后再次使用-git-remote-v-来确认。" class="headerlink" title="3. 添加完之后再次使用 git remote -v 来确认。"></a>3. 添加完之后再次使用 <code>git remote -v</code> 来确认。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tonyt@xiaofeng web-poc % git remote -v</span><br><span class="line">origin  http://10.25.2.87:9980/root/web-poc.git (fetch)</span><br><span class="line">origin  http://10.25.2.87:9980/root/web-poc.git (push)</span><br><span class="line">upstream        http://10.25.0.130/web-tools/web-poc.git (fetch)</span><br><span class="line">upstream        http://10.25.0.130/web-tools/web-poc.git (push)</span><br></pre></td></tr></table></figure>
-
-<p>有 upstream 这样就是已经创建了主 repo 的远程源。</p>
-<h3 id="4-拉取主-repo-源代码："><a href="#4-拉取主-repo-源代码：" class="headerlink" title="4. 拉取主 repo 源代码："></a>4. 拉取主 repo 源代码：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch upstream</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-合并主-repo-代码到本地代码："><a href="#5-合并主-repo-代码到本地代码：" class="headerlink" title="5. 合并主 repo 代码到本地代码："></a>5. 合并主 repo 代码到本地代码：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge upstream/master</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-大功告成！！！！"><a href="#6-大功告成！！！！" class="headerlink" title="6. 大功告成！！！！"></a>6. 大功告成！！！！</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1097,20 +1089,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">83</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">66</span>
+        <span class="site-state-item-count">67</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
