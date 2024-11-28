@@ -60,14 +60,12 @@
       </tags>
   </entry>
   <entry>
-    <title>有点点浮躁</title>
-    <url>/2019/diary/annoyance/</url>
-    <content><![CDATA[<p>其实也没啥，就是莫名的浮躁，好久没有沉下心来好好思考一下未来。<br/></p>
-<p>被各种琐碎的事围绕着，也许已经忘了初心。<br/></p>
-<p>每天都在忙碌，就算不忙，也假装自己很忙。<br/></p>
-<p>忘了自己的兴趣爱好，忘了自己思考的时间。<br/></p>
-<p>突然想到《活着》里面的一句话：没有什么比活着更快乐也没有什么比活着更艰辛。<br/></p>
-<p>希望自己还是能快快乐乐的，让生活变的有趣，让生活能慢下来。</p>
+    <title>2023，新的开始</title>
+    <url>/2023/diary/2023-new-start/</url>
+    <content><![CDATA[<p>升级了 hexo ，重新开始。</p>
+<p>node版本升级到 16.19.0；16开头的最后一个稳定版本。<br>npm版本自动更新到 8.19.3；</p>
+<p>升级是为了使用vue3.0作准备和基础。学习的东西有很多，新知识也需要多更新学习。</p>
+<p>加油吧！</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -77,12 +75,14 @@
       </tags>
   </entry>
   <entry>
-    <title>2023，新的开始</title>
-    <url>/2023/diary/2023-new-start/</url>
-    <content><![CDATA[<p>升级了 hexo ，重新开始。</p>
-<p>node版本升级到 16.19.0；16开头的最后一个稳定版本。<br>npm版本自动更新到 8.19.3；</p>
-<p>升级是为了使用vue3.0作准备和基础。学习的东西有很多，新知识也需要多更新学习。</p>
-<p>加油吧！</p>
+    <title>有点点浮躁</title>
+    <url>/2019/diary/annoyance/</url>
+    <content><![CDATA[<p>其实也没啥，就是莫名的浮躁，好久没有沉下心来好好思考一下未来。<br/></p>
+<p>被各种琐碎的事围绕着，也许已经忘了初心。<br/></p>
+<p>每天都在忙碌，就算不忙，也假装自己很忙。<br/></p>
+<p>忘了自己的兴趣爱好，忘了自己思考的时间。<br/></p>
+<p>突然想到《活着》里面的一句话：没有什么比活着更快乐也没有什么比活着更艰辛。<br/></p>
+<p>希望自己还是能快快乐乐的，让生活变的有趣，让生活能慢下来。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -334,46 +334,6 @@
       </tags>
   </entry>
   <entry>
-    <title>深圳出差随笔</title>
-    <url>/2018/diary/travel-essays-shenzhen/</url>
-    <content><![CDATA[<blockquote>
-<p>时间：6.10-9.30<br>事件：支持银户通项目<br>地点：广东省深圳市南山区沙河街道深圳湾科技园<br>第一次来时住宿地点：深圳南山区枫叶品园公寓 ‭400 886 6633‬<br>7 月 1 日回来之后地点： 广东深圳市南山区粤海街道科伟路科苑花园 48 区 1 栋 1 单元 101 室 Ï</p>
-</blockquote>
-<span id="more"></span>
-
-<p>来深圳做的一些事：</p>
-<h2 id="工作上"><a href="#工作上" class="headerlink" title="工作上"></a>工作上</h2><h3 id="1-关于-VUE-相关的培训"><a href="#1-关于-VUE-相关的培训" class="headerlink" title="1. 关于 VUE 相关的培训"></a>1. 关于 VUE 相关的培训</h3><p>时间：一周<br>目的：让培训人员对 vue 有一个基本的了解，并能使用 vue 进行项目开发<br>成绩：培训人员对 vue 处于一知半解状态（能使用，但是原理性以及系统文档不会主动去看，去了解），还是需要实际项目进行历练</p>
-<h3 id="2-银户通项目基础框架的搭建（使用-vue2-0-webpack-vux）"><a href="#2-银户通项目基础框架的搭建（使用-vue2-0-webpack-vux）" class="headerlink" title="2. 银户通项目基础框架的搭建（使用 vue2.0+webpack+vux）"></a>2. 银户通项目基础框架的搭建（使用 vue2.0+webpack+vux）</h3><ul>
-<li>培训文档，前端项目规范，统一编码规范等的编写</li>
-<li>公共组件的开发（cfca 密码控件封装，下拉刷新上拉滚动组件等）</li>
-<li>代码管理，使用 gitlab，分配合理使用分支，版本控制(master)，打包封版(tag)</li>
-<li>协助配合开发人员，让项目正常进行下去</li>
-</ul>
-<p>项目开发心得：移动端 H5 的开发，而且还是基于小程序 webview 之中的，由于经验不足（比如，小程序与 h5 之间的通信，微信 jdk 的使用，移动端手机不同系统不同品牌的各种 bug 等），磕磕碰碰到不少问题，每个问题都需要花时间去解决去处理，最后好歹也整理出了一套属于项目的开发框架，用的还算顺手，不过后续有可能碰到的问题：手机性能相关的东西，首屏加载时间，页面渲染时间，数据存储等</p>
-<h3 id="3-tinyWeb-的形成"><a href="#3-tinyWeb-的形成" class="headerlink" title="3. tinyWeb 的形成"></a>3. tinyWeb 的形成</h3><p>在深圳支持期间，将前端框架取名为 tinyweb，也熬了两三天的夜，写了相关的文档，从介绍，使用，打包等方面进行了详细的说明。<br>并且，还支持配合其他项目组进行项目的开发，比如，动态权限菜单管理，权限指令等，通过电脑远程方式进行开发。</p>
-<h3 id="4-内管平台-规则平台的开发"><a href="#4-内管平台-规则平台的开发" class="headerlink" title="4. 内管平台-规则平台的开发"></a>4. 内管平台-规则平台的开发</h3><p>主要是使用 vue 开发了一个普通规则相关的组件，需求非常的繁琐复杂。大概断断续续也花了两周左右的时间，不过收获也是蛮大的，对 vue 的理解更深刻了，代码比以前更简洁</p>
-<p>996 的工作制，虽然辛苦却也值得。尤其是快发布上线期间，每天搞到凌晨 2 点甚至通宵，但是一路过来，觉得还是挺有意义的。</p>
-<hr>
-<p><img src="/images/shenzhen/1.jpg"><br><img src="/images/shenzhen/2.jpg"><br><img src="/images/shenzhen/3.jpg"><br><img src="/images/shenzhen/4.jpg"><br><img src="/images/shenzhen/5.jpg"><br><img src="/images/shenzhen/6.jpg"><br><img src="/images/shenzhen/7.jpg"><br><img src="/images/shenzhen/8.jpg"><br><img src="/images/shenzhen/9.jpg"><br><img src="/images/shenzhen/10.jpg"><br><img src="/images/shenzhen/11.jpg"></p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>虽说在深圳呆了三个月左右的时间，但由于 996 的工作制，到了周末基本上就是懒在床上了，所以，也没去过几个地方。</p>
-<h3 id="深圳大学"><a href="#深圳大学" class="headerlink" title="深圳大学"></a>深圳大学</h3><p><img src="/images/shenzhen/12.jpg"><br><img src="/images/shenzhen/13.jpg"><br><img src="/images/shenzhen/14.jpg"><br><img src="/images/shenzhen/15.jpg"></p>
-<h3 id="大梅沙"><a href="#大梅沙" class="headerlink" title="大梅沙"></a>大梅沙</h3><p><img src="/images/shenzhen/16.jpg"><br><img src="/images/shenzhen/17.jpg"><br><img src="/images/shenzhen/18.jpg"><br><img src="/images/shenzhen/19.jpg"></p>
-<h3 id="海岸城"><a href="#海岸城" class="headerlink" title="海岸城"></a>海岸城</h3><p><img src="/images/shenzhen/20.jpg"><br><img src="/images/shenzhen/21.jpg"><br><img src="/images/shenzhen/22.jpg"><br><img src="/images/shenzhen/23.jpg"><br><img src="/images/shenzhen/24.jpg"><br><img src="/images/shenzhen/25.jpg"><br><img src="/images/shenzhen/26.jpg"><br><img src="/images/shenzhen/27.jpg"><br><img src="/images/shenzhen/28.jpg"></p>
-<h3 id="福地：欢乐海岸"><a href="#福地：欢乐海岸" class="headerlink" title="福地：欢乐海岸"></a>福地：欢乐海岸</h3><p><img src="/images/shenzhen/31.jpeg"><br><img src="/images/shenzhen/32.jpeg"><br><img src="/images/shenzhen/33.jpeg"><br><img src="/images/shenzhen/34.jpeg"></p>
-<h3 id="香港"><a href="#香港" class="headerlink" title="香港"></a>香港</h3><p>最后一个周末，也正好是中秋放假，去了趟香港</p>
-<p><img src="/images/shenzhen/35.jpg"><br><img src="/images/shenzhen/36.jpg"><br><img src="/images/shenzhen/37.jpg"><br><img src="/images/shenzhen/38.jpg"><br><img src="/images/shenzhen/39.jpg"><br><img src="/images/shenzhen/40.jpg"><br><img src="/images/shenzhen/41.jpg"><br><img src="/images/shenzhen/42.jpg"><br><img src="/images/shenzhen/43.jpg"><br><img src="/images/shenzhen/44.jpg"><br><img src="/images/shenzhen/45.jpg"></p>
-<br/>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
-        <tag>旅行</tag>
-        <tag>出差</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>北京出差随笔</title>
     <url>/2021/diary/travel-essays-beijing/</url>
     <content><![CDATA[<blockquote>
@@ -427,55 +387,43 @@
       </tags>
   </entry>
   <entry>
-    <title>你和她的爱情故事</title>
-    <url>/2015/prose/you-and-her-love-story/</url>
-    <content><![CDATA[<h4 id="（一）"><a href="#（一）" class="headerlink" title="（一）"></a><center>（一）</center></h4><p>2008 年的秋天，那个清澈的夜晚，你在一大片陌生的面孔中莫名其妙地发现了她。所谓莫名其妙是朦胧诗派的写法，实际上是你搭讪了她的朋友，然后通过她的朋友顺利地要到了她的 QQ。几个月后，你跟她说：我发掘了你。那时她还不大适应你这种种表达方式，所以她微微地愕然了一下。</p>
-<p>有首歌唱：我遇见你是最美丽的意外。你觉得自己遇见她这个美丽的意外实在是有点意外，因为她让你中毒了，并且毒性极大。杨过中了情花毒，一思念小龙女胸口就是那个痛！你中的这个毒好比电脑一开机就卡死，没法运转。</p>
-<h4 id="（二）"><a href="#（二）" class="headerlink" title="（二）"></a><center>（二）</center></h4><p>从此之后，在黎明或是午夜，你总会从许许多多的梦中惊醒。你总会在梦里看到各种各样形形色色的面孔在背后追赶着自己：有古惑仔挥舞着尖刀卖命地追着你砍；有警察举着枪在你后面乱射；更有些人死命地咬着你，嘴里在不停地叫着喊着快还钱还钱快还钱……</p>
-<p>你认为这大概是自己白天追她追得太厉害了，所以到了晚上得自我找点平衡，于是不自学地就老做梦让别人追。</p>
+    <title>深圳出差随笔</title>
+    <url>/2018/diary/travel-essays-shenzhen/</url>
+    <content><![CDATA[<blockquote>
+<p>时间：6.10-9.30<br>事件：支持银户通项目<br>地点：广东省深圳市南山区沙河街道深圳湾科技园<br>第一次来时住宿地点：深圳南山区枫叶品园公寓 ‭400 886 6633‬<br>7 月 1 日回来之后地点： 广东深圳市南山区粤海街道科伟路科苑花园 48 区 1 栋 1 单元 101 室 Ï</p>
+</blockquote>
 <span id="more"></span>
 
-<h4 id="（三）"><a href="#（三）" class="headerlink" title="（三）"></a><center>（三）</center></h4><p>你觉得自己不是很优秀，原因如下：虽然你自认有点才，但是却没什么财，所以这很致命。</p>
-<p>人为财死，鸟为食亡。当你的才华还不能当钞票用的时候，你就算不上是有才。</p>
-<p>你当时还不知道自己其实算不上有才，所以你盲目地、狗急跳墙地急于向她展示自己那点还称不上是才华的才华。你在展示自己才华的时候又犯了一个很大的错误。你没有给她写情书而是写了一个小说。</p>
-<p>其实写小说也没啥，但致命的是，你却在自己的小说里把自己写得一无是处一塌糊涂一文不名一穷二白。</p>
-<p>小说是虚构的，但你的小说写得很好，所以她很傻很天真地认为这就是真实的，于是她认定了你就是小说里那个烂人。</p>
-<h4 id="（四）"><a href="#（四）" class="headerlink" title="（四）"></a><center>（四）</center></h4><p>之后，你在她眼中俨然成了烂人的代名词，而你却还不知道这到底发生了什么事。</p>
-<p>你依旧奋力追赶她，因为你一直觉得自己是优秀的代名词，所以你觉得自己没理由追不到她。</p>
-<p>世界上最悲哀的事莫过于，你认为对方把你当成一朵花，其实她只当你是一坨粪。</p>
-<p>你在不知不觉中把世界上最悲哀的事给经历了，所以你还不知道自己从此之后应该刀枪不入百毒不侵了。这就好比武侠小说中打通任督二脉的主人公，从此之后平步江湖惩恶扬善扬名立万。</p>
-<h4 id="（五）"><a href="#（五）" class="headerlink" title="（五）"></a><center>（五）</center></h4><p>你始终不知道自己已经把情感的任督二脉打通了，所以你还是很虚心地向某一情场高手讨教泡妞绝招。高手故扮深沉，惜字如金。老半天才吐出 14 个字：忍一时风平浪静，退一步海阔天空。</p>
-<p>对此你苦思了几个夜晚，依旧无法参透其中的奥秘。你觉得自己不仅 EQ 低，IQ 也不怎么高。那天刚好下了点雨，于是你的悲伤就逆流成河了。</p>
-<p>你恨铁不成钢，所以你跑到附近化学系去请教钢铁是怎么炼成的。那位化学系的哥们跟你长篇大论说，这个炼钢嘛行要有铁。你在旁边点头，于是他接着说，炼铁的时候，把铁矿石和碳放在一起反应，使碳将铁矿石中的铁还原出来。用碳将铁的氧化物还原成铁，炼钢就是将铁水中含有的过量的碳清除。</p>
-<p>在你差不多要晕掉的时候，你同学补了一句，过量的碳与氧气反应生成一氧化碳和二氧化碳，同时调整硫、磷、锰等元素的含量，这样就能炼出不同种类的钢了。</p>
-<p>于是你彻底晕掉了。半天后你清醒过来，于是你问了一句：女生是怎么追到的？</p>
-<p>化学系的哥们儿扶了扶厚厚的眼镜，然后无可奈何地说，这个问题不在我的研究范围之内。</p>
-<h4 id="（六）"><a href="#（六）" class="headerlink" title="（六）"></a><center>（六）</center></h4><p>你对她越来越感到力不从心。打电话她不接，约吃饭她不理，但是送礼物她却照收不误……</p>
-<p>对此你无可奈何。在日复一日的无可奈何中，你终于觉悟了。你知道除了“忍”之外，第二个办法就是“退”。</p>
-<p>忍一时真的就能风平浪静吗？答案是否定的。你知道，只有忍一世才能风平浪静。</p>
-<p>退一步是否真的就海阔天空？答案也是否定的。你知道，退出江湖才是真正的海阔天空。</p>
-<p>古代兵书有云：退避三舍，欲擒故纵。你似懂非懂。</p>
-<p>你开始忍，你 QQ 隐身飞信隐身 MSN 隐身，你忍着不给她打电话忍着不去想她忍着身边的哥们儿说你死活泡不到妞……</p>
-<h4 id="（七）"><a href="#（七）" class="headerlink" title="（七）"></a><center>（七）</center></h4><p>忍着不去思念一个人就好比忍着一泡尿不撒，这是很难受的一个事，毕竟不撒尿膀胱受不住，不去思念一个人脑袋又控制不了。</p>
-<p>你听着许巍年轻时那些绝望悲切得要死的歌曲，那厮唱：我只有两天，一天用来出生，一天用来死亡。你觉得自己要是只有两天，那一天用来想她，另一天还是得用来想她。</p>
-<p>忍了半个月后，你终于百忍成金，你觉得自己差不多已经放下屠刀了，即将立地成佛。</p>
-<p>没想到几天后你和她再度相遇，你认为大家彼此都绝交半个月了，QQ 不聊，电话不通，飞信短信不发，就让她尘归尘土归土，随风去吧。但是出于礼貌，你还是跟她打了个招呼。这时你发现她对你绽放了一个灿烂的笑容，于是你觉得学校情人坡下面那漫山遍野的野菊花开放了。</p>
-<p>野菊花都有春天，况且自己这么一个大活人呢。你开始密谋策划第二次爱情进攻。</p>
-<h4 id="（八）"><a href="#（八）" class="headerlink" title="（八）"></a><center>（八）</center></h4><p>你想了很久也没有想出一招制胜的办法，毕竟这追女生不是打架，不能操个板凳或板儿砖直接把对方拍倒完事。</p>
-<p>事情进入到一个最棘手的阶段，你束手无策，事情无从发展。这好比小说写到了一半，却突然没办法接下去了，于是只能半路卡住。</p>
-<p>在没有办法的办法中，你只能故伎重演，打电话聊 QQ 聊 MSN 聊飞信，你无所不用其极，目的也只是为了能把她约出来，至于出来后是去吃饭去图书馆还是去参加无聊的校园活动，这些都无所谓，重要的是你们能在一起。</p>
-<p>在反复的死缠烂打以及屡败屡战中，你学会了声东击西、欲擒故纵，另外你还左右开弓把她身边的同学给摆平了。于是接下来，你约她一起逃课，一起钓鱼，一起放风筝，还有在停电的夜晚双双装鬼吓人，看校园十大歌手比赛双双把嗓子喊破……</p>
-<h4 id="（九）"><a href="#（九）" class="headerlink" title="（九）"></a><center>（九）</center></h4><p>你认为自己和她已经把恋爱的所有前提工作都做完了，就差表白然后牵手亲嘴，最后两人躲在黑漆漆的角落做着不可告人的秘密等等。你一直想找一个惊世骇俗并且浪漫无比最好还能让全校女生尖叫让全校男生惊叹的一个表白方法，但你抓破脑袋焦头烂额还是没能想出什么好主意。你去问百度问谷歌问天涯问雅虎，答案无非都是玫瑰蜡烛加吉他唱歌之类的陈旧招数，你对这些老套的方法不屑一顾。</p>
-<h4 id="（十）"><a href="#（十）" class="headerlink" title="（十）"></a><center>（十）</center></h4><p>你觉得自己修了那么久的渠，就等水一到，这渠就成了，但是这水该怎么引过来呢？对此你恨不得操一抽水机把水抽过来，好让它水到渠成，但是爱情抽水机到哪儿找去呢？</p>
-<p>如此庸人自扰纠结了好几天之后，你终于下定决心孤注一掷背水一战，你并没有找到石破天惊浪漫的表白方法，所以你干脆什么都不准备，你觉得这叫无招胜有招。</p>
-<p>那天晚上她上完课，你过去接她然后一起去喝奶茶，在路上你很平静地对她说，我们在一起吧。她没有说话，似乎在思考，又似乎是默认了。你只能继续说话打破这沉默，你说，如果可以的话，请把手给我。于是，你和她的手握在了一起。</p>
-<p>那时是 11 月的冬天，而你觉得生活已经面朝大海，春暖花开。</p>
+<p>来深圳做的一些事：</p>
+<h2 id="工作上"><a href="#工作上" class="headerlink" title="工作上"></a>工作上</h2><h3 id="1-关于-VUE-相关的培训"><a href="#1-关于-VUE-相关的培训" class="headerlink" title="1. 关于 VUE 相关的培训"></a>1. 关于 VUE 相关的培训</h3><p>时间：一周<br>目的：让培训人员对 vue 有一个基本的了解，并能使用 vue 进行项目开发<br>成绩：培训人员对 vue 处于一知半解状态（能使用，但是原理性以及系统文档不会主动去看，去了解），还是需要实际项目进行历练</p>
+<h3 id="2-银户通项目基础框架的搭建（使用-vue2-0-webpack-vux）"><a href="#2-银户通项目基础框架的搭建（使用-vue2-0-webpack-vux）" class="headerlink" title="2. 银户通项目基础框架的搭建（使用 vue2.0+webpack+vux）"></a>2. 银户通项目基础框架的搭建（使用 vue2.0+webpack+vux）</h3><ul>
+<li>培训文档，前端项目规范，统一编码规范等的编写</li>
+<li>公共组件的开发（cfca 密码控件封装，下拉刷新上拉滚动组件等）</li>
+<li>代码管理，使用 gitlab，分配合理使用分支，版本控制(master)，打包封版(tag)</li>
+<li>协助配合开发人员，让项目正常进行下去</li>
+</ul>
+<p>项目开发心得：移动端 H5 的开发，而且还是基于小程序 webview 之中的，由于经验不足（比如，小程序与 h5 之间的通信，微信 jdk 的使用，移动端手机不同系统不同品牌的各种 bug 等），磕磕碰碰到不少问题，每个问题都需要花时间去解决去处理，最后好歹也整理出了一套属于项目的开发框架，用的还算顺手，不过后续有可能碰到的问题：手机性能相关的东西，首屏加载时间，页面渲染时间，数据存储等</p>
+<h3 id="3-tinyWeb-的形成"><a href="#3-tinyWeb-的形成" class="headerlink" title="3. tinyWeb 的形成"></a>3. tinyWeb 的形成</h3><p>在深圳支持期间，将前端框架取名为 tinyweb，也熬了两三天的夜，写了相关的文档，从介绍，使用，打包等方面进行了详细的说明。<br>并且，还支持配合其他项目组进行项目的开发，比如，动态权限菜单管理，权限指令等，通过电脑远程方式进行开发。</p>
+<h3 id="4-内管平台-规则平台的开发"><a href="#4-内管平台-规则平台的开发" class="headerlink" title="4. 内管平台-规则平台的开发"></a>4. 内管平台-规则平台的开发</h3><p>主要是使用 vue 开发了一个普通规则相关的组件，需求非常的繁琐复杂。大概断断续续也花了两周左右的时间，不过收获也是蛮大的，对 vue 的理解更深刻了，代码比以前更简洁</p>
+<p>996 的工作制，虽然辛苦却也值得。尤其是快发布上线期间，每天搞到凌晨 2 点甚至通宵，但是一路过来，觉得还是挺有意义的。</p>
+<hr>
+<p><img src="/images/shenzhen/1.jpg"><br><img src="/images/shenzhen/2.jpg"><br><img src="/images/shenzhen/3.jpg"><br><img src="/images/shenzhen/4.jpg"><br><img src="/images/shenzhen/5.jpg"><br><img src="/images/shenzhen/6.jpg"><br><img src="/images/shenzhen/7.jpg"><br><img src="/images/shenzhen/8.jpg"><br><img src="/images/shenzhen/9.jpg"><br><img src="/images/shenzhen/10.jpg"><br><img src="/images/shenzhen/11.jpg"></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>虽说在深圳呆了三个月左右的时间，但由于 996 的工作制，到了周末基本上就是懒在床上了，所以，也没去过几个地方。</p>
+<h3 id="深圳大学"><a href="#深圳大学" class="headerlink" title="深圳大学"></a>深圳大学</h3><p><img src="/images/shenzhen/12.jpg"><br><img src="/images/shenzhen/13.jpg"><br><img src="/images/shenzhen/14.jpg"><br><img src="/images/shenzhen/15.jpg"></p>
+<h3 id="大梅沙"><a href="#大梅沙" class="headerlink" title="大梅沙"></a>大梅沙</h3><p><img src="/images/shenzhen/16.jpg"><br><img src="/images/shenzhen/17.jpg"><br><img src="/images/shenzhen/18.jpg"><br><img src="/images/shenzhen/19.jpg"></p>
+<h3 id="海岸城"><a href="#海岸城" class="headerlink" title="海岸城"></a>海岸城</h3><p><img src="/images/shenzhen/20.jpg"><br><img src="/images/shenzhen/21.jpg"><br><img src="/images/shenzhen/22.jpg"><br><img src="/images/shenzhen/23.jpg"><br><img src="/images/shenzhen/24.jpg"><br><img src="/images/shenzhen/25.jpg"><br><img src="/images/shenzhen/26.jpg"><br><img src="/images/shenzhen/27.jpg"><br><img src="/images/shenzhen/28.jpg"></p>
+<h3 id="福地：欢乐海岸"><a href="#福地：欢乐海岸" class="headerlink" title="福地：欢乐海岸"></a>福地：欢乐海岸</h3><p><img src="/images/shenzhen/31.jpeg"><br><img src="/images/shenzhen/32.jpeg"><br><img src="/images/shenzhen/33.jpeg"><br><img src="/images/shenzhen/34.jpeg"></p>
+<h3 id="香港"><a href="#香港" class="headerlink" title="香港"></a>香港</h3><p>最后一个周末，也正好是中秋放假，去了趟香港</p>
+<p><img src="/images/shenzhen/35.jpg"><br><img src="/images/shenzhen/36.jpg"><br><img src="/images/shenzhen/37.jpg"><br><img src="/images/shenzhen/38.jpg"><br><img src="/images/shenzhen/39.jpg"><br><img src="/images/shenzhen/40.jpg"><br><img src="/images/shenzhen/41.jpg"><br><img src="/images/shenzhen/42.jpg"><br><img src="/images/shenzhen/43.jpg"><br><img src="/images/shenzhen/44.jpg"><br><img src="/images/shenzhen/45.jpg"></p>
+<br/>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
       <tags>
-        <tag>爱情</tag>
+        <tag>心情</tag>
+        <tag>旅行</tag>
+        <tag>出差</tag>
       </tags>
   </entry>
   <entry>
@@ -1065,139 +1013,55 @@
       </tags>
   </entry>
   <entry>
-    <title>前端工程化-前端规范方案</title>
-    <url>/2023/study-notes/fe-standard/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="Code-standard"><a href="#Code-standard" class="headerlink" title="Code standard"></a>Code standard</h3><p><code>代码规范</code> 是前端工程化落地的基石，用于约束 <code>编码规范</code> 和 <code>编码风格</code>，它的好处是：</p>
-<ul>
-<li>强制规范代码风格统一，保持一样的编码习惯</li>
-<li>增加代码的可维护性和可接入性，即使有新成员的加入也能快速适应项目的架构与需求</li>
-<li>保障项目的整体质量，可减少无用代码、重复代码、错误代码和 BUG 代码的产生几率</li>
-</ul>
-<h3 id="Git-Commit-Message"><a href="#Git-Commit-Message" class="headerlink" title="Git Commit Message"></a>Git Commit Message</h3><p><code>commit message</code> 是开发的日常操作, 写好 <code>log</code> 不仅有助于他人 <code>review</code>, 还可以有效的输出 <code>CHANGELOG</code>, 对项目的管理实际至关重要, 但是实际工作中却常常被大家忽略.</p>
-<p>那如何在前端项目中统一 <strong>代码规范</strong>，以及 <strong>Commit Message</strong> 的规范？<br>我这边结合实际项目以及目前较受欢迎的相关工具，给大家分享一套解决方案。</p>
-<p>使用到的工具：</p>
-<ul>
-<li><a href="https://eslint.org/">eslint</a>：JavaScript 代码检测工具，检测并提示错误或警告信息</li>
-<li><a href="https://prettier.io/">prettier</a>：代码自动格式化工具，更好的代码风格效果</li>
-<li><a href="https://typicode.github.io/husky/">husky</a>：Git hooks 工具, 可以在执行 git 命令时，执行自定义的脚本程序</li>
-<li><a href="https://github.com/okonet/lint-staged">lint-staged</a>：对暂存区 (git add) 文件执行脚本检测校验</li>
-<li><a href="https://commitlint.js.org/">commitlint</a>：帮助你的团队遵守提交约定。通过支持 npm 安装的配置，它可以很容易地共享提交约定。</li>
-</ul>
+    <title>你和她的爱情故事</title>
+    <url>/2015/prose/you-and-her-love-story/</url>
+    <content><![CDATA[<h4 id="（一）"><a href="#（一）" class="headerlink" title="（一）"></a><center>（一）</center></h4><p>2008 年的秋天，那个清澈的夜晚，你在一大片陌生的面孔中莫名其妙地发现了她。所谓莫名其妙是朦胧诗派的写法，实际上是你搭讪了她的朋友，然后通过她的朋友顺利地要到了她的 QQ。几个月后，你跟她说：我发掘了你。那时她还不大适应你这种种表达方式，所以她微微地愕然了一下。</p>
+<p>有首歌唱：我遇见你是最美丽的意外。你觉得自己遇见她这个美丽的意外实在是有点意外，因为她让你中毒了，并且毒性极大。杨过中了情花毒，一思念小龙女胸口就是那个痛！你中的这个毒好比电脑一开机就卡死，没法运转。</p>
+<h4 id="（二）"><a href="#（二）" class="headerlink" title="（二）"></a><center>（二）</center></h4><p>从此之后，在黎明或是午夜，你总会从许许多多的梦中惊醒。你总会在梦里看到各种各样形形色色的面孔在背后追赶着自己：有古惑仔挥舞着尖刀卖命地追着你砍；有警察举着枪在你后面乱射；更有些人死命地咬着你，嘴里在不停地叫着喊着快还钱还钱快还钱……</p>
+<p>你认为这大概是自己白天追她追得太厉害了，所以到了晚上得自我找点平衡，于是不自学地就老做梦让别人追。</p>
 <span id="more"></span>
 
-<h2 id="配置-eslint-amp-prettier"><a href="#配置-eslint-amp-prettier" class="headerlink" title="配置 eslint &amp; prettier"></a>配置 eslint &amp; prettier</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pnpm i eslint prettier @typescript-eslint/parser -D</span><br><span class="line">pnpm i @typescript-eslint/eslint-plugin -D</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<ul>
-<li>可以在 vscode 插件中安装 Prettier 和 Eslint 插件，在设置中开启保存文件则进行格式化；</li>
-<li>也可配置 scripts 命令（这会检测你指定目录的所有文件，当然会比较耗时）。</li>
-<li>另外可结合 lint-staged 只对 commited 后的文件进行格式化重写（见下面的 pre-commit git-hooks 触发）</li>
-</ul>
-</blockquote>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 配置 package.json 文件内容</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;lint&quot;</span><span class="punctuation">:</span> <span class="string">&quot;eslint src --ext js,jsx,.vue,.ts,.tsx --report-unused-disable-directives --max-warnings 0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;format&quot;</span><span class="punctuation">:</span> <span class="string">&quot;prettier --write src/**/*/*.&#123;js,jsx,ts,tsx&#125;&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="通过配置文件，统一代码格式化的格式"><a href="#通过配置文件，统一代码格式化的格式" class="headerlink" title="通过配置文件，统一代码格式化的格式"></a>通过配置文件，统一代码格式化的格式</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .eslintrc.cjs 文件，常规配置方案。 PS:后缀.js可能会报CommonJS 语法错误（如下），将后缀改为.cjs即可</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">env</span>: &#123;</span><br><span class="line">    <span class="attr">browser</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">es2021</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">extends</span>: [<span class="string">&#x27;eslint:recommended&#x27;</span>, <span class="string">&#x27;plugin:@typescript-eslint/recommended&#x27;</span>],</span><br><span class="line">  <span class="attr">parser</span>: <span class="string">&#x27;@typescript-eslint/parser&#x27;</span>,</span><br><span class="line">  <span class="attr">parserOptions</span>: &#123;</span><br><span class="line">    <span class="attr">ecmaVersion</span>: <span class="string">&#x27;latest&#x27;</span>,</span><br><span class="line">    <span class="attr">sourceType</span>: <span class="string">&#x27;module&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [<span class="string">&#x27;@typescript-eslint&#x27;</span>],</span><br><span class="line">  <span class="attr">rules</span>: &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .pretterrc.cjs 文件 PS:后缀.js可能会报CommonJS 语法错误（如下），将后缀改为.cjs即可</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">semi</span>: <span class="literal">true</span>, <span class="comment">// 强制在语句末尾使用分号。</span></span><br><span class="line">  <span class="attr">trailingComma</span>: <span class="string">&#x27;none&#x27;</span>, <span class="comment">// 不允许在多行结构的最后一个元素或属性后添加逗号。\</span></span><br><span class="line">  <span class="attr">singleQuote</span>: <span class="literal">true</span>, <span class="comment">// 使用单引号而不是双引号来定义字符串。</span></span><br><span class="line">  <span class="attr">printWidth</span>: <span class="number">120</span>, <span class="comment">// 指定每行代码的最大字符宽度，超过这个宽度的代码将被换行</span></span><br><span class="line">  <span class="attr">arrowParens</span>: <span class="string">&#x27;avoid&#x27;</span> <span class="comment">// 箭头函数参数只有一个时是否要有小括号（avoid - 省略）</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 其他更多配置</span></span><br><span class="line">  <span class="comment">// bracketSpacing: true, // 在对象，数组括号与文字之间加空格 &quot;&#123; foo: bar &#125;&quot;</span></span><br><span class="line">  <span class="comment">// disableLanguages: [&#x27;vue&#x27;], // 不格式化vue文件，vue文件的格式化单独设置</span></span><br><span class="line">  <span class="comment">// endOfLine: &#x27;auto&#x27;, // 结尾是 \n \r \n\r auto</span></span><br><span class="line">  <span class="comment">// eslintIntegration: false, //不让prettier使用eslint的代码格式进行校验</span></span><br><span class="line">  <span class="comment">// htmlWhitespaceSensitivity: &#x27;ignore&#x27;,</span></span><br><span class="line">  <span class="comment">// ignorePath: &#x27;.prettierignore&#x27;, // 不使用prettier格式化的文件填写在项目的.prettierignore文件中</span></span><br><span class="line">  <span class="comment">// jsxBracketSameLine: true, // 在jsx中把&#x27;&gt;&#x27; 是否单独放一行</span></span><br><span class="line">  <span class="comment">// jsxSingleQuote: true, // 在jsx中使用单引号代替双引号</span></span><br><span class="line">  <span class="comment">// parser: &#x27;babylon&#x27;, // 格式化的解析器，默认是babylon</span></span><br><span class="line">  <span class="comment">// requireConfig: false, // Require a &#x27;prettierconfig&#x27; to format prettier</span></span><br><span class="line">  <span class="comment">// stylelintIntegration: false, //不让prettier使用stylelint的代码格式进行校验</span></span><br><span class="line">  <span class="comment">// trailingComma: &#x27;es5&#x27;, // 在对象或数组最后一个元素后面是否加逗号（在ES5中加尾逗号）</span></span><br><span class="line">  <span class="comment">// tslintIntegration: false // 不让prettier使用tslint的代码格式进行校验=</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Commit-Message-规范"><a href="#Commit-Message-规范" class="headerlink" title="Commit Message 规范"></a>Commit Message 规范</h2><p>我们在使用 Git 托管代码时，规范化的 Commit Message 可以帮助大家直观清晰地理解每次修改的内容，不仅能帮助别人 Review，还可以有效地输出 ChangeLog。那么要想前端工程化项目更易于维护，最好有一套 Git 提交说明的 规范化模板</p>
-<p>目前最受开发人员肯定的规范是前端框架 Angular 提出的 <a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines">Angular 提交信息规范</a>，包含 页眉(header)、正文(body)和页脚(footer)，每次提交必须包含页眉内容，每次提交的信息不超过 100 个字符，提交格式如下：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&lt;<span class="built_in">type</span>&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="页眉设置"><a href="#页眉设置" class="headerlink" title="页眉设置"></a>页眉设置</h3><p>页眉的格式指定为提交类型(type)、作用域(scope，可选)和主题(subject)</p>
-<h4 id="提交类型-type"><a href="#提交类型-type" class="headerlink" title="提交类型(type)"></a>提交类型(type)</h4><p>提交类型指定为下面其中一个：</p>
-<ul>
-<li>feat：新增功能</li>
-<li>fix：Bug 修复</li>
-<li>docs：文档更新</li>
-<li>ci：脚本更新，修改了 CI 配置文件或脚本</li>
-<li>pref：性能优化，提高性能的代码更改</li>
-<li>build：更新构建，构建系统或者外部依赖项进行了修改、更新</li>
-<li>test：新增测试，增加确实的测试或者矫正已存在的测试</li>
-<li>refactor：代码重构，非新增功能也非修复缺陷</li>
-<li>chore：事务变动，改动其他不影响代码的事务</li>
-<li>revert：代码回滚，撤销某次代码提交</li>
-<li>merge：分支合并，合并分支代码到其他分支</li>
-<li>style：格式变动，不影响代码逻辑</li>
-<li>release：版本发布</li>
-</ul>
-<h4 id="作用域-scope，可选"><a href="#作用域-scope，可选" class="headerlink" title="作用域(scope，可选)"></a>作用域(scope，可选)</h4><p>用于说明 commit 的影响范围（选填）<br>（比如按下面这些划分方案填写）</p>
-<ul>
-<li>按功能划分（如：数据层 - Data、视图层 - View 和 控制层 - Control）</li>
-<li>按交互层划分（如：组件 - Component、布局 - Layout、流程 - Flow、视图 - View 和 页面 - Page）</li>
-<li>按改动文件划分（如：某个文件 - Button.tsx，全部改动 -*）</li>
-</ul>
-<h4 id="主题-subject"><a href="#主题-subject" class="headerlink" title="主题(subject)"></a>主题(subject)</h4><p>用于说明 commit 的细节描述（选填）。以精炼简洁的文字（中文还是英文就看各自规定了，一般推荐使用英文）说明提交的改动，比如可以遵循这些规则：</p>
-<ul>
-<li>以动词开头（如：update，更新）</li>
-<li>使用第一人称现在时</li>
-<li>首字母无需大写，重点区分的（如某组件）首字母无需大写</li>
-<li>不以句号（. &#x2F; 。）结尾</li>
-</ul>
-<p>commit 信息示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">feat(Component): add Layout component</span><br><span class="line">feat(Button.tsx): change the default size of the button</span><br><span class="line">fix(EmitEvent): handle event on blur (closes #28)</span><br></pre></td></tr></table></figure>
-
-<h3 id="正文设置"><a href="#正文设置" class="headerlink" title="正文设置"></a>正文设置</h3><p>和主题设置类似，使用命令式、现在时态</p>
-<p>应该包含修改的动机以及和之前行为的对比</p>
-<h3 id="页脚设置"><a href="#页脚设置" class="headerlink" title="页脚设置"></a>页脚设置</h3><h4 id="Breaking-changes"><a href="#Breaking-changes" class="headerlink" title="Breaking changes"></a>Breaking changes</h4><p>不兼容修改指的是本次提交修改了不兼容之前版本的 API 或者环境变量</p>
-<p>所有不兼容修改都必须在页脚中作为中断更改块提到，以 BREAKING CHANGE:开头，后跟一个空格或者两个换行符，其余的信息就是对此次修改的描述，修改的理由和修改注释</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">BREAKING CHANGE: isolate scope bindings definition has changed and</span><br><span class="line">    the inject option <span class="keyword">for</span> the directive controller injection was removed.</span><br><span class="line"></span><br><span class="line">    To migrate the code follow the example below:</span><br><span class="line"></span><br><span class="line">    Before:</span><br><span class="line"></span><br><span class="line">    。。。</span><br><span class="line">    。。。</span><br><span class="line"></span><br><span class="line">    After:</span><br><span class="line"></span><br><span class="line">    。。。</span><br><span class="line">    。。。</span><br><span class="line"></span><br><span class="line">    The removed `inject` wasn<span class="string">&#x27;t generaly useful for directives so there should be no code using it.</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="引用提交的问题"><a href="#引用提交的问题" class="headerlink" title="引用提交的问题"></a>引用提交的问题</h4><p>如果本次提交目的是修改 issue 的话，需要在页脚引用该 issue</p>
-<p>以关键字 Closes 开头，比如</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Closes <span class="comment">#234</span></span><br></pre></td></tr></table></figure>
-
-<p>如果修改了多个 bug，以逗号隔开</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Closes <span class="comment">#123, #245, #992</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="回滚设置"><a href="#回滚设置" class="headerlink" title="回滚设置"></a>回滚设置</h3><p>当此次提交包含回滚(revert)操作，那么页眉以”revert:”开头，同时在正文中添加”This reverts commit hash”，其中 hash 值表示被回滚前的提交</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">revert:&lt;<span class="built_in">type</span>&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">This reverts commit <span class="built_in">hash</span></span><br><span class="line">&lt;other-body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
-
-<p><br/><br/></p>
-<h2 id="方案实现：-husky-commitlint"><a href="#方案实现：-husky-commitlint" class="headerlink" title="方案实现： husky+commitlint"></a>方案实现： <code>husky+commitlint</code></h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pnpm i husky lint-staged @commitlint/cli @commitlint/config-conventional -D</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="初始化-husky，创建-husky-文件夹（本质就是创建要触发的-git-hooks）"><a href="#初始化-husky，创建-husky-文件夹（本质就是创建要触发的-git-hooks）" class="headerlink" title="初始化 husky，创建 .husky 文件夹（本质就是创建要触发的 git-hooks）"></a>初始化 husky，创建 .husky 文件夹（本质就是创建要触发的 git-hooks）</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx husky install</span><br><span class="line"><span class="comment"># 安装 git hooks，创建 .husky 目录</span></span><br><span class="line"><span class="comment"># 结果：husky - Git hooks installed</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行</span></span><br><span class="line">npx husky-init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 它会在 package.json 文件的 scripts 字段中</span></span><br><span class="line"><span class="comment"># 创建 &quot;prepare&quot;: &quot;husky install&quot; 命令</span></span><br><span class="line"><span class="comment"># 同时在 .husky 目录下创建 pre-commit 文件</span></span><br><span class="line"><span class="comment"># 结果：husky - created .husky/pre-commit</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改-husky-x2F-pre-commit-文件："><a href="#修改-husky-x2F-pre-commit-文件：" class="headerlink" title="修改 .husky&#x2F;pre-commit 文件："></a>修改 .husky&#x2F;pre-commit 文件：</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env sh</span></span><br><span class="line">. <span class="string">&quot;<span class="subst">$(dirname -- <span class="string">&quot;<span class="variable">$0</span>&quot;</span>)</span>/_/husky.sh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># npm test  # 这句删掉，改为下面这行，进行代码格式化检测</span></span><br><span class="line">npx lint-staged</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="配置-package-json-文件内容"><a href="#配置-package-json-文件内容" class="headerlink" title="配置 package.json 文件内容"></a>配置 package.json 文件内容</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment">/* lint-staged 配置 */</span></span><br><span class="line">  <span class="attr">&quot;lint-staged&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;*.&#123;js,jsx,vue,ts,tsx&#125;&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="string">&quot;prettier --write&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="string">&quot;eslint --fix --ext .js,.jsx,.vue,.ts,.tsx&quot;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="创建-eslintrc-cjs-文件和-pretterrc-cjs-文件"><a href="#创建-eslintrc-cjs-文件和-pretterrc-cjs-文件" class="headerlink" title="创建 .eslintrc.cjs 文件和 .pretterrc.cjs 文件"></a>创建 .eslintrc.cjs 文件和 .pretterrc.cjs 文件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .eslintrc.cjs 文件</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">env</span>: &#123;</span><br><span class="line">    <span class="attr">browser</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">es2021</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">extends</span>: [<span class="string">&#x27;eslint:recommended&#x27;</span>, <span class="string">&#x27;plugin:@typescript-eslint/recommended&#x27;</span>],</span><br><span class="line">  <span class="attr">parser</span>: <span class="string">&#x27;@typescript-eslint/parser&#x27;</span>,</span><br><span class="line">  <span class="attr">parserOptions</span>: &#123;</span><br><span class="line">    <span class="attr">ecmaVersion</span>: <span class="string">&#x27;latest&#x27;</span>,</span><br><span class="line">    <span class="attr">sourceType</span>: <span class="string">&#x27;module&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [<span class="string">&#x27;@typescript-eslint&#x27;</span>],</span><br><span class="line">  <span class="attr">rules</span>: &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .pretterrc.cjs 文件</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">semi</span>: <span class="literal">false</span>;</span><br><span class="line">  <span class="attr">singleQuote</span>: <span class="literal">true</span>;</span><br><span class="line">  <span class="attr">printWidth</span>: <span class="number">80</span>;</span><br><span class="line">  <span class="attr">trailingComma</span>: <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  <span class="attr">arrowParens</span>: <span class="string">&#x27;avoid&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="在-husky-目录下添加-commit-msg-hook"><a href="#在-husky-目录下添加-commit-msg-hook" class="headerlink" title="在 .husky 目录下添加 commit-msg hook"></a>在 .husky 目录下添加 commit-msg hook</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx husky add .husky/commit-msg <span class="string">&#x27;npx --no -- commitlint --edit &quot;$1&quot;&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 结果：husky - created .husky/commit-msg</span></span><br><span class="line"><span class="comment"># .husky/commit-msg 文件内容：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/env sh</span></span><br><span class="line">. <span class="string">&quot;<span class="subst">$(dirname -- <span class="string">&quot;<span class="variable">$0</span>&quot;</span>)</span>/_/husky.sh&quot;</span></span><br><span class="line"></span><br><span class="line">npx --no -- commitlint --edit <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="创建-commitlint-config-cjs-文件"><a href="#创建-commitlint-config-cjs-文件" class="headerlink" title="创建 commitlint.config.cjs 文件"></a>创建 commitlint.config.cjs 文件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  规范commit日志</span></span><br><span class="line"><span class="comment">  https://commitlint.js.org</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> types = [</span><br><span class="line">    <span class="string">&#x27;build&#x27;</span>, <span class="comment">// 主要目的是修改项目构建系统（例如glup，webpack，rollup的配置等）的提交</span></span><br><span class="line">    <span class="string">&#x27;ci&#x27;</span>, <span class="comment">// 修改项目的持续集成流程（Kenkins、Travis等）的提交</span></span><br><span class="line">    <span class="string">&#x27;chore&#x27;</span>, <span class="comment">// 构建过程或辅助工具的变化</span></span><br><span class="line">    <span class="string">&#x27;docs&#x27;</span>, <span class="comment">// 文档提交（documents）</span></span><br><span class="line">    <span class="string">&#x27;feat&#x27;</span>, <span class="comment">// 新增功能（feature）</span></span><br><span class="line">    <span class="string">&#x27;fix&#x27;</span>, <span class="comment">// 修复 bug</span></span><br><span class="line">    <span class="string">&#x27;pref&#x27;</span>, <span class="comment">// 性能、体验相关的提交</span></span><br><span class="line">    <span class="string">&#x27;refactor&#x27;</span>, <span class="comment">// 代码重构</span></span><br><span class="line">    <span class="string">&#x27;revert&#x27;</span>, <span class="comment">// 回滚某个更早的提交</span></span><br><span class="line">    <span class="string">&#x27;style&#x27;</span>, <span class="comment">// 不影响程序逻辑的代码修改、主要是样式方面的优化、修改</span></span><br><span class="line">    <span class="string">&#x27;test&#x27;</span> <span class="comment">// 测试相关的开发,</span></span><br><span class="line">  ],</span><br><span class="line">  typeEnum = &#123;</span><br><span class="line">    <span class="attr">rules</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;type-enum&#x27;</span>: [<span class="number">2</span>, <span class="string">&#x27;always&#x27;</span>, types]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">value</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> types;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">extends</span>: [<span class="string">&#x27;@commitlint/config-conventional&#x27;</span>],</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">Level [0..2]: 0 disables the rule. For 1 it will be considered a warning for 2 an error.</span></span><br><span class="line"><span class="comment">https://commitlint.js.org/#/reference-rules</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">  <span class="attr">rules</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;type-enum&#x27;</span>: typeEnum.<span class="property">rules</span>[<span class="string">&#x27;type-enum&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;subject-full-stop&#x27;</span>: [<span class="number">0</span>, <span class="string">&#x27;never&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;subject-case&#x27;</span>: [<span class="number">0</span>, <span class="string">&#x27;never&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置完毕，测试"><a href="#配置完毕，测试" class="headerlink" title="配置完毕，测试"></a>配置完毕，测试</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">➡️ git commit -m <span class="string">&quot;tes: 错误示例 🙅&lt;200d&gt;♂️&quot;</span></span><br><span class="line"></span><br><span class="line">✔ Preparing lint-staged...</span><br><span class="line">✔ Running tasks <span class="keyword">for</span> staged files...</span><br><span class="line">✔ Applying modifications from tasks...</span><br><span class="line">✔ Cleaning up temporary files...</span><br><span class="line"></span><br><span class="line">Commit Msg:  tes: 错误示例 🙅‍♂️</span><br><span class="line"></span><br><span class="line">   ERROR  invalid commit message format.</span><br><span class="line"></span><br><span class="line">  Proper commit message format is required <span class="keyword">for</span> automated changelog generation. Examples:</span><br><span class="line"></span><br><span class="line">    feat(compiler): add <span class="string">&#x27;comments&#x27;</span> option</span><br><span class="line">    fix(input): handle events on blur (close <span class="comment">#28)</span></span><br><span class="line"></span><br><span class="line">  See .github/commit-convention.md <span class="keyword">for</span> more details.</span><br><span class="line"></span><br><span class="line">husky - commit-msg hook exited with code 1 (error)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>当然，整体来说也只是一个推荐性的规范方案，commit 同样可以通过 -n 或者是 -no-verify 直接绕开 commit 检测</p>
-<h2 id="添加-ChangeLog"><a href="#添加-ChangeLog" class="headerlink" title="添加 ChangeLog"></a>添加 ChangeLog</h2><h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pnpm i conventional-changelog-cli -D</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="配置-scripts-（packages-json）"><a href="#配置-scripts-（packages-json）" class="headerlink" title="配置 scripts （packages.json）"></a>配置 scripts （packages.json）</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;changelog&quot;</span><span class="punctuation">:</span> <span class="string">&quot;conventional-changelog -p angular -i CHANGELOG.md -s&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>conventional-changelog-cli 不会覆盖任何以前的变更日志。 新增的日志基于自上一个 commit 的 “Feature”, “Fix”, “Performance Improvement” 或 “Breaking Changes”</p>
-<h2 id="另外：结合-husky-和自定义-verifyCommits-js-来实现"><a href="#另外：结合-husky-和自定义-verifyCommits-js-来实现" class="headerlink" title="另外：结合 husky 和自定义 verifyCommits.js 来实现"></a>另外：结合 husky 和自定义 verifyCommits.js 来实现</h2><p>主要处理逻辑是，修改<code>.husky/commit-commit</code>文件中的执行语句</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># scripts/verifyCommits.js 即为我们自定义的校验文件</span></span><br><span class="line"><span class="comment"># .husky/commit-msg 文件内容：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/env sh</span></span><br><span class="line">. <span class="string">&quot;<span class="subst">$(dirname -- <span class="string">&quot;<span class="variable">$0</span>&quot;</span>)</span>/_/husky.sh&quot;</span></span><br><span class="line"><span class="comment"># npx --no -- commitlint --edit &quot;&quot; 将此语句改为下面直接node执行脚本。</span></span><br><span class="line">node scripts/verifyCommits.js <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><code>$1</code> 必须在 <code>.husky/commit-msg</code> 文件中写上（在我们使用<code> git commit -m &quot;[msg]&quot;</code> 时，会传递给 <code>$1</code> 参数），否则我们执行自定义校验 commit 文件时是无法拿到 commit 信息 的（当时花费好长时间去踩这个问题点）</p>
-</blockquote>
-<h3 id="创建-scripts-x2F-verifyCommits-js-文件"><a href="#创建-scripts-x2F-verifyCommits-js-文件" class="headerlink" title="创建 scripts&#x2F;verifyCommits.js 文件"></a>创建 scripts&#x2F;verifyCommits.js 文件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">&#x27;chalk&#x27;</span>);</span><br><span class="line"><span class="comment">// const msgPath = process.env.GIT_PARAMS // 此为 undefined 拿不到 msg 信息</span></span><br><span class="line"><span class="comment">// process.env 对象中没有任何 commit 信息，process.argv 中本来也没有</span></span><br><span class="line"><span class="comment">// pre-commit 里的 $1 必填，这里才能拿到本次的 CommitMsg</span></span><br><span class="line"><span class="keyword">const</span> msgPath =</span><br><span class="line">  process.<span class="property">env</span>.<span class="property">GIT_PARAMS</span> || process.<span class="property">env</span>.<span class="property">HUSKY_GIT_PARAMS</span> || process.<span class="property">argv</span>[<span class="number">2</span>]; <span class="comment">//使用环境变量获取到commit message</span></span><br><span class="line"><span class="comment">// console.log(process.argv,&#x27;process.argv&#x27;);</span></span><br><span class="line"><span class="keyword">const</span> msg = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>).<span class="title function_">readFileSync</span>(msgPath, <span class="string">&#x27;utf-8&#x27;</span>).<span class="title function_">trim</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(); <span class="comment">// 空行，下面打印提示信息</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(chalk.<span class="property">bgBlueBright</span>.<span class="title function_">white</span>(<span class="string">&#x27;Commit Msg: &#x27;</span>), msg);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(); <span class="comment">// 打印提示信息后空行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> commitRE =</span><br><span class="line">  <span class="regexp">/^(revert: )?(feat|fix|docs|style|refactor|perf|test|workflow|ci|chore|types|build)(\(.+\))?: .&#123;1,50&#125;/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!commitRE.<span class="title function_">test</span>(msg)) &#123;</span><br><span class="line">  <span class="comment">// 下面是一些错误日志提醒</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(</span><br><span class="line">    <span class="string">`  <span class="subst">$&#123;chalk.bgRed.white(<span class="string">&#x27; ERROR &#x27;</span>)&#125;</span> <span class="subst">$&#123;chalk.red(</span></span></span><br><span class="line"><span class="subst"><span class="string">      <span class="string">`提交日志不符合规范`</span></span></span></span><br><span class="line"><span class="subst"><span class="string">    )&#125;</span>\n\n<span class="subst">$&#123;chalk.red(</span></span></span><br><span class="line"><span class="subst"><span class="string">      <span class="string">`  合法的提交日志格式如下(emoji 和 模块可选填)：\n\n`</span></span></span></span><br><span class="line"><span class="subst"><span class="string">    )&#125;</span>    </span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`[&lt;emoji&gt;] [revert: ?]&lt;type&gt;[(scope)?]: &lt;message&gt;\n`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`💥 feat(模块): 添加了个很棒的功能`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`🐛 fix(模块): 修复了一些 bug`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`📝 docs(模块): 更新了一下文档`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`🌷 UI(模块): 修改了一下样式`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`🏰 chore(模块): 对脚手架做了些更改`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`🌐 locale(模块): 为国际化做了微小的贡献\n`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(</span></span></span><br><span class="line"><span class="subst"><span class="string">      <span class="string">`其他提交类型: refactor, perf, workflow, build, CI, typos, tests, types, wip, release, dep\n`</span></span></span></span><br><span class="line"><span class="subst"><span class="string">    )&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.red(</span></span></span><br><span class="line"><span class="subst"><span class="string">      <span class="string">`See https://github.com/vuejs/core/blob/main/.github/commit-convention.md\n`</span></span></span></span><br><span class="line"><span class="subst"><span class="string">    )&#125;</span>`</span></span><br><span class="line">  );</span><br><span class="line">  process.<span class="title function_">exit</span>(<span class="number">1</span>); <span class="comment">// 如果不规范退出运行进程</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// const childProcess = require(&#x27;child_process&#x27;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// // 提交记录</span></span><br><span class="line"><span class="comment">// const commitStages = childProcess.execSync(&#x27;git diff --name-status HEAD~3&#x27;, &#123;</span></span><br><span class="line"><span class="comment">//   encoding: &#x27;utf8&#x27;,</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"><span class="comment">// console.log(&#x27;提交记录：&#x27;, commitStages);</span></span><br></pre></td></tr></table></figure>
+<h4 id="（三）"><a href="#（三）" class="headerlink" title="（三）"></a><center>（三）</center></h4><p>你觉得自己不是很优秀，原因如下：虽然你自认有点才，但是却没什么财，所以这很致命。</p>
+<p>人为财死，鸟为食亡。当你的才华还不能当钞票用的时候，你就算不上是有才。</p>
+<p>你当时还不知道自己其实算不上有才，所以你盲目地、狗急跳墙地急于向她展示自己那点还称不上是才华的才华。你在展示自己才华的时候又犯了一个很大的错误。你没有给她写情书而是写了一个小说。</p>
+<p>其实写小说也没啥，但致命的是，你却在自己的小说里把自己写得一无是处一塌糊涂一文不名一穷二白。</p>
+<p>小说是虚构的，但你的小说写得很好，所以她很傻很天真地认为这就是真实的，于是她认定了你就是小说里那个烂人。</p>
+<h4 id="（四）"><a href="#（四）" class="headerlink" title="（四）"></a><center>（四）</center></h4><p>之后，你在她眼中俨然成了烂人的代名词，而你却还不知道这到底发生了什么事。</p>
+<p>你依旧奋力追赶她，因为你一直觉得自己是优秀的代名词，所以你觉得自己没理由追不到她。</p>
+<p>世界上最悲哀的事莫过于，你认为对方把你当成一朵花，其实她只当你是一坨粪。</p>
+<p>你在不知不觉中把世界上最悲哀的事给经历了，所以你还不知道自己从此之后应该刀枪不入百毒不侵了。这就好比武侠小说中打通任督二脉的主人公，从此之后平步江湖惩恶扬善扬名立万。</p>
+<h4 id="（五）"><a href="#（五）" class="headerlink" title="（五）"></a><center>（五）</center></h4><p>你始终不知道自己已经把情感的任督二脉打通了，所以你还是很虚心地向某一情场高手讨教泡妞绝招。高手故扮深沉，惜字如金。老半天才吐出 14 个字：忍一时风平浪静，退一步海阔天空。</p>
+<p>对此你苦思了几个夜晚，依旧无法参透其中的奥秘。你觉得自己不仅 EQ 低，IQ 也不怎么高。那天刚好下了点雨，于是你的悲伤就逆流成河了。</p>
+<p>你恨铁不成钢，所以你跑到附近化学系去请教钢铁是怎么炼成的。那位化学系的哥们跟你长篇大论说，这个炼钢嘛行要有铁。你在旁边点头，于是他接着说，炼铁的时候，把铁矿石和碳放在一起反应，使碳将铁矿石中的铁还原出来。用碳将铁的氧化物还原成铁，炼钢就是将铁水中含有的过量的碳清除。</p>
+<p>在你差不多要晕掉的时候，你同学补了一句，过量的碳与氧气反应生成一氧化碳和二氧化碳，同时调整硫、磷、锰等元素的含量，这样就能炼出不同种类的钢了。</p>
+<p>于是你彻底晕掉了。半天后你清醒过来，于是你问了一句：女生是怎么追到的？</p>
+<p>化学系的哥们儿扶了扶厚厚的眼镜，然后无可奈何地说，这个问题不在我的研究范围之内。</p>
+<h4 id="（六）"><a href="#（六）" class="headerlink" title="（六）"></a><center>（六）</center></h4><p>你对她越来越感到力不从心。打电话她不接，约吃饭她不理，但是送礼物她却照收不误……</p>
+<p>对此你无可奈何。在日复一日的无可奈何中，你终于觉悟了。你知道除了“忍”之外，第二个办法就是“退”。</p>
+<p>忍一时真的就能风平浪静吗？答案是否定的。你知道，只有忍一世才能风平浪静。</p>
+<p>退一步是否真的就海阔天空？答案也是否定的。你知道，退出江湖才是真正的海阔天空。</p>
+<p>古代兵书有云：退避三舍，欲擒故纵。你似懂非懂。</p>
+<p>你开始忍，你 QQ 隐身飞信隐身 MSN 隐身，你忍着不给她打电话忍着不去想她忍着身边的哥们儿说你死活泡不到妞……</p>
+<h4 id="（七）"><a href="#（七）" class="headerlink" title="（七）"></a><center>（七）</center></h4><p>忍着不去思念一个人就好比忍着一泡尿不撒，这是很难受的一个事，毕竟不撒尿膀胱受不住，不去思念一个人脑袋又控制不了。</p>
+<p>你听着许巍年轻时那些绝望悲切得要死的歌曲，那厮唱：我只有两天，一天用来出生，一天用来死亡。你觉得自己要是只有两天，那一天用来想她，另一天还是得用来想她。</p>
+<p>忍了半个月后，你终于百忍成金，你觉得自己差不多已经放下屠刀了，即将立地成佛。</p>
+<p>没想到几天后你和她再度相遇，你认为大家彼此都绝交半个月了，QQ 不聊，电话不通，飞信短信不发，就让她尘归尘土归土，随风去吧。但是出于礼貌，你还是跟她打了个招呼。这时你发现她对你绽放了一个灿烂的笑容，于是你觉得学校情人坡下面那漫山遍野的野菊花开放了。</p>
+<p>野菊花都有春天，况且自己这么一个大活人呢。你开始密谋策划第二次爱情进攻。</p>
+<h4 id="（八）"><a href="#（八）" class="headerlink" title="（八）"></a><center>（八）</center></h4><p>你想了很久也没有想出一招制胜的办法，毕竟这追女生不是打架，不能操个板凳或板儿砖直接把对方拍倒完事。</p>
+<p>事情进入到一个最棘手的阶段，你束手无策，事情无从发展。这好比小说写到了一半，却突然没办法接下去了，于是只能半路卡住。</p>
+<p>在没有办法的办法中，你只能故伎重演，打电话聊 QQ 聊 MSN 聊飞信，你无所不用其极，目的也只是为了能把她约出来，至于出来后是去吃饭去图书馆还是去参加无聊的校园活动，这些都无所谓，重要的是你们能在一起。</p>
+<p>在反复的死缠烂打以及屡败屡战中，你学会了声东击西、欲擒故纵，另外你还左右开弓把她身边的同学给摆平了。于是接下来，你约她一起逃课，一起钓鱼，一起放风筝，还有在停电的夜晚双双装鬼吓人，看校园十大歌手比赛双双把嗓子喊破……</p>
+<h4 id="（九）"><a href="#（九）" class="headerlink" title="（九）"></a><center>（九）</center></h4><p>你认为自己和她已经把恋爱的所有前提工作都做完了，就差表白然后牵手亲嘴，最后两人躲在黑漆漆的角落做着不可告人的秘密等等。你一直想找一个惊世骇俗并且浪漫无比最好还能让全校女生尖叫让全校男生惊叹的一个表白方法，但你抓破脑袋焦头烂额还是没能想出什么好主意。你去问百度问谷歌问天涯问雅虎，答案无非都是玫瑰蜡烛加吉他唱歌之类的陈旧招数，你对这些老套的方法不屑一顾。</p>
+<h4 id="（十）"><a href="#（十）" class="headerlink" title="（十）"></a><center>（十）</center></h4><p>你觉得自己修了那么久的渠，就等水一到，这渠就成了，但是这水该怎么引过来呢？对此你恨不得操一抽水机把水抽过来，好让它水到渠成，但是爱情抽水机到哪儿找去呢？</p>
+<p>如此庸人自扰纠结了好几天之后，你终于下定决心孤注一掷背水一战，你并没有找到石破天惊浪漫的表白方法，所以你干脆什么都不准备，你觉得这叫无招胜有招。</p>
+<p>那天晚上她上完课，你过去接她然后一起去喝奶茶，在路上你很平静地对她说，我们在一起吧。她没有说话，似乎在思考，又似乎是默认了。你只能继续说话打破这沉默，你说，如果可以的话，请把手给我。于是，你和她的手握在了一起。</p>
+<p>那时是 11 月的冬天，而你觉得生活已经面朝大海，春暖花开。</p>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>随笔</category>
       </categories>
       <tags>
-        <tag>代码规范</tag>
-        <tag>前端工程化</tag>
-        <tag>husky</tag>
-        <tag>eslint</tag>
-        <tag>prettier</tag>
-        <tag>commitlint</tag>
+        <tag>爱情</tag>
       </tags>
   </entry>
   <entry>
@@ -1344,6 +1208,142 @@
       <tags>
         <tag>git</tag>
         <tag>前端工程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端工程化-前端规范方案</title>
+    <url>/2023/study-notes/fe-standard/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="Code-standard"><a href="#Code-standard" class="headerlink" title="Code standard"></a>Code standard</h3><p><code>代码规范</code> 是前端工程化落地的基石，用于约束 <code>编码规范</code> 和 <code>编码风格</code>，它的好处是：</p>
+<ul>
+<li>强制规范代码风格统一，保持一样的编码习惯</li>
+<li>增加代码的可维护性和可接入性，即使有新成员的加入也能快速适应项目的架构与需求</li>
+<li>保障项目的整体质量，可减少无用代码、重复代码、错误代码和 BUG 代码的产生几率</li>
+</ul>
+<h3 id="Git-Commit-Message"><a href="#Git-Commit-Message" class="headerlink" title="Git Commit Message"></a>Git Commit Message</h3><p><code>commit message</code> 是开发的日常操作, 写好 <code>log</code> 不仅有助于他人 <code>review</code>, 还可以有效的输出 <code>CHANGELOG</code>, 对项目的管理实际至关重要, 但是实际工作中却常常被大家忽略.</p>
+<p>那如何在前端项目中统一 <strong>代码规范</strong>，以及 <strong>Commit Message</strong> 的规范？<br>我这边结合实际项目以及目前较受欢迎的相关工具，给大家分享一套解决方案。</p>
+<p>使用到的工具：</p>
+<ul>
+<li><a href="https://eslint.org/">eslint</a>：JavaScript 代码检测工具，检测并提示错误或警告信息</li>
+<li><a href="https://prettier.io/">prettier</a>：代码自动格式化工具，更好的代码风格效果</li>
+<li><a href="https://typicode.github.io/husky/">husky</a>：Git hooks 工具, 可以在执行 git 命令时，执行自定义的脚本程序</li>
+<li><a href="https://github.com/okonet/lint-staged">lint-staged</a>：对暂存区 (git add) 文件执行脚本检测校验</li>
+<li><a href="https://commitlint.js.org/">commitlint</a>：帮助你的团队遵守提交约定。通过支持 npm 安装的配置，它可以很容易地共享提交约定。</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="配置-eslint-amp-prettier"><a href="#配置-eslint-amp-prettier" class="headerlink" title="配置 eslint &amp; prettier"></a>配置 eslint &amp; prettier</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pnpm i eslint prettier @typescript-eslint/parser -D</span><br><span class="line">pnpm i @typescript-eslint/eslint-plugin -D</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>可以在 vscode 插件中安装 Prettier 和 Eslint 插件，在设置中开启保存文件则进行格式化；</li>
+<li>也可配置 scripts 命令（这会检测你指定目录的所有文件，当然会比较耗时）。</li>
+<li>另外可结合 lint-staged 只对 commited 后的文件进行格式化重写（见下面的 pre-commit git-hooks 触发）</li>
+</ul>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 配置 package.json 文件内容</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;lint&quot;</span><span class="punctuation">:</span> <span class="string">&quot;eslint src --ext js,jsx,.vue,.ts,.tsx --report-unused-disable-directives --max-warnings 0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;format&quot;</span><span class="punctuation">:</span> <span class="string">&quot;prettier --write src/**/*/*.&#123;js,jsx,ts,tsx&#125;&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="通过配置文件，统一代码格式化的格式"><a href="#通过配置文件，统一代码格式化的格式" class="headerlink" title="通过配置文件，统一代码格式化的格式"></a>通过配置文件，统一代码格式化的格式</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .eslintrc.cjs 文件，常规配置方案。 PS:后缀.js可能会报CommonJS 语法错误（如下），将后缀改为.cjs即可</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">env</span>: &#123;</span><br><span class="line">    <span class="attr">browser</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">es2021</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">extends</span>: [<span class="string">&#x27;eslint:recommended&#x27;</span>, <span class="string">&#x27;plugin:@typescript-eslint/recommended&#x27;</span>],</span><br><span class="line">  <span class="attr">parser</span>: <span class="string">&#x27;@typescript-eslint/parser&#x27;</span>,</span><br><span class="line">  <span class="attr">parserOptions</span>: &#123;</span><br><span class="line">    <span class="attr">ecmaVersion</span>: <span class="string">&#x27;latest&#x27;</span>,</span><br><span class="line">    <span class="attr">sourceType</span>: <span class="string">&#x27;module&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [<span class="string">&#x27;@typescript-eslint&#x27;</span>],</span><br><span class="line">  <span class="attr">rules</span>: &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .pretterrc.cjs 文件 PS:后缀.js可能会报CommonJS 语法错误（如下），将后缀改为.cjs即可</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">semi</span>: <span class="literal">true</span>, <span class="comment">// 强制在语句末尾使用分号。</span></span><br><span class="line">  <span class="attr">trailingComma</span>: <span class="string">&#x27;none&#x27;</span>, <span class="comment">// 不允许在多行结构的最后一个元素或属性后添加逗号。\</span></span><br><span class="line">  <span class="attr">singleQuote</span>: <span class="literal">true</span>, <span class="comment">// 使用单引号而不是双引号来定义字符串。</span></span><br><span class="line">  <span class="attr">printWidth</span>: <span class="number">120</span>, <span class="comment">// 指定每行代码的最大字符宽度，超过这个宽度的代码将被换行</span></span><br><span class="line">  <span class="attr">arrowParens</span>: <span class="string">&#x27;avoid&#x27;</span> <span class="comment">// 箭头函数参数只有一个时是否要有小括号（avoid - 省略）</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 其他更多配置</span></span><br><span class="line">  <span class="comment">// bracketSpacing: true, // 在对象，数组括号与文字之间加空格 &quot;&#123; foo: bar &#125;&quot;</span></span><br><span class="line">  <span class="comment">// disableLanguages: [&#x27;vue&#x27;], // 不格式化vue文件，vue文件的格式化单独设置</span></span><br><span class="line">  <span class="comment">// endOfLine: &#x27;auto&#x27;, // 结尾是 \n \r \n\r auto</span></span><br><span class="line">  <span class="comment">// eslintIntegration: false, //不让prettier使用eslint的代码格式进行校验</span></span><br><span class="line">  <span class="comment">// htmlWhitespaceSensitivity: &#x27;ignore&#x27;,</span></span><br><span class="line">  <span class="comment">// ignorePath: &#x27;.prettierignore&#x27;, // 不使用prettier格式化的文件填写在项目的.prettierignore文件中</span></span><br><span class="line">  <span class="comment">// jsxBracketSameLine: true, // 在jsx中把&#x27;&gt;&#x27; 是否单独放一行</span></span><br><span class="line">  <span class="comment">// jsxSingleQuote: true, // 在jsx中使用单引号代替双引号</span></span><br><span class="line">  <span class="comment">// parser: &#x27;babylon&#x27;, // 格式化的解析器，默认是babylon</span></span><br><span class="line">  <span class="comment">// requireConfig: false, // Require a &#x27;prettierconfig&#x27; to format prettier</span></span><br><span class="line">  <span class="comment">// stylelintIntegration: false, //不让prettier使用stylelint的代码格式进行校验</span></span><br><span class="line">  <span class="comment">// trailingComma: &#x27;es5&#x27;, // 在对象或数组最后一个元素后面是否加逗号（在ES5中加尾逗号）</span></span><br><span class="line">  <span class="comment">// tslintIntegration: false // 不让prettier使用tslint的代码格式进行校验=</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Commit-Message-规范"><a href="#Commit-Message-规范" class="headerlink" title="Commit Message 规范"></a>Commit Message 规范</h2><p>我们在使用 Git 托管代码时，规范化的 Commit Message 可以帮助大家直观清晰地理解每次修改的内容，不仅能帮助别人 Review，还可以有效地输出 ChangeLog。那么要想前端工程化项目更易于维护，最好有一套 Git 提交说明的 规范化模板</p>
+<p>目前最受开发人员肯定的规范是前端框架 Angular 提出的 <a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines">Angular 提交信息规范</a>，包含 页眉(header)、正文(body)和页脚(footer)，每次提交必须包含页眉内容，每次提交的信息不超过 100 个字符，提交格式如下：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&lt;<span class="built_in">type</span>&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="页眉设置"><a href="#页眉设置" class="headerlink" title="页眉设置"></a>页眉设置</h3><p>页眉的格式指定为提交类型(type)、作用域(scope，可选)和主题(subject)</p>
+<h4 id="提交类型-type"><a href="#提交类型-type" class="headerlink" title="提交类型(type)"></a>提交类型(type)</h4><p>提交类型指定为下面其中一个：</p>
+<ul>
+<li>feat：新增功能</li>
+<li>fix：Bug 修复</li>
+<li>docs：文档更新</li>
+<li>ci：脚本更新，修改了 CI 配置文件或脚本</li>
+<li>pref：性能优化，提高性能的代码更改</li>
+<li>build：更新构建，构建系统或者外部依赖项进行了修改、更新</li>
+<li>test：新增测试，增加确实的测试或者矫正已存在的测试</li>
+<li>refactor：代码重构，非新增功能也非修复缺陷</li>
+<li>chore：事务变动，改动其他不影响代码的事务</li>
+<li>revert：代码回滚，撤销某次代码提交</li>
+<li>merge：分支合并，合并分支代码到其他分支</li>
+<li>style：格式变动，不影响代码逻辑</li>
+<li>release：版本发布</li>
+</ul>
+<h4 id="作用域-scope，可选"><a href="#作用域-scope，可选" class="headerlink" title="作用域(scope，可选)"></a>作用域(scope，可选)</h4><p>用于说明 commit 的影响范围（选填）<br>（比如按下面这些划分方案填写）</p>
+<ul>
+<li>按功能划分（如：数据层 - Data、视图层 - View 和 控制层 - Control）</li>
+<li>按交互层划分（如：组件 - Component、布局 - Layout、流程 - Flow、视图 - View 和 页面 - Page）</li>
+<li>按改动文件划分（如：某个文件 - Button.tsx，全部改动 -*）</li>
+</ul>
+<h4 id="主题-subject"><a href="#主题-subject" class="headerlink" title="主题(subject)"></a>主题(subject)</h4><p>用于说明 commit 的细节描述（选填）。以精炼简洁的文字（中文还是英文就看各自规定了，一般推荐使用英文）说明提交的改动，比如可以遵循这些规则：</p>
+<ul>
+<li>以动词开头（如：update，更新）</li>
+<li>使用第一人称现在时</li>
+<li>首字母无需大写，重点区分的（如某组件）首字母无需大写</li>
+<li>不以句号（. &#x2F; 。）结尾</li>
+</ul>
+<p>commit 信息示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">feat(Component): add Layout component</span><br><span class="line">feat(Button.tsx): change the default size of the button</span><br><span class="line">fix(EmitEvent): handle event on blur (closes #28)</span><br></pre></td></tr></table></figure>
+
+<h3 id="正文设置"><a href="#正文设置" class="headerlink" title="正文设置"></a>正文设置</h3><p>和主题设置类似，使用命令式、现在时态</p>
+<p>应该包含修改的动机以及和之前行为的对比</p>
+<h3 id="页脚设置"><a href="#页脚设置" class="headerlink" title="页脚设置"></a>页脚设置</h3><h4 id="Breaking-changes"><a href="#Breaking-changes" class="headerlink" title="Breaking changes"></a>Breaking changes</h4><p>不兼容修改指的是本次提交修改了不兼容之前版本的 API 或者环境变量</p>
+<p>所有不兼容修改都必须在页脚中作为中断更改块提到，以 BREAKING CHANGE:开头，后跟一个空格或者两个换行符，其余的信息就是对此次修改的描述，修改的理由和修改注释</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">BREAKING CHANGE: isolate scope bindings definition has changed and</span><br><span class="line">    the inject option <span class="keyword">for</span> the directive controller injection was removed.</span><br><span class="line"></span><br><span class="line">    To migrate the code follow the example below:</span><br><span class="line"></span><br><span class="line">    Before:</span><br><span class="line"></span><br><span class="line">    。。。</span><br><span class="line">    。。。</span><br><span class="line"></span><br><span class="line">    After:</span><br><span class="line"></span><br><span class="line">    。。。</span><br><span class="line">    。。。</span><br><span class="line"></span><br><span class="line">    The removed `inject` wasn<span class="string">&#x27;t generaly useful for directives so there should be no code using it.</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="引用提交的问题"><a href="#引用提交的问题" class="headerlink" title="引用提交的问题"></a>引用提交的问题</h4><p>如果本次提交目的是修改 issue 的话，需要在页脚引用该 issue</p>
+<p>以关键字 Closes 开头，比如</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Closes <span class="comment">#234</span></span><br></pre></td></tr></table></figure>
+
+<p>如果修改了多个 bug，以逗号隔开</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Closes <span class="comment">#123, #245, #992</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="回滚设置"><a href="#回滚设置" class="headerlink" title="回滚设置"></a>回滚设置</h3><p>当此次提交包含回滚(revert)操作，那么页眉以”revert:”开头，同时在正文中添加”This reverts commit hash”，其中 hash 值表示被回滚前的提交</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">revert:&lt;<span class="built_in">type</span>&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">This reverts commit <span class="built_in">hash</span></span><br><span class="line">&lt;other-body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
+
+<p><br/><br/></p>
+<h2 id="方案实现：-husky-commitlint"><a href="#方案实现：-husky-commitlint" class="headerlink" title="方案实现： husky+commitlint"></a>方案实现： <code>husky+commitlint</code></h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pnpm i husky lint-staged @commitlint/cli @commitlint/config-conventional -D</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="初始化-husky，创建-husky-文件夹（本质就是创建要触发的-git-hooks）"><a href="#初始化-husky，创建-husky-文件夹（本质就是创建要触发的-git-hooks）" class="headerlink" title="初始化 husky，创建 .husky 文件夹（本质就是创建要触发的 git-hooks）"></a>初始化 husky，创建 .husky 文件夹（本质就是创建要触发的 git-hooks）</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx husky install</span><br><span class="line"><span class="comment"># 安装 git hooks，创建 .husky 目录</span></span><br><span class="line"><span class="comment"># 结果：husky - Git hooks installed</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行</span></span><br><span class="line">npx husky-init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 它会在 package.json 文件的 scripts 字段中</span></span><br><span class="line"><span class="comment"># 创建 &quot;prepare&quot;: &quot;husky install&quot; 命令</span></span><br><span class="line"><span class="comment"># 同时在 .husky 目录下创建 pre-commit 文件</span></span><br><span class="line"><span class="comment"># 结果：husky - created .husky/pre-commit</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改-husky-x2F-pre-commit-文件："><a href="#修改-husky-x2F-pre-commit-文件：" class="headerlink" title="修改 .husky&#x2F;pre-commit 文件："></a>修改 .husky&#x2F;pre-commit 文件：</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env sh</span></span><br><span class="line">. <span class="string">&quot;<span class="subst">$(dirname -- <span class="string">&quot;<span class="variable">$0</span>&quot;</span>)</span>/_/husky.sh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># npm test  # 这句删掉，改为下面这行，进行代码格式化检测</span></span><br><span class="line">npx lint-staged</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-package-json-文件内容"><a href="#配置-package-json-文件内容" class="headerlink" title="配置 package.json 文件内容"></a>配置 package.json 文件内容</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment">/* lint-staged 配置 */</span></span><br><span class="line">  <span class="attr">&quot;lint-staged&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;*.&#123;js,jsx,vue,ts,tsx&#125;&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="string">&quot;prettier --write&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="string">&quot;eslint --fix --ext .js,.jsx,.vue,.ts,.tsx&quot;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建-eslintrc-cjs-文件和-pretterrc-cjs-文件"><a href="#创建-eslintrc-cjs-文件和-pretterrc-cjs-文件" class="headerlink" title="创建 .eslintrc.cjs 文件和 .pretterrc.cjs 文件"></a>创建 .eslintrc.cjs 文件和 .pretterrc.cjs 文件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .eslintrc.cjs 文件</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">env</span>: &#123;</span><br><span class="line">    <span class="attr">browser</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">es2021</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">extends</span>: [<span class="string">&#x27;eslint:recommended&#x27;</span>, <span class="string">&#x27;plugin:@typescript-eslint/recommended&#x27;</span>],</span><br><span class="line">  <span class="attr">parser</span>: <span class="string">&#x27;@typescript-eslint/parser&#x27;</span>,</span><br><span class="line">  <span class="attr">parserOptions</span>: &#123;</span><br><span class="line">    <span class="attr">ecmaVersion</span>: <span class="string">&#x27;latest&#x27;</span>,</span><br><span class="line">    <span class="attr">sourceType</span>: <span class="string">&#x27;module&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [<span class="string">&#x27;@typescript-eslint&#x27;</span>],</span><br><span class="line">  <span class="attr">rules</span>: &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .pretterrc.cjs 文件</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">semi</span>: <span class="literal">false</span>;</span><br><span class="line">  <span class="attr">singleQuote</span>: <span class="literal">true</span>;</span><br><span class="line">  <span class="attr">printWidth</span>: <span class="number">80</span>;</span><br><span class="line">  <span class="attr">trailingComma</span>: <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  <span class="attr">arrowParens</span>: <span class="string">&#x27;avoid&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在-husky-目录下添加-commit-msg-hook"><a href="#在-husky-目录下添加-commit-msg-hook" class="headerlink" title="在 .husky 目录下添加 commit-msg hook"></a>在 .husky 目录下添加 commit-msg hook</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx husky add .husky/commit-msg <span class="string">&#x27;npx --no -- commitlint --edit &quot;$1&quot;&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 结果：husky - created .husky/commit-msg</span></span><br><span class="line"><span class="comment"># .husky/commit-msg 文件内容：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/env sh</span></span><br><span class="line">. <span class="string">&quot;<span class="subst">$(dirname -- <span class="string">&quot;<span class="variable">$0</span>&quot;</span>)</span>/_/husky.sh&quot;</span></span><br><span class="line"></span><br><span class="line">npx --no -- commitlint --edit <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建-commitlint-config-cjs-文件"><a href="#创建-commitlint-config-cjs-文件" class="headerlink" title="创建 commitlint.config.cjs 文件"></a>创建 commitlint.config.cjs 文件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  规范commit日志</span></span><br><span class="line"><span class="comment">  https://commitlint.js.org</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> types = [</span><br><span class="line">    <span class="string">&#x27;build&#x27;</span>, <span class="comment">// 主要目的是修改项目构建系统（例如glup，webpack，rollup的配置等）的提交</span></span><br><span class="line">    <span class="string">&#x27;ci&#x27;</span>, <span class="comment">// 修改项目的持续集成流程（Kenkins、Travis等）的提交</span></span><br><span class="line">    <span class="string">&#x27;chore&#x27;</span>, <span class="comment">// 构建过程或辅助工具的变化</span></span><br><span class="line">    <span class="string">&#x27;docs&#x27;</span>, <span class="comment">// 文档提交（documents）</span></span><br><span class="line">    <span class="string">&#x27;feat&#x27;</span>, <span class="comment">// 新增功能（feature）</span></span><br><span class="line">    <span class="string">&#x27;fix&#x27;</span>, <span class="comment">// 修复 bug</span></span><br><span class="line">    <span class="string">&#x27;pref&#x27;</span>, <span class="comment">// 性能、体验相关的提交</span></span><br><span class="line">    <span class="string">&#x27;refactor&#x27;</span>, <span class="comment">// 代码重构</span></span><br><span class="line">    <span class="string">&#x27;revert&#x27;</span>, <span class="comment">// 回滚某个更早的提交</span></span><br><span class="line">    <span class="string">&#x27;style&#x27;</span>, <span class="comment">// 不影响程序逻辑的代码修改、主要是样式方面的优化、修改</span></span><br><span class="line">    <span class="string">&#x27;test&#x27;</span> <span class="comment">// 测试相关的开发,</span></span><br><span class="line">  ],</span><br><span class="line">  typeEnum = &#123;</span><br><span class="line">    <span class="attr">rules</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;type-enum&#x27;</span>: [<span class="number">2</span>, <span class="string">&#x27;always&#x27;</span>, types]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">value</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> types;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">extends</span>: [<span class="string">&#x27;@commitlint/config-conventional&#x27;</span>],</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">Level [0..2]: 0 disables the rule. For 1 it will be considered a warning for 2 an error.</span></span><br><span class="line"><span class="comment">https://commitlint.js.org/#/reference-rules</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">  <span class="attr">rules</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;type-enum&#x27;</span>: typeEnum.<span class="property">rules</span>[<span class="string">&#x27;type-enum&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;subject-full-stop&#x27;</span>: [<span class="number">0</span>, <span class="string">&#x27;never&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;subject-case&#x27;</span>: [<span class="number">0</span>, <span class="string">&#x27;never&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置完毕，测试"><a href="#配置完毕，测试" class="headerlink" title="配置完毕，测试"></a>配置完毕，测试</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">➡️ git commit -m <span class="string">&quot;tes: 错误示例 🙅&lt;200d&gt;♂️&quot;</span></span><br><span class="line"></span><br><span class="line">✔ Preparing lint-staged...</span><br><span class="line">✔ Running tasks <span class="keyword">for</span> staged files...</span><br><span class="line">✔ Applying modifications from tasks...</span><br><span class="line">✔ Cleaning up temporary files...</span><br><span class="line"></span><br><span class="line">Commit Msg:  tes: 错误示例 🙅‍♂️</span><br><span class="line"></span><br><span class="line">   ERROR  invalid commit message format.</span><br><span class="line"></span><br><span class="line">  Proper commit message format is required <span class="keyword">for</span> automated changelog generation. Examples:</span><br><span class="line"></span><br><span class="line">    feat(compiler): add <span class="string">&#x27;comments&#x27;</span> option</span><br><span class="line">    fix(input): handle events on blur (close <span class="comment">#28)</span></span><br><span class="line"></span><br><span class="line">  See .github/commit-convention.md <span class="keyword">for</span> more details.</span><br><span class="line"></span><br><span class="line">husky - commit-msg hook exited with code 1 (error)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>当然，整体来说也只是一个推荐性的规范方案，commit 同样可以通过 -n 或者是 -no-verify 直接绕开 commit 检测</p>
+<h2 id="添加-ChangeLog"><a href="#添加-ChangeLog" class="headerlink" title="添加 ChangeLog"></a>添加 ChangeLog</h2><h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pnpm i conventional-changelog-cli -D</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-scripts-（packages-json）"><a href="#配置-scripts-（packages-json）" class="headerlink" title="配置 scripts （packages.json）"></a>配置 scripts （packages.json）</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;changelog&quot;</span><span class="punctuation">:</span> <span class="string">&quot;conventional-changelog -p angular -i CHANGELOG.md -s&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>conventional-changelog-cli 不会覆盖任何以前的变更日志。 新增的日志基于自上一个 commit 的 “Feature”, “Fix”, “Performance Improvement” 或 “Breaking Changes”</p>
+<h2 id="另外：结合-husky-和自定义-verifyCommits-js-来实现"><a href="#另外：结合-husky-和自定义-verifyCommits-js-来实现" class="headerlink" title="另外：结合 husky 和自定义 verifyCommits.js 来实现"></a>另外：结合 husky 和自定义 verifyCommits.js 来实现</h2><p>主要处理逻辑是，修改<code>.husky/commit-commit</code>文件中的执行语句</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># scripts/verifyCommits.js 即为我们自定义的校验文件</span></span><br><span class="line"><span class="comment"># .husky/commit-msg 文件内容：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/env sh</span></span><br><span class="line">. <span class="string">&quot;<span class="subst">$(dirname -- <span class="string">&quot;<span class="variable">$0</span>&quot;</span>)</span>/_/husky.sh&quot;</span></span><br><span class="line"><span class="comment"># npx --no -- commitlint --edit &quot;&quot; 将此语句改为下面直接node执行脚本。</span></span><br><span class="line">node scripts/verifyCommits.js <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>$1</code> 必须在 <code>.husky/commit-msg</code> 文件中写上（在我们使用<code> git commit -m &quot;[msg]&quot;</code> 时，会传递给 <code>$1</code> 参数），否则我们执行自定义校验 commit 文件时是无法拿到 commit 信息 的（当时花费好长时间去踩这个问题点）</p>
+</blockquote>
+<h3 id="创建-scripts-x2F-verifyCommits-js-文件"><a href="#创建-scripts-x2F-verifyCommits-js-文件" class="headerlink" title="创建 scripts&#x2F;verifyCommits.js 文件"></a>创建 scripts&#x2F;verifyCommits.js 文件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">&#x27;chalk&#x27;</span>);</span><br><span class="line"><span class="comment">// const msgPath = process.env.GIT_PARAMS // 此为 undefined 拿不到 msg 信息</span></span><br><span class="line"><span class="comment">// process.env 对象中没有任何 commit 信息，process.argv 中本来也没有</span></span><br><span class="line"><span class="comment">// pre-commit 里的 $1 必填，这里才能拿到本次的 CommitMsg</span></span><br><span class="line"><span class="keyword">const</span> msgPath =</span><br><span class="line">  process.<span class="property">env</span>.<span class="property">GIT_PARAMS</span> || process.<span class="property">env</span>.<span class="property">HUSKY_GIT_PARAMS</span> || process.<span class="property">argv</span>[<span class="number">2</span>]; <span class="comment">//使用环境变量获取到commit message</span></span><br><span class="line"><span class="comment">// console.log(process.argv,&#x27;process.argv&#x27;);</span></span><br><span class="line"><span class="keyword">const</span> msg = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>).<span class="title function_">readFileSync</span>(msgPath, <span class="string">&#x27;utf-8&#x27;</span>).<span class="title function_">trim</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(); <span class="comment">// 空行，下面打印提示信息</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(chalk.<span class="property">bgBlueBright</span>.<span class="title function_">white</span>(<span class="string">&#x27;Commit Msg: &#x27;</span>), msg);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(); <span class="comment">// 打印提示信息后空行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> commitRE =</span><br><span class="line">  <span class="regexp">/^(revert: )?(feat|fix|docs|style|refactor|perf|test|workflow|ci|chore|types|build)(\(.+\))?: .&#123;1,50&#125;/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!commitRE.<span class="title function_">test</span>(msg)) &#123;</span><br><span class="line">  <span class="comment">// 下面是一些错误日志提醒</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(</span><br><span class="line">    <span class="string">`  <span class="subst">$&#123;chalk.bgRed.white(<span class="string">&#x27; ERROR &#x27;</span>)&#125;</span> <span class="subst">$&#123;chalk.red(</span></span></span><br><span class="line"><span class="subst"><span class="string">      <span class="string">`提交日志不符合规范`</span></span></span></span><br><span class="line"><span class="subst"><span class="string">    )&#125;</span>\n\n<span class="subst">$&#123;chalk.red(</span></span></span><br><span class="line"><span class="subst"><span class="string">      <span class="string">`  合法的提交日志格式如下(emoji 和 模块可选填)：\n\n`</span></span></span></span><br><span class="line"><span class="subst"><span class="string">    )&#125;</span>    </span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`[&lt;emoji&gt;] [revert: ?]&lt;type&gt;[(scope)?]: &lt;message&gt;\n`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`💥 feat(模块): 添加了个很棒的功能`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`🐛 fix(模块): 修复了一些 bug`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`📝 docs(模块): 更新了一下文档`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`🌷 UI(模块): 修改了一下样式`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`🏰 chore(模块): 对脚手架做了些更改`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(<span class="string">`🌐 locale(模块): 为国际化做了微小的贡献\n`</span>)&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.green(</span></span></span><br><span class="line"><span class="subst"><span class="string">      <span class="string">`其他提交类型: refactor, perf, workflow, build, CI, typos, tests, types, wip, release, dep\n`</span></span></span></span><br><span class="line"><span class="subst"><span class="string">    )&#125;</span></span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;chalk.red(</span></span></span><br><span class="line"><span class="subst"><span class="string">      <span class="string">`See https://github.com/vuejs/core/blob/main/.github/commit-convention.md\n`</span></span></span></span><br><span class="line"><span class="subst"><span class="string">    )&#125;</span>`</span></span><br><span class="line">  );</span><br><span class="line">  process.<span class="title function_">exit</span>(<span class="number">1</span>); <span class="comment">// 如果不规范退出运行进程</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// const childProcess = require(&#x27;child_process&#x27;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// // 提交记录</span></span><br><span class="line"><span class="comment">// const commitStages = childProcess.execSync(&#x27;git diff --name-status HEAD~3&#x27;, &#123;</span></span><br><span class="line"><span class="comment">//   encoding: &#x27;utf8&#x27;,</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"><span class="comment">// console.log(&#x27;提交记录：&#x27;, commitStages);</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>代码规范</tag>
+        <tag>前端工程化</tag>
+        <tag>husky</tag>
+        <tag>eslint</tag>
+        <tag>prettier</tag>
+        <tag>commitlint</tag>
       </tags>
   </entry>
   <entry>
@@ -1813,24 +1813,6 @@
       </tags>
   </entry>
   <entry>
-    <title>网页调试显示的警告，让你网站升级为HTTPS</title>
-    <url>/2018/slag/http-update-https-warn/</url>
-    <content><![CDATA[<p>在 chrome 中打开调试工具，出现如下图提示：</p>
-<p><img src="/images/baike/http-update-https.jpg"></p>
-<blockquote>
-<p>This page includes a password or credit card input in a non-secure context. A warning has been added to the URL bar. For more information, see <a href="https://goo.gl/zmWq3m">https://goo.gl/zmWq3m</a>.</p>
-</blockquote>
-<p>提示原因：简单的说，通过 HTTP 协议传递密码是非常不安全的，所以 Google 弹出了这个警告，提示你该是时候把你的网站 <strong>升级为HTTPS</strong> 了。</p>
-]]></content>
-      <categories>
-        <category>技术渣</category>
-      </categories>
-      <tags>
-        <tag>Https</tag>
-        <tag>开发者工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一些有用的 HTML5 pattern</title>
     <url>/2018/slag/html5-pattern/</url>
     <content><![CDATA[<p>最近在做手机页面时，遇到数字输入的键盘的问题，之前的做法只是一刀切的使用 <code>type=&quot;tel&quot;</code>，不过一直觉得九宫格的电话号码键盘上的英文字母太碍事了。于是想要尝试其它的实现方案，最终的结论却令人沮丧。不过也趁机详细了解了下 <code>pattern</code> 这个属性。</p>
@@ -1887,6 +1869,24 @@
       <tags>
         <tag>HTML5</tag>
         <tag>数字键盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网页调试显示的警告，让你网站升级为HTTPS</title>
+    <url>/2018/slag/http-update-https-warn/</url>
+    <content><![CDATA[<p>在 chrome 中打开调试工具，出现如下图提示：</p>
+<p><img src="/images/baike/http-update-https.jpg"></p>
+<blockquote>
+<p>This page includes a password or credit card input in a non-secure context. A warning has been added to the URL bar. For more information, see <a href="https://goo.gl/zmWq3m">https://goo.gl/zmWq3m</a>.</p>
+</blockquote>
+<p>提示原因：简单的说，通过 HTTP 协议传递密码是非常不安全的，所以 Google 弹出了这个警告，提示你该是时候把你的网站 <strong>升级为HTTPS</strong> 了。</p>
+]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Https</tag>
+        <tag>开发者工具</tag>
       </tags>
   </entry>
   <entry>
@@ -2454,47 +2454,6 @@
       </tags>
   </entry>
   <entry>
-    <title>金融行业的用户画像搭建与应用</title>
-    <url>/2019/slag/user-portrait/</url>
-    <content><![CDATA[<h1 id="什么是用户画像"><a href="#什么是用户画像" class="headerlink" title="什么是用户画像"></a>什么是用户画像</h1><p>在移动营销时代里，得用户者得天下，而说到用户则不能不提用户画像。众所周知，商界流传着一句著名的话，那就是“我知道我的广告费有一半是浪费了，但我不知道是那一半被浪费了”。于是大家越来越强调精准投放，精准营销，然而在精准营销的领域里，这一切都离不开用户画像。</p>
-<p>那什么是用户画像呢？用户画像就是对客户信息在特定业务场景下的系统描述，即用户信息标签化，通过收集用户社会属性、消费习惯、偏好特征等维度数据，并对这些特征属性进行刻画，分析和挖掘潜在价值信息，从而抽象出一个用户的信息全貌。</p>
-<h1 id="如何构建用户画像"><a href="#如何构建用户画像" class="headerlink" title="如何构建用户画像"></a>如何构建用户画像</h1><ol>
-<li>数据收集</li>
-</ol>
-<p>数据是构成用户画像的基础，没有数据的话，用户画像也无从说起，那如何进行用户数据收集呢？用户数据一般分为静态数据和动态数据。</p>
-<p>一般来说，每个公司都会有自己的业务系统，可以收集到用户的基本属性信息和交易信息，例如用户的姓名、年龄、性别和投资产品、投资金额、交易时间等，这些一般是用户的静态数据。而用户的行为信息则是属于动态数据，这个一般是通过 SDK 埋点所获取的，例如用户注册、登录、页面浏览等事件信息。当然，还有第三方数据的采集购买，但这个是作为第一方数据的补充，在这里就不进行论述了。</p>
-<ol start="2">
-<li>数据处理</li>
-</ol>
-<p>一般我们所获取到的数据都是原始数据来的，原始数据可能会存在着一些数据空缺、重复、或不一致等问题。因此我们还要对原数据进行清洗处理，才能从中抽取出有分析意义的数据，而数据清洗原则通常要结合具体业务场景进行制定。</p>
-<ol start="3">
-<li>数据打通</li>
-</ol>
-<p>现在用户数据获取的来源有多个渠道，而要勾勒一个完整的用户视图，则离不开渠道间的数据打通，例如一个用户可能有多个设备，拥有多个账号，则要把多个身份 ID 进行组合，建立统一标准，才能构建完整的用户画像。</p>
-<ol start="4">
-<li>用户数据标签化</li>
-</ol>
-<p>用户画像的本质，实际就是“标签化”的用户行为特征，通过给用户“打标签”如年龄、性别、兴趣爱好等，进行高度精炼的特征描述。</p>
-<p><img src="/images/analysis/2019011002090212.png"></p>
-<p>而用户标签一般分为 3 类：</p>
-<p>1）统计类标签：这类标签是最为基础也是最为常见的标签类型，主要是从原始数据中直接提取出来的，例如用户性别、年龄、城市等；<br>2）规则类标签：这类标签主要基于用户行为及确定规则所产生的，例如“活跃用户”而什么才算是活跃用户，这里标签的规则就主要是由运营人员或数据人员进行确定的；<br>3）挖掘类标签：这类标签主要是通过数据挖掘所产生，解决的是从无到有的问题，例如用户“性别”未知，但因中国人的名字和性别是强相关的，因此可以利用贝叶斯算法推测该用户性别。</p>
-<p>用户标签体系的搭建是用户画像中最为核心的工作，因此在梳理标签体系时尽量按照 MECE 原则，做到相互独立，完全穷尽。例如下图中互金行业的标签体系搭建。</p>
-<p><img src="/images/analysis/2019011002090278.png"></p>
-<h1 id="用户画像的实际运用"><a href="#用户画像的实际运用" class="headerlink" title="用户画像的实际运用"></a>用户画像的实际运用</h1><p>不同的企业做用户画像会有不同的战略目的，例如广告平台，主要是为了精准投放，找到目标用户，而内容平台是为了个性化推荐，更好的留住用户，数据类平台，则是进行用户分析，挖掘数据价值，驱动运营增长；</p>
-<p>而对于金融行业来说，金融服务目前正在由以产品为中心转向以用户为中心。面对不同的用户类型，用户群体的细分就显得非常重要，例如有些客户是稳健型投资者，偏好保本收益，有些则是激进型投资者，偏好高风险收益，那这时就应该要为不同用户群体设计不同的金融产品。同样，针对不同年龄段、不同职业、不同偏好的用户，所采取的营销策略也会不一样。这时就可以根据用户属性信息、消费特征、兴趣偏好等来为不同的用户提供不同的产品服务与营销策略。</p>
-<p><img src="/images/analysis/2019011002090375.png"></p>
-<p>在精准营销的领域当中，用户画像是必不可缺的，一个好的用户画像可以帮助企业进行产品定位，人群细分，指导营销决策。但用户画像的搭建与使用必须结合具体的业务场景，否则就算是有再多的数据维度，再完整的用户画像，也无法发挥作用。<br><br/><br><br/><br><br/></p>
-]]></content>
-      <categories>
-        <category>技术渣</category>
-      </categories>
-      <tags>
-        <tag>用户行为</tag>
-        <tag>用户画像</tag>
-        <tag>行为分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用 vscode 配置 ESLint</title>
     <url>/2018/slag/vscode-ESLint/</url>
     <content><![CDATA[<h3 id="Eslint"><a href="#Eslint" class="headerlink" title="Eslint"></a><a href="http://eslint.org/">Eslint</a></h3><p>最初是由 Nicholas C. Zakas 于 2013 年 6 月创建的开源项目。它的目标是提供一个插件化的 javascript 代码检测工具。<br>对于每一个开发者(尤其是团队项目开发)而言都是非常值得使用的，这样会强制你写出高质量且整洁的代码</p>
@@ -2571,6 +2530,47 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>Vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>金融行业的用户画像搭建与应用</title>
+    <url>/2019/slag/user-portrait/</url>
+    <content><![CDATA[<h1 id="什么是用户画像"><a href="#什么是用户画像" class="headerlink" title="什么是用户画像"></a>什么是用户画像</h1><p>在移动营销时代里，得用户者得天下，而说到用户则不能不提用户画像。众所周知，商界流传着一句著名的话，那就是“我知道我的广告费有一半是浪费了，但我不知道是那一半被浪费了”。于是大家越来越强调精准投放，精准营销，然而在精准营销的领域里，这一切都离不开用户画像。</p>
+<p>那什么是用户画像呢？用户画像就是对客户信息在特定业务场景下的系统描述，即用户信息标签化，通过收集用户社会属性、消费习惯、偏好特征等维度数据，并对这些特征属性进行刻画，分析和挖掘潜在价值信息，从而抽象出一个用户的信息全貌。</p>
+<h1 id="如何构建用户画像"><a href="#如何构建用户画像" class="headerlink" title="如何构建用户画像"></a>如何构建用户画像</h1><ol>
+<li>数据收集</li>
+</ol>
+<p>数据是构成用户画像的基础，没有数据的话，用户画像也无从说起，那如何进行用户数据收集呢？用户数据一般分为静态数据和动态数据。</p>
+<p>一般来说，每个公司都会有自己的业务系统，可以收集到用户的基本属性信息和交易信息，例如用户的姓名、年龄、性别和投资产品、投资金额、交易时间等，这些一般是用户的静态数据。而用户的行为信息则是属于动态数据，这个一般是通过 SDK 埋点所获取的，例如用户注册、登录、页面浏览等事件信息。当然，还有第三方数据的采集购买，但这个是作为第一方数据的补充，在这里就不进行论述了。</p>
+<ol start="2">
+<li>数据处理</li>
+</ol>
+<p>一般我们所获取到的数据都是原始数据来的，原始数据可能会存在着一些数据空缺、重复、或不一致等问题。因此我们还要对原数据进行清洗处理，才能从中抽取出有分析意义的数据，而数据清洗原则通常要结合具体业务场景进行制定。</p>
+<ol start="3">
+<li>数据打通</li>
+</ol>
+<p>现在用户数据获取的来源有多个渠道，而要勾勒一个完整的用户视图，则离不开渠道间的数据打通，例如一个用户可能有多个设备，拥有多个账号，则要把多个身份 ID 进行组合，建立统一标准，才能构建完整的用户画像。</p>
+<ol start="4">
+<li>用户数据标签化</li>
+</ol>
+<p>用户画像的本质，实际就是“标签化”的用户行为特征，通过给用户“打标签”如年龄、性别、兴趣爱好等，进行高度精炼的特征描述。</p>
+<p><img src="/images/analysis/2019011002090212.png"></p>
+<p>而用户标签一般分为 3 类：</p>
+<p>1）统计类标签：这类标签是最为基础也是最为常见的标签类型，主要是从原始数据中直接提取出来的，例如用户性别、年龄、城市等；<br>2）规则类标签：这类标签主要基于用户行为及确定规则所产生的，例如“活跃用户”而什么才算是活跃用户，这里标签的规则就主要是由运营人员或数据人员进行确定的；<br>3）挖掘类标签：这类标签主要是通过数据挖掘所产生，解决的是从无到有的问题，例如用户“性别”未知，但因中国人的名字和性别是强相关的，因此可以利用贝叶斯算法推测该用户性别。</p>
+<p>用户标签体系的搭建是用户画像中最为核心的工作，因此在梳理标签体系时尽量按照 MECE 原则，做到相互独立，完全穷尽。例如下图中互金行业的标签体系搭建。</p>
+<p><img src="/images/analysis/2019011002090278.png"></p>
+<h1 id="用户画像的实际运用"><a href="#用户画像的实际运用" class="headerlink" title="用户画像的实际运用"></a>用户画像的实际运用</h1><p>不同的企业做用户画像会有不同的战略目的，例如广告平台，主要是为了精准投放，找到目标用户，而内容平台是为了个性化推荐，更好的留住用户，数据类平台，则是进行用户分析，挖掘数据价值，驱动运营增长；</p>
+<p>而对于金融行业来说，金融服务目前正在由以产品为中心转向以用户为中心。面对不同的用户类型，用户群体的细分就显得非常重要，例如有些客户是稳健型投资者，偏好保本收益，有些则是激进型投资者，偏好高风险收益，那这时就应该要为不同用户群体设计不同的金融产品。同样，针对不同年龄段、不同职业、不同偏好的用户，所采取的营销策略也会不一样。这时就可以根据用户属性信息、消费特征、兴趣偏好等来为不同的用户提供不同的产品服务与营销策略。</p>
+<p><img src="/images/analysis/2019011002090375.png"></p>
+<p>在精准营销的领域当中，用户画像是必不可缺的，一个好的用户画像可以帮助企业进行产品定位，人群细分，指导营销决策。但用户画像的搭建与使用必须结合具体的业务场景，否则就算是有再多的数据维度，再完整的用户画像，也无法发挥作用。<br><br/><br><br/><br><br/></p>
+]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>用户行为</tag>
+        <tag>用户画像</tag>
+        <tag>行为分析</tag>
       </tags>
   </entry>
   <entry>
